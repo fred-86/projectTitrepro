@@ -30,6 +30,8 @@ https://unsplash.com/t/nature
 - Le front et le back sont dans le même projet ou pas?
 sachant que la connexion pour le front à l'api est facilité si tout est dans le même projet, il me semble
 
+> A l'inverse je pense qu'il vaut mieux séparer les 2. Ce n'est pas un problème pour l'accès à l'API, mais surtout pour les histoires de build et de minification il y a moyen que ça soit un bordel si tout est dans le même projet.
+
 ---
 
 ## type de produit à vendre sur le site
