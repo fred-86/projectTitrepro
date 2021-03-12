@@ -75,5 +75,6 @@ doivent être des produits de consommation cher, les plus vendus, les moins éth
 ## mise en ligne
 
 - j'ai cru comprendre qu'avec AWS il n'y avait pas de nom de domaine, juste un accées par l'ip. On se payera un nom de domaine, on l'héberge? Par exemple je suis chez O2Switch, si je rajoute un site l'hébergement est gratuit, il faaut payer le nom de domaine (c'est pas cher du tout). Voir les accées pour tout le monde sur le serveur (en cloisonant l'espace)
- -Fred: il me semble qu'avec le Developer Pack sur Git nous avons accés a un nom de domaine free pendant un an avec Name.com
+
+ >Fred: il me semble qu'avec le Developer Pack sur Git nous avons accés a un nom de domaine free pendant un an avec Name.com
  
