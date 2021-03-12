@@ -12,6 +12,9 @@
 
 https://symfony.com/doc/current/controller/upload_file.html
 
+- pour api voir https://packagist.org/packages/vich/uploader-bundle
+https://www.youtube.com/watch?v=OZBVd4ZTIqk&ab_channel=Grafikart.fr
+
 ### liste de site d'images libre de droit à compléter
 
 https://fr.freepik.com/photos-gratuite/affiche-cadres-verticaux-mur-blanc-vide-interieur-du-salon-fauteuil-velours-bleu-rendu-3d_10451793.htm
