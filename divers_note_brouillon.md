@@ -8,6 +8,9 @@
 
 - format?
 
+- ajouter des images ça marche avec cette doc mais pas test pour l'api 
+
+https://symfony.com/doc/current/controller/upload_file.html
 
 ### liste de site d'images libre de droit à compléter
 
