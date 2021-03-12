@@ -32,6 +32,7 @@ https://unsplash.com/t/nature
 - Pas de connexion au site pour remplir et valider un panier pour un utilisateur dans un premier temps (facilite la gestion des users) seulement une connexion pour l'admin, manager?
 
 > John: est ce que l'on part sur un BO fait par la partie symfo de l'équipe comme proposait Morgane, ou on intègre un accès sur la partie front en React?
+> 
 > Fred: Moi je partirais Côté Back cela me semble plus simple  après je ne sais pas côté React les possibilités donc à en discuter :)
 
 ---
