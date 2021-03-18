@@ -45,7 +45,7 @@ class Place
     private $logo;
 
     /**
-     * @ORM\Column(type="smallint")
+     * @ORM\Column(type="smallint", options={"unsigned":true, "default":1})
      */
     private $status;
 

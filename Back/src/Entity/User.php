@@ -42,7 +42,7 @@ class User implements UserInterface
     private $nickname;
 
     /**
-     * @ORM\Column(type="smallint")
+     * @ORM\Column(type="smallint", options={"unsigned":true, "default":0})
      */
     private $status;
 

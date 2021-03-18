@@ -25,7 +25,7 @@ class Department
     private $name;
 
     /**
-     * @ORM\Column(type="smallint", unique=true)
+     * @ORM\Column(type="smallint", unique=true ,options={"unsigned":true})
      */
     private $postalcode;
 
