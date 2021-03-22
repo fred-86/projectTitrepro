@@ -18,19 +18,40 @@ const NavBar = () => (
 
       <li className="navLink navLink--2">
         Electromenager
-      </li>
-      <ul className="navBar__subList navBar__subList--2">
+        <ul className="navBar__subList navBar__subList--2">
           <li className="navBar__subLink">Cuisine</li>
           <li className="navBar__subLink">Confort</li>
           <li className="navBar__subLink">Soin/Beauté</li>
-      </ul>
-      <li className="navLink">
-        Alimentaire
+        </ul>
       </li>
-      <li className="navLink">
-        Mobilier/Décoration</li>
-      <li className="navLink">
+
+      <li className="navLink navLink--3">
+        Alimentaire
+        <ul className="navBar__subList navBar__subList--3">
+          <li className="navBar__subLink">Fruits/Légumes</li>
+          <li className="navBar__subLink">Viandes/Poissons</li>
+          <li className="navBar__subLink">Surgelés</li>
+          <li className="navBar__subLink">Boissons</li>
+        </ul>
+      </li>
+
+      <li className="navLink navLink--4">
+        Mobilier/Décoration
+        <ul className="navBar__subList navBar__subList--4">
+          <li className="navBar__subLink">Salon</li>
+          <li className="navBar__subLink">Chambre</li>
+          <li className="navBar__subLink">Bureau</li>
+        </ul>
+      </li>
+
+      <li className="navLink navLink--5">
         Habillement
+        <ul className="navBar__subList navBar__subList--5">
+          <li className="navBar__subLink">Vêtements</li>
+          <li className="navBar__subLink">Sous-vêtements</li>
+          <li className="navBar__subLink">Chassures</li>
+          <li className="navBar__subLink">Accessoires</li>
+        </ul>
       </li>
     </ul>
   </nav>
