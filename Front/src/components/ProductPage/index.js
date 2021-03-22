@@ -1,7 +1,23 @@
 /* eslint-disable arrow-body-style */
-import React from 'react';
+import React, { useRef } from 'react';
 
-const ProductPage = () => {
+const ProductPage = ({ data, addToCart, setPictureToMain, pictures }) => {
+  const { name, compagny, description, price, save } = data;
+
+  const quantity = useRef(null);
+
+  const getUserChoice = () => {
+    const userChoice = {
+      quantity: quantity.current.value,
+      productId: 1,
+    };
+    addToCart(userChoice);
+  };
+
+  const setPictureTolog = (event) => {
+    console.log(event.target.src);
+  };
+
   return (
     <div className="ProductPage">
       <nav className="navBar">
@@ -15,56 +31,46 @@ const ProductPage = () => {
       </nav>
       <section className="description">
         <aside className="description__pictures">
-          <div className="description__pictures-main">
-            Main Picture
-          </div>
+          <img src={pictures[0]} alt="" className="description__pictures-main" />
           <div className="description__pictures-alt">
-            <div className="description__pictures-alt-item">
-              alt picture 1
-            </div>
-            <div className="description__pictures-alt-item">
-              alt picture 2
-            </div>
-            <div className="description__pictures-alt-item">
-              alt picture 3
-            </div>
+            <img src={pictures[1]} alt="" className="description__pictures-alt-item" onClick={setPictureToMain} />
+            <img src={pictures[2]} alt="" className="description__pictures-alt-item" onClick={setPictureToMain} />
+            <img src={pictures[3]} alt="" className="description__pictures-alt-item" onClick={setPictureToMain} />
           </div>
         </aside>
         <article className="description__details">
           <h1 className="description__details-title">
-            Product name  
+            {name}
           </h1>
           <p className="description__details-compagny">
-            By <strong>compagny name</strong>
+            By <strong>{compagny}</strong>
           </p>
           <div>
             <p className="description__details-price">
               <span className="description__details-price-amount">
-                35$
-              </span> 
+                {price}$
+              </span>
               <span className="description__details-price-save">
-                Save 85%
-              </span>  
+                Save {save}%
+              </span>
             </p>
           </div>
           <p className="description__details-resume">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem praesentium fugiat, at ut quo possimus nesciunt eius et velit illo quidem delectus quod beatae cupiditate porro minima aliquam. Eius, neque!
-            Natus debitis incidunt obcaecati error reprehenderit explicabo et? Laborum, culpa deserunt. Beatae, ea deleniti? Necessitatibus quasi, ex tempore possimus fugiat nostrum neque qui eaque reprehenderit delectus quis saepe perspiciatis omnis.
-            Ex, corporis. Commodi eos, voluptas error vel magnam rem ex harum facilis doloremque praesentium, consequatur a aliquid. Facere recusandae possimus error porro at? Dignissimos optio officia numquam, molestiae alias blanditiis!
+            {description}
           </p>
           <div className="description__details-cart">
             <div className="description__details-cart-quantity">
               <label htmlFor="description__details-cart-quantity-amount" className="description__details-cart-quantity-label">
                 Quantité
               </label>
-              <select className="description__details-cart-quantity-amount" id="description__details-cart-quantity-amount">
+              <select className="description__details-cart-quantity-amount" id="description__details-cart-quantity-amount" ref={quantity}>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
               </select>
             </div>
-            <button className="description__details-cart-btn">
+            <button className="description__details-cart-btn" type="button" onClick={getUserChoice}>
               Ajouter
             </button>
           </div>

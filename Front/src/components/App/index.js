@@ -1,5 +1,6 @@
 // == Import npm
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 
 // == Import local
 import 'src/styles/index.scss';
@@ -8,10 +9,12 @@ import Cart from '../Cart/assistant';
 import Page404 from '../404';
 import MentionsLegales from '../MentionsLegales';
 import Apropos from '../Apropos';
-import Footer from '../Footer';
-import { Switch, Route } from 'react-router-dom';
 import Home from '../Home';
-import ProductPage from '../ProductPage';
+import ProductPage from '../ProductPage/assistant';
+import Footer from '../Footer';
+
+// temp imports
+import { product } from 'src/data';
 
 // == Composant
 const App = () => (
@@ -20,7 +23,7 @@ const App = () => (
     <main className="app__main-content">
       <Switch>
         <Route path="/product">
-          <ProductPage />
+          <ProductPage data={product} />
         </Route>
         <Route path="/cart">
           <Cart />

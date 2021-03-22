@@ -47,3 +47,17 @@ export const images = [
     image: "https://images.unsplash.com/photo-1614174485275-0493108905ca?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80"
   }
 ];
+
+export const product = {
+    name: "AirMax",
+    compagny: "Nike",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod harum impedit alias, maxime repellendus quisquam dolore tempora temporibus a minima eius doloremque blanditiis eveniet? Tempora nisi in ipsa dignissimos iusto. Tempora voluptate eligendi accusamus quidem consequatur sit earum repellendus quisquam numquam similique, soluta excepturi quaerat a delectus cum officiis ipsa obcaecati quia sint recusandae reprehenderit laboriosam aperiam! In, corporis modi.",
+    price: 50,
+    save: 85,
+    pictures: [
+      "https://images.unsplash.com/photo-1615349597898-4e3d0fb6d854?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=681&q=80",
+      "https://images.unsplash.com/photo-1614174485275-0493108905ca?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80",
+      "https://images.unsplash.com/photo-1615506067565-68ca88e025f1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80",
+      "https://images.unsplash.com/photo-1599948126325-0fba3761669a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=967&q=80"
+    ],
+  };

@@ -17,34 +17,34 @@
   .description {
     display: flex;
     text-align: left;
-    border: 1px solid blue;
 
     &__pictures {
       min-width: 50%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      //padding: 0 1rem;
-      border: 1px solid red;
+      
 
       &-main {
+        background-size: cover;
         width: 450px;
         height: 350px;
         margin-bottom: 1rem;
         border-radius: 10px;
-        background-color: lightblue;
+        cursor: pointer;
+        transition: all 4s;
       }
 
       &-alt {
         width: 450px;
         display: flex;
         justify-content: space-between;
-
+        transition: all 4s;
         &-item {
           width: 140px;
           height: 80px;
           border-radius: 10px;
-          background-color: lightblue;
+          cursor: pointer;
         }
       }
     }
