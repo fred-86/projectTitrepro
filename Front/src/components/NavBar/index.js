@@ -1,111 +1,39 @@
+// == Import npm
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
 
-const NavBar = () => {
-  return (
-    <nav className="NavBar">
-      <ul className="NavBar__list">
-        <li className="NavBar__list-link NavBar__list-link--1">
-          <NavLink to="/high_tech">
-            High Tech
-          </NavLink>
-          <ul className="NavBar__sublist NavBar__sublist--1">
-            <li className="NavBar__sublink">
-              <Link to="/high_tech/hifi">
-                Hifi
-              </Link>
-            </li>
-            <li className="NavBar__sublink">
-              <Link to="/high_tech/tv_video">
-                Tv/Vidéo
-              </Link>
-            </li>
-            <li className="NavBar__sublink">
-              <Link to="/high_tech/photo_camera">
-                Photo/Caméra
-              </Link>
-            </li>
-          </ul>
-        </li>
-        <li className="NavBar__list-link NavBar__list-link--2">
-          <NavLink to="/electromenager">
-            Electroménager
-          </NavLink>
-          <ul className="NavBar__sublink-list NavBar__sublink-list--2">
-            <li className="NavBar__sublink">
-              <Link to="/electromenager/cuisine">
-                Cuisine
-              </Link>
-            </li>
-            <li className="NavBar__sublink">
-              <Link to="/electromenager/confort">
-                Confort
-              </Link>
-            </li>
-            <li className="NavBar__sublink">
-              <Link to="/electromenager/soin_beaute">
-                Soin/Beauté
-              </Link>
-            </li>
-          </ul>
-        </li>
-        <li className="NavBar__list-link NavBar__list-link--3">
-          <Link to="/alimentaire">
-            Alimentaire
-          </Link>
-          <ul className="NavBar__sublink-list NavBar__sublink-list--3">
-            <li className="NavBar__sublink">
-              <Link to="/alimentaire/fruits_legumes">
-                Fruits et légumes
-              </Link>
-            </li>
-            <li className="NavBar__sublink">
-              <Link to="/alimentaire/viandes_poissons">
-                Viandes et poissons
-              </Link>
-            </li>
-            <li className="NavBar__sublink">
-              <Link to="/alimentaire/surgeles">
-                Surgelés
-              </Link>
-            </li>
-            <li className="NavBar__sublink">
-              <Link to="/alimentaire/boissons">
-                Boissons
-              </Link>
-            </li>
-          </ul>
-        </li>
-        <li className="NavBar__link NavBar__link--4">
-          <Link to="/mobilier_decoration">
-            Mobilier/Décoration
-          </Link>
-          <ul className="NavBar__sublink-list NavBar__sublink-list--4">
-            <li className="NavBar__sublink">
-              <Link to="/mobilier_decoration/salon">
-                Salon
-              </Link>
-            </li>
-            <li className="NavBar__sublink">
-              <Link to="/mobilier_decoration/chambre">
-                Chambre
-              </Link>
-            </li>
-            <li className="NavBar__sublink">
-              <Link to="/mobilier_decoration/bureau">
-                Bureau
-              </Link>
-            </li>
-          </ul>
-        </li>
-        <li className="NavBar__link">
-          <Link to="/habillement">
-            Habillement
-          </Link>
-        </li>
+import Submenu from 'src/components/Submenu';
+import 'src/styles/index.scss';
+
+const NavBar = () => (
+  <nav className="navBar">
+    <ul className="navBar__list">
+      <li className="navLink navLink--1">
+        High Tech
+        <ul className="navBar__subList navBar__subList--1">
+          <li className="navBar__subLink">Hifi</li>
+          <li className="navBar__subLink">Tv/Vidéo</li>
+          <li className="navBar__subLink">Photo/Caméra</li>
+        </ul>
+      </li>
+
+      <li className="navLink navLink--2">
+        Electromenager
+      </li>
+      <ul className="navBar__subList navBar__subList--2">
+          <li className="navBar__subLink">Cuisine</li>
+          <li className="navBar__subLink">Confort</li>
+          <li className="navBar__subLink">Soin/Beauté</li>
       </ul>
-    </nav>
-  );
-};
+      <li className="navLink">
+        Alimentaire
+      </li>
+      <li className="navLink">
+        Mobilier/Décoration</li>
+      <li className="navLink">
+        Habillement
+      </li>
+    </ul>
+  </nav>
+);
 
 export default NavBar;
