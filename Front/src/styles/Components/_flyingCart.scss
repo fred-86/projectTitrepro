@@ -1,0 +1,55 @@
+.FlyingCart {
+  position: absolute;
+  top: 72px;
+  right: -150px;
+  width: 150px;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0 0;
+  background-color: $secondary-color;
+  transition: right 0.4s;
+
+  &.FlyingCart--open {
+    right: 0;
+    transition: right 0.4s;
+  }
+
+  &__resume {
+    position: relative;
+    border-top: 2px solid lightgrey;
+    display: flex;
+    flex-direction: column;
+    background-color: lighten($secondary-color, 20%);
+    padding: 2rem 1rem;
+
+    &-logo {
+      height: 50px;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      background-color: white;
+    }
+
+    & > label {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    &-dep {
+      margin-bottom: 3rem;
+    }
+
+    &-total {
+      margin-bottom: 2rem;
+    }
+
+    & > button {
+      position: absolute;
+      bottom: 0;
+      height: 40px;
+      border-radius: 100% / 25px 25px 0 0;
+    }
+  }
+}

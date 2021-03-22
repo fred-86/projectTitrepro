@@ -1,18 +1,24 @@
 @use 'reset';
-@use 'vars';
+@import './Utils/vars';
+@import './Utils/mixins';
+@import './Components/flyingCart';
+@import './Components/carrousel';
+@import './Layouts/app';
+@import './Layouts/header';
+@import './Layouts/navBar';
+@import './Layouts/home';
+@import './Layouts/cart';
+@import './Layouts/aPropos';
+@import './Layouts/mentionsLegales';
+@import './Layouts/page404';
+@import './Layouts/footer';
 
 body {
+  margin: 0;
+  padding: 0;
   font-family: sans-serif;
 }
 
-/* 
-  // or you can import your own font
-  @font-face {
-    font-family: 'Roboto';
-    src: url('../assets/fonts/Roboto-Regular.ttf');
-  }
-
-  body {
-    font-family: 'Roboto', sans-serif;
-  }
-*/
+:export {
+  margin: 1rem;
+}

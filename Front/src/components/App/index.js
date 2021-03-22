@@ -1,15 +1,41 @@
 // == Import npm
 import React from 'react';
 
-// == Import
-import reactLogo from './react-logo.svg';
-import './styles.css';
+// == Import local
+import 'src/styles/index.scss';
+import Header from '../Header/assistant';
+import Cart from '../Cart/assistant';
+import Page404 from '../404';
+import MentionsLegales from '../MentionsLegales';
+import Apropos from '../Apropos';
+import Footer from '../Footer';
+import { Switch, Route } from 'react-router-dom';
+import Home from '../Home';
 
 // == Composant
 const App = () => (
   <div className="app">
-    <img src={reactLogo} alt="react logo" />
-    <h1>Composant : App</h1>
+    <Header />
+    <main className="app__main-content">
+      <Switch>
+        <Route path="/cart">
+          <Cart />
+        </Route>
+        <Route path="/mentionslegales">
+          <MentionsLegales />
+        </Route>
+        <Route path="/apropos">
+          <Apropos />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+        <Route>
+          <Page404 />
+        </Route>
+      </Switch>
+    </main>
+    <Footer />
   </div>
 );
 

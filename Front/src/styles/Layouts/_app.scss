@@ -1,0 +1,16 @@
+.app {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  //align-items: center;
+  text-align: center;
+
+  &__main-content {
+    margin-top: 72px;
+    margin-bottom: 150px;
+    display: flex;
+    justify-content: center;
+  }
+}

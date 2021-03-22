@@ -1,0 +1,45 @@
+.NavBar {
+
+  &__link-list {
+    position: relative;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+  }
+
+  &__link {
+    //padding: 1rem;
+    border: 1px solid red;
+  }
+
+  &__link.NavBar__link--1:hover .NavBar__sublink-list--1 {
+    display: block;
+  }
+
+  &__link.NavBar__link--2:hover .NavBar__sublink-list--2 {
+    display: block;
+  }
+
+  &__link.NavBar__link--3:hover .NavBar__sublink-list--3 {
+    display: block;
+  }
+
+  &__link.NavBar__link--4:hover .NavBar__sublink-list--4 {
+    display: block;
+  }
+
+  &__link:not(:nth-last-of-type(1)) {
+    margin-right: 1rem;
+  }
+
+  &__sublink-list {
+    position: absolute;
+    border: 1px solid black;
+    display: none;
+    padding: 1rem;
+  }
+
+  &__sublink:not(:nth-last-of-type(1)) {
+    margin-bottom: 0.5rem;
+  }
+}
