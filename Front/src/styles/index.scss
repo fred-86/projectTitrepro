@@ -1,5 +1,8 @@
 @use 'reset';
-@use 'vars';
+@import './Utils/vars';
+@import './Utils/mixins';
+@import './Layouts/app';
+@import './Layouts/nav';
 
 body {
   font-family: sans-serif;

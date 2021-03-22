@@ -1,0 +1,132 @@
+@use 'src/styles/Utils/_vars';
+
+.navBar{
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: vars.$background-nav;
+
+  .navBar__list{
+    display: flex;
+
+    color: vars.$color-nav;
+    font-size: 1em;
+    font-weight: 700;
+    
+    .navLink:nth-child(1){
+      border-left: none;
+    }
+    .navLink{
+      position: relative;
+
+      padding: 0 2em;
+      border-left: vars.$nav-separator solid 1px;
+    }
+
+    .navLink--1:hover .navBar__subList--1{
+      //display: block;
+      left: 0;
+    }
+    .navBar__subList--1:hover{
+      //display: block;
+      left:0;
+    }
+
+    .navBar__subList{
+      //display: none;
+      position: absolute;
+      top: 25px;
+      left: -1000px;
+
+      background-color: vars.$background-nav-light;
+
+      .navBar__subLink{
+        padding: 1em;
+
+        color: vars.$color-nav;
+        font-size: 1em;
+        font-weight: 700;
+
+        border-top: solid 0.15px vars.$submenu-separator;
+
+        &:hover{
+          color: vars.$color-nav-hover;
+        }
+      }
+    }
+  }
+}
+
+// .navBar{
+//   width: 100%;
+//   height: 2em;
+
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   position: relative;
+
+//   background-color: vars.$background-nav;
+//   text-align: center;
+
+//   .navLink:nth-child(1){
+//     border-left: none;
+//   }
+
+//   .navLink{
+//     //background-color: vars.$background-nav;
+//     border-left: vars.$nav-separator solid 1px;
+
+//     a {
+//       display: inline-block;
+//       padding: 0 2em;
+
+//       color: vars.$color-nav;
+//       font-size: 1em;
+//       font-weight: 700;
+
+//       &:hover {
+//         color: vars.$color-nav-hover;
+//       }
+//       &:hover .submenu{
+//         color: vars.$color-nav-hover;
+//         display: block;
+//       }
+//     }
+//   }
+// }
+
+
+
+// .submenu{
+//   background-color: vars.$background-nav-light;
+//   display: none;
+
+//   position: absolute;
+//   top: 2em;
+
+//   .submenu-list{
+//     color: vars.$color-nav;
+
+//     .submenu-item{
+//       padding: 0.5em 0;
+//       border-top: solid 0.15px vars.$submenu-separator;
+
+//       font-size: 1em;
+//       font-weight: 700;
+
+//       &:hover {
+//         color: vars.$color-nav-hover;
+//       }
+//     }
+
+//   }
+
+//   &:hover {
+//     visibility: visible;
+//   }
+// }
