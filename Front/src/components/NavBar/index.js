@@ -1,7 +1,6 @@
 // == Import npm
 import React from 'react';
 
-import Submenu from 'src/components/Submenu';
 import 'src/styles/index.scss';
 
 const NavBar = () => (
