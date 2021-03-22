@@ -10,6 +10,7 @@ const Home = () => {
     <div className="Home">
       <NavBar />
       <Carrousel />
+      <Carrousel />
     </div>
   );
 };
