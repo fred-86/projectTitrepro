@@ -13,9 +13,7 @@
   .navBar__list{
     display: flex;
 
-    color: vars.$color-nav;
-    font-size: 1em;
-    font-weight: 700;
+
     
     .navLink:nth-child(1){
       border-left: none;
@@ -25,6 +23,10 @@
 
       padding: 0 2em;
       border-left: vars.$nav-separator solid 1px;
+
+      color: vars.$color-nav;
+      font-size: 1em;
+      font-weight: 700;
     }
 
     // -- SUBLINK HOVER SETTINGS -- //
@@ -64,17 +66,15 @@
       left: 3em;
     }
     .navBar__subList--4:hover{
-      //display: block;
+      display: block;
       left:0;
     }
 
 
     .navLink--5:hover .navBar__subList--5{
-      //display: block;
       left: 1.5em;
     }
     .navBar__subList--5:hover{
-      //display: block;
       left:0;
     }
 
@@ -82,20 +82,17 @@
     // -- SUBLIST SETTINGS -- //
 
     .navBar__subList{
-      //display: none;
       position: absolute;
-      top: 25px;
+      top: 27px;
       left: -2000px;
 
       background-color: vars.$background-nav-light;
 
+      .navBar__subLink:nth-child(1){
+        border-top: none;
+      }
       .navBar__subLink{
         padding: 1em;
-
-        color: vars.$color-nav;
-        font-size: 1em;
-        font-weight: 700;
-
         border-top: solid 0.15px vars.$submenu-separator;
 
         &:hover{
