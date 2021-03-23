@@ -14,10 +14,6 @@ const ProductPage = ({ data, addToCart, setPictureToMain, pictures }) => {
     addToCart(userChoice);
   };
 
-  const setPictureTolog = (event) => {
-    console.log(event.target.src);
-  };
-
   return (
     <div className="ProductPage">
       <nav className="navBar">
@@ -43,7 +39,7 @@ const ProductPage = ({ data, addToCart, setPictureToMain, pictures }) => {
             {name}
           </h1>
           <p className="description__details-compagny">
-            By <strong>{compagny}</strong>
+            By <em>{compagny}</em>
           </p>
           <div>
             <p className="description__details-price">
