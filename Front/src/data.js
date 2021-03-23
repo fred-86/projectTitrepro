@@ -93,6 +93,8 @@ export const cartProducts = [
     name: 'lunette',
     picture: 'https://images.unsplash.com/photo-1615349597898-4e3d0fb6d854?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=681&q=80',
   },
+];
+  
 export const subCategoriesData = [
   {
     image: "https://images.unsplash.com/photo-1566352394430-a3e0417c779d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1066&q=80",
