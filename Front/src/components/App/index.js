@@ -15,6 +15,7 @@ import Footer from '../Footer';
 
 // temp imports
 import { product } from 'src/data';
+import PageCategory from '../PageCategory';
 
 // == Composant
 const App = () => (
@@ -22,6 +23,9 @@ const App = () => (
     <Header />
     <main className="app__main-content">
       <Switch>
+        <Route path="/category">
+          <PageCategory />
+        </Route>
         <Route path="/product">
           <ProductPage data={product} />
         </Route>

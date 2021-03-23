@@ -4,6 +4,8 @@
 @import './Utils/mixins';
 @import './Components/flyingCart';
 @import './Components/carrousel';
+@import './Components/categoryNavBar';
+@import './Components/subCategoriesImg';
 @import './Layouts/app';
 @import './Layouts/header';
 @import './Layouts/navBar';
@@ -14,6 +16,7 @@
 @import './Layouts/mentionsLegales';
 @import './Layouts/page404';
 @import './Layouts/footer';
+@import './Layouts/categoryPage';
 
 body {
   margin: 0;

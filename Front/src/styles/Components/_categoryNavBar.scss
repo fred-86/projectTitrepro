@@ -1,0 +1,18 @@
+.NavBarCategory {
+  padding: 1rem;
+  cursor: pointer;
+
+  &__link-list {
+    display:flex;
+    justify-content: center;
+
+  }
+  &__link {
+    margin-left: 1.5rem;
+    padding:0.4rem;
+    border-radius: 5px;
+  }
+  &__link:hover {
+    background-color: rgba(228, 228, 72, 0.938);
+  }
+}
