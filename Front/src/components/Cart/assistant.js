@@ -2,8 +2,8 @@
 import { connect } from 'react-redux';
 
 // Import local
+import { setSelectedProduct, setSelectedOption } from 'src/store/actions';
 import Cart from './index';
-import { setSelectedOption } from 'src/store/actions';
 
 const mapStateToProps = (state) => ({
   selectedOption: state.cart.cart.selectedOption,
@@ -13,6 +13,10 @@ const mapDispatchToProps = (dispatch) => ({
   setSelectedOption: (event) => {
     const optionIndex = parseInt(event.target.value);
     dispatch(setSelectedOption(optionIndex));
+  },
+  setSelectedProduct: (selectedProduct) => {
+    const productId = parseInt(selectedProduct);
+    dispatch(setSelectedProduct(productId));
   },
 });
 

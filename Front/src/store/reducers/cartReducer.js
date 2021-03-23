@@ -2,7 +2,7 @@ const initialState = {
   products: [],
   quantity: [],
   cart: {
-    selectedProduct: 0,
+    selectedProduct: 1,
     options: [],
     selectedOption: 0,
     places: [],
@@ -28,6 +28,19 @@ const cartReducer = (state = initialState, action = {}) => {
         flyingCart: flyingCart,
       };
     }
+
+    case 'SET_SELECTED_PRODUCT': {
+      const newCart = {
+        ...state.cart,
+        selectedProduct: action.selectedProduct,
+      };
+
+      return {
+        ...state,
+        cart: newCart,
+      };
+    }
+
     case 'SET_SELECTED_OPTION': {
       const newCart = {
         selectedOption: action.value,

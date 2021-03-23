@@ -16,3 +16,8 @@ export const setPictureToMain = (newPictures) => ({
   type: 'SET_PICTURE_TO_MAIN',
   newPictures: newPictures,
 });
+
+export const setSelectedProduct = (selectedProduct) => ({
+  type: 'SET_SELECTED_PRODUCT',
+  selectedProduct: selectedProduct,
+});

@@ -1,7 +1,10 @@
-import React from 'react';
-import { categories } from 'src/data';
+import React, { useRef } from 'react';
+import { categories, cartProducts } from 'src/data';
 
-const Cart = ({ selectedOption, setSelectedOption }) => {
+const Cart = ({ setSelectedProduct, selectedOption, setSelectedOption }) => {
+  const setCurrentProduct = (event) => {
+    setSelectedProduct(event.target.value);
+  };
 
   return (
     <div className="Cart">
@@ -13,10 +16,29 @@ const Cart = ({ selectedOption, setSelectedOption }) => {
         </p>
       </article>
       <section className="Cart__proposal">
-        <div className="Cart__proposal-product-list">
-          <h2>
+        <div className="Cart__proposal-list">
+          <h2 className="Cart__proposal-list-title">
             Panier
           </h2>
+          {cartProducts.map((cartProduct, index) => (
+            <React.Fragment key={`item-id-${cartProduct.id}`}>
+              <label
+                htmlFor={`Cart__proposal-list-item-${index}`}
+                className="Cart__proposal-list-label"
+                style={{ backgroundImage: `url(${cartProduct.picture})` }}
+              >
+                {cartProduct.name}
+              </label>
+              <input
+                type="radio"
+                name="Cart__proposal-list-item"
+                id={`Cart__proposal-list-item-${index}`}
+                className="Cart__proposal-list-item"
+                value={cartProduct.id}
+                onClick={setCurrentProduct}
+              />
+            </React.Fragment>
+          ))}
         </div>
         <div className="Cart__proposal-choices">
           <h2 className="Cart__proposal-choices-title">

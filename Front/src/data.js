@@ -61,3 +61,36 @@ export const product = {
       "https://images.unsplash.com/photo-1599948126325-0fba3761669a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=967&q=80"
     ],
   };
+
+export const cartProducts = [
+  {
+    id: 1,
+    name: 'chaussure',
+    picture: 'https://images.unsplash.com/photo-1599948126325-0fba3761669a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=967&q=80',
+  },
+  {
+    id: 2,
+    name: 'montre',
+    picture: 'https://images.unsplash.com/photo-1615349597898-4e3d0fb6d854?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=681&q=80',
+  },
+  {
+    id: 3,
+    name: 'chapeau',
+    picture: 'https://images.unsplash.com/photo-1599948126325-0fba3761669a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=967&q=80',
+  },
+  {
+    id: 4,
+    name: 'bague',
+    picture: 'https://images.unsplash.com/photo-1615349597898-4e3d0fb6d854?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=681&q=80',
+  },
+  {
+    id: 5,
+    name: 'jean',
+    picture: 'https://images.unsplash.com/photo-1599948126325-0fba3761669a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=967&q=80',
+  },
+  {
+    id: 6,
+    name: 'lunette',
+    picture: 'https://images.unsplash.com/photo-1615349597898-4e3d0fb6d854?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=681&q=80',
+  },
+];

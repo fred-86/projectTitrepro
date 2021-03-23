@@ -16,12 +16,36 @@
 
   &__proposal {
     display: flex;
+    max-height: 600px;
     background-color: lightblue;
 
-    &-product-list {
+    &-list {
       width: 30%;
       border-right: 2px solid rgb(157, 178, 180);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
+      overflow-y: scroll;
+
+      &-title {
+        margin-bottom: 1rem;
+      }
+
+      &-label {
+        margin-bottom: 3rem;
+        width: 50%;
+        min-height: 120px;
+        border-radius: 5px;
+        padding: 0.5rem 0 0 0.5rem;
+        background-size: cover;
+        background-position: center;
+        text-align: left;
+      }
+
+      &-item {
+       display: none;
+      }
     }
 
     &-choices {
