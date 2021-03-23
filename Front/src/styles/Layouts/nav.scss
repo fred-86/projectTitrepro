@@ -7,7 +7,7 @@
   padding:  0;
 
   background-color: vars.$background-nav;
-
+  
   .navBar__list{
     display: flex;
     padding:  0;
@@ -16,6 +16,7 @@
       border-left: none;
     }
     .navLink{
+      width: 250px;
       position: relative;
 
       padding: 1rem 2rem;
@@ -24,6 +25,10 @@
       color: vars.$color-nav;
       font-size: 1rem;
       font-weight: 700;
+
+      &:hover { 
+        color: vars.$color-nav-hover;
+      }
     }
 
     // -- SUBLIST SETTINGS -- //
@@ -32,15 +37,17 @@
       position: absolute;
       top: 3rem;
       left: -2000px;
-
       background-color: vars.$background-nav-light;
 
       .navBar__subLink:nth-child(1){
         border-top: none;
       }
       .navBar__subLink{
+        width: 250px;
         padding: 1em;
         border-top: solid 0.15px vars.$submenu-separator;
+
+        color: vars.$color-nav;
 
         &:hover { 
           color: vars.$color-nav-hover;
@@ -59,7 +66,7 @@
 
 
     .navLink--2:hover .navBar__subList--2{
-       left: 2em;
+       left: 0;
     }
     .navBar__subList--2:hover{
        left:0;
@@ -67,7 +74,7 @@
 
 
     .navLink--3:hover .navBar__subList--3{
-      left: -0.5em;
+      left: 0;
     }
     .navBar__subList--3:hover{
       left:0;
@@ -75,7 +82,7 @@
 
 
     .navLink--4:hover .navBar__subList--4{
-      left: 3em;
+      left: 0;
     }
     .navBar__subList--4:hover{
       left:0;
@@ -83,7 +90,7 @@
 
 
     .navLink--5:hover .navBar__subList--5{
-      left: 1.5em;
+      left: 0;
     }
     .navBar__subList--5:hover{
       left:0;
@@ -91,72 +98,3 @@
   }
 }
 
-// .navBar{
-//   width: 100%;
-//   height: 2em;
-
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   position: relative;
-
-//   background-color: vars.$background-nav;
-//   text-align: center;
-
-//   .navLink:nth-child(1){
-//     border-left: none;
-//   }
-
-//   .navLink{
-//     //background-color: vars.$background-nav;
-//     border-left: vars.$nav-separator solid 1px;
-
-//     a {
-//       display: inline-block;
-//       padding: 0 2em;
-
-//       color: vars.$color-nav;
-//       font-size: 1em;
-//       font-weight: 700;
-
-//       &:hover {
-//         color: vars.$color-nav-hover;
-//       }
-//       &:hover .submenu{
-//         color: vars.$color-nav-hover;
-//         display: block;
-//       }
-//     }
-//   }
-// }
-
-
-
-// .submenu{
-//   background-color: vars.$background-nav-light;
-//   display: none;
-
-//   position: absolute;
-//   top: 2em;
-
-//   .submenu-list{
-//     color: vars.$color-nav;
-
-//     .submenu-item{
-//       padding: 0.5em 0;
-//       border-top: solid 0.15px vars.$submenu-separator;
-
-//       font-size: 1em;
-//       font-weight: 700;
-
-//       &:hover {
-//         color: vars.$color-nav-hover;
-//       }
-//     }
-
-//   }
-
-//   &:hover {
-//     visibility: visible;
-//   }
-// }
