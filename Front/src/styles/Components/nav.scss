@@ -1,0 +1,100 @@
+@use 'src/styles/Utils/_vars';
+
+.navBar{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding:  0;
+
+  background-color: vars.$background-nav;
+  
+  .navBar__list{
+    display: flex;
+    padding:  0;
+    
+    .navLink:nth-child(1){
+      border-left: none;
+    }
+    .navLink{
+      width: 250px;
+      position: relative;
+
+      padding: 1rem 2rem;
+      border-left: vars.$nav-separator solid 1px;
+
+      color: vars.$color-nav;
+      font-size: 1rem;
+      font-weight: 700;
+
+      &:hover { 
+        color: vars.$color-nav-hover;
+      }
+    }
+
+    // -- SUBLIST SETTINGS -- //
+
+    .navBar__subList{
+      position: absolute;
+      top: 3rem;
+      left: -2000px;
+      background-color: vars.$background-nav-light;
+
+      .navBar__subLink:nth-child(1){
+        border-top: none;
+      }
+      .navBar__subLink{
+        width: 250px;
+        padding: 1em;
+        border-top: solid 0.15px vars.$submenu-separator;
+
+        color: vars.$color-nav;
+
+        &:hover { 
+          color: vars.$color-nav-hover;
+        }
+      }
+    }
+
+    // -- SUBLINK HOVER SETTINGS -- //
+
+    .navLink--1:hover .navBar__subList--1{
+       left: 0;
+    }
+    .navBar__subList--1:hover{
+       left:0;
+    }
+
+
+    .navLink--2:hover .navBar__subList--2{
+       left: 0;
+    }
+    .navBar__subList--2:hover{
+       left:0;
+    }
+
+
+    .navLink--3:hover .navBar__subList--3{
+      left: 0;
+    }
+    .navBar__subList--3:hover{
+      left:0;
+    }
+
+
+    .navLink--4:hover .navBar__subList--4{
+      left: 0;
+    }
+    .navBar__subList--4:hover{
+      left:0;
+    }
+
+
+    .navLink--5:hover .navBar__subList--5{
+      left: 0;
+    }
+    .navBar__subList--5:hover{
+      left:0;
+    }
+  }
+}
+
