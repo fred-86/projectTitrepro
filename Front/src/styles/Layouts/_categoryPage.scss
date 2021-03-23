@@ -1,0 +1,39 @@
+.CategoryPage {
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  padding:2rem;
+  width:100%;
+  height:100%;
+}
+.MainImgCategory {
+  background-color: #C4C4C4;
+  border-radius: 30px;
+  height:231px; // à enlever quand image en place
+  width:847px;
+  color: grey;
+  margin:0.5rem;
+}
+.Pictogram {
+  &__sub-list {
+  display:flex;
+  align-items: center;
+  margin:1rem;
+  
+  }
+  &__sub {
+  cursor:pointer;
+  background-color: #C4C4C4;
+  height:115px; // à enlever quand picto mis en place
+  width:88px; // à enlever quand picto mis en place
+  margin-left:2rem;
+  border-radius: 30px;
+  }
+}
+.ContainerSubCategoriesImg {
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction:row;
+  max-width:80%;
+}

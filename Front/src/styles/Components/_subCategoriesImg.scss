@@ -1,0 +1,22 @@
+.SubCategories {
+  width:232px; // à enlever quand img mis en place
+  height:200px;  // à enlever quand img mis en place
+  background-color: #C4C4C4;
+  padding:1rem;
+  margin:1rem;
+  text-align: left;
+
+  &__img {
+    height:70%;
+    width:90%;
+    margin:0.3rem;
+    border-radius: 25px;
+  }
+
+  &__title  {
+    font-weight: bold;
+  }
+  &__price {
+    font-weight:100;
+  }
+}

@@ -11,6 +11,7 @@ import Apropos from '../Apropos';
 import Footer from '../Footer';
 import { Switch, Route } from 'react-router-dom';
 import Home from '../Home';
+import PageCategory from '../PageCategory';
 
 // == Composant
 const App = () => (
@@ -18,6 +19,9 @@ const App = () => (
     <Header />
     <main className="app__main-content">
       <Switch>
+      <Route path="/category">
+          <PageCategory />
+        </Route>
         <Route path="/cart">
           <Cart />
         </Route>
