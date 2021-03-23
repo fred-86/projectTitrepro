@@ -11,6 +11,8 @@ const Home = () => {
       <NavBar />
       <Carrousel />
       <Carrousel />
+      <Carrousel />
+      <Carrousel />
     </div>
   );
 };

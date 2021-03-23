@@ -3,11 +3,11 @@ import { images } from 'src/data';
 
 const Carrousel = () => {
   const [startingIndex, setStartingIndex] = useState(0);
-  const [currentImagesIndex, setCurrentImagesIndex] = useState([0, 1, 2]);
+  const [currentImagesIndex, setCurrentImagesIndex] = useState([0, 1, 2, 3]);
 
   let currentIndex = startingIndex;
   const currentImages = [];
-  const sliderLength = 3;
+  const sliderLength = 4;
 
   const swipe = (side) => {
     if (side === "left") {
