@@ -5,6 +5,7 @@
   justify-content: center;
   margin-bottom: 3rem;
 
+
   background-color: $background-nav;
   
   .navBar__list{
@@ -94,5 +95,15 @@
     .navBar__subList--5:hover{
       left:0;
     }
+
+    @include xl{
+      display: flex;
+      flex-wrap: wrap;
+      height: auto;
+      border: 5px solid red;
+      border-left: 0;
+    }
   }
+
+ 
 }
