@@ -4,6 +4,12 @@ import { NavLink, Link } from 'react-router-dom';
 
 const Burger = () => (
   <nav className="Burger">
+    <input id="menu__toggle" type="checkbox" />
+    <label className="burger-btn" htmlFor="menu__toggle">
+      <div className="btn-bars"></div>
+      <div className="btn-bars"></div>
+      <div className="btn-bars"></div>
+    </label>
     <ul className="navBar__list">
       <li className="navLink navLink--1">
         <NavLink to="/high_tech">
