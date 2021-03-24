@@ -1,22 +1,38 @@
 .SubCategories {
-  width:232px; // à enlever quand img mis en place
-  height:200px;  // à enlever quand img mis en place
+  max-width:232px; 
+  max-height:200px;  
   background-color: #C4C4C4;
-  padding:1rem;
+  padding:0.9rem;
   margin:1rem;
-  text-align: left;
+  border-radius:25px;
+  position: relative;
 
   &__img {
     height:70%;
-    width:90%;
-    margin:0.3rem;
-    border-radius: 25px;
+    width:99%;
+    margin:0.3rem 0;
+    border-radius: 10px;
   }
 
   &__title  {
     font-weight: bold;
+    padding:0.4rem;
+    text-align: left;
+    margin-left:0.2rem;
   }
-  &__price {
+  &__price  {
     font-weight:100;
+    text-align: left;
+    margin-left:0.6rem;
   }
+  &__btn {
+    position:absolute;
+    border:none;
+    border-radius:8px;
+    bottom:12px;
+    right:16px;
+    padding: 3px 9px;
+    font-size: 20px;
+  }
+
 }
