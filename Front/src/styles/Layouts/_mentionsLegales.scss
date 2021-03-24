@@ -6,25 +6,31 @@
   
   &__article {
     width: 50%;
-    box-shadow: 2px 2px 5px black;
-    border-radius: 5px;
     padding: 1rem 2rem;
-    background-color: rgba(204, 226, 229, 0.5);
 
     &-title {
       margin-bottom: 1rem;
       text-align: left;
       font-size: 2rem;
-      font-weight: bold;
-      text-decoration: underline;
+      font-weight: 700;
+    }
+
+    &-title--2 {
+      margin-bottom: 1.5rem;
+      text-align: left;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #999999;
     }
 
     &-content {
-      text-align: left;
+      text-align: justify;
+      line-height: 1.5rem;
+      padding-bottom: 1rem;
     }
   }
 
   &__article:not(:nth-last-of-type(1)) {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
   }
 }
