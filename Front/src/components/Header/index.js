@@ -1,11 +1,11 @@
+// Import npm
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-
+// Import local
 import cart from 'src/assets/images/shopping-cart.svg';
-import FlyingCart from '../FlyingCart/assistant';
 import ePakoLogo from 'src/assets/images/ePaKo.svg';
-
+import FlyingCart from '../FlyingCart/assistant';
 
 const Header = ({ isOpened, setIsOpened }) => {
   
