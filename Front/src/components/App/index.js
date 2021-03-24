@@ -18,7 +18,7 @@ import { product } from 'src/data';
 import PageCategory from '../PageCategory';
 
 // == Composant
-const App = ({ loadCategory, categories, loadProducts }) => {
+const App = ({ loadCategory, categories, loadProducts, products }) => {
   useEffect(() => {
     loadCategory();
     loadProducts();
@@ -45,7 +45,7 @@ const App = ({ loadCategory, categories, loadProducts }) => {
             <Apropos />
           </Route>
           <Route path="/">
-            <Home categories={categories} />
+            <Home categories={categories} products={products} />
           </Route>
           <Route>
             <Page404 />

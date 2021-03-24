@@ -7,6 +7,7 @@ import App from './index';
 
 const mapStateToProps = (state) => ({
   categories: state.product.categories,
+  products: state.product.products,
 });
 
 const mapDispatchToProps = (dispatch) => ({
