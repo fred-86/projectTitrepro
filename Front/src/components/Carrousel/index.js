@@ -3,11 +3,11 @@ import { images } from 'src/data';
 
 const Carrousel = () => {
   const [startingIndex, setStartingIndex] = useState(0);
-  const [currentImagesIndex, setCurrentImagesIndex] = useState([0, 1, 2]);
+  const [currentImagesIndex, setCurrentImagesIndex] = useState([0, 1, 2, 3]);
 
   let currentIndex = startingIndex;
   const currentImages = [];
-  const sliderLength = 3;
+  const sliderLength = 4;
 
   const swipe = (side) => {
     if (side === "left") {
@@ -45,19 +45,27 @@ const Carrousel = () => {
     <div className="Carrousel">
       <h2 className="Carrousel__title">High tech</h2>
       <div className="Carrousel__slider">
-        <button className="Carrousel__slider-control Carrousel__slider-control--left" onClick={() => {
-          swipe("left")
-          }}>
+        <button
+          type="button"
+          className="Carrousel__slider-control Carrousel__slider-control--left"
+          onClick={() => {
+            swipe('left');
+          }}
+        >
           &#171;
         </button>
         <div className="Carrousel__slider-content">
           {currentImages.map((currentImage, index) => (
-            <img src={currentImage.image} alt={`product_image-${index}`} key={index} />  
+            <img src={currentImage.image} alt={`product_image-${index}`} key={index} />
           ))}
         </div>
-        <button className="Carrousel__slider-control Carrousel__slider-control--right" onClick={() => {
-          swipe("right")
-          }}>
+        <button
+          type="button"
+          className="Carrousel__slider-control Carrousel__slider-control--right"
+          onClick={() => {
+            swipe('right');
+          }}
+        >
           &#187;
         </button>
       </div>
