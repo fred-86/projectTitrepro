@@ -18,9 +18,10 @@ import { product } from 'src/data';
 import PageCategory from '../PageCategory';
 
 // == Composant
-const App = ({ loadCategory, categories }) => {
+const App = ({ loadCategory, categories, loadProducts }) => {
   useEffect(() => {
     loadCategory();
+    loadProducts();
   }, []);
 
   return (
