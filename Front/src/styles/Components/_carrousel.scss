@@ -23,7 +23,6 @@
         rgba(255,255,255,0.7175245098039216) 100%
       );
 
-
       & > img { 
         width: 22%;
         height: 200px;
@@ -145,6 +144,7 @@
   }
 
   @include medium-only {  
+    min-width: 80%;
     &__slider {
       &-control {
         display: none;

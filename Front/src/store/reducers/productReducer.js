@@ -1,4 +1,5 @@
 const initialState = {
+  categories: [],
   name: '',
   brand: '',
   description: '',
@@ -14,12 +15,17 @@ const initialState = {
 
 const productReducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case 'SET_CATEGORIES':
+      return {
+        ...state,
+        categories: action.categories,
+      };
+
     case 'SET_PICTURE_TO_MAIN':
       return {
         ...state,
         pictures: action.newPictures,
       };
-
     default:
       return state;
   }

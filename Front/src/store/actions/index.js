@@ -21,3 +21,18 @@ export const setSelectedProduct = (selectedProduct) => ({
   type: 'SET_SELECTED_PRODUCT',
   selectedProduct: selectedProduct,
 });
+
+export const setDisplayedCategory = (newDisplayedCategory) => ({
+  type: 'SET_DISPLAYED_CATEGORY',
+  newDisplayedCategory: newDisplayedCategory,
+});
+
+// App
+export const loadCategory = () => ({
+  type: 'LOAD_CATEGORY',
+});
+
+export const setCategories = (categories) => ({
+  type: 'SET_CATEGORIES',
+  categories: categories,
+});

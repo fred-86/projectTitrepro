@@ -1,6 +1,21 @@
 .Home {
   margin-bottom: 3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include medium-only {
+
+    &__content {
+      max-width: 100vw;
+      flex-direction: row;
+      overflow-x: hidden;
+    }
+  }
 }
