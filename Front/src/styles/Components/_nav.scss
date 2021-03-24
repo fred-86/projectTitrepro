@@ -5,13 +5,12 @@
   justify-content: center;
   margin-bottom: 3rem;
 
+  background-color: $background-nav;
+
   @include xl{
     justify-content: left;
   }
-  
 
-  background-color: $background-nav;
-  
   .navBar__list{
     display: flex;
     padding:  0;

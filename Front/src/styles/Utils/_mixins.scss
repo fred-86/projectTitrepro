@@ -27,9 +27,39 @@
   } 
 }
 
-
+@mixin btn-burger{
+  @media (max-width:1200px){
+    #menu__toggle {
+      opacity: 0;
+    }
+    #menu__toggle:checked ~ .navBar__list {
+      visibility: visible;
+      background-color: $background-nav;  
+    }
+  
+    .burger-btn{
+      height: 45px;
+      width: 45px;
+      padding:5px;
+      background-color: $background-nav;
+      position: absolute;
+      top: 10.6%;
+      left:0%;
+  
+      .btn-bars:nth-child(3){
+        margin-bottom: 0;
+      }
+      .btn-bars{
+        height: 4px;
+        background-color: $background-nav-light;
+        margin: 6px 0;
+      }
+    }
+  }
+}
 @mixin burgerTest{
   @media (max-width:1200px){
+
         // -- SUBLINK HOVER SETTINGS -- //
 
         .navLink--1:hover .navBar__subList--1{
