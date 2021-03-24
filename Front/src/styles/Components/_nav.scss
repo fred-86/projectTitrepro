@@ -5,6 +5,10 @@
   justify-content: center;
   margin-bottom: 3rem;
 
+  @include xl{
+    justify-content: left;
+  }
+  
 
   background-color: $background-nav;
   
@@ -29,6 +33,10 @@
       &:hover { 
         color: $color-nav-hover;
       }
+      @include xl{
+        border-left: none;
+        justify-content: left;
+      }
     }
 
     // -- SUBLIST SETTINGS -- //
@@ -52,6 +60,14 @@
         &:hover { 
           color: $color-nav-hover;
         }
+      }
+
+      @include xl{
+        
+          border: 0;
+          position: absolute;
+          top: 0;
+          left: -200%;
       }
     }
 
@@ -97,12 +113,9 @@
     }
 
     @include xl{
-      display: flex;
-      flex-wrap: wrap;
-      height: auto;
-      border: 5px solid red;
-      border-left: 0;
+      display: block;
     }
+    @include burgerTest;
   }
 
  
