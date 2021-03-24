@@ -9,7 +9,6 @@ const appMiddleware = (store) => (next) => (action) => {
     case 'LOAD_CATEGORY':
       axios.get('http://julien-cambien.vpnuser.lan/apotheose/apo-E-pascommerce-back/public/api/product/category/browse')
         .then((response) => {
-          console.log(response.data);
           store.dispatch(setCategories(response.data));
         })
         .catch((err) => {

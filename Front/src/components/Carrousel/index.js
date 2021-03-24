@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { images } from 'src/data';
 
-const Carrousel = () => {
+const Carrousel = ({ category }) => {
   const [startingIndex, setStartingIndex] = useState(0);
   const [currentImagesIndex, setCurrentImagesIndex] = useState([0, 1, 2, 3]);
+  const { name } = category;
 
   let currentIndex = startingIndex;
   const currentImages = [];
@@ -43,7 +44,7 @@ const Carrousel = () => {
 
   return (
     <div className="Carrousel">
-      <h2 className="Carrousel__title">High tech</h2>
+      <h2 className="Carrousel__title">{name}</h2>
       <div className="Carrousel__slider">
         <button
           type="button"

@@ -6,7 +6,7 @@ import { loadCategory } from 'src/store/actions';
 import App from './index';
 
 const mapStateToProps = (state) => ({
-
+  categories: state.product.categories,
 });
 
 const mapDispatchToProps = (dispatch) => ({
