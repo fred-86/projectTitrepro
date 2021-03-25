@@ -1,9 +1,10 @@
 .FlyingCart {
+  // TODO Check erreur postcss
   position: absolute;
   top: 72px;
   right: -250px;
   width: 250px;
-  height: 70vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,14 +14,21 @@
   transition: right 0.4s;
 
   &__product-list{
-    width: 80%;
+    margin: 1rem 0;
+    height: 600px;
+    padding: 1rem 2.5rem 1.5rem;
+    overflow-y: scroll;
+
+    & > li:not(:nth-last-of-type(1)) {
+      margin-bottom: 3rem;
+    }
   }
    
   h1{
     font-size: 1rem;
     font-weight: 700;
     color: $warning-color;
-    padding-bottom: 2rem;
+    //padding-bottom: 2rem;
   }
 
   h2{

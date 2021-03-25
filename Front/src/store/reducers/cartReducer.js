@@ -1,6 +1,5 @@
 const initialState = {
-  products: [],
-  quantity: [],
+  items: [],
   cart: {
     selectedProduct: 1,
     options: [],
@@ -29,6 +28,40 @@ const cartReducer = (state = initialState, action = {}) => {
       };
     }
 
+    case 'ADD_TO_CART': {
+      const newItems = [
+        ...state.items,
+        action.userChoice,
+      ];
+      const newFlyingCart = {
+        ...state.flyingCart,
+        haveChange: true,
+      };
+
+      return {
+        ...state,
+        items: newItems,
+        flyingCart: newFlyingCart,
+      };
+    }
+
+    case 'UPDATE_ITEM': {
+      const indexToUpdate = state.items.findIndex(
+        (item) => item.product.id === action.item.product.id,
+      );
+
+      const newItems = [
+        ...state.items,
+      ];
+
+      newItems[indexToUpdate] = action.item;
+
+      return {
+        ...state,
+        items: newItems,
+      };
+    }
+
     case 'SET_SELECTED_PRODUCT': {
       const newCart = {
         ...state.cart,
@@ -49,22 +82,6 @@ const cartReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         cart: newCart,
-      };
-    }
-    case 'ADD_TO_CART': {
-      const newProducts = [
-        ...state.products,
-        action.userChoice,
-      ];
-      const newFlyingCart = {
-        ...state.flyingCart,
-        haveChange: true,
-      };
-
-      return {
-        ...state,
-        products: newProducts,
-        flyingCart: newFlyingCart,
       };
     }
 

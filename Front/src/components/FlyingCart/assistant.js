@@ -7,7 +7,7 @@ import FlyingCart from 'src/components/FlyingCart';
 
 const mapStateToProps = (state) => ({
   isOpened: state.cart.flyingCart.isOpened,
-  products: state.cart.products,
+  items: state.cart.items,
 });
 
 const mapDispatchToProps = (dispatch) => ({

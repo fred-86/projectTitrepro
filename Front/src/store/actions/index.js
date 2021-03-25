@@ -18,10 +18,18 @@ export const setProducts = (products) => ({
   products: products,
 });
 
+// ==========
 // FlyingCart
 export const setIsOpened = () => ({
   type: 'SET_IS_OPENED',
 });
+
+export const updateItem = (item) => ({
+  type: 'UPDATE_ITEM',
+  item: item,
+});
+
+// ==========
 
 export const setSelectedOption = (value) => ({
   type: 'SET_SELECTED_OPTION',

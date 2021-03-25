@@ -2,25 +2,26 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const FlyingCart = ({ isOpened, setIsOpened, products, setProducts }) => {
+// Import local
+import Item from './Item/assistant';
+
+const FlyingCart = ({
+  isOpened,
+  setIsOpened,
+  items,
+  setProducts
+}) => {
   const cartClass = classNames("FlyingCart", {"FlyingCart--open": isOpened});
   // TODO ajouter un voyant lumineux témoins d'un changement dans le panier
   return (
     <aside className={cartClass}>
       <h1>Mon panier</h1>
       <ul className="FlyingCart__product-list">
-        <li>
-          <article>
-            <h2>product 1</h2>
-            <div className="FlyingCart__div"></div>
-          </article>
-        </li>
-        <li>
-          <article>
-            <h2>product 2</h2>
-            <div className="FlyingCart__div"></div>
-          </article>
-        </li>
+        {items.map((item, index) => (
+          <li key={`item-${index}-${item.product.name}`}>
+            <Item item={item} />
+          </li>
+        ))}
       </ul>
       <div className="FlyingCart__resume">
         <div className="FlyingCart__resume-logo">
@@ -35,7 +36,7 @@ const FlyingCart = ({ isOpened, setIsOpened, products, setProducts }) => {
           <option value="31">Occitanie</option>
         </select>
         <p className="FlyingCart__resume-total">Coût total : 450 €</p>
-        <button>Valider</button>
+        <button type="button">Valider</button>
       </div>
     </aside>
   );

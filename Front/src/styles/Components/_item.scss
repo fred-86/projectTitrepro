@@ -1,0 +1,96 @@
+.Item {
+  position: relative;
+  width: 120px;
+  height: 182px;
+  box-shadow: 0 -2px 4px rgba(184, 184, 184, 0.527);
+  border: 1px solid rgb(80, 80, 80);
+  border-radius: 10px 10px 0 0;
+  border-bottom-right-radius: 20px 14px;
+  border-bottom-left-radius:  20px 14px;
+  border-bottom: none;
+  display: flex;
+  flex-direction: column;
+  //background-color: transparent;
+  
+  &__delete-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border-color: leightblue;
+    background: rgb(252,94,94);
+    background: radial-gradient(circle, rgba(252,94,94,1) 22%, rgba(221,44,44,1) 71%, rgba(201,27,27,1) 84%, rgba(195,4,4,1) 100%);
+    color: white;
+    text-shadow: 1px 1px black;
+    
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  &__img {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  &__name {
+    position: absolute;
+    bottom: 18px;
+    width: 100%;
+    //border-top: 1px solid gold;
+    border-radius: 110px 110px 0 0 / 10%;
+    padding-top: 0.2rem;
+    padding-bottom: 28px;
+    background-color: gray;
+    text-align: center;
+  }
+  
+  &__btn {
+    position: absolute;
+    bottom: -10px;
+    width: 46%;
+    height: 50px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.582);
+    font-size: 2rem;
+    background: rgb(121,139,142);
+    background: linear-gradient(0deg, rgba(121,139,142,1) 0%, rgba(188,209,212,1) 40%, rgba(207,218,221,1) 50%, rgba(183,205,208,1) 60%, rgba(121,139,142,1) 100%);
+    color: white;
+    text-shadow: 1px 1px black;
+    
+    &.Item__btn--less {
+      left: 0;
+      border-radius: 110px 20px 20px 110px / 110%;
+    }
+
+    &.Item__btn--more {
+      right: 0;
+      border-radius: 20px 110px 110px 20px / 110%;
+    }
+    
+    &:focus {
+      outline: none;
+    }
+  }
+  &__quantity {
+    z-index: 4;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    margin-left: -14px;
+    width: 28px;
+    height: 40px;
+    border: 1px solid rgb(121,139,142);
+    border-radius: 15px 15px 15px 15px / 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(213,213,213,1) 64%, rgba(166,166,166,1) 88%, rgba(148,147,147,1) 100%);
+    text-align: center;
+     
+  }
+}
