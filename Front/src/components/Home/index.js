@@ -3,7 +3,7 @@ import React from 'react';
 
 // Import local
 import NavBar from '../NavBar';
-import Burger from 'src/components/Burger';
+import Burger2 from 'src/components/Burger2';
 
 import Carrousel from '../Carrousel';
 
