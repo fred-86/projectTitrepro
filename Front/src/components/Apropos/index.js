@@ -31,6 +31,7 @@ const Apropos = () => {
         </p>               
       </article>
     </section>
+
   );
 };
 
