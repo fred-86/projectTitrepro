@@ -2,7 +2,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const FlyingCart = ({ isOpened, setIsOpened }) => {
+const FlyingCart = ({ isOpened, setIsOpened, products, setProducts }) => {
   const cartClass = classNames("FlyingCart", {"FlyingCart--open": isOpened});
   // TODO ajouter un voyant lumineux témoins d'un changement dans le panier
   return (
