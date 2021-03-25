@@ -7,30 +7,35 @@ const FlyingCart = ({ isOpened, setIsOpened }) => {
   // TODO ajouter un voyant lumineux témoins d'un changement dans le panier
   return (
     <aside className={cartClass}>
+      <h1>Mon panier</h1>
       <ul className="FlyingCart__product-list">
         <li>
           <article>
             <h2>product 1</h2>
-            <div></div>
+            <div className="FlyingCart__div"></div>
           </article>
         </li>
         <li>
           <article>
             <h2>product 2</h2>
-            <div></div>
+            <div className="FlyingCart__div"></div>
           </article>
         </li>
       </ul>
       <div className="FlyingCart__resume">
-        <div className="FlyingCart__resume-logo">carte bancaire</div>
-        <label htmlFor="FlyingCart__resume-dep">Département: </label>
+        <div className="FlyingCart__resume-logo">
+          14 jours pour changer d’avis(3)<br/>
+          Paiement en 4 fois possible<br/>
+          Paiement sécurisé<br/>
+        </div>
+        <label htmlFor="FlyingCart__resume-dep">Département  </label>
         <select id="FlyingCart__resume-dep" className="FlyingCart__resume-dep">
           <option value="94">Val de Marne</option>
           <option value="86">Vienne</option>
           <option value="31">Occitanie</option>
         </select>
-        <p className="FlyingCart__resume-total">Coût total : 450$</p>
-        <button>Valider son panier</button>
+        <p className="FlyingCart__resume-total">Coût total : 450 €</p>
+        <button>Valider</button>
       </div>
     </aside>
   );
