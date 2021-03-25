@@ -3,6 +3,8 @@ import React from 'react';
 
 // Import local
 import NavBar from '../NavBar';
+import Burger from 'src/components/Burger';
+
 import Carrousel from '../Carrousel';
 
 const Home = ({
