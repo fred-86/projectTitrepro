@@ -7,15 +7,12 @@ import 'src/styles/index.scss';
 import Header from '../Header/assistant';
 import Cart from '../Cart/assistant';
 import Page404 from '../404';
+import Home from '../Home/assistant';
+import PageCategory from '../PageCategory';
+import ProductPage from '../ProductPage/assistant';
 import MentionsLegales from '../MentionsLegales';
 import Apropos from '../Apropos';
-import Home from '../Home/assistant';
-import ProductPage from '../ProductPage/assistant';
 import Footer from '../Footer';
-
-// temp imports
-import { product } from 'src/data';
-import PageCategory from '../PageCategory';
 
 // == Composant
 const App = ({ loadCategory, categories, loadProducts, products }) => {
@@ -32,8 +29,8 @@ const App = ({ loadCategory, categories, loadProducts, products }) => {
           <Route path="/category">
             <PageCategory />
           </Route>
-          <Route path="/product">
-            <ProductPage data={product} />
+          <Route path="/product/:id">
+            <ProductPage />
           </Route>
           <Route path="/cart">
             <Cart />
@@ -45,7 +42,7 @@ const App = ({ loadCategory, categories, loadProducts, products }) => {
             <Apropos />
           </Route>
           <Route path="/">
-            <Home categories={categories} products={products} />
+            <Home />
           </Route>
           <Route>
             <Page404 />

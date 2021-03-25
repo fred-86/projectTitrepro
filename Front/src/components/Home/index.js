@@ -4,9 +4,15 @@ import React from 'react';
 // Import local
 import NavBar from '../NavBar';
 import Carrousel from '../Carrousel';
-import { loadCategory } from '../../store/actions';
 
-const Home = ({ categories, products, displayedCategory, setDisplayedCategory }) => {
+const Home = ({
+  categories,
+  products,
+  isCategoriesLoaded,
+  isProductLoaded,
+  displayedCategory,
+  setDisplayedCategory 
+}) => {
   const handlesSwitchCategory = (event) => {
     const newDisplayedCategory = (
       event.target.value === 'left'
@@ -20,13 +26,15 @@ const Home = ({ categories, products, displayedCategory, setDisplayedCategory })
     <div className="Home">
       <NavBar categories={categories} />
       <div className="Home__content">
-        {categories.map((category) => {
-          const associatedProduct = products.filter((product) => (
-            product.productCategories[0].id === category.id
+        {isCategoriesLoaded && isProductLoaded && categories.map((category) => {
+          const childCategoriesIndex = category.childCategories.map((childCategorie) => (
+            childCategorie.id
           ));
-          console.log(products[0]);
+          const associatedProduct = products.filter((product) => (
+            childCategoriesIndex.includes(product.productCategories[0].id)
+          ));
           return (
-            <Carrousel category={category} key={category.id} />
+            <Carrousel category={category} products={associatedProduct} key={category.id} />
           );
         })}
       </div>
