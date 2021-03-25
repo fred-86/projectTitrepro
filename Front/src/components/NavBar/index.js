@@ -8,7 +8,7 @@ const NavBar = () => (
       <li className="navLink navLink--1">
         <NavLink to="/high_tech">
           High-Tech
-        </NavLink>  
+        </NavLink>
         <ul className="navBar__subList navBar__subList--1">
           <li className="navBar__subLink">
             <Link to="/high_tech/hifi">

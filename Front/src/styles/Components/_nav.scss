@@ -1,28 +1,18 @@
 .navBar{
   z-index: 7;
-  width: 100%;
-  display: flex;
-  justify-content: center;
   margin-bottom: 3rem;
-
   background-color: $background-nav;
 
-  @include xl{
-    justify-content: left;
-  }
-
-  .navBar__list{
+  &__list{
     display: flex;
-    padding:  0;
+    justify-content: center;
     
-    .navLink:nth-child(1){
-      border-left: none;
-    }
     .navLink{
-      width: 250px;
+      width: 236px;
+      height: 48px;
       position: relative;
 
-      padding: 1rem 2rem;
+      padding: 1rem 1.3rem;
       border-left: $nav-separator solid 1px;
 
       color: $color-nav;
@@ -31,29 +21,28 @@
 
       &:hover { 
         color: $color-nav-hover;
-      }
-      @include xl{
-        border-left: none;
-        justify-content: left;
-      }
+      } 
     }
 
-    // -- SUBLIST SETTINGS -- //
+    .navLink:nth-child(1){
+      border-left: none;
+    }
 
+    
+    // -- SUBLIST SETTINGS -- //
     .navBar__subList{
       position: absolute;
-      top: 3rem;
+      top: 48px;
       left: -2000px;
+      width: inherit;
       background-color: $background-nav-light;
 
-      .navBar__subLink:nth-child(1){
-        border-top: none;
-      }
       .navBar__subLink{
-        width: 250px;
-        padding: 1em;
+        width: inherit;
+        box-sizing: content-box;
+        border-right: 1px solid $background-nav-light;
         border-top: solid 0.15px $submenu-separator;
-
+        padding: 1rem 0;
         color: $color-nav;
 
         &:hover { 
@@ -61,61 +50,53 @@
         }
       }
 
-      @include xl{
-        
-          border: 0;
-          position: absolute;
-          top: 0;
-          left: -200%;
+      .navBar__subLink:nth-child(1){
+        border-top: none;
       }
     }
 
-    // -- SUBLINK HOVER SETTINGS -- //
 
+    // -- SUBLINK HOVER SETTINGS -- //
     .navLink--1:hover .navBar__subList--1{
        left: 0;
     }
-    .navBar__subList--1:hover{
-       left:0;
-    }
-
-
+  
     .navLink--2:hover .navBar__subList--2{
-       left: 0;
+       left: -1px;
     }
-    .navBar__subList--2:hover{
-       left:0;
-    }
-
-
+   
     .navLink--3:hover .navBar__subList--3{
-      left: 0;
+      left: -1px;
     }
-    .navBar__subList--3:hover{
-      left:0;
-    }
-
-
+   
     .navLink--4:hover .navBar__subList--4{
-      left: 0;
+      left: -1px;
     }
-    .navBar__subList--4:hover{
-      left:0;
-    }
-
-
+    
     .navLink--5:hover .navBar__subList--5{
-      left: 0;
+      left: -1px;
     }
-    .navBar__subList--5:hover{
-      left:0;
-    }
-
-    @include xl{
-      display: block;
-    }
-    @include burgerTest;
   }
 
- 
+  @media (max-width: 1200px) {
+    &__list{
+      .navLink{
+        width: 195px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    &__list{
+      flex-direction: column;
+      align-items: center;
+
+      .navLink{
+        width: 100%;
+        border-left: none;
+        border-bottom: 1px solid $nav-separator;
+      }
+    }
+  }
 }
