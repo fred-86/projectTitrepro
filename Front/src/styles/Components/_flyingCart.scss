@@ -1,16 +1,40 @@
 .FlyingCart {
   position: absolute;
   top: 72px;
-  right: -150px;
-  width: 150px;
+  right: -250px;
+  width: 250px;
   height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
   padding: 1rem 0 0;
-  background-color: $secondary-color;
+  background-color: $nav-separator;
   transition: right 0.4s;
+
+  &__product-list{
+    width: 80%;
+  }
+   
+  h1{
+    font-size: 1rem;
+    font-weight: 700;
+    color: $warning-color;
+    padding-bottom: 2rem;
+  }
+
+  h2{
+    font-size: 1rem;
+    color: $color-nav;
+    padding-bottom: 2rem;
+  }
+
+  .FlyingCart__div{
+    width: 100%;
+    height: 6rem;
+    background-color: $color-nav;
+    margin-bottom: 2rem;
+  }
 
   &.FlyingCart--open {
     right: 0;
@@ -18,31 +42,48 @@
   }
 
   &__resume {
+    width: 100%;
     position: relative;
     border-top: 2px solid lightgrey;
     display: flex;
     flex-direction: column;
-    background-color: lighten($secondary-color, 20%);
+    background-color: lighten($nav-separator, 20%);
     padding: 2rem 1rem;
 
     &-logo {
-      height: 50px;
+      height: auto;
+      padding: 1rem;
       margin-bottom: 1rem;
       border-radius: 5px;
-      background-color: white;
+      background-color: lighten(lightgrey, 20%);
+
+      font-size: 0.7rem;
+      line-height: 1.2rem;
+      text-align: left;
     }
 
     & > label {
       display: inline-block;
       margin-bottom: 0.5rem;
+      color: $warning-color;
+      font-weight: 600;
     }
 
     &-dep {
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      height: 2rem;
+      border: none;
+      background-color: $nav-separator;
+
+      color: $color-nav;
     }
 
     &-total {
       margin-bottom: 2rem;
+      font-weight: bold;
+      color: #black;
     }
 
     & > button {
