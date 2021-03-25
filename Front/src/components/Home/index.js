@@ -4,8 +4,9 @@ import React from 'react';
 // Import local
 import NavBar from '../NavBar';
 import Carrousel from '../Carrousel';
+import { loadCategory } from '../../store/actions';
 
-const Home = ({ categories, displayedCategory, setDisplayedCategory }) => {
+const Home = ({ categories, products, displayedCategory, setDisplayedCategory }) => {
   const handlesSwitchCategory = (event) => {
     const newDisplayedCategory = (
       event.target.value === 'left'
@@ -19,9 +20,15 @@ const Home = ({ categories, displayedCategory, setDisplayedCategory }) => {
     <div className="Home">
       <NavBar categories={categories} />
       <div className="Home__content">
-        {categories.map((category) => (
-          <Carrousel category={category} key={category.id} />
-        ))}
+        {categories.map((category) => {
+          const associatedProduct = products.filter((product) => (
+            product.productCategories[0].id === category.id
+          ));
+          console.log(products[0]);
+          return (
+            <Carrousel category={category} key={category.id} />
+          );
+        })}
       </div>
       <button type="button" onClick={handlesSwitchCategory} value="left">left</button>
       <button type="button" onClick={handlesSwitchCategory} value="right">right</button>
