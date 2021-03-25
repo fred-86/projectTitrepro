@@ -1,4 +1,5 @@
 import React from 'react';
+import PopUpAlt from '../PopUpAlt';
 
 const Apropos = () => {
   return (
@@ -26,7 +27,9 @@ const Apropos = () => {
           Donec lobortis porta erat, eget congue odio bibendum at. Suspendisse potenti. Sed ac fringilla est, nec placerat odio. Nulla imperdiet interdum erat, eget iaculis diam varius nec. Proin vitae nisl et ex accumsan condimentum. Etiam erat diam, congue id sapien ac, pretium finibus justo. Phasellus magna enim, blandit vitae dignissim ac, gravida nec justo. In neque sem, vehicula quis augue ac, congue efficitur sem. Curabitur rutrum dolor vitae libero tempor condimentum. Vestibulum consectetur est mauris, et blandit elit semper in. Morbi imperdiet fermentum quam vitae pulvinar. Donec at nibh eget neque sollicitudin fringilla in sed odio. Proin viverra quam in neque maximus, et lacinia turpis semper. Integer consequat volutpat nisi porta dignissim. Suspendisse mattis pulvinar egestas. Praesent a leo nunc.
         </p>               
       </article>
+      <PopUpAlt />
     </section>
+
   );
 };
 

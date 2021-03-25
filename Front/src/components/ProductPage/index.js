@@ -34,7 +34,7 @@ const ProductPage = ({ data, addToCart, setPictureToMain, pictures }) => {
         <div className="breadcrumb">
             <ol className="breadcrumb__list">
               <li className="breadcrumb__item">
-                <Link to="#">
+                <Link to="#" >
                   Categorie&#x02002; &#x0003E; &#x02002;
                 </Link>
               </li>

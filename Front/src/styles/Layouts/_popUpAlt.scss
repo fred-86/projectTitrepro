@@ -1,0 +1,69 @@
+.popUpAlt{
+  &__frame{
+    width: 720px;
+    height: auto;
+    text-align: left;
+    padding: 3rem;
+    background-color: brown;  
+  }
+
+  &__button{
+    width: 45px;
+    height: 45px;
+    border: none;
+    
+    font-size: 2rem;
+    font-weight: 400;
+    background-color: burlywood;
+  }
+
+  &__picture{
+    width: auto;
+    height: 10rem;
+    background-color: cadetblue;
+    margin-top: 2rem;
+  }
+
+  &__title{
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding-top: 1rem;
+  }
+
+  &__content {
+    display: flex;
+    //flex-direction: column;
+
+
+    .description{
+      width: 60%;
+      margin: 1rem 2rem 1rem 0;
+
+      &__text{
+        line-height: 1.2rem;
+        text-align: justify;
+      }
+    }
+
+    .info{
+      width: 40%;
+      margin: 1rem 0 1rem 2rem;
+
+      &__title{
+        font-size: 1.1rem;
+        font-weight: 700;
+        padding-bottom: 1rem;
+      }
+      &__text{
+        padding-bottom: 0.5rem;
+      }
+      &__map{
+        width: 100%;
+        height: 235px;
+        background-color: coral;
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
