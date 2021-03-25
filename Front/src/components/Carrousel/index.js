@@ -1,32 +1,36 @@
 import React, { useState } from 'react';
-import { images } from 'src/data';
+import { Link } from 'react-router-dom';
 
-const Carrousel = ({ category }) => {
+const Carrousel = ({ category, products }) => {
   const [startingIndex, setStartingIndex] = useState(0);
-  const [currentImagesIndex, setCurrentImagesIndex] = useState([0, 1, 2, 3]);
+  const [currentProductsIndex, setCurrentProductsIndex] = useState(
+    products.map((product, index) => (
+      index
+    )),
+  );
   const { name } = category;
 
   let currentIndex = startingIndex;
-  const currentImages = [];
-  const sliderLength = 4;
+  const currentProducts = [];
+  const sliderLength = products.length;
 
   const swipe = (side) => {
-    if (side === "left") {
+    if (side === 'left') {
       currentIndex--;
 
-      currentIndex = currentIndex < 0 ? images.length - 1 : currentIndex;
+      currentIndex = currentIndex < 0 ? products.length - 1 : currentIndex;
     }
     else {
       currentIndex++;
 
-      currentIndex = currentIndex > images.length - 1 ? 0 : currentIndex;
+      currentIndex = currentIndex > products.length - 1 ? 0 : currentIndex;
     }
 
     const indexList = [];
     let suppIndex = 0;
 
     for (let i = currentIndex; i < currentIndex + sliderLength; i++) {
-      if (typeof images[i] !== 'undefined') {
+      if (typeof products[i] !== 'undefined') {
         indexList.push(i);
       }
       else {
@@ -34,12 +38,12 @@ const Carrousel = ({ category }) => {
         suppIndex++;
       }
     }
-    setCurrentImagesIndex(indexList);
+    setCurrentProductsIndex(indexList);
     setStartingIndex(currentIndex);
   };
 
-  currentImagesIndex.forEach((currentImageIndex) => {
-    currentImages.push(images[currentImageIndex]);
+  currentProductsIndex.forEach((currentProductIndex) => {
+    currentProducts.push(products[currentProductIndex]);
   });
 
   return (
@@ -56,8 +60,21 @@ const Carrousel = ({ category }) => {
           &#171;
         </button>
         <div className="Carrousel__slider-content">
-          {currentImages.map((currentImage, index) => (
-            <img src={currentImage.image} alt={`product_image-${index}`} key={index} />
+          {currentProducts.map((currentProduct) => (
+            <Link
+              className="Carrousel__slider-content-product"
+              to={`product/${currentProduct.id}`}
+              key={currentProduct.id}
+            >
+              <img
+                src={currentProduct.images[0].url}
+                alt={currentProduct.images[0].alt}
+                key={`product-${currentProduct.id}`}
+              />
+              <figcaption>
+                {currentProduct.name}
+              </figcaption>
+            </Link>
           ))}
         </div>
         <button

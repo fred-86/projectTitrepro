@@ -1,3 +1,24 @@
+// App
+export const loadCategory = () => ({
+  type: 'LOAD_CATEGORY',
+});
+
+export const setCategories = (categories) => ({
+  type: 'SET_CATEGORIES',
+  categories: categories,
+});
+
+export const loadProducts = (products) => ({
+  type: 'LOAD_PRODUCTS',
+  products: products,
+});
+
+export const setProducts = (products) => ({
+  type: 'SET_PRODUCTS',
+  products: products,
+});
+
+// FlyingCart
 export const setIsOpened = () => ({
   type: 'SET_IS_OPENED',
 });
@@ -25,14 +46,4 @@ export const setSelectedProduct = (selectedProduct) => ({
 export const setDisplayedCategory = (newDisplayedCategory) => ({
   type: 'SET_DISPLAYED_CATEGORY',
   newDisplayedCategory: newDisplayedCategory,
-});
-
-// App
-export const loadCategory = () => ({
-  type: 'LOAD_CATEGORY',
-});
-
-export const setCategories = (categories) => ({
-  type: 'SET_CATEGORIES',
-  categories: categories,
 });

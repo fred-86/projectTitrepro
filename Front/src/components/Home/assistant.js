@@ -4,6 +4,10 @@ import { setDisplayedCategory } from 'src/store/actions';
 import Home from './index';
 
 const mapStateToProps = (state) => ({
+  isCategoriesLoaded: state.product.isCategoriesLoaded,
+  isProductLoaded: state.product.isProductLoaded,
+  categories: state.product.categories,
+  products: state.product.products,
   displayedCategory: state.home.displayedCategory,
 });
 
