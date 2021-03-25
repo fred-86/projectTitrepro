@@ -83,14 +83,23 @@
     &-total {
       margin-bottom: 2rem;
       font-weight: bold;
-      color: #black;
+      color: black;
     }
 
     & > button {
       position: absolute;
-      bottom: 0;
+      bottom: -6px;
+      left: 25%;
       height: 40px;
+      width: 130px;
+      border: 1px solid #FFC233;
       border-radius: 100% / 25px 25px 0 0;
+      background-color: $warning-color;
+      color: $nav-separator;
+
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
     }
   }
 }

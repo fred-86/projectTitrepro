@@ -35,7 +35,7 @@ const FlyingCart = ({ isOpened, setIsOpened }) => {
           <option value="31">Occitanie</option>
         </select>
         <p className="FlyingCart__resume-total">Coût total : 450 €</p>
-        <button>Valider son panier</button>
+        <button>Valider</button>
       </div>
     </aside>
   );
