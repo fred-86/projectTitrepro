@@ -5,7 +5,7 @@ const PopUpAlt = () => (
     <button className="popUpAlt__button">
       X
     </button>
-    <figure className="popUpAlt__picture">
+    <figure className="popUpAlt__picture" >
 
     </figure>
     <h1 className="popUpAlt__title">Nom Alternative</h1>
