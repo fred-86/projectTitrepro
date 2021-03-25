@@ -4,7 +4,7 @@
     height: auto;
     text-align: left;
     padding: 3rem;
-    background-color: brown;  
+    background-color: $popUpAlt-backg;  
   }
 
   &__button{
@@ -14,12 +14,13 @@
     
     font-size: 2rem;
     font-weight: 400;
-    background-color: burlywood;
+    background-color:$background-nav-light;
+    color: $nav-separator;
   }
 
   &__picture{
     width: auto;
-    height: 10rem;
+    height: 15rem;
     background-color: cadetblue;
     margin-top: 2rem;
   }
@@ -28,6 +29,7 @@
     font-size: 1.2rem;
     font-weight: 700;
     padding-top: 1rem;
+    color: $nav-separator;
   }
 
   &__content {
@@ -43,15 +45,30 @@
         line-height: 1.2rem;
         text-align: justify;
       }
+      &__link{
+        width: auto;
+        height: auto;
+        background-color: $nav-separator;
+        color: $warning-color;
+        border-radius: 5px;
+        border: none;
+        margin: 1rem 0;
+        padding: 0.8rem;
+        
+
+        font-size: 1rem;
+        font-weight: bold;
+      }
     }
 
     .info{
       width: 40%;
       margin: 1rem 0 1rem 2rem;
 
-      &__title{
+      &__address{
         font-size: 1.1rem;
         font-weight: 700;
+        color: $background-nav;
         padding-bottom: 1rem;
       }
       &__text{
@@ -60,10 +77,33 @@
       &__map{
         width: 100%;
         height: 235px;
-        background-color: coral;
+        background-color: cadetblue;;
         margin-top: 1rem;
       }
     }
+  }
+
+  &__comment{
+    width: 100%;
+    padding-top: 1rem;
+
+    &-title{
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: $nav-separator;
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__input{
+    width: 100%;
+    padding: 1rem;
+    border: none;
+  }
+
+  &__hr{
+    width: 100%;
+
   }
 }
 
