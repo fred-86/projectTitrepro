@@ -1,0 +1,49 @@
+.AltHome {
+  margin: 0 auto;
+
+  @include mobile-medium {
+    display:flex;
+    flex-direction: column;
+  }
+
+  &__banner {
+    width:100%;
+    max-height:587px;
+    position:relative;
+
+  &-img {
+    max-height: 587px;
+    width:100%;
+    object-fit: cover;
+    
+  }
+  &-article {
+    background-color: rgba(65, 63, 63, 0.472);
+    position:absolute;
+    width:40%;
+    height:100%;
+    top:0;
+    right:0;
+    padding:4rem;
+    display:flex;
+    flex-direction: column;
+    text-align: left;
+
+    @include mobile-medium {
+      position:initial;
+      width:100%;
+      margin:0;
+    }
+    
+  }
+  &-title {
+    font-weight:700;
+    font-size: 3rem;
+    margin-bottom:0.9rem;
+  }
+  
+
+ }
+  
+  
+}

@@ -10,6 +10,7 @@ import Page404 from '../404';
 import MentionsLegales from '../MentionsLegales';
 import Apropos from '../Apropos';
 import Home from '../Home/assistant';
+import AltHome from '../AltHome';
 import ProductPage from '../ProductPage/assistant';
 import Footer from '../Footer';
 
@@ -30,6 +31,9 @@ const App = ({ loadCategory, categories }) => {
         <Switch>
           <Route path="/category">
             <PageCategory />
+          </Route>
+          <Route path="/althome">
+            <AltHome />
           </Route>
           <Route path="/product">
             <ProductPage data={product} />
