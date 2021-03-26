@@ -1,20 +1,24 @@
 .NavBarCategory {
   padding: 1rem 2rem;
-  cursor: pointer;
 
   &__link-list {
     display:flex;
     justify-content: center;
-
   }
+
   &__link {
-    margin-left: 1.5rem;
     padding:0.4rem 1.5rem;
     border-radius: 5px;
   }
+
+  &__link:not(:nth-of-type(1)) {
+    margin-left: 1.5rem;
+  }
+
   &__link:hover {
     background-color: rgb(255, 230, 102);
   }
+
   @include mobile-medium {
     display:none;
   }

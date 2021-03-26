@@ -7,7 +7,7 @@ import { setCategories, setProducts } from 'src/store/actions';
 const appMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case 'LOAD_CATEGORY':
-      axios.get('http://julien-cambien.vpnuser.lan/apotheose/apo-E-pascommerce-back/public/api/product/category/browse')
+      axios.get('http://100.25.202.232/apo-E-pascommerce-back/public/api/product/category/browse')
         .then((response) => {
           store.dispatch(setCategories(response.data));
         })
@@ -17,7 +17,7 @@ const appMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     case 'LOAD_PRODUCTS':
-      axios.get('http://julien-cambien.vpnuser.lan/apotheose/apo-E-pascommerce-back/public/api/product/browse')
+      axios.get('http://100.25.202.232/apo-E-pascommerce-back/public/api/product/browse')
         .then((response) => {
           store.dispatch(setProducts(response.data));
         })

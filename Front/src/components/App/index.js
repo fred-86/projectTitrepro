@@ -9,25 +9,35 @@ import Cart from '../Cart/assistant';
 import Page404 from '../404';
 import Home from '../Home/assistant';
 import AltHome from '../AltHome';
-import PageCategory from '../PageCategory';
+import PageCategory from '../PageCategory/assistant';
 import ProductPage from '../ProductPage/assistant';
 import MentionsLegales from '../MentionsLegales';
 import Apropos from '../Apropos';
 import Footer from '../Footer';
 
 // == Composant
-const App = ({ loadCategory, categories, loadProducts, products }) => {
+const App = ({ loadCategory, categories, loadProducts }) => {
   useEffect(() => {
     loadCategory();
     loadProducts();
   }, []);
+
+  const categoryPaths = [];
+
+  categories.forEach((category) => {
+    categoryPaths.push(`/${category.name}`);
+
+    category.childCategories.forEach((childCategory) => {
+      categoryPaths.push(`/${category.name}/${childCategory.name}`);
+    });
+  });
 
   return (
     <div className="app">
       <Header />
       <main className="app__main-content">
         <Switch>
-          <Route path="/category">
+          <Route path={categoryPaths}>
             <PageCategory />
           </Route>
           <Route path="/product/:id">

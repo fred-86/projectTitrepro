@@ -5,7 +5,7 @@ import { setLocations } from '../store/actions';
 const cartMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case 'LOAD_LOCATIONS':
-      axios.get('http://frederic-lescure.vpnuser.lan/project/back/apo-E-pascommerce-back/public/api/department/browse')
+      axios.get('http://100.25.202.232/apo-E-pascommerce-back/public/api/department/browse')
         .then((response) => {
           store.dispatch(setLocations(response.data));
         })
@@ -18,9 +18,9 @@ const cartMiddleware = (store) => (next) => (action) => {
       const { selectedLocation } = store.getState().cart.flyingCart;
       const { category } = store.getState().cart.items[0];
 
-      axios.get(`http://frederic-lescure.vpnuser.lan/project/back/apo-E-pascommerce-back/public/api/place/browse/productcategory/${category}/postalcode/${selectedLocation}`)
+      axios.get(`http://100.25.202.232/apo-E-pascommerce-back/public/api/place/browse/productcategory/${category}/postalcode/${selectedLocation}`)
         .then((response) => {
-          console.log(response); 
+          console.log(response);
         })
         .catch((err) => {
           console.log(err.response);
