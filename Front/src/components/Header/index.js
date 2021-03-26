@@ -13,7 +13,7 @@ const Header = ({ setIsOpened }) => (
       <img src={ePakoLogo} alt="logo-ePako" className="Header__logo" />
     </NavLink>
     <label className="Header__switch" htmlFor="Header__switch-checkbox">
-      <input type="checkbox" className="Header__switch-checkbox" />
+      <input type="checkbox" className="Header__switch-checkbox" id="Header__switch-checkbox" />
       <span className="Header__switch-slider" />
     </label>
     <input type="search" className="Header__search" />
