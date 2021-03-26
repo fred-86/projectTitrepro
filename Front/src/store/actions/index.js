@@ -18,14 +18,19 @@ export const setProducts = (products) => ({
   products: products,
 });
 
+// ==========
 // FlyingCart
 export const setIsOpened = () => ({
   type: 'SET_IS_OPENED',
 });
 
-export const setSelectedOption = (value) => ({
-  type: 'SET_SELECTED_OPTION',
-  value: value,
+export const loadLocations = () => ({
+  type: 'LOAD_LOCATIONS',
+});
+
+export const setLocations = (locations) => ({
+  type: 'SET_LOCATIONS',
+  locations: locations,
 });
 
 export const addToCart = (userChoice) => ({
@@ -33,6 +38,39 @@ export const addToCart = (userChoice) => ({
   userChoice: userChoice,
 });
 
+export const updateItem = (item) => ({
+  type: 'UPDATE_ITEM',
+  item: item,
+});
+
+export const setAmount = (amount) => ({
+  type: 'SET_AMOUNT',
+  amount: amount,
+});
+
+export const removeFromCart = (item) => ({
+  type: 'REMOVE_FROM_CART',
+  item: item,
+});
+
+export const setSelectedLocation = (location) => ({
+  type: 'SET_SELECTED_LOCATION',
+  location: location,
+});
+
+export const sendCart = () => ({
+  type: 'SEND_CART',
+});
+
+// ==========
+// Cart
+export const setSelectedOption = (value) => ({
+  type: 'SET_SELECTED_OPTION',
+  value: value,
+});
+
+// ==========
+// Product page
 export const setPictureToMain = (newPictures) => ({
   type: 'SET_PICTURE_TO_MAIN',
   newPictures: newPictures,

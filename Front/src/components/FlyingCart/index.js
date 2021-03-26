@@ -1,26 +1,45 @@
 // Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 import classNames from 'classnames';
 
-const FlyingCart = ({ isOpened, setIsOpened }) => {
+// Import local
+import { calculateAmount } from 'src/Utils';
+import Item from './Item/assistant';
+
+const FlyingCart = ({
+  isOpened,
+  setIsOpened,
+  loadLocations,
+  locations,
+  selectedLocation,
+  setSelectedLocation,
+  items,
+  amount,
+  setAmount,
+  removeFromCart,
+  sendCart
+}) => {
   const cartClass = classNames("FlyingCart", {"FlyingCart--open": isOpened});
   // TODO ajouter un voyant lumineux témoins d'un changement dans le panier
+
+  useEffect(() => {
+    loadLocations();
+  }, []);
+
+  useEffect(() => {
+    const newAmount = calculateAmount(items);
+    setAmount(newAmount);
+  }, [items]);
+
   return (
     <aside className={cartClass}>
       <h1>Mon panier</h1>
       <ul className="FlyingCart__product-list">
-        <li>
-          <article>
-            <h2>product 1</h2>
-            <div className="FlyingCart__div"></div>
-          </article>
-        </li>
-        <li>
-          <article>
-            <h2>product 2</h2>
-            <div className="FlyingCart__div"></div>
-          </article>
-        </li>
+        {items.map((item) => (
+          <li key={`item-${item.product.name}`}>
+            <Item item={item} removeFromCart={removeFromCart} />
+          </li>
+        ))}
       </ul>
       <div className="FlyingCart__resume">
         <div className="FlyingCart__resume-logo">
@@ -29,13 +48,14 @@ const FlyingCart = ({ isOpened, setIsOpened }) => {
           Paiement sécurisé<br/>
         </div>
         <label htmlFor="FlyingCart__resume-dep">Département  </label>
-        <select id="FlyingCart__resume-dep" className="FlyingCart__resume-dep">
-          <option value="94">Val de Marne</option>
-          <option value="86">Vienne</option>
-          <option value="31">Occitanie</option>
+        <select id="FlyingCart__resume-dep" className="FlyingCart__resume-dep" value={selectedLocation} onChange={setSelectedLocation}>
+          <option value=""> </option>
+          {locations.map((location) => (
+            <option value={location.postalcode} key={location.name}>{location.name}</option>
+          ))}
         </select>
-        <p className="FlyingCart__resume-total">Coût total : 450 €</p>
-        <button>Valider</button>
+        <p className="FlyingCart__resume-total">Coût total : {amount}</p>
+        <button type="button" onClick={sendCart}>Valider</button>
       </div>
     </aside>
   );

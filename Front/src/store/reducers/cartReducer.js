@@ -1,6 +1,5 @@
 const initialState = {
-  products: [],
-  quantity: [],
+  items: [],
   cart: {
     selectedProduct: 1,
     options: [],
@@ -10,8 +9,9 @@ const initialState = {
   flyingCart: {
     isOpened: false,
     haveChange: false,
-    location: '',
-    price: 0,
+    locations: [],
+    selectedLocation: '',
+    amount: 0,
   },
 };
 
@@ -26,6 +26,84 @@ const cartReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         flyingCart: flyingCart,
+      };
+    }
+
+    case 'SET_LOCATIONS': {
+      const newFlyingCart = {
+        ...state.flyingCart,
+        locations: action.locations,
+      };
+
+      return {
+        ...state,
+        flyingCart: newFlyingCart,
+      };
+    }
+
+    case 'SET_SELECTED_LOCATION': {
+      const newFlyingCart = {
+        ...state.flyingCart,
+        selectedLocation: action.location,
+      };
+
+      return {
+        ...state,
+        flyingCart: newFlyingCart,
+      };
+    }
+
+    case 'ADD_TO_CART': {
+      const newItems = [
+        ...state.items,
+        action.userChoice,
+      ];
+      const newFlyingCart = {
+        ...state.flyingCart,
+        haveChange: true,
+      };
+
+      return {
+        ...state,
+        items: newItems,
+        flyingCart: newFlyingCart,
+      };
+    }
+
+    case 'UPDATE_ITEM': {
+      const indexToUpdate = state.items.findIndex(
+        (item) => item.product.id === action.item.product.id,
+      );
+
+      const newItems = [
+        ...state.items,
+      ];
+
+      newItems[indexToUpdate] = action.item;
+
+      return {
+        ...state,
+        items: newItems,
+      };
+    }
+    case 'SET_AMOUNT': {
+      const newFlyingCart = {
+        ...state.flyingCart,
+        amount: action.amount,
+      };
+
+      return {
+        ...state,
+        flyingCart: newFlyingCart,
+      };
+    }
+
+    case 'REMOVE_FROM_CART': {
+      const newItems = state.items.filter((item) => item.product.id !== parseInt(action.item));
+
+      return {
+        ...state,
+        items: newItems,
       };
     }
 
@@ -49,22 +127,6 @@ const cartReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         cart: newCart,
-      };
-    }
-    case 'ADD_TO_CART': {
-      const newProducts = [
-        ...state.products,
-        action.userChoice,
-      ];
-      const newFlyingCart = {
-        ...state.flyingCart,
-        haveChange: true,
-      };
-
-      return {
-        ...state,
-        products: newProducts,
-        flyingCart: newFlyingCart,
       };
     }
 

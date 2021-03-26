@@ -31,8 +31,9 @@ const ProductPage = ({
 
   const getUserChoice = () => {
     const userChoice = {
+      product: currentProduct,
+      category: currentCategory.id,
       quantity: parseInt(quantity.current.value),
-      productId: parseInt(id),
     };
     addToCart(userChoice);
   };

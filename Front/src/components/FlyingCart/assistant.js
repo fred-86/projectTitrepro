@@ -1,17 +1,43 @@
 // Import npm
-import  { connect } from 'react-redux';
+import { connect } from 'react-redux';
 
 // Import local
-import { setIsOpened } from 'src/store/actions';
+import {
+  setIsOpened,
+  loadLocations,
+  setAmount,
+  removeFromCart,
+  setSelectedLocation,
+  sendCart,
+} from 'src/store/actions';
 import FlyingCart from 'src/components/FlyingCart';
 
 const mapStateToProps = (state) => ({
-  isOpened: state.cart.flyingCart.isOpened
+  isOpened: state.cart.flyingCart.isOpened,
+  items: state.cart.items,
+  locations: state.cart.flyingCart.locations,
+  selectedLocation: state.cart.flyingCart.selectedLocation,
+  amount: state.cart.flyingCart.amount,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   setIsOpened: () => {
     dispatch(setIsOpened());
+  },
+  loadLocations: () => {
+    dispatch(loadLocations());
+  },
+  setAmount: (amount) => {
+    dispatch(setAmount(amount));
+  },
+  removeFromCart: (event) => {
+    dispatch(removeFromCart(event.target.value));
+  },
+  setSelectedLocation: (event) => {
+    dispatch(setSelectedLocation(event.target.value));
+  },
+  sendCart: () => {
+    dispatch(sendCart());
   },
 });
 
