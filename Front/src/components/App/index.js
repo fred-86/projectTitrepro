@@ -8,6 +8,7 @@ import Header from '../Header/assistant';
 import Cart from '../Cart/assistant';
 import Page404 from '../404';
 import Home from '../Home/assistant';
+import AltHome from '../AltHome';
 import PageCategory from '../PageCategory';
 import ProductPage from '../ProductPage/assistant';
 import MentionsLegales from '../MentionsLegales';
@@ -34,6 +35,9 @@ const App = ({ loadCategory, categories, loadProducts, products }) => {
           </Route>
           <Route path="/cart">
             <Cart />
+          </Route>
+          <Route path="/althome">
+            <AltHome />
           </Route>
           <Route path="/mentionslegales">
             <MentionsLegales />
