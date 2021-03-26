@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Item = ({ item, updateItem }) => {
-  const { id, name, price, images, category } = item.product;
+const Item = ({ item, updateItem, removeFromCart }) => {
+  const { id, name, images, category } = item.product;
   const { quantity } = item;
 
   const getUserChoice = (event) => {
@@ -24,7 +24,7 @@ const Item = ({ item, updateItem }) => {
 
   return (
     <article className="Item">
-      <button type="button" className="Item__delete-btn" value="delete">
+      <button type="button" className="Item__delete-btn" value={id} onClick={removeFromCart}>
         X
       </button>
       <img src={images[0].url} alt={images[0].alt} className="Item__img" />

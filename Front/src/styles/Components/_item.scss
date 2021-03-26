@@ -20,11 +20,17 @@
     height: 30px;
     border-radius: 50%;
     border-color: leightblue;
-    background: rgb(252,94,94);
-    background: radial-gradient(circle, rgba(252,94,94,1) 22%, rgba(221,44,44,1) 71%, rgba(201,27,27,1) 84%, rgba(195,4,4,1) 100%);
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,0.711922268907563) 0%, rgba(116,116,116,0.5270483193277311) 40%, rgba(116,116,116,0.5158438375350141) 60%, rgba(255,255,255,0.7175245098039216) 100%);
     color: white;
     text-shadow: 1px 1px black;
     
+    &:hover {
+      background: rgb(252,94,94);
+      background: radial-gradient(circle, rgba(252,94,94,1) 22%, rgba(221,44,44,1) 71%, rgba(201,27,27,1) 84%, rgba(195,4,4,1) 100%);
+    color: white;
+    }
+
     &:focus {
       outline: none;
     }

@@ -9,8 +9,9 @@ const initialState = {
   flyingCart: {
     isOpened: false,
     haveChange: false,
-    location: '',
-    price: 0,
+    locations: [],
+    selectedLocation: '',
+    amount: 0,
   },
 };
 
@@ -25,6 +26,30 @@ const cartReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         flyingCart: flyingCart,
+      };
+    }
+
+    case 'SET_LOCATIONS': {
+      const newFlyingCart = {
+        ...state.flyingCart,
+        locations: action.locations,
+      };
+
+      return {
+        ...state,
+        flyingCart: newFlyingCart,
+      };
+    }
+
+    case 'SET_SELECTED_LOCATION': {
+      const newFlyingCart = {
+        ...state.flyingCart,
+        selectedLocation: action.location,
+      };
+
+      return {
+        ...state,
+        flyingCart: newFlyingCart,
       };
     }
 
@@ -55,6 +80,26 @@ const cartReducer = (state = initialState, action = {}) => {
       ];
 
       newItems[indexToUpdate] = action.item;
+
+      return {
+        ...state,
+        items: newItems,
+      };
+    }
+    case 'SET_AMOUNT': {
+      const newFlyingCart = {
+        ...state.flyingCart,
+        amount: action.amount,
+      };
+
+      return {
+        ...state,
+        flyingCart: newFlyingCart,
+      };
+    }
+
+    case 'REMOVE_FROM_CART': {
+      const newItems = state.items.filter((item) => item.product.id !== parseInt(action.item));
 
       return {
         ...state,

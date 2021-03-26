@@ -32,7 +32,7 @@ const ProductPage = ({
   const getUserChoice = () => {
     const userChoice = {
       product: currentProduct,
-      category: currentCategory.name,
+      category: currentCategory.id,
       quantity: parseInt(quantity.current.value),
     };
     addToCart(userChoice);
