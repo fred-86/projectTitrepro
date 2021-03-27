@@ -1,5 +1,5 @@
 // Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLocation, NavLink } from 'react-router-dom';
 
 // Import local
@@ -29,7 +29,10 @@ const PageCategory = ({ isCategoriesLoaded, categories, products }) => {
       (product) => (product.productCategories[0].name === pathStructure[2]),
     );
   }
-console.log(currentProducts);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // TODO modifier src image quand intégrée au back
   return (

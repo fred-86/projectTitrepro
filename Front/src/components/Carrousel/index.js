@@ -48,7 +48,11 @@ const Carrousel = ({ category, products }) => {
 
   return (
     <div className="Carrousel">
-      <h2 className="Carrousel__title">{name}</h2>
+      <h2 className="Carrousel__title">
+        <Link to={`/${category.name}`}>
+          {name}
+        </Link>
+      </h2>
       <div className="Carrousel__slider">
         <button
           type="button"
