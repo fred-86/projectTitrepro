@@ -2,49 +2,23 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Carrousel = ({ category, products }) => {
-  const [startingIndex, setStartingIndex] = useState(0);
-  const [currentProductsIndex, setCurrentProductsIndex] = useState(
-    products.map((product, index) => (
-      index
-    )),
-  );
+  const [position, setPosition] = useState(0);
   const { name } = category;
 
-  let currentIndex = startingIndex;
-  const currentProducts = [];
-  const sliderLength = products.length;
+  const swipeAlt = (side) => {
+    const frameSize = 4 * 200 + 3 * 24 + 65;
+    const lastFramePosition = 0 - (frameSize * (products.length % 4));
+    let newPosition = 0;
 
-  const swipe = (side) => {
-    if (side === 'left') {
-      currentIndex--;
-
-      currentIndex = currentIndex < 0 ? products.length - 1 : currentIndex;
+    if (side === 'right') {
+      newPosition = position === lastFramePosition ? 0 : position - 937;
     }
     else {
-      currentIndex++;
-
-      currentIndex = currentIndex > products.length - 1 ? 0 : currentIndex;
+      newPosition = position === 0 ? lastFramePosition : position + 937;
     }
 
-    const indexList = [];
-    let suppIndex = 0;
-
-    for (let i = currentIndex; i < currentIndex + sliderLength; i++) {
-      if (typeof products[i] !== 'undefined') {
-        indexList.push(i);
-      }
-      else {
-        indexList.push(suppIndex);
-        suppIndex++;
-      }
-    }
-    setCurrentProductsIndex(indexList);
-    setStartingIndex(currentIndex);
+    setPosition(newPosition);
   };
-
-  currentProductsIndex.forEach((currentProductIndex) => {
-    currentProducts.push(products[currentProductIndex]);
-  });
 
   return (
     <div className="Carrousel">
@@ -58,25 +32,26 @@ const Carrousel = ({ category, products }) => {
           type="button"
           className="Carrousel__slider-control Carrousel__slider-control--left"
           onClick={() => {
-            swipe('left');
+            swipeAlt('left');
           }}
         >
           &#171;
         </button>
         <div className="Carrousel__slider-content">
-          {currentProducts.map((currentProduct) => (
+          {products.map((product) => (
             <Link
               className="Carrousel__slider-content-product"
-              to={`product/${currentProduct.id}`}
-              key={currentProduct.id}
+              to={`product/${product.id}`}
+              key={product.id}
+              style={{ transform: `translateX(${position}px)` }}
             >
               <img
-                src={currentProduct.images[0].url}
-                alt={currentProduct.images[0].alt}
-                key={`product-${currentProduct.id}`}
+                src={product.images[0].url}
+                alt={product.images[0].alt}
+                key={`product-${product.id}`}
               />
               <figcaption>
-                {currentProduct.name}
+                {product.name}
               </figcaption>
             </Link>
           ))}
@@ -85,7 +60,7 @@ const Carrousel = ({ category, products }) => {
           type="button"
           className="Carrousel__slider-control Carrousel__slider-control--right"
           onClick={() => {
-            swipe('right');
+            swipeAlt('right');
           }}
         >
           &#187;
