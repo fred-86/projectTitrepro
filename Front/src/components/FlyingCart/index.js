@@ -54,7 +54,9 @@ const FlyingCart = ({
             <option value={location.postalcode} key={location.name}>{location.name}</option>
           ))}
         </select>
-        <p className="FlyingCart__resume-total">Coût total : {amount}</p>
+        <p className="FlyingCart__resume-total">
+          Coût total : <span className="FlyingCart__resume-total-amount">{amount}&#8364;</span>
+        </p>
         <button type="button" onClick={sendCart}>Valider</button>
       </div>
     </aside>

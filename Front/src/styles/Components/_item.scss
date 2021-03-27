@@ -10,7 +10,7 @@
   border-bottom: none;
   display: flex;
   flex-direction: column;
-  //background-color: transparent;
+  
   
   &__delete-btn {
     position: absolute;
@@ -39,7 +39,7 @@
   &__img {
     box-sizing: border-box;
     width: 100%;
-    border: 1px solid grey;
+    border: 1px solid rgb(126, 126, 126);
     border-radius: 10px 10px 0 0;
   }
   
@@ -47,11 +47,18 @@
     position: absolute;
     bottom: 18px;
     width: 100%;
-    //border-top: 1px solid gold;
+    border-top: 2px solid rgb(189, 196, 197);
     border-radius: 110px 110px 0 0 / 10%;
     padding-top: 0.2rem;
     padding-bottom: 28px;
-    background-color: gray;
+    background: rgb(194,204,207);
+    background: linear-gradient(
+      180deg,
+      rgba(194,204,207,0.9444152661064426) 0%,
+      rgba(237,240,241,1) 16%, 
+      rgba(216,226,230,0.958420868347339) 38%, 
+      rgba(205,218,222,0.9220063025210083) 100%
+    );
     text-align: center;
   }
   
@@ -62,8 +69,8 @@
     height: 50px;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.582);
     font-size: 2rem;
-    background: rgb(121,139,142);
-    background: linear-gradient(0deg, rgba(121,139,142,1) 0%, rgba(188,209,212,1) 40%, rgba(207,218,221,1) 50%, rgba(183,205,208,1) 60%, rgba(121,139,142,1) 100%);
+    background: rgb(111,122,125);
+    background: linear-gradient(180deg, rgba(111,122,125,1) 0%, rgba(185,193,195,1) 35%, rgba(220,223,224,1) 46%, rgba(209,215,217,1) 54%, rgba(185,193,195,1) 64%, rgba(111,122,125,1) 100%);
     color: white;
     text-shadow: 1px 1px black;
     
@@ -77,6 +84,11 @@
       border-radius: 20px 110px 110px 20px / 110%;
     }
     
+    &:hover {
+      background: rgb(121,139,142);
+      background: linear-gradient(0deg, rgba(121,139,142,1) 0%, rgba(188,209,212,1) 40%, rgba(207,218,221,1) 50%, rgba(183,205,208,1) 60%, rgba(121,139,142,1) 100%);
+    }
+
     &:focus {
       outline: none;
     }
