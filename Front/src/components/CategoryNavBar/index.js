@@ -4,10 +4,10 @@ import { NavLink } from 'react-router-dom';
 
 const CategoryNavBar = ({ categories }) => (
   <nav className="NavBarCategory">
-    <ul className="NavBarCategory__link-list">
+    <ul className="NavBarCategory__list">
       {categories.map((category) => (
-        <li className="NavBarCategory__link" key={category.name}>
-          <NavLink to={`/${category.name}`}>
+        <li key={category.name}>
+          <NavLink to={`/${category.name}`} className="NavBarCategory__list-link" activeClassName="NavBarCategory__list-link--active">
             {category.name}
           </NavLink>
         </li>

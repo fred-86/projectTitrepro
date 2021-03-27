@@ -33,11 +33,11 @@ const App = ({ loadCategory, categories, loadProducts }) => {
   });
 
   return (
-    <div className="app">
+    <div className="App">
       <Header />
-      <main className="app__main-content">
+      <main className="App__main-content">
         <Switch>
-          <Route path={categoryPaths}>
+          <Route exact path={categoryPaths}>
             <PageCategory />
           </Route>
           <Route path="/product/:id">
@@ -55,7 +55,7 @@ const App = ({ loadCategory, categories, loadProducts }) => {
           <Route path="/apropos">
             <Apropos />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
           <Route>

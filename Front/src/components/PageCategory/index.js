@@ -8,18 +8,28 @@ import CategoryNavBar from '../CategoryNavBar';
 import mainImg from '../../assets/temp/vegetables.jpg';
 
 const PageCategory = ({ isCategoriesLoaded, categories, products }) => {
-  const location = useLocation();
+  const { pathname } = useLocation();
+  const pathStructure = pathname.split('/');
+  let currentProducts = [];
 
-  const currentCategory = categories.find((category) => (category.name === location.pathname.split('/')[1]));
+  const currentCategory = categories.find((category) => (category.name === pathStructure[1]));
 
-  const currentProducts = products.filter((product) => {
-    const childCategoriesId = [];
-    currentCategory.childCategories.forEach((childCategory) => {
-      childCategoriesId.push(childCategory.id);
+  if (pathStructure.length < 3) {
+    currentProducts = products.filter((product) => {
+      const childCategoriesId = [];
+      currentCategory.childCategories.forEach((childCategory) => {
+        childCategoriesId.push(childCategory.id);
+      });
+
+      return childCategoriesId.includes(product.productCategories[0].id);
     });
-
-    return childCategoriesId.includes(product.productCategories[0].id);
-  });
+  }
+  else {
+    currentProducts = products.filter(
+      (product) => (product.productCategories[0].name === pathStructure[2]),
+    );
+  }
+console.log(currentProducts);
 
   // TODO modifier src image quand intégrée au back
   return (
@@ -34,7 +44,7 @@ const PageCategory = ({ isCategoriesLoaded, categories, products }) => {
             {isCategoriesLoaded && currentCategory.childCategories.map(
               (childCategory) => (
                 <li className="Pictogram__sub Pictogram__sub-1" key={childCategory.id}>
-                  <NavLink to={`${location.pathname}/${childCategory.name}`}>
+                  <NavLink to={`/${currentCategory.name}/${childCategory.name}`}>
                     <img src="#" alt="picto" />
                   </NavLink>
                 </li>
@@ -43,9 +53,10 @@ const PageCategory = ({ isCategoriesLoaded, categories, products }) => {
           </ul>
         </nav>
         <div className="ContainerSubCategoriesImg">
-          {currentProducts.map((currentProduct) => (
+          {currentProducts.length > 0 && currentProducts.map((currentProduct) => (
             <ProductCard product={currentProduct} key={currentProduct.id} />
           ))}
+          {currentProducts.length === 0 && <p className="ContainerSubCategoriesImg__empty-message">Veuillez nous excuser, nous ne proposons aucun article dans cette catégorie.</p>}
         </div>
       </section>
     </>
