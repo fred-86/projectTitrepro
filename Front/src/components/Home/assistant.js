@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { setDisplayedCategory } from 'src/store/actions';
+import { setPosition } from 'src/store/actions';
 import Home from './index';
 
 const mapStateToProps = (state) => ({
@@ -8,12 +8,12 @@ const mapStateToProps = (state) => ({
   isProductLoaded: state.product.isProductLoaded,
   categories: state.product.categories,
   products: state.product.products,
-  displayedCategory: state.home.displayedCategory,
+  position: state.home.position,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  setDisplayedCategory: (newDisplayedCategory) => {
-    dispatch(setDisplayedCategory(newDisplayedCategory));
+  setPosition: (position) => {
+    dispatch(setPosition(position));
   },
 });
 

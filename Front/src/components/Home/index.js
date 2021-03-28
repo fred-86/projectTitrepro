@@ -1,10 +1,8 @@
 // Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 
 // Import local
 import NavBar from '../NavBar';
-import Burger2 from 'src/components/Burger2';
-
 import Carrousel from '../Carrousel';
 
 const Home = ({
@@ -12,21 +10,51 @@ const Home = ({
   products,
   isCategoriesLoaded,
   isProductLoaded,
-  displayedCategory,
-  setDisplayedCategory 
+  position,
+  setPosition 
 }) => {
-  const handlesSwitchCategory = (event) => {
-    const newDisplayedCategory = (
-      event.target.value === 'left'
-        ? displayedCategory - 1
-        : displayedCategory + 1
-    );
-    setDisplayedCategory(newDisplayedCategory);
+  const currentWidth = window.innerWidth;
+  const initialPosition = Math.floor((currentWidth / 2) - 325 - 7);
+  const lastPosition = 0 - (currentWidth * (categories.length - 1)) + initialPosition;
+
+  const margin = currentWidth - 650;
+
+  const swipeCategory = (side) => {
+    let newPosition = 0;
+
+    if (side === 'right') {
+      newPosition = position === initialPosition ? lastPosition : position + currentWidth;
+    }
+    else {
+      newPosition = position === lastPosition ? initialPosition : position - currentWidth;
+    }
+
+    setPosition(newPosition);
   };
+
+  useEffect(() => {
+    setPosition(initialPosition);
+  }, []);
 
   return (
     <div className="Home">
       <NavBar categories={categories} />
+      <button
+        type="button"
+        onClick={() => {
+          swipeCategory('left');
+        }}
+      >
+        left
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          swipeCategory('right');
+        }}
+      >
+        right
+      </button>
       <div className="Home__content">
         {isCategoriesLoaded && isProductLoaded && categories.map((category) => {
           const childCategoriesIndex = category.childCategories.map((childCategorie) => (
@@ -36,12 +64,15 @@ const Home = ({
             childCategoriesIndex.includes(product.productCategories[0].id)
           ));
           return (
-            <Carrousel category={category} products={associatedProduct} key={category.id} />
+            <Carrousel
+              category={category}
+              products={associatedProduct}
+              categoryPosition={[position, margin]}
+              key={category.id}
+            />
           );
         })}
       </div>
-      <button type="button" onClick={handlesSwitchCategory} value="left">left</button>
-      <button type="button" onClick={handlesSwitchCategory} value="right">right</button>
     </div>
   );
 };

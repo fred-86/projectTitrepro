@@ -19,6 +19,25 @@ export const setProducts = (products) => ({
 });
 
 // ==========
+// Home page
+export const setPosition = (position) => ({
+  type: 'SET_POSITION',
+  position: position,
+});
+
+// ==========
+// Product page
+export const setPictureToMain = (newPictures) => ({
+  type: 'SET_PICTURE_TO_MAIN',
+  newPictures: newPictures,
+});
+
+export const addToCart = (userChoice) => ({
+  type: 'ADD_TO_CART',
+  userChoice: userChoice,
+});
+
+// ==========
 // FlyingCart
 export const setIsOpened = () => ({
   type: 'SET_IS_OPENED',
@@ -31,11 +50,6 @@ export const loadLocations = () => ({
 export const setLocations = (locations) => ({
   type: 'SET_LOCATIONS',
   locations: locations,
-});
-
-export const addToCart = (userChoice) => ({
-  type: 'ADD_TO_CART',
-  userChoice: userChoice,
 });
 
 export const updateItem = (item) => ({
@@ -64,24 +78,12 @@ export const sendCart = () => ({
 
 // ==========
 // Cart
-export const setSelectedOption = (value) => ({
-  type: 'SET_SELECTED_OPTION',
-  value: value,
-});
-
-// ==========
-// Product page
-export const setPictureToMain = (newPictures) => ({
-  type: 'SET_PICTURE_TO_MAIN',
-  newPictures: newPictures,
-});
-
 export const setSelectedProduct = (selectedProduct) => ({
   type: 'SET_SELECTED_PRODUCT',
   selectedProduct: selectedProduct,
 });
 
-export const setDisplayedCategory = (newDisplayedCategory) => ({
-  type: 'SET_DISPLAYED_CATEGORY',
-  newDisplayedCategory: newDisplayedCategory,
+export const setSelectedOption = (value) => ({
+  type: 'SET_SELECTED_OPTION',
+  value: value,
 });

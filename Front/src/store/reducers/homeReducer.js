@@ -1,13 +1,13 @@
 const initialState = {
-  displayedCategory: 1,
+  position: 0,
 };
 
 const homeReducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case 'SET_DISPLAYED_CATEGORY':
+    case 'SET_POSITION':
       return {
         ...state,
-        displayedCategory: action.newDisplayedCategory,
+        position: action.position,
       };
 
     default:
