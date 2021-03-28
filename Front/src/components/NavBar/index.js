@@ -2,7 +2,7 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
-const NavBar = () => (
+const NavBar = ({ categories }) => (
   <nav className="navBar">
     <ul className="navBar__list">
       <li className="navLink navLink--1">
