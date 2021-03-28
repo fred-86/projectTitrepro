@@ -54,10 +54,34 @@ const cartReducer = (state = initialState, action = {}) => {
     }
 
     case 'ADD_TO_CART': {
-      const newItems = [
-        ...state.items,
-        action.userChoice,
-      ];
+      const indexToUpdate = state.items.findIndex(
+        (item) => (item.product.id === action.userChoice.product.id),
+      );
+
+      let newItems;
+
+      if (indexToUpdate === -1) {
+        newItems = [
+          ...state.items,
+          action.userChoice,
+        ];
+      }
+      else {
+        const { quantity: lastQuatity } = state.items[indexToUpdate];
+        const { quantity: quantityToAdd } = action.userChoice;
+
+        const newItem = {
+          ...action.userChoice,
+          quantity: lastQuatity + quantityToAdd,
+        };
+
+        newItems = [
+          ...state.items,
+        ];
+
+        newItems[indexToUpdate] = newItem;
+      }
+
       const newFlyingCart = {
         ...state.flyingCart,
         haveChange: true,
