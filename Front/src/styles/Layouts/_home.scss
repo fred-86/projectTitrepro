@@ -1,8 +1,10 @@
 .Home {
   margin-bottom: 3rem;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
+
+  & > button {
+    width: 50px;
+    display: none;
+  }
 
   &__content {
     display: flex;
@@ -10,11 +12,18 @@
     align-items: center;
   }
 
-  @include medium-only {
+  @include md {
+
+    & > button {
+      margin-bottom: 3rem;
+      display: inline-block;
+    }
 
     &__content {
       max-width: 100vw;
       flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
       overflow-x: hidden;
     }
   }

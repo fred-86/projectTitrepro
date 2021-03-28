@@ -78,7 +78,7 @@
     }
   }
 
-  @media (max-width: 1200px) {
+  @include lg {
     &__list{
       .navLink{
         width: 195px;
@@ -87,7 +87,7 @@
     }
   }
 
-  @media (max-width: 992px) {
+  @include md {
     &__list{
       flex-direction: column;
       align-items: center;

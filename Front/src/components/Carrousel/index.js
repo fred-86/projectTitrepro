@@ -1,54 +1,52 @@
-import React, { useState } from 'react';
+// Import npm
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const Carrousel = ({ category, products }) => {
-  const [startingIndex, setStartingIndex] = useState(0);
-  const [currentProductsIndex, setCurrentProductsIndex] = useState(
-    products.map((product, index) => (
-      index
-    )),
-  );
+const Carrousel = ({ category, products, categoryPosition }) => {
+  const [position, setPosition] = useState(0);
+  const [picturesDisplayed, setPicturesDisplayed] = useState(0);
   const { name } = category;
 
-  let currentIndex = startingIndex;
-  const currentProducts = [];
-  const sliderLength = products.length;
+  const updateCarrousel = () => {
+    const { matches } = window.matchMedia('(max-width: 1200px');
+    const picturesToDisplay = matches ? 3 : 4;
 
-  const swipe = (side) => {
-    if (side === 'left') {
-      currentIndex--;
-
-      currentIndex = currentIndex < 0 ? products.length - 1 : currentIndex;
-    }
-    else {
-      currentIndex++;
-
-      currentIndex = currentIndex > products.length - 1 ? 0 : currentIndex;
-    }
-
-    const indexList = [];
-    let suppIndex = 0;
-
-    for (let i = currentIndex; i < currentIndex + sliderLength; i++) {
-      if (typeof products[i] !== 'undefined') {
-        indexList.push(i);
-      }
-      else {
-        indexList.push(suppIndex);
-        suppIndex++;
-      }
-    }
-    setCurrentProductsIndex(indexList);
-    setStartingIndex(currentIndex);
+    setPicturesDisplayed(picturesToDisplay);
   };
 
-  currentProductsIndex.forEach((currentProductIndex) => {
-    currentProducts.push(products[currentProductIndex]);
-  });
+  window.onresize = updateCarrousel;
+
+  const swipe = (side) => {
+    const frameSize = picturesDisplayed * 200 + (picturesDisplayed - 1) * 24 + 65;
+    const lastFramePosition = 0 - (frameSize * (Math.floor(products.length / picturesDisplayed)));
+    let newPosition = 0;
+
+    if (side === 'right') {
+      newPosition = position === lastFramePosition ? 0 : position - frameSize;
+    }
+    else {
+      newPosition = position === 0 ? lastFramePosition : position + frameSize;
+    }
+
+    setPosition(newPosition);
+  };
+
+  useEffect(() => {
+    updateCarrousel();
+  }, []);
 
   return (
-    <div className="Carrousel">
-      <h2 className="Carrousel__title">{name}</h2>
+    <div
+      className="Carrousel"
+      style={{
+        transform: `translateX(${categoryPosition}px)`,
+      }}
+    >
+      <h2 className="Carrousel__title">
+        <Link to={`/${category.name}`}>
+          {name}
+        </Link>
+      </h2>
       <div className="Carrousel__slider">
         <button
           type="button"
@@ -60,19 +58,20 @@ const Carrousel = ({ category, products }) => {
           &#171;
         </button>
         <div className="Carrousel__slider-content">
-          {currentProducts.map((currentProduct) => (
+          {products.map((product) => (
             <Link
               className="Carrousel__slider-content-product"
-              to={`product/${currentProduct.id}`}
-              key={currentProduct.id}
+              to={`product/${product.id}`}
+              key={product.id}
+              style={{ transform: `translateX(${position}px)` }}
             >
               <img
-                src={currentProduct.images[0].url}
-                alt={currentProduct.images[0].alt}
-                key={`product-${currentProduct.id}`}
+                src={product.images[0].url}
+                alt={product.images[0].alt}
+                key={`product-${product.id}`}
               />
               <figcaption>
-                {currentProduct.name}
+                {product.name}
               </figcaption>
             </Link>
           ))}
