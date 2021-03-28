@@ -40,7 +40,6 @@ const Home = ({
 
   return (
     <div className="Home">
-      <NavBar categories={categories} />
       <button
         type="button"
         onClick={() => {

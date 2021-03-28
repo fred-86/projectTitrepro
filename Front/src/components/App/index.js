@@ -34,7 +34,7 @@ const App = ({ loadCategory, categories, loadProducts }) => {
 
   return (
     <div className="App">
-      <Header />
+      <Header categoryPaths={categoryPaths} />
       <main className="App__main-content">
         <Switch>
           <Route exact path={categoryPaths}>

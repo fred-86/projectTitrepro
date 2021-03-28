@@ -5,10 +5,11 @@
   overflow: auto;
 
   &__main-content {
-    margin-top: 72px;
+    margin-top: 120px;
     margin-bottom: 120px;
     
     // to hack margin collapse
+    padding-top: 2rem;
     padding-bottom: 1px;
   }
 }

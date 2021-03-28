@@ -9,7 +9,13 @@
   border-top: 1px solid lighten(rgb(79,146,139), 10%);
   padding: 1rem 2rem;
   background: rgb(203,225,235);
-  background: linear-gradient(180deg, rgba(203,225,235,0.9724264705882353) 13%, rgba(142,181,190,0.9444152661064426) 52%, rgba(99,140,154,0.9416141456582633) 94%, rgba(159,185,195,1) 98%);
+  background: linear-gradient(
+    180deg, 
+    rgba(203,225,235,0.9724264705882353) 13%, 
+    rgba(142,181,190,0.9444152661064426) 52%, 
+    rgba(99,140,154,0.9416141456582633) 94%, 
+    rgba(159,185,195,1) 98%
+  );
   text-align: right;
   color: $text-color;
 

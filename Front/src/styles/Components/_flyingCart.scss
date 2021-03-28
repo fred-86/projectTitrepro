@@ -1,5 +1,4 @@
 .FlyingCart {
-  // TODO Check erreur postcss
   position: absolute;
   top: 72px;
   right: -250px;
@@ -8,7 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   padding: 1rem 0 0;
   background-color: $nav-separator;
   transition: right 0.4s;

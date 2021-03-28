@@ -7,6 +7,7 @@ import Header from 'src/components/Header';
 
 const mapStateToProps = (state) => ({
   isOpened: state.cart.flyingCart.isOpened,
+  categories: state.product.categories,
 });
 
 const mapDispatchToProps = (dispatch) => ({
