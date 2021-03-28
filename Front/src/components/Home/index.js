@@ -1,5 +1,5 @@
 // Import npm
-import React, { useEffect } from 'react';
+import React from 'react';
 
 // Import local
 import NavBar from '../NavBar';
@@ -13,28 +13,30 @@ const Home = ({
   position,
   setPosition 
 }) => {
-  const currentWidth = window.innerWidth;
-  const initialPosition = Math.floor((currentWidth / 2) - 325 - 7);
-  const lastPosition = 0 - (currentWidth * (categories.length - 1)) + initialPosition;
+  const lockPosition = () => {
+    const currentWidth = window.innerWidth;
 
-  const margin = currentWidth - 650;
+    if (currentWidth > 992) {
+      setPosition(0);
+    }
+  };
+
+  window.onresize = lockPosition;
 
   const swipeCategory = (side) => {
+    const frameSize = window.innerWidth - 14;
+    const lastPosition = 0 - (frameSize * (categories.length - 1));
     let newPosition = 0;
 
     if (side === 'right') {
-      newPosition = position === initialPosition ? lastPosition : position + currentWidth;
+      newPosition = position === 0 ? lastPosition : position + frameSize;
     }
     else {
-      newPosition = position === lastPosition ? initialPosition : position - currentWidth;
+      newPosition = position === lastPosition ? 0 : position - frameSize;
     }
 
     setPosition(newPosition);
   };
-
-  useEffect(() => {
-    setPosition(initialPosition);
-  }, []);
 
   return (
     <div className="Home">
@@ -67,7 +69,7 @@ const Home = ({
             <Carrousel
               category={category}
               products={associatedProduct}
-              categoryPosition={[position, margin]}
+              categoryPosition={position}
               key={category.id}
             />
           );

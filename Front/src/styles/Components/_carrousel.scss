@@ -190,6 +190,7 @@
   }
 
   @include md {
+    margin: 0 calc(50vw - 325px - 7px);
     transition: transform 0.4s;
 
     &__slider {

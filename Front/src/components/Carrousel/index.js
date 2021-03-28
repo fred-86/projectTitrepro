@@ -4,9 +4,17 @@ import { Link } from 'react-router-dom';
 
 const Carrousel = ({ category, products, categoryPosition }) => {
   const [position, setPosition] = useState(0);
-  const [picturesDisplayed, setPicturesDisplayed] = useState(4);
+  const [picturesDisplayed, setPicturesDisplayed] = useState(0);
   const { name } = category;
-  const { matches } = window.matchMedia('(max-width: 1200px');
+
+  const updateCarrousel = () => {
+    const { matches } = window.matchMedia('(max-width: 1200px');
+    const picturesToDisplay = matches ? 3 : 4;
+
+    setPicturesDisplayed(picturesToDisplay);
+  };
+
+  window.onresize = updateCarrousel;
 
   const swipe = (side) => {
     const frameSize = picturesDisplayed * 200 + (picturesDisplayed - 1) * 24 + 65;
@@ -24,20 +32,14 @@ const Carrousel = ({ category, products, categoryPosition }) => {
   };
 
   useEffect(() => {
-    if (matches) {
-      setPicturesDisplayed(3);
-    }
-    else {
-      setPicturesDisplayed(4);
-    }
+    updateCarrousel();
   }, []);
 
   return (
     <div
       className="Carrousel"
       style={{
-        transform: `translateX(${categoryPosition[0]}px)`,
-        marginRight: `${categoryPosition[1]}px`,
+        transform: `translateX(${categoryPosition}px)`,
       }}
     >
       <h2 className="Carrousel__title">
