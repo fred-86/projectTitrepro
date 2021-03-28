@@ -1,5 +1,5 @@
 .navBar{
-  //z-index: 7;
+  z-index: 7;
   position: absolute;
   top: 72px;
   left: 0;
@@ -92,6 +92,8 @@
   }
 
   @include md {
+    display: none;
+    
     &__list{
       flex-direction: column;
       align-items: center;
