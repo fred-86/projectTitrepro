@@ -14,6 +14,7 @@ import ProductPage from '../ProductPage/assistant';
 import MentionsLegales from '../MentionsLegales';
 import Apropos from '../Apropos';
 import Footer from '../Footer';
+import PopUp from '../PopUp/assistant';
 
 // == Component
 const App = ({ loadCategory, categories, loadProducts }) => {
@@ -34,6 +35,7 @@ const App = ({ loadCategory, categories, loadProducts }) => {
 
   return (
     <div className="App">
+      <PopUp />
       <Header categoryPaths={categoryPaths} />
       <main className="App__main-content">
         <Switch>

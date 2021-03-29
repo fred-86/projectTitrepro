@@ -17,10 +17,28 @@ const FlyingCart = ({
   amount,
   setAmount,
   removeFromCart,
-  sendCart
+  sendCart,
+  showPopUp
 }) => {
   const cartClass = classNames("FlyingCart", {"FlyingCart--open": isOpened});
   // TODO ajouter un voyant lumineux témoins d'un changement dans le panier
+
+  const checkCart = () => {
+    if (amount !== 0 && selectedLocation !== '') {
+      sendCart();
+    }
+    else {
+      const messages = [];
+
+      if (amount === 0) {
+        messages.push('Votre panier est vide');
+      }
+      if (selectedLocation === '') {
+        messages.push('Veuillez sélectionner un département.');
+      }
+      showPopUp(messages);
+    }
+  };
 
   useEffect(() => {
     loadLocations();
@@ -57,7 +75,7 @@ const FlyingCart = ({
         <p className="FlyingCart__resume-total">
           Coût total : <span className="FlyingCart__resume-total-amount">{amount}&#8364;</span>
         </p>
-        <button type="button" onClick={sendCart}>Valider</button>
+        <button type="button" onClick={checkCart}>Valider</button>
       </div>
     </aside>
   );

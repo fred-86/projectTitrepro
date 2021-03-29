@@ -87,3 +87,15 @@ export const setSelectedOption = (value) => ({
   type: 'SET_SELECTED_OPTION',
   value: value,
 });
+
+// ==========
+// Pop up
+export const showPopUp = (messages) => ({
+  type: 'SHOW_POP_UP',
+  messages: messages,
+});
+
+export const setIsActive = (value) => ({
+  type: 'SET_IS_ACTIVE',
+  value: value,
+});

@@ -24,7 +24,7 @@
 
 // ==========
 @mixin xs {
-  @media (max-width: 300) {
+  @media (max-width: 576px) {
     @content;
   }
 }

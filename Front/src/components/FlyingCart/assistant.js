@@ -9,6 +9,7 @@ import {
   removeFromCart,
   setSelectedLocation,
   sendCart,
+  showPopUp,
 } from 'src/store/actions';
 import FlyingCart from 'src/components/FlyingCart';
 
@@ -38,6 +39,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   sendCart: () => {
     dispatch(sendCart());
+  },
+  showPopUp: (messages) => {
+    dispatch(showPopUp(messages));
   },
 });
 

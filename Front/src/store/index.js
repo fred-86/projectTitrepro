@@ -5,14 +5,16 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 // Import local
 import appMiddleware from '../middlewares/appMiddleware';
 import cartMiddleware from '../middlewares/cartMiddleware';
+import homeReducer from './reducers/homeReducer';
 import productReducer from './reducers/productReducer';
 import cartReducer from './reducers/cartReducer';
-import homeReducer from './reducers/homeReducer';
+import popUpReducer from './reducers/popUpReducer';
 
 const rootReducer = combineReducers({
   home: homeReducer,
-  cart: cartReducer,
   product: productReducer,
+  cart: cartReducer,
+  popUp: popUpReducer,
 });
 
 const enhancers = composeWithDevTools(
