@@ -14,11 +14,14 @@ const Carrousel = ({ category, products, categoryPosition }) => {
     setPicturesDisplayed(picturesToDisplay);
   };
 
-  window.onresize = updateCarrousel;
-
   const swipe = (side) => {
     const frameSize = picturesDisplayed * 200 + (picturesDisplayed - 1) * 24 + 65;
-    const lastFramePosition = 0 - (frameSize * (Math.floor(products.length / picturesDisplayed)));
+
+    const times = products.length % picturesDisplayed === 0
+      ? products.length / picturesDisplayed - 1
+      : Math.floor(products.length / picturesDisplayed);
+
+    const lastFramePosition = 0 - (frameSize * times);
     let newPosition = 0;
 
     if (side === 'right') {
@@ -33,6 +36,11 @@ const Carrousel = ({ category, products, categoryPosition }) => {
 
   useEffect(() => {
     updateCarrousel();
+    window.addEventListener('resize', updateCarrousel);
+
+    return () => {
+      window.removeEventListener('resize', updateCarrousel);
+    };
   }, []);
 
   return (

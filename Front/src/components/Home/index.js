@@ -1,9 +1,8 @@
 // Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 
 // Import local
 import Loader from '../Loader';
-import NavBar from '../NavBar';
 import Carrousel from '../Carrousel';
 
 const Home = ({
@@ -22,7 +21,7 @@ const Home = ({
     }
   };
 
-  window.onresize = lockPosition;
+ 
 
   const swipeCategory = (side) => {
     const frameSize = window.innerWidth - 14;
@@ -38,6 +37,14 @@ const Home = ({
 
     setPosition(newPosition);
   };
+
+  useEffect(() => {
+    window.addEventListener('resize', lockPosition);
+
+    return () => {
+      window.removeEventListener('resize', lockPosition);
+    };
+  }, []);
 
   return (
     <div className="Home">
