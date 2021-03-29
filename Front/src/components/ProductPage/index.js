@@ -1,9 +1,11 @@
-/* eslint-disable arrow-body-style */
+// Import npm
 import React, { useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
-import NavBar from '../NavBar';
+// Import local
+import Loader from '../Loader';
 
+// Component
 const ProductPage = ({
   isProductLoaded,
   products,
@@ -40,6 +42,7 @@ const ProductPage = ({
 
   return (
     <div className="ProductPage">
+      {!isProductLoaded && <Loader />}
       <section className="description">
         {isProductLoaded && (
           <aside className="description__pictures">

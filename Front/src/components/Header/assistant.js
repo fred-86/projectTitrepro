@@ -1,5 +1,5 @@
 // Import npm
-import  { connect } from 'react-redux';
+import { connect } from 'react-redux';
 
 // Import local
 import { setIsOpened } from 'src/store/actions';

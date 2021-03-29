@@ -2,6 +2,7 @@
 import React from 'react';
 
 // Import local
+import Loader from '../Loader';
 import NavBar from '../NavBar';
 import Carrousel from '../Carrousel';
 
@@ -57,6 +58,7 @@ const Home = ({
         right
       </button>
       <div className="Home__content">
+        {!isCategoriesLoaded && !isProductLoaded && <Loader />}
         {isCategoriesLoaded && isProductLoaded && categories.map((category) => {
           const childCategoriesIndex = category.childCategories.map((childCategorie) => (
             childCategorie.id

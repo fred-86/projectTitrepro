@@ -4,6 +4,7 @@ import { useLocation, NavLink } from 'react-router-dom';
 
 // Import local
 import ProductCard from 'src/components/ProductCard';
+import Loader from '../Loader';
 import CategoryNavBar from '../CategoryNavBar';
 import mainImg from '../../assets/temp/vegetables.jpg';
 
@@ -44,6 +45,7 @@ const PageCategory = ({ isCategoriesLoaded, categories, products }) => {
         </div>
         <nav className="Pictogram">
           <ul className="Pictogram__sub-list">
+            {!isCategoriesLoaded && <Loader />}
             {isCategoriesLoaded && currentCategory.childCategories.map(
               (childCategory) => (
                 <li className="Pictogram__sub Pictogram__sub-1" key={childCategory.id}>

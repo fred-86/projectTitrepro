@@ -30,7 +30,7 @@ const FlyingCart = ({
     const newAmount = calculateAmount(items);
     setAmount(newAmount);
   }, [items]);
-
+// TODO message erreur fail load location
   return (
     <aside className={cartClass}>
       <h1>Mon panier</h1>

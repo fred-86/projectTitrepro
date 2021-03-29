@@ -7,7 +7,6 @@ import 'src/styles/index.scss';
 import Header from '../Header/assistant';
 import Cart from '../Cart/assistant';
 import Page404 from '../404';
-import Loader from '../Loader';
 import Home from '../Home/assistant';
 import AltHome from '../AltHome';
 import PageCategory from '../PageCategory/assistant';
@@ -16,7 +15,7 @@ import MentionsLegales from '../MentionsLegales';
 import Apropos from '../Apropos';
 import Footer from '../Footer';
 
-// == Composant
+// == Component
 const App = ({ loadCategory, categories, loadProducts }) => {
   useEffect(() => {
     loadCategory();
@@ -36,7 +35,6 @@ const App = ({ loadCategory, categories, loadProducts }) => {
   return (
     <div className="App">
       <Header categoryPaths={categoryPaths} />
-      <Loader />
       <main className="App__main-content">
         <Switch>
           <Route exact path={categoryPaths}>
@@ -69,5 +67,6 @@ const App = ({ loadCategory, categories, loadProducts }) => {
     </div>
   );
 };
+
 // == Export
 export default App;

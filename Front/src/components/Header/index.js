@@ -8,6 +8,7 @@ import cart from 'src/assets/images/shopping-cart.svg';
 import FlyingCart from '../FlyingCart/assistant';
 import NavBar from '../NavBar';
 
+// Component
 const Header = ({ setIsOpened, categories, categoryPaths }) => {
   const navCategories = [
     ...categories,
