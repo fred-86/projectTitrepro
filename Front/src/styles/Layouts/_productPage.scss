@@ -138,6 +138,10 @@
     .description{
       max-width: 80%;
     }
+
+    .description__details-resume{
+      padding: inherit;
+    }
   }
 
   @include md {
@@ -155,9 +159,6 @@
     .description__pictures-main{
       width: auto;
       height: auto;
-    }
-    .description__details-resume{
-      margin: 0;
     }
   }
 
