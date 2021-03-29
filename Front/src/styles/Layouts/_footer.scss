@@ -30,4 +30,16 @@
   & > ul > li:hover {
     color: lighten($text-color, 30%);
   }
+
+  @include sm{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      font-size: 0.7rem;
+
+      .Footer__copyright{
+        margin-bottom: 0.8rem;
+      }
+  }
 }
