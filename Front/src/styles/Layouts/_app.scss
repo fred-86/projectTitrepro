@@ -11,5 +11,21 @@
     // to hack margin collapse
     padding-top: 2rem;
     padding-bottom: 1px;
+
+    @include lg{
+      padding-top: 1rem;
+    }
+  
+    @include md{
+      padding-top: 0;
+    }
+  
+    @include sm{
+      padding-top: 0;
+    }
+  
+    @include xs{
+      padding-top: 0;
+    }
   }
 }

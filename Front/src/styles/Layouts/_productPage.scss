@@ -92,6 +92,7 @@
         margin: 2rem 0;
         padding: 0 5rem 0 0;
         line-height: 1.5rem;
+        text-align: justify;
       }
 
       &-cart {
@@ -130,6 +131,53 @@
           border: solid 3px #FFC233;
         }        
       }
+    }
+  }
+
+  @include lg {
+    .description{
+      max-width: 80%;
+    }
+
+    .description__details-resume{
+      padding: inherit;
+    }
+  }
+
+  @include md {
+    .description{
+      display: flex;
+      flex-direction: column-reverse;
+      //align-items: center;
+      text-align: left;
+    }
+    .description__details{
+      margin-bottom: 2rem;
+    }
+
+
+    .description__pictures-main{
+      width: auto;
+      height: auto;
+    }
+  }
+
+  @include sm {
+    .description__pictures {
+      width: auto;
+      height: auto;
+      align-items: center;
+      padding-right: inherit;
+    }
+
+    .description__pictures-main{
+      width: 250px;
+      height: auto;
+    }
+
+    .description__details-resume{
+      margin-top: 1rem;
+      padding: 0;
     }
   }
 }
