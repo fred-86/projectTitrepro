@@ -23,6 +23,12 @@
 }
 
 // ==========
+@mixin xs {
+  @media (max-width: 350) {
+    @content;
+  }
+}
+
 @mixin sm {
   @media (max-width: 768px) {
     @content;
