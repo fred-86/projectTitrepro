@@ -5,6 +5,7 @@ import classNames from 'classnames';
 // Import local
 import { calculateAmount } from 'src/Utils';
 import Item from './Item/assistant';
+import { Redirect } from 'react-router-dom';
 
 const FlyingCart = ({
   isOpened,
@@ -17,7 +18,8 @@ const FlyingCart = ({
   amount,
   setAmount,
   removeFromCart,
-  sendCart
+  sendCart,
+  haveFound
 }) => {
   const cartClass = classNames("FlyingCart", {"FlyingCart--open": isOpened});
   // TODO ajouter un voyant lumineux témoins d'un changement dans le panier
@@ -59,6 +61,7 @@ const FlyingCart = ({
         </p>
         <button type="button" onClick={sendCart}>Valider</button>
       </div>
+      {haveFound && <Redirect to="/cart" />}
     </aside>
   );
 };

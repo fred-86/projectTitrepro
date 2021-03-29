@@ -2,8 +2,8 @@ const initialState = {
   items: [],
   cart: {
     selectedProduct: 1,
-    options: [],
-    selectedOption: 0,
+    placeCategories: [],
+    selectedPlaceCategory: 1,
     places: [],
   },
   flyingCart: {
@@ -12,6 +12,7 @@ const initialState = {
     locations: [],
     selectedLocation: '',
     amount: 0,
+    haveFound: false,
   },
 };
 
@@ -131,6 +132,18 @@ const cartReducer = (state = initialState, action = {}) => {
       };
     }
 
+    case 'SET_PLACE_CATEGORIES': {
+      const newCart = {
+        ...state.cart,
+        placeCategories: action.placeCategories,
+      };
+
+      return {
+        ...state,
+        cart: newCart,
+      };
+    }
+
     case 'SET_SELECTED_PRODUCT': {
       const newCart = {
         ...state.cart,
@@ -143,9 +156,35 @@ const cartReducer = (state = initialState, action = {}) => {
       };
     }
 
-    case 'SET_SELECTED_OPTION': {
+    case 'SET_SELECTED_PLACE_CATEGORY': {
       const newCart = {
-        selectedOption: action.value,
+        ...state.cart,
+        selectedPlaceCategory: action.value,
+      };
+
+      return {
+        ...state,
+        cart: newCart,
+      };
+    }
+
+    case 'SET_HAVE_FOUND': {
+      const newFlyingCart = {
+        ...state.flyingCart,
+        isOpened: false,
+        haveFound: action.value,
+      };
+
+      return {
+        ...state,
+        flyingCart: newFlyingCart,
+      };
+    }
+
+    case 'SET_PLACES': {
+      const newCart = {
+        ...state.cart,
+        places: action.places,
       };
 
       return {

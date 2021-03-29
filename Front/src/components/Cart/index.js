@@ -1,10 +1,33 @@
-import React, { useRef } from 'react';
+// Import npm
+import React, { useRef, useEffect } from 'react';
 import { categories, cartProducts } from 'src/data';
 
-const Cart = ({ setSelectedProduct, selectedOption, setSelectedOption }) => {
+const Cart = ({
+  loadPlaceCategories,
+  placeCategories,
+  items,
+  places,
+  selectedProduct,
+  setSelectedProduct,
+  selectedPlaceCategory,
+  setSelectedPlaceCategory
+}) => {
   const setCurrentProduct = (event) => {
-    setSelectedProduct(event.target.value);
+    setSelectedProduct(parseInt(event.target.value));
   };
+
+  const placesByProduct = places.filter(
+    (place) => (place.productCategories[1].id === selectedProduct),
+  );
+
+  const placesByCategory = placesByProduct.filter(
+    (place) => (place.placeCategory.id === selectedPlaceCategory),
+  );
+console.log(placesByCategory);
+
+  useEffect(() => {
+    loadPlaceCategories();
+  }, []);
 
   return (
     <div className="Cart">
@@ -20,21 +43,21 @@ const Cart = ({ setSelectedProduct, selectedOption, setSelectedOption }) => {
           <h2 className="Cart__proposal-list-title">
             Panier
           </h2>
-          {cartProducts.map((cartProduct, index) => (
-            <React.Fragment key={`item-id-${cartProduct.id}`}>
+          {items.map((item, index) => (
+            <React.Fragment key={`item-id-${item.product.id}`}>
               <label
                 htmlFor={`Cart__proposal-list-item-${index}`}
                 className="Cart__proposal-list-label"
-                style={{ backgroundImage: `url(${cartProduct.picture})` }}
+                style={{ backgroundImage: `url(${item.product.images[0].url})` }}
               >
-                {cartProduct.name}
+                {item.product.name}
               </label>
               <input
                 type="radio"
                 name="Cart__proposal-list-item"
                 id={`Cart__proposal-list-item-${index}`}
                 className="Cart__proposal-list-item"
-                value={cartProduct.id}
+                value={item.product.productCategories[0].id}
                 onClick={setCurrentProduct}
               />
             </React.Fragment>
@@ -44,25 +67,29 @@ const Cart = ({ setSelectedProduct, selectedOption, setSelectedOption }) => {
           <h2 className="Cart__proposal-choices-title">
             Liste des alternatives
           </h2>
-          {categories.map((place, index) => (
-            <label htmlFor={`alt-option--${index}`} className="Cart__proposal-choices-option-btn" key={place.name}>
-              {place.name}
-            <input name="alt-option" id={`alt-option--${index}`} type="radio" value={index} onChange={setSelectedOption} />
+          {placeCategories.map((placeCategory, index) => (
+            <label htmlFor={`alt-option--${index}`} className="Cart__proposal-choices-option-btn" key={placeCategory.name}>
+              {placeCategory.name}
+            <input name="alt-option" id={`alt-option--${index}`} type="radio" value={placeCategory.id} onChange={setSelectedPlaceCategory} />
             </label>
           ))}
           <div className="Cart__proposal-choices-tab">
-            <h1 className="Cart__proposal-choices-tab-name">01</h1>
-            <p className="Cart__proposal-choices-tab-description">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui illo distinctio non, adipisci aliquid, iste velit veniam atque quam eaque repudiandae nesciunt minima a possimus neque dolore tempore ab suscipit?
-              Ducimus, atque, numquam qui quis rerum facere consectetur pariatur ipsum beatae, maiores natus quod a nostrum delectus reprehenderit aliquid ex dolorem ea repellat. Aliquam non nam repellat tempora libero repellendus.
-              Beatae unde, quaerat saepe non quidem nobis aliquam culpa, tempora illo molestias cupiditate? Repellat, maiores. Expedita totam vitae debitis. Ullam, culpa. Dolor fugiat blanditiis officiis placeat? Asperiores aliquam incidunt inventore.
-              Exercitationem quaerat harum dolorem earum nam tenetur tempore neque accusantium expedita nobis! Exercitationem corporis odio, earum iusto possimus at, magnam ab in laboriosam quo, dicta repudiandae minima ipsum deleniti voluptates.
-              
-            </p>
+            {placesByCategory.map((placeByCategory) => (
+              <article className="Cart__proposal-choices-tab-content" key={placeByCategory.name}>
+                <h1 className="Cart__proposal-choices-tab-name">{placeByCategory.name}</h1>
+                <ul className="Cart__proposal-choices-tab-adress">
+                  <li>{placeByCategory.address}</li>
+                  <li>{placeByCategory.addressComplement}</li>
+                  <li>{`${placeByCategory.city}, ${placeByCategory.department.name}`}</li>
+                </ul>
+                <img src={placeByCategory.logo} alt={placeByCategory.name} />
+                <button className="Cart__proposal-choices-link">
+                  Go to website
+                </button>
+              </article>
+            ))}
           </div>
-          <button className="Cart__proposal-choices-link">
-            Go to website
-          </button>
+          
         </div>
       </section>
     </div>
