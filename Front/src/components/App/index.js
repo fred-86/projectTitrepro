@@ -8,7 +8,7 @@ import Header from '../Header/assistant';
 import Cart from '../Cart/assistant';
 import Page404 from '../404';
 import Home from '../Home/assistant';
-import AltHome from '../AltHome';
+import AltHome from '../AltHome/assistant';
 import PageCategory from '../PageCategory/assistant';
 import ProductPage from '../ProductPage/assistant';
 import MentionsLegales from '../MentionsLegales';
@@ -48,7 +48,7 @@ const App = ({ loadCategory, categories, loadProducts }) => {
           <Route path="/cart">
             <Cart />
           </Route>
-          <Route path="/althome">
+          <Route path="/practical">
             <AltHome />
           </Route>
           <Route path="/mentionslegales">
