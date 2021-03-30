@@ -1,4 +1,5 @@
 const initialState = {
+  token: '',
   categories: [],
   isCategoriesLoaded: false,
   products: [],
@@ -7,6 +8,12 @@ const initialState = {
 
 const productReducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case 'SET_TOKEN':
+      return {
+        ...state,
+        token: action.token,
+      };
+
     case 'SET_CATEGORIES':
       return {
         ...state,

@@ -10,6 +10,7 @@ import { Redirect } from 'react-router-dom';
 const FlyingCart = ({
   isOpened,
   setIsOpened,
+  token,
   loadLocations,
   locations,
   selectedLocation,
@@ -44,7 +45,7 @@ const FlyingCart = ({
 
   useEffect(() => {
     loadLocations();
-  }, []);
+  }, [token]);
 
   useEffect(() => {
     const newAmount = calculateAmount(items);

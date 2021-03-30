@@ -7,14 +7,14 @@ import AltCategoryNavBar from '../AltCategoryNavBar';
 import AltCategoryCards from '../AltCategoryCards';
 import bannerImg from '../../assets/temp/forest.jpg';
 
-const AltHome = ({ loadPlaceCategories, placeCategories, loadPlaces, places }) => {
+const AltHome = ({ token, loadPlaceCategories, placeCategories, loadPlaces, places, selectedPlace, setSelectedPlace }) => {
   const { id } = useParams();
   const placesByCategory = parseInt(id) === 0 ? places : places.filter((place) => (place.placeCategory.id === parseInt(id)));
 
   useEffect(() => {
     loadPlaceCategories();
     loadPlaces();
-  }, []);
+  }, [token]);
 
   return (
     <React.Fragment>
@@ -31,7 +31,7 @@ const AltHome = ({ loadPlaceCategories, placeCategories, loadPlaces, places }) =
           </article>
         </div>
         <AltCategoryNavBar placeCategories={placeCategories} />
-        <AltCategoryCards places={placesByCategory} />
+        <AltCategoryCards places={placesByCategory} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace} />
       </section>
     </React.Fragment>
   );

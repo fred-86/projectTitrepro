@@ -17,6 +17,7 @@
     object-fit: cover;
     
   }
+
   &-article {
     background-color: rgba(65, 63, 63, 0.472);
     position:absolute;
@@ -36,14 +37,11 @@
     }
     
   }
+
   &-title {
     font-weight:700;
     font-size: 3rem;
     margin-bottom:0.9rem;
   }
-  
-
- }
-  
-  
+ }   
 }

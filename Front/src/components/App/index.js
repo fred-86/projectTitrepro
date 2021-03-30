@@ -17,11 +17,15 @@ import Footer from '../Footer';
 import PopUp from '../PopUp/assistant';
 
 // == Component
-const App = ({ loadCategory, categories, loadProducts }) => {
+const App = ({ getToken, token, loadCategory, categories, loadProducts }) => {
+  useEffect(() => {
+    getToken();
+  }, []);
+
   useEffect(() => {
     loadCategory();
     loadProducts();
-  }, []);
+  }, [token]);
 
   const categoryPaths = [];
 

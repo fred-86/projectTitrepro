@@ -1,4 +1,13 @@
 // App
+export const getToken = () => ({
+  type: 'GET_TOKEN',
+});
+
+export const setToken = (token) => ({
+  type: 'SET_TOKEN',
+  token: token,
+});
+
 export const loadCategory = () => ({
   type: 'LOAD_CATEGORY',
 });
@@ -38,6 +47,11 @@ export const loadPlaces = () => ({
 export const setPlaces = (places) => ({
   type: 'SET_PLACES',
   places: places,
+});
+
+export const setSelectedPlace = (place) => ({
+  type: 'SET_SELECTED_PLACE',
+  place: place,
 });
 
 // ==========

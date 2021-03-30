@@ -1,11 +1,15 @@
 .popUpAlt{
-  &__frame{
+  // z-index: 7;
+  // position: absolute;
+  // top: 50%;
+  // left: 100%;
+
     width: 720px;
     height: auto;
     text-align: left;
     padding: 3rem;
     background-color: $popUpAlt-backg;  
-  }
+  
 
   &__button{
     width: 45px;
@@ -45,9 +49,11 @@
         line-height: 1.2rem;
         text-align: justify;
       }
+      
       &__link{
         width: auto;
         height: auto;
+        display: inline-block;
         background-color: $nav-separator;
         color: $warning-color;
         border-radius: 5px;

@@ -4,51 +4,62 @@
   flex-direction:row;
   justify-content: center;
   padding: 0rem 3rem 2rem;
+
   @include mobile-medium {
     margin-top: 15rem;
   }
-}
 
-.AltCategoryCards {
-  border-radius: 25px 25px 0px 0px;
-  margin: 1rem 0.6rem;
-  width: 200px; // à définir en max-width quand img mis en place 
-  min-height: 295px; // à définir en max-width quand img mis en place 
-  background-color: rgb(241, 242, 243);
-  text-align: left;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  transition: transform .2s;
-  padding-bottom: 1rem;
-
-  &__img {
+  .AltCategoryCards {
+    // z-index: 0;
+    // position: relative;
     border-radius: 25px 25px 0px 0px;
-    height:75%;
-    width:100%;
-    margin-bottom: 0.5rem;
+    margin: 1rem 0.6rem;
+    width: 200px; // à définir en max-width quand img mis en place 
+    min-height: 320px;
+    background-color: rgb(241, 242, 243);
+    text-align: left;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    transition: transform .2s;
+    padding-bottom: 1rem;
+
+    &__img {
+      border-radius: 25px 25px 0px 0px;
+      height:75%;
+      width:100%;
+      margin-bottom: 0.5rem;
+    }
+
+    &__categoryTitle {
+      margin-left: 0.5rem;
+      margin-bottom: 0.6rem;
+      font-size: 15px;
+      font-weight: 700;
+      color: #7E7D7D,;
+    }
+
+    &__title {
+      margin-left: 0.5rem;
+      margin-bottom: 0.3rem;
+      font-size: 1.2rem;
+      font-weight: 900;
+      color:#525252;
+    } 
+
+    &__adresse {
+      margin-left: 0.5rem;
+      margin-bottom: 1px;
+      font-weight: 300;
+      font-size: 13px;
+      color:#7E7D7D;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
-  &__categoryTitle {
-    margin-left: 0.5rem;
-    font-size: 15px;
-    font-weight: 700;
-    color: #7E7D7D,;
-  }
-
-  &__title {
-    margin-left: 0.5rem;
-    font-size: 1.2rem;
-    font-weight: 900;
-    color:#525252;
-  } 
-
-  &__adresse {
-    margin-left: 0.5rem;
-    font-weight: 300;
-    font-size: 13px;
-    color:#7E7D7D;
+  & > input {
+    display: none;
   }
 }
 
-.AltCategoryCards:hover {
-  transform: scale(1.1);
-}

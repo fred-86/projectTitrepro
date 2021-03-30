@@ -2,10 +2,11 @@
 import { connect } from 'react-redux';
 
 // Import local
-import { loadCategory, loadProducts } from 'src/store/actions';
+import { getToken, loadCategory, loadProducts } from 'src/store/actions';
 import App from './index';
 
 const mapStateToProps = (state) => ({
+  token: state.product.token,
   categories: state.product.categories,
   products: state.product.products,
 });
@@ -16,6 +17,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   loadProducts: () => {
     dispatch(loadProducts());
+  },
+  getToken: () => {
+    dispatch(getToken());
   },
 });
 

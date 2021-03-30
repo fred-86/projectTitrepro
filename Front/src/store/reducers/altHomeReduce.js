@@ -1,5 +1,6 @@
 const initialState = {
   places: [],
+  selectedPlace: 0,
 };
 
 const altHomeReducer = (state = initialState, action = {}) => {
@@ -8,6 +9,12 @@ const altHomeReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         places: action.places,
+      }
+
+    case 'SET_SELECTED_PLACE':
+      return {
+        ...state,
+        selectedPlace: action.place,
       }
 
     default:

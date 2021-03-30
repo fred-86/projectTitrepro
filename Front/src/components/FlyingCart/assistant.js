@@ -15,6 +15,7 @@ import FlyingCart from 'src/components/FlyingCart';
 
 const mapStateToProps = (state) => ({
   isOpened: state.cart.flyingCart.isOpened,
+  token: state.product.token,
   items: state.cart.items,
   locations: state.cart.flyingCart.locations,
   selectedLocation: state.cart.flyingCart.selectedLocation,
