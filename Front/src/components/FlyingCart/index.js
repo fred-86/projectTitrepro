@@ -5,6 +5,7 @@ import classNames from 'classnames';
 // Import local
 import { calculateAmount } from 'src/Utils';
 import Item from './Item/assistant';
+import { Redirect } from 'react-router-dom';
 
 const FlyingCart = ({
   isOpened,
@@ -18,9 +19,10 @@ const FlyingCart = ({
   setAmount,
   removeFromCart,
   sendCart,
+  haveFound,
   showPopUp
 }) => {
-  const cartClass = classNames("FlyingCart", {"FlyingCart--open": isOpened});
+  const cartClass = classNames("FlyingCart", { "FlyingCart--open": isOpened });
   // TODO ajouter un voyant lumineux témoins d'un changement dans le panier
 
   const checkCart = () => {
@@ -48,7 +50,7 @@ const FlyingCart = ({
     const newAmount = calculateAmount(items);
     setAmount(newAmount);
   }, [items]);
-// TODO message erreur fail load location
+  // TODO message erreur fail load location
   return (
     <aside className={cartClass}>
       <h1>Mon panier</h1>
@@ -61,9 +63,9 @@ const FlyingCart = ({
       </ul>
       <div className="FlyingCart__resume">
         <div className="FlyingCart__resume-logo">
-          14 jours pour changer d’avis(3)<br/>
-          Paiement en 4 fois possible<br/>
-          Paiement sécurisé<br/>
+          14 jours pour changer d’avis(3)<br />
+          Paiement en 4 fois possible<br />
+          Paiement sécurisé<br />
         </div>
         <label htmlFor="FlyingCart__resume-dep">Département  </label>
         <select id="FlyingCart__resume-dep" className="FlyingCart__resume-dep" value={selectedLocation} onChange={setSelectedLocation}>
@@ -77,6 +79,7 @@ const FlyingCart = ({
         </p>
         <button type="button" onClick={checkCart}>Valider</button>
       </div>
+      {haveFound && <Redirect to="/cart" />}
     </aside>
   );
 };

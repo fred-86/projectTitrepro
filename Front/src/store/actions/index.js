@@ -76,15 +76,34 @@ export const sendCart = () => ({
   type: 'SEND_CART',
 });
 
+export const setHaveFound = (value) => ({
+  type: 'SET_HAVE_FOUND',
+  value: value,
+});
+
 // ==========
 // Cart
+export const loadPlaceCategories = () => ({
+  type: 'LOAD_PLACE_CATEGORIES',
+});
+
+export const setPlaceCategories = (placeCategories) => ({
+  type: 'SET_PLACE_CATEGORIES',
+  placeCategories: placeCategories,
+});
+
+export const setPlaces = (places) => ({
+  type: 'SET_PLACES',
+  places: places,
+});
+
 export const setSelectedProduct = (selectedProduct) => ({
   type: 'SET_SELECTED_PRODUCT',
   selectedProduct: selectedProduct,
 });
 
-export const setSelectedOption = (value) => ({
-  type: 'SET_SELECTED_OPTION',
+export const setSelectedPlaceCategory = (value) => ({
+  type: 'SET_SELECTED_PLACE_CATEGORY',
   value: value,
 });
 

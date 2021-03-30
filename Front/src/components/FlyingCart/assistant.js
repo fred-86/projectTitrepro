@@ -19,6 +19,7 @@ const mapStateToProps = (state) => ({
   locations: state.cart.flyingCart.locations,
   selectedLocation: state.cart.flyingCart.selectedLocation,
   amount: state.cart.flyingCart.amount,
+  haveFound: state.cart.flyingCart.haveFound,
 });
 
 const mapDispatchToProps = (dispatch) => ({
