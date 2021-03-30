@@ -1,22 +1,19 @@
+// Import npm
 import React from 'react';
-import {altCardsData} from 'src/data';
-import { v4 as uuidv4 } from 'uuid';
 
-const AltCategoryCard = ({altCardData}) => {
-  return(
-      <div className="AltCategoryCards">
-        <img className="AltCategoryCards__img" src={altCardData.image}/>
-        <h2 className="AltCategoryCards__categoryTitle">Dons</h2>
-        <h2 className="AltCategoryCards__title">title</h2>
-        <p className="AltCategoryCards__adresse">Adresse</p>
-      </div>
-  );
-};
-const AltCategoryCards = () => {
+const AltCategoryCards = ({ places }) => {
   return (
     <section className="ContainerAltCategoryCards">
-      {altCardsData.map(altCardData=> <AltCategoryCard key={uuidv4()} altCardData={altCardData}/>)}
+      {places.map((place) => (
+        <div className="AltCategoryCards" key={place.id}>
+          <img className="AltCategoryCards__img" src={place.logo} />
+          <h2 className="AltCategoryCards__categoryTitle">{place.placeCategory.name}</h2>
+          <h2 className="AltCategoryCards__title">{place.name}</h2>
+          <p className="AltCategoryCards__adresse">{place.city}</p>
+        </div>
+      ))}
     </section>
-  )
+  );
 };
+
 export default AltCategoryCards

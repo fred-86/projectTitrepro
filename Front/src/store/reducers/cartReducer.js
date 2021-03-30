@@ -181,7 +181,7 @@ const cartReducer = (state = initialState, action = {}) => {
       };
     }
 
-    case 'SET_PLACES': {
+    case 'SET_CART_PLACES': {
       const newCart = {
         ...state.cart,
         places: action.places,

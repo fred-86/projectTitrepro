@@ -13,32 +13,35 @@
   border-radius: 25px 25px 0px 0px;
   margin:0.5rem;
   width: 200px; // à définir en max-width quand img mis en place 
-  height: 250px; // à définir en max-width quand img mis en place 
+  //height: 250px; // à définir en max-width quand img mis en place 
   background-color: rgb(241, 242, 243);
   text-align: left;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  cursor:pointer;
   transition: transform .2s;
+  padding-bottom: 1rem;
 
   &__img {
     border-radius: 25px 25px 0px 0px;
     height:75%;
     width:100%;
-    background-color: red;
-    margin-bottom: 0.2rem;
+    //background-color: red;
+    margin-bottom: 0.5rem;
   }
+
   &__categoryTitle {
     margin-left: 0.5rem;
     font-size: 15px;
     font-weight: 700;
     color: #7E7D7D,;
   }
+
   &__title {
     margin-left: 0.5rem;
-    font-size: 18px;
+    font-size: 1.2rem;
     font-weight: 900;
     color:#525252;
   } 
+
   &__adresse {
     margin-left: 0.5rem;
     font-weight: 300;
@@ -46,6 +49,7 @@
     color:#7E7D7D;
   }
 }
+
 .AltCategoryCards:hover {
   transform: scale(1.1);
 }

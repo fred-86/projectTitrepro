@@ -48,7 +48,7 @@ const App = ({ loadCategory, categories, loadProducts }) => {
           <Route path="/cart">
             <Cart />
           </Route>
-          <Route path="/practical">
+          <Route path="/practical/:category/:id">
             <AltHome />
           </Route>
           <Route path="/mentionslegales">

@@ -9,12 +9,14 @@ import homeReducer from './reducers/homeReducer';
 import productReducer from './reducers/productReducer';
 import cartReducer from './reducers/cartReducer';
 import popUpReducer from './reducers/popUpReducer';
+import altHomeReducer from './reducers/altHomeReduce';
 
 const rootReducer = combineReducers({
   home: homeReducer,
   product: productReducer,
   cart: cartReducer,
   popUp: popUpReducer,
+  altHome: altHomeReducer,
 });
 
 const enhancers = composeWithDevTools(

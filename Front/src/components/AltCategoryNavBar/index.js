@@ -1,27 +1,29 @@
+// Import npm
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const AltCategoryNavBar = () => {
-  return(
+// Import local
+import { generateLink } from 'src/Utils';
+
+const AltCategoryNavBar = ({ placeCategories }) => {
+  return (
     <nav className="AltCategoryNavBar">
-      <ul className="AltCategoryNavBar__link-list">
-        <li className="AltCategoryNavBar__link AltCategoryNavBar__link--1">
-            Alimentaire
+      <ul className="AltCategoryNavBar__list">
+        <li>
+          <NavLink to="/practical/Home/0">
+            All
+          </NavLink>
         </li>
-        <li className="AltCategoryNavBar__link AltCategoryNavBar__link--2">
-            Occasions
-        </li>
-        <li className="AltCategoryNavBar__link AltCategoryNavBar__link--3">
-            Dons
-        </li>
-        <li className="AltCategoryNavBar__link AltCategoryNavBar__link--4">
-            Associations
-        </li>
-        <li className="AltCategoryNavBar__link AltCategoryNavBar__link--5">
-            Trocs
-        </li>
-        <li className="AltCategoryNavBar__link AltCategoryNavBar__link--5">
-            Autres
-        </li>
+        {placeCategories.map((placeCategory) => {
+          const formatLink = generateLink(placeCategory.name);
+          return (
+            <li key={placeCategory.name}>
+              <NavLink to={`/practical/${formatLink}/${placeCategory.id}`} className="AltCategoryNavBar__list-link" activeClassName={"AltCategoryNavBar__list-link--active"}>
+                {placeCategory.name}
+              </NavLink>
+            </li>
+          )
+        })}
       </ul>
     </nav>
   );

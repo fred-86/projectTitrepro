@@ -2,17 +2,21 @@
 import { connect } from 'react-redux';
 
 // Import local
-import { loadAltCategories } from 'src/store/actions';
+import { loadPlaceCategories, loadPlaces } from 'src/store/actions';
 import AltHome from './index';
 
 const mapStateToProps = (state) => ({
-
+  placeCategories: state.cart.cart.placeCategories,
+  places: state.altHome.places,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  loadAltCategories: () => {
-    dispatch(loadAltCategories());
-  }
+  loadPlaceCategories: () => {
+    dispatch(loadPlaceCategories());
+  },
+  loadPlaces: () => {
+    dispatch(loadPlaces());
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AltHome);

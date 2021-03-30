@@ -1,16 +1,20 @@
 // Import npm
 import React, { useEffect } from 'react';
+import { useParams } from 'react-router';
 
 // Import local
 import AltCategoryNavBar from '../AltCategoryNavBar';
 import AltCategoryCards from '../AltCategoryCards';
 import bannerImg from '../../assets/temp/forest.jpg';
 
-const AltHome = ({ loadAltCategories, altCategories }) => {
+const AltHome = ({ loadPlaceCategories, placeCategories, loadPlaces, places }) => {
+  const { id } = useParams();
+  const placesByCategory = parseInt(id) === 0 ? places : places.filter((place) => (place.placeCategory.id === parseInt(id)));
 
   useEffect(() => {
-    loadAltCategories();
-  });
+    loadPlaceCategories();
+    loadPlaces();
+  }, []);
 
   return (
     <React.Fragment>
@@ -26,8 +30,8 @@ const AltHome = ({ loadAltCategories, altCategories }) => {
           </p>
           </article>
         </div>
-        <AltCategoryNavBar />
-        <AltCategoryCards />
+        <AltCategoryNavBar placeCategories={placeCategories} />
+        <AltCategoryCards places={placesByCategory} />
       </section>
     </React.Fragment>
   );

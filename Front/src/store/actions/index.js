@@ -26,6 +26,21 @@ export const setPosition = (position) => ({
 });
 
 // ==========
+// Alt Home
+export const loadPlaceCategories = () => ({
+  type: 'LOAD_PLACE_CATEGORIES',
+});
+
+export const loadPlaces = () => ({
+  type: 'LOAD_PLACES',
+});
+
+export const setPlaces = (places) => ({
+  type: 'SET_PLACES',
+  places: places,
+});
+
+// ==========
 // Product page
 export const setPictureToMain = (newPictures) => ({
   type: 'SET_PICTURE_TO_MAIN',
@@ -83,17 +98,13 @@ export const setHaveFound = (value) => ({
 
 // ==========
 // Cart
-export const loadPlaceCategories = () => ({
-  type: 'LOAD_PLACE_CATEGORIES',
-});
-
 export const setPlaceCategories = (placeCategories) => ({
   type: 'SET_PLACE_CATEGORIES',
   placeCategories: placeCategories,
 });
 
-export const setPlaces = (places) => ({
-  type: 'SET_PLACES',
+export const setCartPlaces = (places) => ({
+  type: 'SET_CART_PLACES',
   places: places,
 });
 
