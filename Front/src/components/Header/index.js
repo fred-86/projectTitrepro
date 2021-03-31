@@ -18,13 +18,25 @@ const Header = ({ mainSwitch, setMainSwitch, setIsOpened, categories, categoryPa
   navCategories.pop();
 
   const { pathname } = useLocation();
-  const isCategoryPage = categoryPaths.includes(pathname);
+
+  const forbiddenPaths = [...categoryPaths];
+  forbiddenPaths.push("/cart", "/practical");
+  const isCurrentPath = (path) => pathname.includes(path);
+  const isNavHide = forbiddenPaths.some(isCurrentPath);
+
   const isCartPage = pathname === "/cart" ? true : false;
-  const isAltHome = pathname.includes("/practical") ? true : false;
+  const isAltHome = pathname.includes("practical");
+
+  let homePath = "/";
+
+  if (isAltHome) {
+    homePath = "/practical/home/0";
+  }
+
   return (
     <>
       <header className="Header">
-        <NavLink to="/">
+        <NavLink to={homePath}>
           <img src={ePakoLogo} alt="logo-ePako" className="Header__logo" />
         </NavLink>
         <label className="Header__switch" htmlFor="Header__switch-checkbox">
@@ -37,8 +49,8 @@ const Header = ({ mainSwitch, setMainSwitch, setIsOpened, categories, categoryPa
         </button>}
         <FlyingCart />
       </header>
-      {!isCategoryPage && <NavBar categories={navCategories} />}
-      {!isCategoryPage && <NavBarSmall categories={navCategories} />}
+      {!isNavHide && <NavBar categories={navCategories} />}
+      {!isNavHide && <NavBarSmall categories={navCategories} />}
       {mainSwitch && <Redirect to="/practical/home/0" />}
     </>
   );
