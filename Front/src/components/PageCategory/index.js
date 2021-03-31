@@ -13,6 +13,10 @@ const PageCategory = ({ isCategoriesLoaded, categories, products }) => {
   const { pathname } = useLocation();
   const pathStructure = pathname.split('/');
   let currentProducts = [];
+  const navCategories = [
+    ...categories,
+  ];
+  navCategories.pop();
 
   const currentCategory = categories.find((category) => (generateLink(category.name) === pathStructure[1]));
   const currentCategoryLink = generateLink(currentCategory.name);
@@ -42,7 +46,7 @@ const PageCategory = ({ isCategoriesLoaded, categories, products }) => {
   return (
     <>
       <section className="CategoryPage">
-        <CategoryNavBar categories={categories} />
+        <CategoryNavBar categories={navCategories} />
         <div className="MainImgCategory">
           <img src={mainImg} className="MainImgCategory__img" alt={currentCategory.name} />
         </div>

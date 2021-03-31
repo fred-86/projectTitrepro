@@ -64,15 +64,23 @@ const Home = ({
       </button>
       <div className="Home__content">
         {!isCategoriesLoaded && !isProductLoaded && <Loader />}
-        {isCategoriesLoaded && isProductLoaded && categories.map((category) => {
-          const childCategoriesIndex = category.childCategories.map((childCategorie) => (
-            childCategorie.id
-          ));
-          const associatedProduct = products.filter((product) => {
-            return (
-              childCategoriesIndex.includes(product.productCategories[0].id)
-            )
-          });
+        {isCategoriesLoaded && isProductLoaded && categories.map((category, index) => {
+          let associatedProduct = [];
+
+          if (index !== categories.length - 1) {
+            const childCategoriesIndex = category.childCategories.map((childCategorie) => (
+              childCategorie.id
+            ));
+            associatedProduct = products.filter((product) => {
+              return (
+                childCategoriesIndex.includes(product.productCategories[0].id)
+              )
+            });
+          }
+          else {
+            associatedProduct = products.filter((product) => product.productCategories.length > 1);
+          }
+
           return (
             <Carrousel
               category={category}
