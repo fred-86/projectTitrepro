@@ -1,5 +1,6 @@
 const initialState = {
   position: 0,
+  mainSwitch: false,
 };
 
 const homeReducer = (state = initialState, action = {}) => {
@@ -8,6 +9,12 @@ const homeReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         position: action.position,
+      };
+
+    case 'SET_MAIN_SWITCH':
+      return {
+        ...state,
+        mainSwitch: !state.mainSwitch,
       };
 
     default:

@@ -27,6 +27,11 @@ export const setProducts = (products) => ({
   products: products,
 });
 
+export const setMainSwitch = (value) => ({
+  type: 'SET_MAIN_SWITCH',
+  value: value,
+});
+
 // ==========
 // Home page
 export const setPosition = (position) => ({

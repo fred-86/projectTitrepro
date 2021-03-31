@@ -2,10 +2,11 @@
 import { connect } from 'react-redux';
 
 // Import local
-import { setIsOpened } from 'src/store/actions';
+import { setMainSwitch, setIsOpened } from 'src/store/actions';
 import Header from 'src/components/Header';
 
 const mapStateToProps = (state) => ({
+  mainSwitch: state.home.mainSwitch,
   isOpened: state.cart.flyingCart.isOpened,
   categories: state.product.categories,
 });
@@ -13,6 +14,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   setIsOpened: () => {
     dispatch(setIsOpened());
+  },
+  setMainSwitch: (value) => {
+    dispatch(setMainSwitch(value));
   },
 });
 

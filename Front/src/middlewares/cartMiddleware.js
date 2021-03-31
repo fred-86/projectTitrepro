@@ -27,7 +27,13 @@ const cartMiddleware = (store) => (next) => (action) => {
       const { selectedLocation } = store.getState().cart.flyingCart;
       const { items } = store.getState().cart;
 
-      const subCategoriesIndex = items.map((item) => (item.product.productCategories[0].id));
+      const subCategoriesIndex = [];
+
+      items.forEach((item) => {
+        if (!subCategoriesIndex.includes(item.product.productCategories[0].id)) {
+          subCategoriesIndex.push(item.product.productCategories[0].id);
+        }
+      });
 
       axios.get(`http://100.25.202.232/apo-E-pascommerce-back/public/api/place/browse/productcategory/${subCategoriesIndex}/postalcode/${selectedLocation}`, {
         headers: {

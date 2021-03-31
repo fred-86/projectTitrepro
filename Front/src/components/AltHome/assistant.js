@@ -9,6 +9,7 @@ const mapStateToProps = (state) => ({
   token: state.product.token,
   placeCategories: state.cart.cart.placeCategories,
   places: state.altHome.places,
+  mainSwitch: state.home.mainSwitch,
   selectedPlace: state.altHome.selectedPlace,
 });
 

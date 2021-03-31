@@ -10,7 +10,8 @@ const Cart = ({
   selectedProduct,
   setSelectedProduct,
   selectedPlaceCategory,
-  setSelectedPlaceCategory
+  setSelectedPlaceCategory,
+  setHaveFound
 }) => {
   const setCurrentProduct = (event) => {
     setSelectedProduct(parseInt(event.target.value));
@@ -18,17 +19,17 @@ const Cart = ({
 
   const placesByProduct = places.filter((place) => {
     const placeSubCategoriesIndex = place.productCategories.map((productCategory) => (productCategory.id));
-    console.log(placeSubCategoriesIndex);
-    return (placeSubCategoriesIndex.include(selectedProduct));
+
+    return (placeSubCategoriesIndex.includes(selectedProduct));
   });
 
   const placesByCategory = placesByProduct.filter(
     (place) => (place.placeCategory.id === selectedPlaceCategory),
   );
-  console.log(placesByProduct);
 
   useEffect(() => {
     loadPlaceCategories();
+    setHaveFound(false);
   }, []);
 
   return (
@@ -87,9 +88,12 @@ const Cart = ({
                 </ul>
                 <button className="Cart__proposal-choices-tab-content-link">
                   Visiter le site
-                </button>
+                  </button>
               </article>
             ))}
+            {placesByCategory.length === 0
+              && <p>Veuillez nous excuser, nous n'avons trouvé aucune alternative pour ce produit dans cette catégorie.</p>
+            }
           </div>
 
         </div>

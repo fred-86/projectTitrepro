@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 
 // Import local
-import { loadPlaceCategories, setSelectedProduct, setSelectedPlaceCategory } from 'src/store/actions';
+import { loadPlaceCategories, setSelectedProduct, setSelectedPlaceCategory, setHaveFound } from 'src/store/actions';
 import Cart from './index';
 
 const mapStateToProps = (state) => ({
@@ -24,6 +24,9 @@ const mapDispatchToProps = (dispatch) => ({
   setSelectedProduct: (selectedProduct) => {
     const productId = parseInt(selectedProduct);
     dispatch(setSelectedProduct(productId));
+  },
+  setHaveFound: (value) => {
+    dispatch(setHaveFound(value));
   },
 });
 

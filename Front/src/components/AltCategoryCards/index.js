@@ -38,10 +38,11 @@ const AltCategoryCards = ({ places, selectedPlace, setSelectedPlace }) => {
                   </p>
                 </section>
               </div>
+              <hr className="popUpAlt__hr" />
               <div>
                 <section className="Place__comment">
                   <h2 className="popUpAlt__comment-title">Comment</h2>
-                  <input className="popUpAlt__input" placeholder="Votre avis nous intéresse !" />
+                  <textarea type="text" className="popUpAlt__input" placeholder="Votre avis nous intéresse !" />
                   <a className="Place__description-link" href={place.url}>Voir le site</a>
                 </section>
                 <section className="Place__address">
@@ -57,13 +58,12 @@ const AltCategoryCards = ({ places, selectedPlace, setSelectedPlace }) => {
                   <img className="Place__address-map" src="#" alt="map"></img>
                 </section>
               </div>
-              <hr className="popUpAlt__hr" />
-
             </div>
           </label>
         </React.Fragment>
-      ))}
-    </section>
+      ))
+      }
+    </section >
   );
 };
 
