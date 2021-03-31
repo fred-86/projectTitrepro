@@ -13,12 +13,12 @@ const Footer = () => (
     </p>
     <ul className="Footer__links">
       <li>
-        <Link to="/apropos">
+        <Link to="/a-propos">
           A propos
         </Link>
       </li>
       <li>
-        <Link to="/mentionslegales">
+        <Link to="/mentions-legales">
           Mentions légales
         </Link>
       </li>

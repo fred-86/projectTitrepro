@@ -2,10 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+// Import local
+import { generateLink } from '../../Utils';
+
 const Carrousel = ({ category, products, categoryPosition }) => {
   const [position, setPosition] = useState(0);
   const [picturesDisplayed, setPicturesDisplayed] = useState(0);
   const { name } = category;
+  const categoryLink = generateLink(category.name);
 
   const updateCarrousel = () => {
     const { matches } = window.matchMedia('(max-width: 1200px');
@@ -51,7 +55,7 @@ const Carrousel = ({ category, products, categoryPosition }) => {
       }}
     >
       <h2 className="Carrousel__title">
-        <Link to={`/${category.name}`}>
+        <Link to={`/${categoryLink}`}>
           {name}
         </Link>
       </h2>

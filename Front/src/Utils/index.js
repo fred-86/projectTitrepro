@@ -10,7 +10,7 @@ export const calculateAmount = (items) => {
 
 export const generateLink = (rawData) => {
 
-  let link = rawData.toLowerCase().replace(/ /g, '-');
+  let link = rawData.toLowerCase().replace(/\//g, '-');
 
   link = link.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 

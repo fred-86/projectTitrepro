@@ -15,6 +15,7 @@ import MentionsLegales from '../MentionsLegales';
 import Apropos from '../Apropos';
 import Footer from '../Footer';
 import PopUp from '../PopUp/assistant';
+import { generateLink } from 'src/Utils';
 
 // == Component
 const App = ({ getToken, token, loadCategory, categories, loadProducts }) => {
@@ -32,10 +33,12 @@ const App = ({ getToken, token, loadCategory, categories, loadProducts }) => {
   const categoryPaths = [];
 
   categories.forEach((category) => {
-    categoryPaths.push(`/${category.name}`);
+    const categoryLink = generateLink(category.name);
+    categoryPaths.push(`/${categoryLink}`);
 
     category.childCategories.forEach((childCategory) => {
-      categoryPaths.push(`/${category.name}/${childCategory.name}`);
+      const childCategoryLink = generateLink(childCategory.name);
+      categoryPaths.push(`/${categoryLink}/${childCategoryLink}`);
     });
   });
 
@@ -57,10 +60,10 @@ const App = ({ getToken, token, loadCategory, categories, loadProducts }) => {
           <Route path="/practical/:category/:id">
             <AltHome />
           </Route>
-          <Route path="/mentionslegales">
+          <Route path="/mentions-legales">
             <MentionsLegales />
           </Route>
-          <Route path="/apropos">
+          <Route path="/a-propos">
             <Apropos />
           </Route>
           <Route exact path="/">

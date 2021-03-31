@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useLocation, NavLink } from 'react-router-dom';
 
 // Import local
+import { generateLink } from 'src/Utils';
 import ProductCard from 'src/components/ProductCard';
 import Loader from '../Loader';
 import CategoryNavBar from '../CategoryNavBar';
@@ -13,7 +14,8 @@ const PageCategory = ({ isCategoriesLoaded, categories, products }) => {
   const pathStructure = pathname.split('/');
   let currentProducts = [];
 
-  const currentCategory = categories.find((category) => (category.name === pathStructure[1]));
+  const currentCategory = categories.find((category) => (generateLink(category.name) === pathStructure[1]));
+  const currentCategoryLink = generateLink(currentCategory.name);
 
   if (pathStructure.length < 3) {
     currentProducts = products.filter((product) => {
@@ -26,9 +28,10 @@ const PageCategory = ({ isCategoriesLoaded, categories, products }) => {
     });
   }
   else {
-    currentProducts = products.filter(
-      (product) => (product.productCategories[0].name === pathStructure[2]),
-    );
+    currentProducts = products.filter((product) => {
+      const producCategory = generateLink(product.productCategories[0].name);
+      return producCategory === pathStructure[2];
+    });
   }
 
   useEffect(() => {
@@ -46,15 +49,16 @@ const PageCategory = ({ isCategoriesLoaded, categories, products }) => {
         <nav className="Pictogram">
           <ul className="Pictogram__sub-list">
             {!isCategoriesLoaded && <Loader />}
-            {isCategoriesLoaded && currentCategory.childCategories.map(
-              (childCategory) => (
+            {isCategoriesLoaded && currentCategory.childCategories.map((childCategory) => {
+              const childCategoryLink = generateLink(childCategory.name);
+              return (
                 <li className="Pictogram__sub Pictogram__sub-1" key={childCategory.id}>
-                  <NavLink to={`/${currentCategory.name}/${childCategory.name}`}>
+                  <NavLink to={`/${currentCategoryLink}/${childCategoryLink}`}>
                     <img src="#" alt="picto" />
                   </NavLink>
                 </li>
-              ),
-            )}
+              );
+            })}
           </ul>
         </nav>
         <div className="ContainerSubCategoriesImg">
