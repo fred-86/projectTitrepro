@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 // Import local
 import Loader from '../Loader';
 import Carrousel from '../Carrousel';
+import PromoCarrousel from '../PromoCarrousel';
 
 const Home = ({
   categories,
@@ -46,6 +47,7 @@ const Home = ({
 
   return (
     <div className="Home">
+      <PromoCarrousel />
       <button
         type="button"
         onClick={() => {

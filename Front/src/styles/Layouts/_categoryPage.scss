@@ -12,19 +12,21 @@
   
 }
 .MainImgCategory {
-  margin:0.5rem;
+  margin-bottom: 3rem;
 
   &__img {
-    max-height:231px; 
-    width:847px;
+    max-height:250px; 
+    width: 90%;
     object-fit: cover;
-    border-radius: 30px;
+    border-radius: 20px;
+
     @include mobile-medium {
       width:100%;
       border-radius: 0px;
     }
   }
 }
+
 .Pictogram {
   &__sub-list {
   display:flex;

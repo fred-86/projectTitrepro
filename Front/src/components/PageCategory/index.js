@@ -9,7 +9,7 @@ import Loader from '../Loader';
 import CategoryNavBar from '../CategoryNavBar';
 import mainImg from '../../assets/temp/vegetables.jpg';
 
-const PageCategory = ({ isCategoriesLoaded, categories, products }) => {
+const PageCategory = ({ isCategoriesLoaded, categories, products, addToCart }) => {
   const { pathname } = useLocation();
   const pathStructure = pathname.split('/');
   let currentProducts = [];
@@ -67,7 +67,7 @@ const PageCategory = ({ isCategoriesLoaded, categories, products }) => {
         </nav>
         <div className="ContainerSubCategoriesImg">
           {currentProducts.length > 0 && currentProducts.map((currentProduct) => (
-            <ProductCard product={currentProduct} key={currentProduct.id} />
+            <ProductCard product={currentProduct} addToCart={addToCart} key={currentProduct.id} />
           ))}
           {currentProducts.length === 0 && <p className="ContainerSubCategoriesImg__empty-message">Veuillez nous excuser, nous ne proposons aucun article dans cette catégorie.</p>}
         </div>

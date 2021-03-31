@@ -19,14 +19,14 @@ const initialState = {
 const cartReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case 'SET_IS_OPENED': {
-      const flyingCart = {
+      const newflyingCart = {
         ...state.flyingCart,
         isOpened: !state.flyingCart.isOpened,
         haveChange: false,
       };
       return {
         ...state,
-        flyingCart: flyingCart,
+        flyingCart: newflyingCart,
       };
     }
 
@@ -111,6 +111,7 @@ const cartReducer = (state = initialState, action = {}) => {
         items: newItems,
       };
     }
+
     case 'SET_AMOUNT': {
       const newFlyingCart = {
         ...state.flyingCart,

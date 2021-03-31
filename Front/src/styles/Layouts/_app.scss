@@ -8,8 +8,10 @@
     margin-top: 120px;
     margin-bottom: 120px;
     
+    //padding-top: 2rem;
+
     // to hack margin collapse
-    padding-top: 2rem;
+    padding-top: 1px;
     padding-bottom: 1px;
 
     @include lg{

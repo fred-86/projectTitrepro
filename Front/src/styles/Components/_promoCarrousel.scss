@@ -1,0 +1,77 @@
+.PromoCarrousel {
+  position: relative;
+  margin-bottom: 3rem;
+  padding: 2.5rem 0;
+
+  &__content {
+    position: relative;
+    z-index: 3;
+    //overflow: hidden;
+    margin: 0 auto;
+    width: 60%;
+    height: 500px;
+    border-radius: 105px 105px 105px 105px / 100%;
+    //display: flex;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,0.3533788515406162) 0%, rgba(150,191,175,0.47942927170868344) 25%, rgba(91,116,103,0.6166841736694677) 50%, rgba(150,191,175,0.4766281512605042) 75%, rgba(255,255,255,0.3757878151260504) 100%);
+
+    &-img {
+      width: 85%;
+      height: 100%;
+      border-radius: 5px;
+      object-fit: cover;
+      transition: all 0.4s;
+    }
+
+    & > div {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      margin-left: -50px;
+      width: 100px;
+      display: flex;
+      justify-content: space-between;
+
+      .PromoCarrousel__content-indicator-label {
+        width: 20px;
+        height: 20px;
+        border: 2px solid rgb(231, 165, 41);
+        border-radius: 50%;
+        display: inline-block;
+        background-color: rgba(32, 87, 57, 0.719);
+      }
+
+      & > input {
+        display: none;
+      }
+    }
+  }
+
+  &:before {
+    content: '';
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 17%;
+    margin-top: -200px;
+    width: 66%;
+    height: 400px;
+    border-radius: 105px 105px 105px 105px / 100%;
+    background: rgb(186,242,216);
+    background: linear-gradient(180deg, rgba(186,242,216,0.22172619047619047) 0%, rgba(130,215,176,0.4150035014005602) 11%, rgba(33,94,73,0.7847514005602241) 30%, rgba(28,56,43,1) 50%, rgba(33,94,73,0.7287289915966386) 70%, rgba(130,215,176,0.40940126050420167) 89%, rgba(186,242,216,0.24413515406162467) 100%);
+  }
+
+  &:after {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 14%;
+    margin-top: -150px;
+    width: 72%;
+    height: 300px;
+    border-radius: 105px 105px 105px 105px / 100%;
+    background: rgb(186,242,216);
+    background: linear-gradient(180deg, rgba(186,242,216,0.22172619047619047) 0%, rgba(130,215,176,0.4150035014005602) 11%, rgba(33,94,73,0.7847514005602241) 30%, rgba(28,56,43,1) 50%, rgba(33,94,73,0.7287289915966386) 70%, rgba(130,215,176,0.40940126050420167) 89%, rgba(186,242,216,0.24413515406162467) 100%);
+  }
+}
