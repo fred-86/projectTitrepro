@@ -35,7 +35,18 @@ const cartMiddleware = (store) => (next) => (action) => {
         }
       });
 
-      axios.get(`http://100.25.202.232/apo-E-pascommerce-back/public/api/place/browse/productcategory/${subCategoriesIndex}/postalcode/${selectedLocation}`, {
+      let formatUrl;
+
+      subCategoriesIndex.forEach((subCategoryIndex, index) => {
+        if (index === 0) {
+          formatUrl = `ids[]=${subCategoryIndex}`;
+        }
+        else {
+          formatUrl += `&ids[]=${subCategoryIndex}`;
+        }
+      });
+
+      axios.get(`http://100.25.202.232/apo-E-pascommerce-back/public/api/place/browse/productcategory/postalcode/${selectedLocation}?${formatUrl}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         }
