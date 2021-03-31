@@ -103,6 +103,12 @@
         border-left: none;
         border-bottom: 1px solid $nav-separator;
       }
+
+      .navBar__subList {
+        position: relative;
+        top: initial;
+        left: initial;
+      }
     }
   }
 }

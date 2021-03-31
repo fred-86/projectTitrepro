@@ -23,8 +23,10 @@ const App = ({ getToken, token, loadCategory, categories, loadProducts }) => {
   }, []);
 
   useEffect(() => {
-    loadCategory();
-    loadProducts();
+    if (token !== '') {
+      loadCategory();
+      loadProducts();
+    }
   }, [token]);
 
   const categoryPaths = [];

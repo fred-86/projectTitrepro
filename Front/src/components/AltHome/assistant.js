@@ -20,7 +20,9 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(loadPlaces());
   },
   setSelectedPlace: (event) => {
-    dispatch(setSelectedPlace(parseInt(event.target.value)));
+    const selectedPlace = [parseInt(event.target.value), event.target.nextElementSibling.offsetLeft, event.target.nextElementSibling.offsetTop]
+
+    dispatch(setSelectedPlace(selectedPlace));
   },
 });
 

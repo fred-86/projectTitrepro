@@ -6,14 +6,17 @@ import { useParams } from 'react-router';
 import AltCategoryNavBar from '../AltCategoryNavBar';
 import AltCategoryCards from '../AltCategoryCards';
 import bannerImg from '../../assets/temp/forest.jpg';
+import PopUpAlt from '../PopUpAlt';
 
 const AltHome = ({ token, loadPlaceCategories, placeCategories, loadPlaces, places, selectedPlace, setSelectedPlace }) => {
   const { id } = useParams();
   const placesByCategory = parseInt(id) === 0 ? places : places.filter((place) => (place.placeCategory.id === parseInt(id)));
 
   useEffect(() => {
-    loadPlaceCategories();
-    loadPlaces();
+    if (token !== '') {
+      loadPlaceCategories();
+      loadPlaces();
+    }
   }, [token]);
 
   return (

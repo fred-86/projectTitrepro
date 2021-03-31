@@ -1,5 +1,5 @@
 // Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
 // Import local
@@ -7,6 +7,7 @@ import ePakoLogo from 'src/assets/images/ePaKo.svg';
 import cart from 'src/assets/images/shopping-cart.svg';
 import FlyingCart from '../FlyingCart/assistant';
 import NavBar from '../NavBar';
+import NavBarSmall from '../NavBarSmall';
 
 // Component
 const Header = ({ setIsOpened, categories, categoryPaths }) => {
@@ -36,6 +37,7 @@ const Header = ({ setIsOpened, categories, categoryPaths }) => {
         <FlyingCart />
       </header>
       {!isCategoryPage && <NavBar categories={navCategories} />}
+      {!isCategoryPage && <NavBarSmall categories={navCategories} />}
     </>
   );
 };

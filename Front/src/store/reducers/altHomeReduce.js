@@ -1,6 +1,6 @@
 const initialState = {
   places: [],
-  selectedPlace: 0,
+  selectedPlace: [0, 0, 0],
 };
 
 const altHomeReducer = (state = initialState, action = {}) => {

@@ -32,7 +32,7 @@ const appMiddleware = (store) => (next) => (action) => {
           store.dispatch(setCategories(response.data));
         })
         .catch((err) => {
-          console.log(err.response);
+          //console.log(err.response);
         });
       next(action);
       break;
@@ -47,7 +47,7 @@ const appMiddleware = (store) => (next) => (action) => {
           store.dispatch(setProducts(response.data));
         })
         .catch((err) => {
-          console.log(err);
+          //console.log(err);
         });
       next(action);
       break;
@@ -62,7 +62,7 @@ const appMiddleware = (store) => (next) => (action) => {
           store.dispatch(setPlaceCategories(response.data));
         })
         .catch((err) => {
-          console.log(err);
+          //console.log(err);
         });
       next(action);
       break;

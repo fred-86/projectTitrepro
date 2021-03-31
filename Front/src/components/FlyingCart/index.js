@@ -44,7 +44,9 @@ const FlyingCart = ({
   };
 
   useEffect(() => {
-    loadLocations();
+    if (token !== '') {
+      loadLocations();
+    }
   }, [token]);
 
   useEffect(() => {

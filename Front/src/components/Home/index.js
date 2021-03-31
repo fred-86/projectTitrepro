@@ -11,7 +11,7 @@ const Home = ({
   isCategoriesLoaded,
   isProductLoaded,
   position,
-  setPosition 
+  setPosition
 }) => {
   const lockPosition = () => {
     const currentWidth = window.innerWidth;
@@ -20,8 +20,6 @@ const Home = ({
       setPosition(0);
     }
   };
-
- 
 
   const swipeCategory = (side) => {
     const frameSize = window.innerWidth - 14;
@@ -70,9 +68,11 @@ const Home = ({
           const childCategoriesIndex = category.childCategories.map((childCategorie) => (
             childCategorie.id
           ));
-          const associatedProduct = products.filter((product) => (
-            childCategoriesIndex.includes(product.productCategories[0].id)
-          ));
+          const associatedProduct = products.filter((product) => {
+            return (
+              childCategoriesIndex.includes(product.productCategories[0].id)
+            )
+          });
           return (
             <Carrousel
               category={category}
