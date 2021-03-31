@@ -25,9 +25,11 @@ const cartMiddleware = (store) => (next) => (action) => {
 
     case 'SEND_CART': {
       const { selectedLocation } = store.getState().cart.flyingCart;
-      const { id } = store.getState().cart.items[0].product.productCategories[0];
+      const { items } = store.getState().cart;
 
-      axios.get(`http://100.25.202.232/apo-E-pascommerce-back/public/api/place/browse/productcategory/${id}/postalcode/${selectedLocation}`, {
+      const subCategoriesIndex = items.map((item) => (item.product.productCategories[0].id));
+
+      axios.get(`http://100.25.202.232/apo-E-pascommerce-back/public/api/place/browse/productcategory/${subCategoriesIndex}/postalcode/${selectedLocation}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         }

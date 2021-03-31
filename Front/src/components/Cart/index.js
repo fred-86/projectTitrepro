@@ -16,14 +16,16 @@ const Cart = ({
     setSelectedProduct(parseInt(event.target.value));
   };
 
-  const placesByProduct = places.filter(
-    (place) => (place.productCategories[1].id === selectedProduct),
-  );
+  const placesByProduct = places.filter((place) => {
+    const placeSubCategoriesIndex = place.productCategories.map((productCategory) => (productCategory.id));
+    console.log(placeSubCategoriesIndex);
+    return (placeSubCategoriesIndex.include(selectedProduct));
+  });
 
   const placesByCategory = placesByProduct.filter(
     (place) => (place.placeCategory.id === selectedPlaceCategory),
   );
-console.log(placesByCategory);
+  console.log(placesByProduct);
 
   useEffect(() => {
     loadPlaceCategories();
@@ -70,7 +72,7 @@ console.log(placesByCategory);
           {placeCategories.map((placeCategory, index) => (
             <label htmlFor={`alt-option--${index}`} className="Cart__proposal-choices-option-btn" key={placeCategory.name}>
               {placeCategory.name}
-            <input name="alt-option" id={`alt-option--${index}`} type="radio" value={placeCategory.id} onChange={setSelectedPlaceCategory} />
+              <input name="alt-option" id={`alt-option--${index}`} type="radio" value={placeCategory.id} onChange={setSelectedPlaceCategory} />
             </label>
           ))}
           <div className="Cart__proposal-choices-tab">
@@ -89,7 +91,7 @@ console.log(placesByCategory);
               </article>
             ))}
           </div>
-          
+
         </div>
       </section>
     </div>
