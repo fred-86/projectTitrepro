@@ -1,6 +1,6 @@
 // Import npm
 import React, { useRef } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, Redirect, useParams } from 'react-router-dom';
 
 // Import local
 import Loader from '../Loader';
@@ -42,8 +42,9 @@ const ProductPage = ({
   return (
     <div className="ProductPage">
       {!isProductLoaded && <Loader />}
+      {isProductLoaded && typeof currentProduct === "undefined" && <Redirect to="/404" />}
       <section className="description">
-        {isProductLoaded && (
+        {typeof currentProduct !== "undefined" && (
           <aside className="description__pictures">
             <img src={currentProduct.images[0].url} alt="" className="description__pictures-main" />
             <div className="description__pictures-alt">
@@ -53,7 +54,7 @@ const ProductPage = ({
             </div>
           </aside>
         )}
-        {isProductLoaded && (
+        {typeof currentProduct !== "undefined" && (
           <article className="description__details">
             <div className="breadcrumb">
               <ol className="breadcrumb__list">
