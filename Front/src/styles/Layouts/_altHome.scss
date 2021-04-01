@@ -19,7 +19,7 @@
   }
 
   &-article {
-    background-color: rgba(65, 63, 63, 0.472);
+    background-color: rgba(65, 63, 63, 0.563);
     position:absolute;
     width:40%;
     height:100%;
@@ -42,6 +42,15 @@
     font-weight:700;
     font-size: 3rem;
     margin-bottom:0.9rem;
+    color: white;
+  }
+
+  &-text {
+    font-weight: 600;
+    line-height: 1.2rem;
+    margin-bottom: 0.9rem;
+    color: white;
+    text-align: justify;
   }
  }   
 }

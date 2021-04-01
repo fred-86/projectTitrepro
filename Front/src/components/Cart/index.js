@@ -35,10 +35,10 @@ const Cart = ({
   return (
     <div className="Cart">
       <article className="Cart__intro">
-        <h2 className="Cart__intro-title">concept du site</h2>
+        <h2 className="Cart__intro-title">Quelle(s) circuit(s) pour trouver mon produit ?</h2>
         <p className="Cart__intro-content">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi explicabo magni amet ipsam necessitatibus unde ratione nesciunt rerum doloremque possimus. Adipisci laborum atque incidunt ipsam fuga aspernatur at veritatis maiores.
-          At repellat provident saepe asperiores ea necessitatibus, minus voluptatibus et soluta odit ducimus exercitationem qui tempora est vitae officiis hic id facere obcaecati aut incidunt! Doloremque nobis natus optio itaque.
+          E-pako (contraction d’E-Pas-Commerce),  vous apporte un ensemble d’alternatives au canaux traditionnelles tout en respectant vos besoins de consommation.  
+          Opter pour de la seconde main, du troc, des dons ou soutenir une association proche de chez vous, c’est possible ! A vous de choisir.
         </p>
       </article>
       <section className="Cart__proposal">
