@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 // Import local
-import { images } from 'src/data.js';
+import { images } from './utils';
 
 const PromoCarrousel = () => {
   const [promoIndex, setPromoIndex] = useState(0);
