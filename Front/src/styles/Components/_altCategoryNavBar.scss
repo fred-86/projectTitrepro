@@ -1,0 +1,28 @@
+.AltCategoryNavBar {
+  margin: 2rem 0 3rem;
+  padding: 1rem 2rem;
+  
+  &__list {
+    display:flex;
+    justify-content: space-evenly;
+
+    cursor: pointer;
+
+    &-link {
+      padding:0.4rem 1.5rem;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: $warning-color;
+      }
+
+      &--active {
+        background-color: $warning-color;
+      }
+    }
+  }
+
+  @include mobile-medium {
+    display:none;
+  }
+}

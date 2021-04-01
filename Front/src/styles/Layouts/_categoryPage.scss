@@ -1,0 +1,59 @@
+.CategoryPage { 
+  margin: 0 auto;
+  padding: 0 2rem 2rem;
+  
+  @include large {
+    max-width: 1300px;
+  }
+  @include mobile-medium {
+    max-width: 863px;
+    padding:0;
+  }
+  
+}
+.MainImgCategory {
+  margin-bottom: 3rem;
+
+  &__img {
+    max-height:250px; 
+    width: 90%;
+    object-fit: cover;
+    border-radius: 20px;
+
+    @include mobile-medium {
+      width:100%;
+      border-radius: 0px;
+    }
+  }
+}
+
+.Pictogram {
+  &__sub-list {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin:1rem;
+  
+  }
+  &__sub {
+  cursor:pointer;
+  background-color: #C4C4C4;
+  height:115px; // à enlever quand picto mis en place
+  width:88px; // à enlever quand picto mis en place
+  margin-left:2rem;
+  border-radius: 30px;
+  }
+  @include mobile-medium {
+    display:none;
+  }
+}
+.ContainerSubCategoriesImg {
+  display:flex;
+  flex-wrap:wrap;
+  align-content:center;
+  justify-content: center;
+
+  &__empty-message {
+    margin-top: 2rem;
+  }
+}

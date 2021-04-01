@@ -1,0 +1,157 @@
+.Header {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(167, 175, 177);
+  padding: 1rem 2rem;
+  background: rgb(203,225,235);
+  background: linear-gradient(180deg, rgba(203,225,235,0.9724264705882353) 13%, rgba(142,181,190,0.9444152661064426) 52%, rgba(99,140,154,0.9416141456582633) 94%, rgba(159,185,195,1) 98%);
+
+  &__logo {
+    margin-right: 2rem;
+    width: 150px;
+
+    @include xs {
+      width: 100px;
+    }
+  }
+
+  &__switch {
+    position: relative;
+    margin-right: 1rem;
+    width: 90px;
+    height: 40px;
+    box-shadow: 0 2px 2px rgba(65, 65, 65, 0.719), 0 -4px 6px rgba(36, 36, 36, 0.37);
+    border-radius: 20px;
+
+    &-checkbox {
+      width: 0;
+      height: 0;
+      opacity: 0;
+
+      &:hover + .Header__switch-slider {
+        background-color: lighten($tertiary-color, 10%);
+      } 
+
+      &:checked + .Header__switch-slider {
+        background: rgb(101,188,224);
+        background: radial-gradient(circle, rgba(101,188,224,1) 13%, rgba(74,180,205,1) 30%, rgba(38,136,170,1) 82%, rgba(13,119,159,1) 98%);
+        transition: all 3s;
+      }
+      
+      &:checked + .Header__switch-slider:before, &:checked + .Header__switch-slider:after {
+        transform: translateX(49px);
+      }
+      
+      @include xs {
+        &:checked + .Header__switch-slider:before, &:checked + .Header__switch-slider:after {
+          transform: translateX(55px);
+        }
+      }
+    }
+
+    &-slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 2px inset rgb(174, 189, 190);
+      border-radius: 20px;
+      background: rgb(114,224,101);
+      background: radial-gradient(circle, rgba(114,224,101,1) 13%, rgba(78,205,74,1) 43%, rgba(38,170,45,1) 71%, rgba(31,133,17,1) 91%);
+      transition: all 3.4s;
+    }
+    
+    &-slider:before {
+      content: "";
+      position: absolute;
+      left: 1px;
+      top: 50%;
+      width: 36px;
+      height: 36px;
+      margin-top: -18px;
+      border: 2px solid rgb(204, 216, 211);
+      border-radius: 50%;
+      background: rgb(214,212,180);
+      background: radial-gradient(circle, rgb(252, 252, 251) 15%, rgb(88, 117, 117) 22%, rgb(140, 196, 193) 36%, rgb(85, 130, 141) 41%);
+      transition: 0.4s;
+    }
+
+    &-slider:after {
+      content: "";
+      position: absolute;
+      left: 1px;
+      top: 50%;
+      width: 36px;
+      height: 36px;
+      margin-top: -18px;
+      border-radius: 50%;
+      background: rgb(146,149,150);
+      background: linear-gradient(148deg, rgba(146,149,150,0.4822303921568627) 33%, rgba(170,170,170,0.6502976190476191) 58%, rgba(207,215,212,0.8211659663865546) 78%);
+      transition: 0.4s;
+    }
+
+    @include xs {
+      height: 35px;
+
+      &-slider:before, &-slider:after {
+        left: 0px;
+        width: 31px;
+        height: 31px;
+        margin-top: -15px;
+      }
+    }
+  }
+
+  &__search {
+    position: absolute;
+    right: 180px;
+    width: 40%;
+    height: 40px;
+    box-shadow: 0 4px 4px rgba(91, 103, 104, 0.664);
+    border-radius: 15px;
+    background-color: rgba(230, 230, 230, 0.438);
+    text-indent: 1rem;
+    font-size: 1.2rem;
+    color: rgb(70, 75, 146);
+
+    @include md {
+      width: 35%;
+    }
+
+    @include sm {
+      display: none;
+    }
+  }
+
+  &__cart-button {
+    position: absolute;
+    right: 60px;
+    width: 60px;
+    height: 40px;
+    box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.877), -4px -3px 2px rgba(255, 255, 255, 0.719);
+    background: rgb(255,246,170);
+    background: linear-gradient(225deg, rgba(255,246,170,0.5942752100840336) 12%, rgba(247,214,92,0.7287289915966386) 40%, rgba(221,178,58,0.8575805322128851) 64%, rgba(250,174,74,0.8687850140056023) 99%);
+    transform: skew(-40deg);
+
+    &-img {
+      margin: 0.2rem 0.5rem;
+      transform: skew(40deg);
+    }
+
+    @include xs {
+      right: 35px;
+      height: 35px;
+
+      &-img {
+        transform: scale(0.9) skew(40deg);
+      }
+    }
+  }
+}

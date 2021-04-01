@@ -1,0 +1,114 @@
+.navBar{
+  z-index: 7;
+  position: absolute;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  background-color: $background-nav;
+
+  &__list{
+    display: flex;
+    justify-content: center;
+    
+    .navLink{
+      width: 236px;
+      height: 48px;
+      position: relative;
+
+      padding: 1rem 1.3rem;
+      border-left: $nav-separator solid 1px;
+
+      color: $color-nav;
+      font-size: 1rem;
+      font-weight: 700;
+
+      &:hover { 
+        color: $color-nav-hover;
+      } 
+    }
+
+    .navLink:nth-child(1){
+      border-left: none;
+    }
+
+    
+    // -- SUBLIST SETTINGS -- //
+    .navBar__subList{
+      z-index: 7;
+      position: absolute;
+      top: 48px;
+      left: -2000px;
+      width: inherit;
+      background-color: $background-nav-light;
+
+      .navBar__subLink{
+        width: inherit;
+        box-sizing: content-box;
+        border-right: 1px solid $background-nav-light;
+        border-top: solid 0.15px $submenu-separator;
+        padding: 1rem 0;
+        color: $color-nav;
+
+        &:hover { 
+          color: $color-nav-hover;
+        }
+      }
+
+      .navBar__subLink:nth-child(1){
+        border-top: none;
+      }
+    }
+
+
+    // -- SUBLINK HOVER SETTINGS -- //
+    .navLink--0:hover .navBar__subList--0{
+       left: 0;
+    }
+  
+    .navLink--1:hover .navBar__subList--1{
+       left: -1px;
+    }
+   
+    .navLink--2:hover .navBar__subList--2{
+      left: -1px;
+    }
+   
+    .navLink--3:hover .navBar__subList--3{
+      left: -1px;
+    }
+    
+    .navLink--4:hover .navBar__subList--4{
+      left: -1px;
+    }
+  }
+
+  @include lg {
+    &__list{
+      .navLink{
+        width: 195px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  @include md {
+    display: none;
+    
+    &__list{
+      flex-direction: column;
+      align-items: center;
+
+      .navLink{
+        width: 100%;
+        border-left: none;
+        border-bottom: 1px solid $nav-separator;
+      }
+
+      .navBar__subList {
+        position: relative;
+        top: initial;
+        left: initial;
+      }
+    }
+  }
+}
