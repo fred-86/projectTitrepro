@@ -6,29 +6,50 @@
   &__content {
     position: relative;
     z-index: 3;
-    //overflow: hidden;
+    overflow: hidden;
     margin: 0 auto;
     width: 60%;
     height: 500px;
     border-radius: 105px 105px 105px 105px / 100%;
-    //display: flex;
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,0.3533788515406162) 0%, rgba(150,191,175,0.47942927170868344) 25%, rgba(91,116,103,0.6166841736694677) 50%, rgba(150,191,175,0.4766281512605042) 75%, rgba(255,255,255,0.3757878151260504) 100%);
 
     &-img {
-      width: 85%;
+      position: absolute;
+      width: 84%;
       height: 100%;
       border-radius: 5px;
       object-fit: cover;
-      transition: all 0.4s;
+      
+
+      &-displayed {
+        z-index: 3;
+        top: 0;
+        left: 8%;
+        transition: left 0.8s;
+      }
+
+      &-incoming {
+        z-index: 4;
+        top: 0;
+        left: 100%;
+      }
+
+      &-waiting {
+        z-index: 2;
+        top: 100%;
+        left: 8%;
+        transition: top 0.1s 0.8s;
+      }
     }
 
     & > div {
+      z-index: 5;
       position: absolute;
       bottom: 20px;
       left: 50%;
-      margin-left: -50px;
-      width: 100px;
+      margin-left: -90px;
+      width: 180px;
       display: flex;
       justify-content: space-between;
 
@@ -39,9 +60,15 @@
         border-radius: 50%;
         display: inline-block;
         background-color: rgba(32, 87, 57, 0.719);
+        transition: transform 0.6s;
+
+        &-active {
+          border: 3px solid rgb(231, 164, 41);
+          transform: scale(1.7);
+        }
       }
 
-      & > input {
+      & > div > input {
         display: none;
       }
     }

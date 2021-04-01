@@ -6,6 +6,11 @@ import { images } from 'src/data.js';
 
 const PromoCarrousel = () => {
   const [promoIndex, setPromoIndex] = useState(0);
+  const positions = [
+    "displayed",
+    "incoming",
+    "waiting"
+  ];
 
   const setPosition = (event) => {
     setPromoIndex(parseInt(event.target.value));
@@ -14,7 +19,7 @@ const PromoCarrousel = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       promoIndex === images.length - 1 ? setPromoIndex(0) : setPromoIndex(promoIndex + 1);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(timer);
   });
@@ -22,14 +27,35 @@ const PromoCarrousel = () => {
   return (
     <section className="PromoCarrousel">
       <div className="PromoCarrousel__content">
-        <img src={images[promoIndex].image} alt="promo" className="PromoCarrousel__content-img" />
+        {images.map((image, index) => {
+          let position;
+
+          if (index === promoIndex) {
+            position = `PromoCarrousel__content-img-${positions[0]}`;
+          }
+          else if (index === promoIndex + 1) {
+            position = `PromoCarrousel__content-img-${positions[1]}`;
+          }
+          else {
+            position = `PromoCarrousel__content-img-${positions[2]}`;
+          }
+
+          return (
+            <img src={image.image} alt="promo" className={`PromoCarrousel__content-img ${position}`} key={index} />
+          );
+        })}
+
         <div>
-          <label htmlFor="PromoCarrousel__content-indicator-1" className="PromoCarrousel__content-indicator-label" />
-          <input type="radio" id="PromoCarrousel__content-indicator-1" name="indicator" value="0" onChange={setPosition} />
-          <label htmlFor="PromoCarrousel__content-indicator-2" className="PromoCarrousel__content-indicator-label" />
-          <input type="radio" id="PromoCarrousel__content-indicator-2" name="indicator" value="1" onChange={setPosition} />
-          <label htmlFor="PromoCarrousel__content-indicator-3" className="PromoCarrousel__content-indicator-label" />
-          <input type="radio" id="PromoCarrousel__content-indicator-3" name="indicator" value="2" onChange={setPosition} />
+          {images.map((image, index) => {
+            const indicator = index === promoIndex ? "active" : "waitin";
+
+            return (
+              <div key={index}>
+                <label htmlFor={`PromoCarrousel__content-indicator-${index}`} className={`PromoCarrousel__content-indicator-label PromoCarrousel__content-indicator-label-${indicator}`} />
+                <input type="radio" id={`PromoCarrousel__content-indicator-${index}`} name="indicator" value={index} onChange={setPosition} />
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
