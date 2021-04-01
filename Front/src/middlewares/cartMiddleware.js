@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // Import local
-import { setLocations, setHaveFound, setCartPlaces } from '../store/actions';
+import { setLocations, setHaveFound, setCartPlaces, showPopUp } from '../store/actions';
 
 const cartMiddleware = (store) => (next) => (action) => {
   const { token } = store.getState().product;
@@ -56,7 +56,15 @@ const cartMiddleware = (store) => (next) => (action) => {
           store.dispatch(setCartPlaces(response.data));
         })
         .catch((err) => {
-          console.log(err.response);
+          const { error, status } = err.response.data;
+
+          if (status === 404) {
+            store.dispatch(setHaveFound(true));
+            store.dispatch(showPopUp([error]));
+          }
+          else {
+            console.log(err.response);
+          }
         });
       next(action);
       break;
