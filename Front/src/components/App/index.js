@@ -9,6 +9,7 @@ import Cart from '../Cart/assistant';
 import Page404 from '../404';
 import Home from '../Home/assistant';
 import AltHome from '../AltHome/assistant';
+import AltPageMobile from '../AltPageMobile/assistant';
 import PageCategory from '../PageCategory/assistant';
 import ProductPage from '../ProductPage/assistant';
 import MentionsLegales from '../MentionsLegales';
@@ -57,8 +58,11 @@ const App = ({ getToken, token, loadCategory, categories, loadProducts }) => {
           <Route path="/cart">
             <Cart />
           </Route>
-          <Route path="/practical/:category/:id">
+          <Route path="/practical/category/:id">
             <AltHome />
+          </Route>
+          <Route path="/practical/place/:id">
+            <AltPageMobile />
           </Route>
           <Route path="/mentions-legales">
             <MentionsLegales />

@@ -1,12 +1,11 @@
 // Import npm
 import React, { useEffect } from 'react';
-import { Redirect, useParams } from 'react-router';
+import { useParams } from 'react-router';
 
 // Import local
 import AltCategoryNavBar from '../AltCategoryNavBar';
 import AltCategoryCards from '../AltCategoryCards';
 import bannerImg from '../../assets/temp/forest.jpg';
-import PopUpAlt from '../PopUpAlt';
 
 const AltHome = ({ token, loadPlaceCategories, placeCategories, loadPlaces, places, selectedPlace, setSelectedPlace, mainSwitch }) => {
   const { id } = useParams();
@@ -36,7 +35,6 @@ const AltHome = ({ token, loadPlaceCategories, placeCategories, loadPlaces, plac
         <AltCategoryNavBar placeCategories={placeCategories} />
         <AltCategoryCards places={placesByCategory} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace} />
       </section>
-      {!mainSwitch && <Redirect to="/" />}
     </React.Fragment>
   );
 };
