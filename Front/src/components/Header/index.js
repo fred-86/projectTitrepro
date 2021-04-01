@@ -30,7 +30,7 @@ const Header = ({ mainSwitch, setMainSwitch, setIsOpened, categories, categoryPa
   let homePath = "/";
 
   if (isAltHome) {
-    homePath = "/practical/home/0";
+    homePath = "/practical/category/0";
   }
 
   return (
@@ -51,7 +51,8 @@ const Header = ({ mainSwitch, setMainSwitch, setIsOpened, categories, categoryPa
       </header>
       {!isNavHide && <NavBar categories={navCategories} />}
       {!isNavHide && <NavBarSmall categories={navCategories} />}
-      {mainSwitch && <Redirect to="/practical/home/0" />}
+      {mainSwitch && <Redirect to="/practical/category/0" />}
+      {!mainSwitch && <Redirect to="/" />}
     </>
   );
 };
