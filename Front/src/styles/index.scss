@@ -3,30 +3,30 @@
 @import './Utils/vars';
 @import './Utils/mixins';
 @import './Components/popUp';
+@import './Components/nav';
+@import './Components/navBarSmall';
 @import './Components/promoCarrousel';
 @import './Components/item';
 @import './Components/flyingCart';
 @import './Components/carrousel';
 @import './Components/categoryNavBar';
 @import './Components/productCard';
-@import './Components/nav';
-@import './Components/navBarSmall';
 @import './Components/loader';
 @import './Components/altCategoryCards';
 @import './Components/altCategoryNavBar';
 @import './Layouts/app';
 @import './Layouts/header';
+@import './Layouts/cart';
+@import './Layouts/footer';
 @import './Layouts/home';
+@import './Layouts/categoryPage';
+@import './Layouts/productPage';
 @import './Layouts/altHome';
 @import './Layouts/altPageMobile';
-@import './Layouts/productPage';
-@import './Layouts/cart';
 @import './Layouts/aPropos';
 @import './Layouts/mentionsLegales';
 @import './Layouts/page404';
-@import './Layouts/footer';
-@import './Layouts/categoryPage';
-@import './Layouts/popUpAlt';
+//@import './Layouts/popUpAlt';
 
 body {
   font-family: 'Poppins', sans-serif;

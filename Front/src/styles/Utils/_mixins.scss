@@ -1,4 +1,8 @@
-
+@mixin xxs {
+  @media (max-width: 300px) {
+      @content;
+  }
+}
 
 @mixin medium {
   @media (min-width:657px) {
