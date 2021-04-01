@@ -32,9 +32,7 @@ const AltCategoryCards = ({ places, selectedPlace, setSelectedPlace }) => {
                   <h2 className="Place__description-category-title">{place.placeCategory.name}</h2>
                   <h2 className="Place__description-name">{place.name}</h2>
                   <p className="Place__description-resume">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae dolores, sapiente, ipsam consequatur corporis atque minima id porro iusto quasi in repudiandae, vitae est dicta earum dolore? Amet, quidem recusandae?
-                    Omnis suscipit tempore ea esse, deserunt laudantium beatae aperiam, ipsa, nulla quod quidem dignissimos delectus odit animi. Modi veniam architecto quis labore facere maxime voluptates excepturi perferendis ratione deleniti. Ut?
-                    Blanditiis sequi, quia, excepturi deleniti, quo facere distinctio earum error deserunt iure illum dolore rem quod voluptatum. Ipsam, repudiandae!
+                    {place.content}
                   </p>
                 </section>
               </div>
