@@ -40,6 +40,12 @@ const PromoCarrousel = () => {
             position = `PromoCarrousel__content-img-${positions[2]}`;
           }
 
+          if (promoIndex === images.length - 1) {
+            if (index === 0) {
+              position = `PromoCarrousel__content-img-${positions[1]}`;
+            }
+          }
+
           return (
             <img src={image.image} alt="promo" className={`PromoCarrousel__content-img ${position}`} key={index} />
           );

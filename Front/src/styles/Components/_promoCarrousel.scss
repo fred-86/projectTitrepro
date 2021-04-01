@@ -19,7 +19,7 @@
       width: 84%;
       height: 100%;
       border-radius: 5px;
-      object-fit: cover;
+      object-fit: contain;
       
 
       &-displayed {
@@ -39,7 +39,7 @@
         z-index: 2;
         top: 100%;
         left: 8%;
-        transition: top 0.1s 0.8s;
+        transition: top 0s 0.8s;
       }
     }
 
@@ -100,5 +100,30 @@
     border-radius: 105px 105px 105px 105px / 100%;
     background: rgb(186,242,216);
     background: linear-gradient(180deg, rgba(186,242,216,0.22172619047619047) 0%, rgba(130,215,176,0.4150035014005602) 11%, rgba(33,94,73,0.7847514005602241) 30%, rgba(28,56,43,1) 50%, rgba(33,94,73,0.7287289915966386) 70%, rgba(130,215,176,0.40940126050420167) 89%, rgba(186,242,216,0.24413515406162467) 100%);
+  }
+
+  @include sm {
+    &__content {
+      width: 78%;
+      height: 400px;
+
+      & > div {
+        bottom: 60px;
+      }
+    }
+
+    &:before {
+      left: 8%;
+      margin-top: -150px;
+      width: 84%;
+      height: 300px;
+    }
+
+    &:after {
+      left: 5%;
+      margin-top: -100px;
+      width: 90%;
+      height: 200px;
+    }
   }
 }
