@@ -61,8 +61,6 @@ const Apropos = () => {
           <h3 className="Apropos__article-role">Scrum Master</h3>
           <h4 className="Apropos__article-teamate">Alexandre Maspimby</h4>
         </div>
-   
-          
       </aside>
     </section>
   );
