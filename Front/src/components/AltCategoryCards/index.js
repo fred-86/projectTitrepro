@@ -23,7 +23,7 @@ const AltCategoryCards = ({ places }) => (
         </div>
       </Link>
     ))}
-  </section >
+  </section>
 );
 
 export default AltCategoryCards

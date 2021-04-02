@@ -1,10 +1,13 @@
 .Home {
-  //margin-top: 3rem;
   margin-bottom: 3rem;
 
-  & > button {
+  &__swipe-btn {
     width: 50px;
     display: none;
+
+    &:nth-of-type(1) {
+      margin-right: 200px;
+    }
   }
 
   &__content {
@@ -15,9 +18,11 @@
 
   @include md {
 
-    & > button {
+    &__swipe-btn {
+      position: relative;
       margin-bottom: 3rem;
       display: inline-block;
+      @include swipe-btn;   
     }
 
     &__content {
