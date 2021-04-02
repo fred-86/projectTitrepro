@@ -20,7 +20,7 @@ const PageCategory = ({ isCategoriesLoaded, categories, products, addToCart }) =
   navCategories.pop();
 
   const currentCategory = categories.find((category) => (generateLink(category.name) === pathStructure[1]));
-  console.log('currentCategory:', currentCategory);
+
   if (typeof currentCategory !== "undefined") {
     currentCategoryLink = generateLink(currentCategory.name);
 

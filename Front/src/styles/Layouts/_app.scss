@@ -7,27 +7,9 @@
   &__main-content {
     margin-top: 120px;
     margin-bottom: 120px;
-    
-    //padding-top: 2rem;
 
     // to hack margin collapse
     padding-top: 1px;
     padding-bottom: 1px;
-
-    @include lg{
-      padding-top: 1rem;
-    }
-  
-    @include md{
-      padding-top: 0;
-    }
-  
-    @include sm{
-      padding-top: 0;
-    }
-  
-    @include xs{
-      padding-top: 0;
-    }
   }
 }

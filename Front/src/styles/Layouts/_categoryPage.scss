@@ -1,29 +1,20 @@
 .CategoryPage { 
-  margin: 0 auto;
-  padding: 0 2rem 2rem;
+  position: relative;
+  padding: 0 0 2rem;
   
-  @include lg {
-    max-width: 1300px;
+  @include md {
+    padding: 0;
+    padding-bottom: 2rem;
   }
-  @include mobile-medium {
-    max-width: 863px;
-    padding:0;
-  }
-  
 }
+
 .MainImgCategory {
   margin-bottom: 3rem;
 
   &__img {
     max-height:250px; 
-    width: 90%;
+    width: 100%;
     object-fit: cover;
-    border-radius: 20px;
-
-    @include mobile-medium {
-      width:100%;
-      border-radius: 0px;
-    }
   }
 }
 
@@ -43,9 +34,9 @@
   margin-left:2rem;
   border-radius: 30px;
   }
-  @include mobile-medium {
-    display:none;
-  }
+  // @include mobile-medium {
+  //   display:none;
+  // }
 }
 .ContainerSubCategoriesImg {
   display:flex;

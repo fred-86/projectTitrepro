@@ -54,6 +54,7 @@
 }
 
 @mixin swipe-btn {
+  user-select: none;
   width: 50px;
   height: 60px;
   border: 2px solid rgb(116, 122, 129);
