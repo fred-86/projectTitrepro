@@ -18,21 +18,52 @@ const Apropos = () => {
         <p className="Apropos__article-content">
         Avec <strong>E-PaKo</strong> (contraction d’<strong>E</strong>-<strong>Pa</strong>s-<strong>Co</strong>mmerce),  <strong>nous vous proposons un ensemble de solutions pour changer certaines habitudes de consommation</strong> héritées de notre quotidien ultra connecté. 
         La vente en ligne a pris un essor encore plus important avec la pandémie, faisant oublier qu’il existe d’autres façons de consommer.
-        <ul>
+        </p>
+        <ul className="Apropos__article-content">
           <li>&#8883; Favoriser une approche éco-responsable</li>
           <li>&#8883; Dépenser “malin” en soignant son budget</li>
           <li>&#8883; Encourager les commerces de proximité</li>
           <li>&#8883; Soutenir les initiatives sociales et solidaires</li>
-        </ul>
-        </p> 
+        </ul> 
         <p className="Apropos__article-content">
         Grâce à nos “vrai-faux” produits, n’achetez pas ! <strong>Découvrez plutôt de nouvelles alternatives proches de chez vous</strong> ou n’hésitez pas à nous faire part de vos trouvailles.<br/>
         <strong>Participez à votre échelle à un cet élan collectif</strong> et continuez à faire bouger les lignes avec nous.
         </p>    
         <p className="Apropos__article-content">
         L’équipe E-PaKo
-        </p>               
+        <br/>
+        </p>
+        <h1 className="Apropos__article-title">L'équipe :</h1>               
       </article>
+      <aside className="Apropos__article-aside">
+        <div className="Apropos__article-card">
+          <img className="Apropos__article-img" src="https://picsum.photos/180"/>
+          <h3 className="Apropos__article-role">Product Owner</h3>
+          <h4 className="Apropos__article-teamate">Julien Cambien</h4>
+        </div>
+        <div className="Apropos__article-card">
+          <img className="Apropos__article-img" src="https://picsum.photos/180"/>
+          <h3 className="Apropos__article-role">Lead Dev Back</h3>
+          <h4 className="Apropos__article-teamate">Frédéric Lescure</h4>
+        </div>
+        <div className="Apropos__article-card">
+          <img className="Apropos__article-img" src="https://picsum.photos/180"/>
+          <h3 className="Apropos__article-role">Lead Dev Front</h3>
+          <h4 className="Apropos__article-teamate">Jonathan Fuzeau</h4>
+        </div>
+        <div className="Apropos__article-card">
+          <img className="Apropos__article-img" src="https://picsum.photos/180"/>
+          <h3 className="Apropos__article-role">UX designer</h3>
+          <h4 className="Apropos__article-teamate">Laurent Dashwdood</h4>
+        </div>
+        <div className="Apropos__article-card">
+          <img className="Apropos__article-img" src="https://picsum.photos/180"/>
+          <h3 className="Apropos__article-role">Scrum Master</h3>
+          <h4 className="Apropos__article-teamate">Alexandre Maspimby</h4>
+        </div>
+   
+          
+      </aside>
     </section>
   );
 };
