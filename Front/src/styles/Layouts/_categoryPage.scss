@@ -2,7 +2,7 @@
   margin: 0 auto;
   padding: 0 2rem 2rem;
   
-  @include large {
+  @include lg {
     max-width: 1300px;
   }
   @include mobile-medium {
