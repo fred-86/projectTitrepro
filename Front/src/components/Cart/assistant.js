@@ -22,8 +22,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(setSelectedPlaceCategory(categoryIndex));
   },
   setSelectedProduct: (selectedProduct) => {
-    const productId = parseInt(selectedProduct);
-    dispatch(setSelectedProduct(productId));
+    dispatch(setSelectedProduct(selectedProduct));
   },
   setHaveFound: (value) => {
     dispatch(setHaveFound(value));

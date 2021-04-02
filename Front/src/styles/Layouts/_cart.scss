@@ -1,10 +1,8 @@
 .Cart {
-  // display: flex;
-  // justify-content: center;
   text-align: left;
 
   &__intro {
-    margin: 1.5rem auto;
+    margin: 0 auto 1.5rem;
     width: 50%;
     padding: 1rem 2rem;
     
@@ -26,6 +24,7 @@
   &__proposal {
     display: flex;
     min-height: 400px;
+    max-height: 700px;
 
     &-list {
       width: 30%;
@@ -49,13 +48,23 @@
         position: relative;
         margin-bottom: 3rem;
         width: 200px;
-        min-height: 170px;
+        min-height: 200px;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.849);
         border-radius: 5px;
-        padding: 0.5rem 0 0 0.5rem;
         background-size: cover;
         background-position: center;
         text-align: left;
+
+        & > span {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 48px;
+          font-weight: bold;
+          padding:0.5rem;
+          background-color: rgba(0, 0, 0, 0.507);
+          color: rgb(219, 219, 219);
+        }
 
         &:after {
           content: '';
@@ -64,7 +73,6 @@
           left: -10px;
           width: 0px;
           height: 0px;
-          //border: 2px solid rgb(181, 209, 196);
           border-radius: 5px;
         }
       }
@@ -75,9 +83,9 @@
         &:checked + .Cart__proposal-list-label {
           &:after {
             width: 220px;
-            height: 190px;
+            height: 220px;
             border: 2px solid rgb(181, 209, 196);
-            transition: width 0.2s, heigth 0.4s;
+            transition: height 0.5s 0.2s, width 0.2s;  
           }
           
         }
@@ -94,6 +102,14 @@
         color: $color-nav;
       }
       
+      & input {
+        display: none;
+
+        &:checked + label {
+          color: red;
+        }
+      }
+
       &-option-btn {
         border: 1px solid rgb(134, 134, 134);
         border-bottom: none;
@@ -102,18 +118,16 @@
         background-color: $color-nav;
       }
 
-      & input {
-        display: none;
-      }
-
       &-tab {
         margin-bottom: 3rem;
+        width: fit-content;
         min-height: 250px;
-        box-shadow: 4px 4px 6px rgba(75, 72, 72, 0.726);
+        box-shadow: 4px 4px 6px rgba(43, 42, 42, 0.568);
+        border-left: 1px solid rgb(134, 134, 134);
         border-radius: 10px;
         padding: 2rem 1rem 1rem;
-        background-color: $color-nav;
-        border-left: 1px solid rgb(134, 134, 134);
+        background: rgb(88,121,138);
+        background: linear-gradient(180deg, rgba(88,121,138,1) 0%, rgba(124,153,171,1) 15%, rgba(199,227,246,1) 38%, rgba(124,153,171,1) 85%, rgba(88,121,138,1) 100%);
 
         &-content {
           &-name {
@@ -136,9 +150,13 @@
           
           &-link {
             clear: both;
+            margin-top: 0.5rem;
             margin-left: 1rem;
+            display: inline-block;
             padding: 0.5rem 1rem;
+            border: 2px solid darken($warning-color, 20%);
             border-radius: 5px;
+            background-color: $warning-color;
             font-size: 1rem;
           }
         }

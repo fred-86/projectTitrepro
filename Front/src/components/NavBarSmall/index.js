@@ -26,7 +26,7 @@ const NavBarSmall = ({ categories }) => (
             </NavLink>
             <label htmlFor={`navLink__toggle-${index}`} className="navLink__toggle-label navLink__toggle-label--1"></label>
             <label htmlFor={`navLink__toggle-${index}`} className="navLink__toggle-label navLink__toggle-label--2"></label>
-            <input className="navLink__toggle" id={`navLink__toggle-${index}`} type="checkbox" />
+            <input className="navLink__toggle" id={`navLink__toggle-${index}`} name="navLink__toggle-input" type="radio" />
             <ul className={`NavBarSmall__subList NavBarSmall__subList--${index}`}>
               {category.childCategories.map((childCategory) => {
                 const childCategoryLink = generateLink(childCategory.name);
