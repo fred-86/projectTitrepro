@@ -12,12 +12,14 @@ const ProductCard = ({ product, addToCart }) => {
   };
 
   return (
-    <Link className="ProductCard" to={`/product/${product.id}`}>
-      <img className="ProductCard__img" src={product.images[0].url} alt={product.name} />
-      <h2 className="ProductCard__title">{product.name}</h2>
-      <p className="ProductCard__price">{product.price} &#8364;</p>
+    <article className="ProductCard">
+      <Link className="ProductCard__link" to={`/product/${product.id}`}>
+        <img className="ProductCard__link-img" src={product.images[0].url} alt={product.name} />
+        <h2 className="ProductCard__link-title">{product.name}</h2>
+        <p className="ProductCard__link-price">{product.price} &#8364;</p>
+      </Link>
       <button type="button" className="ProductCard__btn" onClick={getUserChoice}>+</button>
-    </Link>
+    </article>
   );
 };
 

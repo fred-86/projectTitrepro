@@ -66,10 +66,9 @@
         transition: all 0.4s;
 
         & > img {
-          //width: 100%;
+          width: 100%;
           height: 100%;
-          //object-fit: fill;
-          background-position: right;
+          object-fit: cover;
         }
 
         &:not(:nth-last-of-type(1)) {

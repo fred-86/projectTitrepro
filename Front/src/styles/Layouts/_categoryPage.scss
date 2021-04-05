@@ -19,25 +19,37 @@
 }
 
 .Pictogram {
-  &__sub-list {
+  &__list {
   display:flex;
   align-items: center;
   justify-content: center;
-  margin:1rem;
   
+    &-item {
+      margin-bottom: 4rem;
+      border-radius: 20px;
+      background-color: #C4C4C4;
+    
+      &-link {
+        border-bottom: 1px solid transparent;
+
+        &-img {
+          width: 90px;
+          height: 90px;
+          padding: 0.5rem;
+        }
+        
+        &--active {
+          border-bottom: 2px solid $warning-color;
+        }
+      }
+
+      &:not(:nth-of-type(1)) {
+        margin-left:2rem;
+      }
+    }
   }
-  &__sub {
-  cursor:pointer;
-  background-color: #C4C4C4;
-  height:115px; // à enlever quand picto mis en place
-  width:88px; // à enlever quand picto mis en place
-  margin-left:2rem;
-  border-radius: 30px;
-  }
-  // @include mobile-medium {
-  //   display:none;
-  // }
 }
+
 .ContainerSubCategoriesImg {
   display:flex;
   flex-wrap:wrap;
