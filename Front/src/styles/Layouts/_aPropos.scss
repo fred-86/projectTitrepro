@@ -40,37 +40,37 @@
         line-height: 2rem;
         padding-left: 3rem;
       }
-
     }
-    &-aside{
+  }
+
+  &__aside {
       display: flex;
       flex-wrap: wrap;
-      flex-direction: flex-start;
       width: 50%;
-    }
+    
     &-card {
       box-shadow: $secondary-color 6px 6px 6px;
-      //border: black 1px solid;
       border-radius: 10px;
       padding-bottom: 1rem;
       margin: 2rem;
-    }
-    &-img {
-      border-radius: 10px 10px 0 0;
 
-    }
-    &-role {
-      margin-top: 0.5rem;
-      font-size: 1rem;
-      font-weight: 700;
-      color: $background-nav;
-    }
-    &-teamate {
-      margin-top: 0.5rem;
-      font-size: 0.8rem;
-      color: $secondary-color;
-    }
+      &-img {
+        border-radius: 10px 10px 0 0;
+      }
 
+      &-role {
+        margin-top: 0.5rem;
+        font-size: 1rem;
+        font-weight: 700;
+        color: $background-nav;
+      }
+
+      &-teamate {
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+        color: $secondary-color;
+      }
+    }
   }
 
   &__article:not(:nth-last-of-type(1)) {
@@ -82,6 +82,9 @@
   @include lg {
     .Apropos {
       &__article{
+        width: 75%;
+      }
+      &__aside {
         width: 75%;
       }
     }
@@ -105,6 +108,10 @@
           font-size: 0.9rem ;
         }
       }
+
+      &__aside {
+        width: 88%;
+      }
     }
   }
 
@@ -112,10 +119,11 @@
     .Apropos {
       &__article{
         width: 95%!important;
+      }
 
+      &__aside{
+        width: 95%;
       }
     }
   }
-
-
 }
