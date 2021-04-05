@@ -119,9 +119,9 @@
       }
 
       &-tab {
-        margin-bottom: 3rem;
         width: fit-content;
         min-height: 250px;
+        height: 320px;
         box-shadow: 4px 4px 6px rgba(43, 42, 42, 0.568);
         border-left: 1px solid rgb(134, 134, 134);
         border-radius: 10px;
@@ -130,29 +130,31 @@
         background: linear-gradient(180deg, rgba(88,121,138,1) 0%, rgba(124,153,171,1) 15%, rgba(199,227,246,1) 38%, rgba(124,153,171,1) 85%, rgba(88,121,138,1) 100%);
 
         &-content {
+          height: 100%;
+          overflow-y: scroll;
+
           &-name {
             margin-bottom: 1rem;
             width: fit-content;
             border-bottom: 1px solid rgb(158, 158, 158);
-            padding: 0 0 0.5rem;
+            padding: 0 0.5rem 0.5rem 0;
             font-size: 2.5rem;
             font-weight: 300;
           }
 
-          &-logo {
-            float: left;
+          & > section {
+            display: flex;
+            // TODO check bug margin
+            margin-bottom: 2rem;
+
+            .Cart__proposal-choices-tab-content-adress {
+              margin-top: 0.5rem;
+              margin-left: 1.5rem;
+              font-size: 0.9rem;
+            }
           }
 
-          &-adress {
-            margin-left: 6rem;
-            font-size: 0.9rem;
-          }
-          
           &-link {
-            clear: both;
-            margin-top: 0.5rem;
-            margin-left: 1rem;
-            display: inline-block;
             padding: 0.5rem 1rem;
             border: 2px solid darken($warning-color, 20%);
             border-radius: 5px;

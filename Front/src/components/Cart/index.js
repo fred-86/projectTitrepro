@@ -100,15 +100,17 @@ const Cart = ({
             {placesByCategory.map((placeByCategory) => (
               <article className="Cart__proposal-choices-tab-content" key={placeByCategory.name}>
                 <h1 className="Cart__proposal-choices-tab-content-name">{placeByCategory.name}</h1>
-                <img src={placeByCategory.logo} alt={placeByCategory.name} className="Cart__proposal-choices-tab-content-logo" />
-                <ul className="Cart__proposal-choices-tab-content-adress">
-                  <li>{placeByCategory.address}</li>
-                  <li>{placeByCategory.addressComplement}</li>
-                  <li>{`${placeByCategory.city}, ${placeByCategory.department.name}`}</li>
-                </ul>
+                <section>
+                  <img src={placeByCategory.logo} alt={placeByCategory.name} className="Cart__proposal-choices-tab-content-logo" />
+                  <ul className="Cart__proposal-choices-tab-content-adress">
+                    <li>{placeByCategory.address}</li>
+                    <li>{placeByCategory.addressComplement}</li>
+                    <li>{`${placeByCategory.city}, ${placeByCategory.department.name}`}</li>
+                  </ul>
+                </section>
                 <a className="Cart__proposal-choices-tab-content-link" href="#">
                   Visiter le site
-                </a>
+                  </a>
               </article>
             ))}
             {placesByCategory.length === 0

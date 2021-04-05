@@ -69,7 +69,6 @@ const PageCategory = ({ isCategoriesLoaded, categories, products, addToCart }) =
                     <img src={childCategory.pictogram} alt="picto" className="Pictogram__list-item-link-img" />
                     <img src={childCategory.pictogram} alt="picto" className="Pictogram__list-item-link-back" />
                   </NavLink>
-
                 </li>
               );
             })}
