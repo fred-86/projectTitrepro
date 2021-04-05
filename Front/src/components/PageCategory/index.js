@@ -54,7 +54,7 @@ const PageCategory = ({ isCategoriesLoaded, categories, products, addToCart }) =
       {typeof currentCategory !== "undefined" && <section className="CategoryPage">
         <CategoryNavBar categories={navCategories} />
         <div className="MainImgCategory">
-          <img src={mainImg} className="MainImgCategory__img" alt={currentCategory.name} />
+          <img src={currentCategory.pictogram} className="MainImgCategory__img" alt={currentCategory.name} />
         </div>
         <nav className="Pictogram">
           <ul className="Pictogram__list">

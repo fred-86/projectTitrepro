@@ -1,8 +1,9 @@
 .CategoryPage { 
   position: relative;
   padding: 0 0 2rem;
-  
+ 
   @include md {
+    //margin-top: -49px;
     padding: 0;
     padding-bottom: 2rem;
   }
@@ -27,7 +28,9 @@
     &-item {
       margin-bottom: 4rem;
       border-radius: 20px;
-      background-color: #c4c4c486;
+      //background-color: #c4c4c486;
+      background: rgb(118,193,222);
+      background: linear-gradient(220deg, rgba(118,193,222,1) 0%, rgba(89,164,209,1) 28%, rgba(177,223,241,1) 79%, rgba(89,145,179,1) 94%, rgba(68,122,158,1) 100%);
     
       &-link {
         border-bottom: 1px solid transparent;
