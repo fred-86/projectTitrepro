@@ -1,56 +1,72 @@
 .AltHome {
-  margin: 0 auto;
-
-  @include mobile-medium {
-    display:flex;
-    flex-direction: column;
-  }
+  margin-top: -49px;
 
   &__banner {
     width:100%;
     max-height:587px;
     position:relative;
 
-  &-img {
-    max-height: 587px;
-    width:100%;
-    object-fit: cover;
-    
-  }
-
-  &-article {
-    background-color: rgba(65, 63, 63, 0.563);
-    position:absolute;
-    width:40%;
-    height:100%;
-    top:0;
-    right:0;
-    padding:4rem;
-    display:flex;
-    flex-direction: column;
-    text-align: left;
-
-    @include mobile-medium {
-      position:initial;
+    &-img {
+      max-height: 587px;
       width:100%;
-      margin:0;
+      object-fit: cover;  
     }
-    
-  }
 
-  &-title {
-    font-weight:700;
-    font-size: 3rem;
-    margin-bottom:0.9rem;
-    color: white;
-  }
+    &-article {
+      background-color: rgba(65, 63, 63, 0.563);
+      position:absolute;
+      width:40%;
+      height:100%;
+      bottom:0;
+      right:0;
+      padding: 3rem;
+      text-align: left;
 
-  &-text {
-    font-weight: 600;
-    line-height: 1.2rem;
-    margin-bottom: 0.9rem;
-    color: white;
-    text-align: justify;
-  }
- }   
+      @include lg {
+        width: 50%;
+      }
+
+      @include md {
+        width: 100%;
+        padding-right: 300px;
+      }
+
+      @include sm {
+        padding-right: 160px;
+      }
+
+      @include sm {
+        padding: 2rem;
+      }
+    }
+
+    &-title {
+      font-weight:700;
+      font-size: 3rem;
+      margin-bottom:0.9rem;
+      color: white;
+
+      @include xs {
+        font-size: 2rem;
+      }
+    }
+
+    &-text {
+      font-weight: 600;
+      line-height: 1.2rem;
+      margin-bottom: 0.9rem;
+      color: white;
+      text-align: justify;
+
+      @include xs {
+        font-size: 0.9rem;
+      }
+    }
+
+    @include sm {
+      &-img {
+        height: 500px;
+      }
+    }
+  }   
 }

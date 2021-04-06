@@ -50,19 +50,21 @@ const Home = ({
       <PromoCarrousel />
       <button
         type="button"
+        className="Home__swipe-btn Home__swipe-btn--left"
         onClick={() => {
           swipeCategory('left');
         }}
       >
-        left
+        &#171;
       </button>
       <button
         type="button"
+        className="Home__swipe-btn Home__swipe-btn--right"
         onClick={() => {
           swipeCategory('right');
         }}
       >
-        right
+        &#187;
       </button>
       <div className="Home__content">
         {!isCategoriesLoaded && !isProductLoaded && <Loader />}

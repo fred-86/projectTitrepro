@@ -53,15 +53,15 @@
     display: none;
 
     &:checked + .NavBarSmall__list{
-      display: block;
-      max-height: initial;
-      transition: max-height 4s;
+      max-height: 100vh;
+      transition: max-height 1.3s;
     }
   }
 
   &__list{
-    display: none;
+    overflow: hidden;
     max-height: 0;
+    transition: max-height 0.5s;
 
     .navLink{
       position: relative;
@@ -88,9 +88,8 @@
       }
 
       &__toggle:checked + .NavBarSmall__subList {
-        opacity: 1;
-        max-height: initial;
-        transition: max-height 0.4s;
+        max-height: 100vh;
+        transition: max-height 1.2s;
       }
       
       &:hover { 
@@ -100,11 +99,11 @@
 
     // -- SUBLIST SETTINGS -- //
     .NavBarSmall__subList{
-      opacity: 0;
+      overflow: hidden;
       max-height: 0;
       margin-top: 1rem;
       background-color: $background-nav-light;
-      transition: max-height 0.4s;
+      transition: max-height 0.3s ease-out;
 
       .NavBarSmall__subLink{
         border-top: solid 0.15px $submenu-separator;

@@ -17,13 +17,13 @@
       padding-right: 3rem;
       
       &-main {
-        background-size: cover;
+        object-fit: fill;
         width: 450px;
         height: 350px;
         margin-bottom: 1rem;
         border-radius: 10px;
-        cursor: pointer;
-        transition: all 4s;
+        //cursor: pointer;
+        //transition: all 4s;
       }
 
       &-alt {

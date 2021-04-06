@@ -10,8 +10,8 @@ const appMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case 'GET_TOKEN':
       axios.post('http://100.25.202.232/apo-E-pascommerce-back/public/api/login_check', {
-        "username": "admin@admin.com",
-        "password": "admin"
+        "username": "ydfhvd@uifjfn.com",
+        "password": "uhzudhzd:;,78545289"
       })
         .then((response) => {
           store.dispatch(setToken(response.data.token));

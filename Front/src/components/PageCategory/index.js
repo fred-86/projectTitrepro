@@ -20,7 +20,7 @@ const PageCategory = ({ isCategoriesLoaded, categories, products, addToCart }) =
   navCategories.pop();
 
   const currentCategory = categories.find((category) => (generateLink(category.name) === pathStructure[1]));
-  console.log('currentCategory:', currentCategory);
+
   if (typeof currentCategory !== "undefined") {
     currentCategoryLink = generateLink(currentCategory.name);
 
@@ -54,16 +54,20 @@ const PageCategory = ({ isCategoriesLoaded, categories, products, addToCart }) =
       {typeof currentCategory !== "undefined" && <section className="CategoryPage">
         <CategoryNavBar categories={navCategories} />
         <div className="MainImgCategory">
-          <img src={mainImg} className="MainImgCategory__img" alt={currentCategory.name} />
+          <img src={currentCategory.pictogram} className="MainImgCategory__img" alt={currentCategory.name} />
         </div>
         <nav className="Pictogram">
-          <ul className="Pictogram__sub-list">
+          <ul className="Pictogram__list">
             {currentCategory.childCategories.map((childCategory) => {
               const childCategoryLink = generateLink(childCategory.name);
               return (
-                <li className="Pictogram__sub Pictogram__sub-1" key={childCategory.id}>
-                  <NavLink to={`/${currentCategoryLink}/${childCategoryLink}`}>
-                    <img src="#" alt="picto" />
+                <li className="Pictogram__list-item" key={childCategory.id}>
+                  <NavLink
+                    to={`/${currentCategoryLink}/${childCategoryLink}`} className="Pictogram__list-item-link"
+                    activeClassName="Pictogram__list-item-link--active"
+                  >
+                    <img src={childCategory.pictogram} alt="picto" className="Pictogram__list-item-link-img" />
+                    <img src={childCategory.pictogram} alt="picto" className="Pictogram__list-item-link-back" />
                   </NavLink>
                 </li>
               );
@@ -74,7 +78,9 @@ const PageCategory = ({ isCategoriesLoaded, categories, products, addToCart }) =
           {currentProducts.length > 0 && currentProducts.map((currentProduct) => (
             <ProductCard product={currentProduct} addToCart={addToCart} key={currentProduct.id} />
           ))}
-          {currentProducts.length === 0 && <p className="ContainerSubCategoriesImg__empty-message">Veuillez nous excuser, nous ne proposons aucun article dans cette catégorie.</p>}
+          {currentProducts.length === 0 && <p className="ContainerSubCategoriesImg__empty-message">
+            Veuillez nous excuser, nous ne proposons aucun article dans cette catégorie.
+          </p>}
         </div>
       </section>}
     </>
