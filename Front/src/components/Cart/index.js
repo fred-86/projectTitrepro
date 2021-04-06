@@ -85,33 +85,81 @@ const Cart = ({
           })}
         </div>
         <div className="Cart__proposal-choices">
-          <h2 className="Cart__proposal-choices-title">
-            Liste des alternatives
-          </h2>
-          {categoriesByProduct.map((categoryByProduct, index) => (
-            <React.Fragment key={categoryByProduct.name}>
-              <input name="alt-option" id={`alt-option--${index}`} type="radio" value={categoryByProduct.id} onChange={setSelectedPlaceCategory} />
-              <label htmlFor={`alt-option--${index}`} className="Cart__proposal-choices-option-btn">
-                {categoryByProduct.name}
-              </label>
-            </React.Fragment>
-          ))}
+          <div className="Cart__proposal-choices-header">
+            <h2 className="Cart__proposal-choices-header-title">
+              Liste des alternatives
+            </h2>
+            <div className="Cart__proposal-choices-header-options">
+              {categoriesByProduct.map((categoryByProduct, index) => (
+                <React.Fragment key={categoryByProduct.name}>
+                  <input name="alt-option" id={`alt-option--${index}`} type="radio" value={categoryByProduct.id} onChange={setSelectedPlaceCategory} />
+                  <label htmlFor={`alt-option--${index}`} className="Cart__proposal-choices-header-options-btn">
+                    {categoryByProduct.name}
+                  </label>
+                  <input name="alt-option" id={`alt-option--2`} type="radio" value={categoryByProduct.id} onChange={setSelectedPlaceCategory} />
+                  <label htmlFor={`alt-option--2`} className="Cart__proposal-choices-header-options-btn">
+                    {categoryByProduct.name}
+                  </label>
+                  <input name="alt-option" id={`alt-option--3`} type="radio" value={categoryByProduct.id} onChange={setSelectedPlaceCategory} />
+                  <label htmlFor={`alt-option--3`} className="Cart__proposal-choices-header-options-btn">
+                    {categoryByProduct.name}
+                  </label>
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
           <div className="Cart__proposal-choices-tab">
             {placesByCategory.map((placeByCategory) => (
-              <article className="Cart__proposal-choices-tab-content" key={placeByCategory.name}>
-                <h1 className="Cart__proposal-choices-tab-content-name">{placeByCategory.name}</h1>
-                <section>
-                  <img src={placeByCategory.logo} alt={placeByCategory.name} className="Cart__proposal-choices-tab-content-logo" />
-                  <ul className="Cart__proposal-choices-tab-content-adress">
-                    <li>{placeByCategory.address}</li>
-                    <li>{placeByCategory.addressComplement}</li>
-                    <li>{`${placeByCategory.city}, ${placeByCategory.department.name}`}</li>
-                  </ul>
-                </section>
-                <a className="Cart__proposal-choices-tab-content-link" href={placeByCategory.url} target="_blank">
-                  Visiter le site
+              <>
+                <article className="Cart__proposal-choices-tab-content" key={placeByCategory.name}>
+                  <h1 className="Cart__proposal-choices-tab-content-name">{placeByCategory.name}</h1>
+                  <section>
+                    <img src={placeByCategory.logo} alt={placeByCategory.name} className="Cart__proposal-choices-tab-content-logo" />
+                    <ul className="Cart__proposal-choices-tab-content-address">
+                      <li>{placeByCategory.address}</li>
+                      <li>{placeByCategory.addressComplement}</li>
+                      <li>{`${placeByCategory.city}, ${placeByCategory.department.name}`}</li>
+                      <li>
+                        <a className="Cart__proposal-choices-tab-content-address-link" href={placeByCategory.url} target="_blank">
+                          Visiter le site
+                      </a>
+                      </li>
+                    </ul>
+                  </section>
+                </article>
+                <article className="Cart__proposal-choices-tab-content" key={placeByCategory.name}>
+                  <h1 className="Cart__proposal-choices-tab-content-name">{placeByCategory.name}</h1>
+                  <section>
+                    <img src={placeByCategory.logo} alt={placeByCategory.name} className="Cart__proposal-choices-tab-content-logo" />
+                    <ul className="Cart__proposal-choices-tab-content-address">
+                      <li>{placeByCategory.address}</li>
+                      <li>{placeByCategory.addressComplement}</li>
+                      <li>{`${placeByCategory.city}, ${placeByCategory.department.name}`}</li>
+                      <li>
+                        <a className="Cart__proposal-choices-tab-content-address-link" href={placeByCategory.url} target="_blank">
+                          Visiter le site
+                    </a>
+                      </li>
+                    </ul>
+                  </section>
+                </article>
+                <article className="Cart__proposal-choices-tab-content" key={placeByCategory.name}>
+                  <h1 className="Cart__proposal-choices-tab-content-name">{placeByCategory.name}</h1>
+                  <section>
+                    <img src={placeByCategory.logo} alt={placeByCategory.name} className="Cart__proposal-choices-tab-content-logo" />
+                    <ul className="Cart__proposal-choices-tab-content-address">
+                      <li>{placeByCategory.address}</li>
+                      <li>{placeByCategory.addressComplement}</li>
+                      <li>{`${placeByCategory.city}, ${placeByCategory.department.name}`}</li>
+                      <li>
+                        <a className="Cart__proposal-choices-tab-content-address-link" href={placeByCategory.url} target="_blank">
+                          Visiter le site
                   </a>
-              </article>
+                      </li>
+                    </ul>
+                  </section>
+                </article>
+              </>
             ))}
             {placesByCategory.length === 0
               && <p>Veuillez nous excuser, nous n'avons trouvé aucune alternative pour ce produit.</p>
