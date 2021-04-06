@@ -16,7 +16,7 @@ const AltCategoryCards = ({ places }) => (
               {place.name}
             </h2>
             <p className="Place__small-details-location">
-              <span className="Place__small-details-location-post">{place.department.postalcode}, </span>
+              <span className="Place__small-details-location-post">{place.addressComplement}, </span>
               {place.city}
             </p>
           </section>

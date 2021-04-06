@@ -147,6 +147,12 @@
             // TODO check bug margin
             margin-bottom: 2rem;
 
+            .Cart__proposal-choices-tab-content-logo {
+              width: 250px;
+              height: 250px;
+              object-fit: contain;
+            }
+
             .Cart__proposal-choices-tab-content-adress {
               margin-top: 0.5rem;
               margin-left: 1.5rem;

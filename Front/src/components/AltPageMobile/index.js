@@ -50,7 +50,7 @@ const AltPageMobile = ({ token, loadPlaces, places }) => {
           <article className="Alt__adress">
             <h2 className="Alt__address--title">Adresse</h2>
             <p className="Alt__address--text">{currentPlace.address}</p>
-            <p className="Alt__address--text">{`${currentPlace.department.postalcode}, ${currentPlace.city}`}</p>
+            <p className="Alt__address--text">{`${currentPlace.addressComplement}, ${currentPlace.city}`}</p>
           </article>
           <div className="Alt__map">
             <img className="Alt__map--geoloc"></img>
