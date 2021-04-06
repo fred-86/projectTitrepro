@@ -1,5 +1,5 @@
 // Import npm
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 const Cart = ({
   loadPlaceCategories,
@@ -108,7 +108,7 @@ const Cart = ({
                     <li>{`${placeByCategory.city}, ${placeByCategory.department.name}`}</li>
                   </ul>
                 </section>
-                <a className="Cart__proposal-choices-tab-content-link" href="#">
+                <a className="Cart__proposal-choices-tab-content-link" href={placeByCategory.url}>
                   Visiter le site
                   </a>
               </article>

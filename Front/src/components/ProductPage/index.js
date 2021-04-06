@@ -4,6 +4,7 @@ import { Link, Redirect, useParams } from 'react-router-dom';
 
 // Import local
 import Loader from '../Loader';
+import { generateLink } from 'src/Utils';
 
 // Component
 const ProductPage = ({
@@ -19,6 +20,8 @@ const ProductPage = ({
   const currentProduct = products.find((product) => product.id === parseInt(id));
 
   let currentCategory;
+  let productLink;
+  let categoryLink;
 
   if (typeof currentProduct !== 'undefined') {
     categories.forEach((category) => {
@@ -27,6 +30,9 @@ const ProductPage = ({
 
       if (typeof searchedCategory !== 'undefined') {
         currentCategory = category;
+
+        productLink = generateLink(currentProduct.productCategories[0].name);
+        categoryLink = generateLink(currentCategory.name);
       }
     });
   }
@@ -59,12 +65,12 @@ const ProductPage = ({
             <div className="breadcrumb">
               <ol className="breadcrumb__list">
                 <li className="breadcrumb__item">
-                  <Link to={`/${currentCategory.name}`}>
+                  <Link to={`/${categoryLink}`}>
                     {`${currentCategory.name} >`}
                   </Link>
                 </li>
                 <li className="breadcrumb__item">
-                  <Link to={`/${currentCategory.name}/${currentProduct.productCategories[0].name}`}>
+                  <Link to={`/${categoryLink}/${productLink}`}>
                     {`${currentProduct.productCategories[0].name}`}
                   </Link>
                 </li>
