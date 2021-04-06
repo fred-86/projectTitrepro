@@ -9,7 +9,7 @@ const cartMiddleware = (store) => (next) => (action) => {
 
   switch (action.type) {
     case 'LOAD_LOCATIONS':
-      axios.get('http://100.25.202.232/apo-E-pascommerce-back/public/api/department/browse', {
+      axios.get('http://www.epako.studio/apo-E-pascommerce-back/public/api/department/browse', {
         headers: {
           Authorization: `Bearer ${token}`,
         }
@@ -46,7 +46,7 @@ const cartMiddleware = (store) => (next) => (action) => {
         }
       });
 
-      axios.get(`http://100.25.202.232/apo-E-pascommerce-back/public/api/place/browse/productcategory/postalcode/${selectedLocation}?${formatUrl}`, {
+      axios.get(`http://www.epako.studio/apo-E-pascommerce-back/public/api/place/browse/productcategory/postalcode/${selectedLocation}?${formatUrl}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         }
