@@ -24,10 +24,10 @@ const Footer = () => (
       </li>
       <li className="Footer__links-socials">
         <div>
-          <a href="https://facebook.com">
+          <a href="https://facebook.com" target="_blank">
             <img src={facebook} alt="facebook-icon" />
           </a>
-          <a href="https://twitter.com">
+          <a href="https://twitter.com" target="_blank">
             <img src={twitter} alt="twitter-icon" />
           </a>
         </div>

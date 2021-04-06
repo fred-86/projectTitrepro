@@ -108,7 +108,7 @@ const Cart = ({
                     <li>{`${placeByCategory.city}, ${placeByCategory.department.name}`}</li>
                   </ul>
                 </section>
-                <a className="Cart__proposal-choices-tab-content-link" href={placeByCategory.url}>
+                <a className="Cart__proposal-choices-tab-content-link" href={placeByCategory.url} target="_blank">
                   Visiter le site
                   </a>
               </article>
