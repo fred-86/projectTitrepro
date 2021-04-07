@@ -12,6 +12,10 @@ const AltHome = ({ token, loadPlaceCategories, placeCategories, loadPlaces, plac
   const placesByCategory = parseInt(id) === 0 ? places : places.filter((place) => (place.placeCategory.id === parseInt(id)));
 
   useEffect(() => {
+    window.scrollTo(0, 500);
+  }, []);
+
+  useEffect(() => {
     if (token !== '') {
       loadPlaceCategories();
       loadPlaces();

@@ -26,10 +26,8 @@ const placeMiddleware = (store) => (next) => (action) => {
 
       axios.get(`https://api.tomtom.com/search/2/structuredGeocode.json?countryCode=FR&streetNumber=${addressNumber}&streetName=${streetName}&municipality=${formatedCity}&postalCode=${addressComplement}&language=fr-FR&extendedPostalCodesFor=PAD&entityTypeSet=&key=Vk9kuXhAN8yKOewmoBU0ahHhEMAe40Op`)
         .then((response) => {
-          console.log(response.data.results);
           let currentPlace = response.data.results.find((result) => result.type === 'Point Address');
 
-          console.log(currentPlace);
           if (typeof currentPlace === 'undefined') {
             currentPlace = response.data.results.find((result) => result.type === 'Street');
 

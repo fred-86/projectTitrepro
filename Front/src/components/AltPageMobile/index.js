@@ -10,6 +10,10 @@ const AltPageMobile = ({ token, loadPlaces, places, getMap, map }) => {
   const currentPlace = places.find((place) => place.id === parseInt(id));
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (token !== '') {
       loadPlaces();
       getMap(currentPlace);
@@ -25,7 +29,7 @@ const AltPageMobile = ({ token, loadPlaces, places, getMap, map }) => {
         {typeof currentPlace !== 'undefined' && <div className="Alt__wrapper">
           <div className="Alt__returnToggle">
             <Link to="/practical/category/0" className="Alt__returnBtn">
-            &#10554;
+              &#10554;
             </Link>
           </div>
           <h1 className="Alt__title">{currentPlace.name}</h1>
