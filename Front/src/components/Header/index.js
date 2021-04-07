@@ -11,27 +11,44 @@ import NavBarSmall from '../NavBarSmall';
 
 // Component
 const Header = ({ mainSwitch, setMainSwitch, setIsOpened, categories, categoryPaths }) => {
+  const { pathname } = useLocation();
+
   const navCategories = [
     ...categories,
   ];
-
+  // Exclude tendance category from navBar
   navCategories.pop();
 
-  const { pathname } = useLocation();
 
   const forbiddenPaths = [...categoryPaths];
   forbiddenPaths.push("/cart", "/practical");
+
   const isCurrentPath = (path) => pathname.includes(path);
   const isNavHide = forbiddenPaths.some(isCurrentPath);
 
   const isCartPage = pathname === "/cart" ? true : false;
-  const isAltHome = pathname.includes("practical");
 
+  let stillRedirect = true;
+
+  if (pathname === '/a-propos' || pathname === '/mentions-legales') {
+    stillRedirect = false;
+  }
+
+  // Set the path for le Logo link
   let homePath = "/";
+  const isAltHome = pathname.includes("practical");
 
   if (isAltHome) {
     homePath = "/practical/category/0";
   }
+
+  useEffect(() => {
+    if (pathname === '/a-propos' || pathname === '/mentions-legales') {
+      if (mainSwitch === true) {
+        setMainSwitch();
+      }
+    }
+  }, [pathname]);
 
   return (
     <>
@@ -40,7 +57,7 @@ const Header = ({ mainSwitch, setMainSwitch, setIsOpened, categories, categoryPa
           <img src={ePakoLogo} alt="logo-ePako" className="Header__logo" />
         </NavLink>
         <label className="Header__switch" htmlFor="Header__switch-checkbox">
-          <input type="checkbox" className="Header__switch-checkbox" id="Header__switch-checkbox" value={mainSwitch} onChange={setMainSwitch} />
+          <input type="checkbox" className="Header__switch-checkbox" id="Header__switch-checkbox" checked={mainSwitch} onChange={setMainSwitch} />
           <span className="Header__switch-slider" />
         </label>
         <input type="search" className="Header__search" />
@@ -52,7 +69,7 @@ const Header = ({ mainSwitch, setMainSwitch, setIsOpened, categories, categoryPa
       {!isNavHide && <NavBar categories={navCategories} />}
       {!isNavHide && <NavBarSmall categories={navCategories} />}
       {mainSwitch && <Redirect to="/practical/category/0" />}
-      {!mainSwitch && <Redirect to="/" />}
+      {!mainSwitch && stillRedirect && <Redirect to="/" />}
     </>
   );
 };

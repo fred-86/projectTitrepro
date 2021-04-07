@@ -12,10 +12,6 @@ const Cart = ({
   setSelectedPlaceCategory,
   setHaveFound
 }) => {
-  const setCurrentProduct = (event) => {
-    setSelectedProduct(parseInt(event.target.value));
-  };
-
   const placesByProduct = places.filter((place) => {
     const placeSubCategoriesIndex = place.productCategories.map((productCategory) => (productCategory.id));
 
@@ -30,6 +26,10 @@ const Cart = ({
     const relatedCategories = placesByProduct.map((placeByProduct) => (placeByProduct.placeCategory.id));
     return relatedCategories.includes(placeCategory.id);
   });
+
+  const setCurrentProduct = (event) => {
+    setSelectedProduct(parseInt(event.target.value));
+  };
 
   useEffect(() => {
     loadPlaceCategories();
@@ -92,14 +92,29 @@ const Cart = ({
               Liste des alternatives
             </h2>
             <div className="Cart__proposal-choices-header-options">
-              {categoriesByProduct.map((categoryByProduct, index) => (
-                <React.Fragment key={categoryByProduct.name}>
-                  <input name="alt-option" id={`alt-option--${index}`} type="radio" value={categoryByProduct.id} onChange={setSelectedPlaceCategory} />
-                  <label htmlFor={`alt-option--${index}`} className="Cart__proposal-choices-header-options-btn">
-                    {categoryByProduct.name}
-                  </label>
-                </React.Fragment>
-              ))}
+              {categoriesByProduct.map((categoryByProduct, index) => {
+                let checked = '';
+
+                if (index === 0) {
+                  checked = 'checked';
+                }
+
+                return (
+                  <React.Fragment key={categoryByProduct.name}>
+                    <input
+                      name="alt-option"
+                      id={`alt-option--${index}`}
+                      type="radio"
+                      defaultChecked={checked}
+                      value={categoryByProduct.id}
+                      onChange={setSelectedPlaceCategory}
+                    />
+                    <label htmlFor={`alt-option--${index}`} className="Cart__proposal-choices-header-options-btn">
+                      {categoryByProduct.name}
+                    </label>
+                  </React.Fragment>
+                );
+              })}
             </div>
           </div>
           <div className="Cart__proposal-choices-tab">
@@ -110,8 +125,7 @@ const Cart = ({
                   <img src={placeByCategory.logo} alt={placeByCategory.name} className="Cart__proposal-choices-tab-content-logo" />
                   <ul className="Cart__proposal-choices-tab-content-address">
                     <li>{placeByCategory.address}</li>
-                    <li>{placeByCategory.addressComplement}</li>
-                    <li>{`${placeByCategory.city}, ${placeByCategory.department.name}`}</li>
+                    <li>{`${placeByCategory.addressComplement}, ${placeByCategory.city}`}</li>
                     <li>
                       <a className="Cart__proposal-choices-tab-content-address-link" href={placeByCategory.url} target="_blank">
                         Visiter le site

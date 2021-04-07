@@ -1,6 +1,5 @@
 const initialState = {
   places: [],
-  selectedPlace: [0, 0, 0],
   map: '',
 };
 
@@ -10,13 +9,7 @@ const altHomeReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         places: action.places,
-      }
-
-    case 'SET_SELECTED_PLACE':
-      return {
-        ...state,
-        selectedPlace: action.place,
-      }
+      };
 
     case 'SET_MAP':
       return {

@@ -27,9 +27,8 @@ export const setProducts = (products) => ({
   products: products,
 });
 
-export const setMainSwitch = (value) => ({
+export const setMainSwitch = () => ({
   type: 'SET_MAIN_SWITCH',
-  value: value,
 });
 
 // ==========
@@ -52,11 +51,6 @@ export const loadPlaces = () => ({
 export const setPlaces = (places) => ({
   type: 'SET_PLACES',
   places: places,
-});
-
-export const setSelectedPlace = (place) => ({
-  type: 'SET_SELECTED_PLACE',
-  place: place,
 });
 
 export const getMap = (place) => ({
@@ -123,6 +117,11 @@ export const sendCart = () => ({
 export const setHaveFound = (value) => ({
   type: 'SET_HAVE_FOUND',
   value: value,
+});
+
+export const setPathToFollow = (path) => ({
+  type: 'PATH_TO_FOLLOW',
+  path: path,
 });
 
 // ==========

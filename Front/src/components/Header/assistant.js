@@ -15,8 +15,8 @@ const mapDispatchToProps = (dispatch) => ({
   setIsOpened: () => {
     dispatch(setIsOpened());
   },
-  setMainSwitch: (value) => {
-    dispatch(setMainSwitch(value));
+  setMainSwitch: () => {
+    dispatch(setMainSwitch());
   },
 });
 
