@@ -26,23 +26,41 @@ const placeMiddleware = (store) => (next) => (action) => {
 
       axios.get(`https://api.tomtom.com/search/2/structuredGeocode.json?countryCode=FR&streetNumber=${addressNumber}&streetName=${streetName}&municipality=${formatedCity}&postalCode=${addressComplement}&language=fr-FR&extendedPostalCodesFor=PAD&entityTypeSet=&key=Vk9kuXhAN8yKOewmoBU0ahHhEMAe40Op`)
         .then((response) => {
-          const currentPlace = response.data.results.find((result) => result.type === 'Point Address');
-          console.log('currentPlace:', currentPlace);
+          console.log(response.data.results);
+          let currentPlace = response.data.results.find((result) => result.type === 'Point Address');
+
+          console.log(currentPlace);
+          if (typeof currentPlace === 'undefined') {
+            currentPlace = response.data.results.find((result) => result.type === 'Street');
+
+            if (typeof currentPlace === 'undefined') {
+              currentPlace = response.data.results.find((result) => result.type === 'Address Range');
+
+              return currentPlace;
+            }
+
+            return currentPlace;
+          }
           return currentPlace;
         })
         .catch((err) => {
           console.log(err);
         })
         .then((currentPlace) => {
-          const { lon, lat } = currentPlace.position;
+          if (typeof currentPlace !== 'undefined') {
+            const { lon, lat } = currentPlace.position;
 
-          axios.get(`https://api.tomtom.com/map/1/staticimage?layer=basic&style=main&format=png&zoom=15&center=${lon}%2C%20${lat}&width=512&height=512&key=Vk9kuXhAN8yKOewmoBU0ahHhEMAe40Op`)
-            .then((response) => {
-              store.dispatch(setMap(response.config.url));
-            })
-            .catch((err) => {
-              console.log(err);
-            });
+            axios.get(`https://api.tomtom.com/map/1/staticimage?layer=basic&style=main&format=png&zoom=15&center=${lon}%2C%20${lat}&width=512&height=512&key=Vk9kuXhAN8yKOewmoBU0ahHhEMAe40Op`)
+              .then((response) => {
+                store.dispatch(setMap(response.config.url));
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+          }
+          else {
+            store.dispatch(setMap("Erreur lors du chargement de la carte."));
+          }
         });
       next(action);
       break;
