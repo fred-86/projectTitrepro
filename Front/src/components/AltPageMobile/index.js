@@ -5,13 +5,14 @@ import { Link, useParams } from 'react-router-dom';
 // Import local
 import bannerAltCardImg from '../../assets/temp/imageAltDons.jpg';
 
-const AltPageMobile = ({ token, loadPlaces, places }) => {
+const AltPageMobile = ({ token, loadPlaces, places, getMap, map }) => {
   const { id } = useParams();
   const currentPlace = places.find((place) => place.id === parseInt(id));
 
   useEffect(() => {
     if (token !== '') {
       loadPlaces();
+      getMap(currentPlace);
     }
   }, [token]);
 
@@ -33,7 +34,7 @@ const AltPageMobile = ({ token, loadPlaces, places }) => {
             <p className="Alt__address--text">{`${currentPlace.addressComplement}, ${currentPlace.city}`}</p>
           </article>
           <div className="Alt__map">
-            <img className="Alt__map--geoloc"></img>
+            <img className="Alt__map--geoloc" src={map}></img>
             <a className="Alt__map--btn" href={currentPlace.url} target="_blank">Visiter le site</a>
           </div>
           <div className="Alt__comment">

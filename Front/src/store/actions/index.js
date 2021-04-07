@@ -59,6 +59,16 @@ export const setSelectedPlace = (place) => ({
   place: place,
 });
 
+export const getMap = (place) => ({
+  type: 'GET_MAP',
+  place: place,
+});
+
+export const setMap = (map) => ({
+  type: 'SET_MAP',
+  map: map,
+});
+
 // ==========
 // Product page
 export const setPictureToMain = (newPictures) => ({
