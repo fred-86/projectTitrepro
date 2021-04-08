@@ -133,16 +133,19 @@
         }
 
         &--btn {
-          border:none;
-          background-color: $background-nav-light;
-          color: $color-nav;
-          border-radius: 5px;
-          height:35px;
+          margin:0.5rem 0 0.5rem 0;
           width:120px;
+          height:35px;
+          border:none;
+          border-radius: 5px;
+          display: inline-block;
+          padding: 0.5rem 1rem;
+          background-color: $background-nav-light;
           text-align: center;
           font-size: 1rem;
           font-weight:700;
-          margin:0.5rem 0 0.5rem 0;
+          color: $color-nav;
+
           &:hover{
             color: $color-nav-hover;
           }

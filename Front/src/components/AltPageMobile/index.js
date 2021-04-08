@@ -45,7 +45,7 @@ const AltPageMobile = ({ token, loadPlaces, places, getMap, map }) => {
           </article>
           <div className="Alt__map">
             <img className="Alt__map--geoloc" src={map}></img>
-            <button className="Alt__map--btn" href={currentPlace.url} target="_blank">Voir le site</button>
+            <a className="Alt__map--btn" href={currentPlace.url} target="_blank">Voir le site</a>
           </div>
           <div className="Alt__comment">
             <h2 className="Alt__comment--title">Commentaire</h2>
