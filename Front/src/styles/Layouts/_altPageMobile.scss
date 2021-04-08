@@ -9,10 +9,34 @@
         //position:relative;
       }
 
-      &__bannerImg {
+      &__bannerQuote {
         max-height:500px;
         width:100%;
+        padding: 3rem 5rem;
         object-fit: cover;
+        background-color: $background-nav-light;
+        text-align: center;
+        border-bottom: 3px solid $nav-separator;
+        &-text{
+          font-size: 1.2rem;
+          line-height: 1.6rem;
+          color:#fff;
+          @include xs {
+            font-size: 0.8rem;
+          }
+        }
+        &-signature{
+          padding-top: 1rem;
+          font-size: 0.8rem;
+          color:#fff;
+          @include xs {
+            font-size: 0.7rem;
+          }
+        }
+        @include xs {
+          text-align: justify;
+          padding: 2rem 2.5rem;
+        }
       }
 
       &__returnToggle{
