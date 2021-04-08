@@ -20,7 +20,7 @@
       text-align: left;
       font-size: 1.5rem;
       font-weight: 500;
-      color: #999999;
+      color: $background-mediumgrey;
     }
 
     &-content {
@@ -49,7 +49,7 @@
       width: 50%;
     
     &-card {
-      box-shadow: $secondary-color 6px 6px 6px;
+      box-shadow: $background-mediumgreyRGB 6px 6px 6px;
       border-radius: 10px;
       padding-bottom: 1rem;
       margin: 2rem;
@@ -68,7 +68,7 @@
       &-teamate {
         margin-top: 0.5rem;
         font-size: 0.8rem;
-        color: $secondary-color;
+        color: $background-mediumgrey;
       }
     }
   }

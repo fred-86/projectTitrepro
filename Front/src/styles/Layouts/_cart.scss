@@ -33,22 +33,11 @@
   }
 
   &__proposal {
-    //display: flex;
-    //min-height: 459px;
 
     &-list {
-      // z-index: 2;
-      // position: relative;
       margin-bottom: 3rem;
-      //width: 30%;
-      //border-right: 2px solid rgb(129, 143, 136);
-      // display: flex;
-      // flex-direction: column;
-      // align-items: center;
-      //padding: 1rem;
-      //background-color: $nav-separator;
       text-align: center;
-      //overflow-y: scroll;
+ 
 
       &-title {
         margin: 0 0 2rem 2rem;
@@ -57,7 +46,7 @@
         background-color: $nav-separator;
         font-size: 1.5rem;
         font-weight: 700;
-        color: $warning-color;
+        color: $color-nav-hover;
       }
 
       &-content {
@@ -218,7 +207,20 @@
             width: 32px;
             height: 32px;
             background: rgb(255,255,255);
-            background: linear-gradient(135deg, rgba(255,255,255,0.8211659663865546) 0%, rgba(206,230,236,0.7987570028011204) 29%, rgba(115,163,175,1) 46%, rgba(210,233,241,1) 49%, rgba(115,163,175,1) 58%, rgba(207,233,240,1) 61%, rgba(115,163,175,1) 69%, rgba(207,233,240,1) 71%, rgba(115,163,175,1) 79%, rgba(219,246,255,1) 81%, rgba(66,90,105,1) 100%);
+            background: linear-gradient(
+              135deg, 
+              rgba(255,255,255,0.8211659663865546) 0%, 
+              rgba(206,230,236,0.7987570028011204) 29%, 
+              rgba(115,163,175,1) 46%, 
+              rgba(210,233,241,1) 49%, 
+              rgba(115,163,175,1) 58%, 
+              rgba(207,233,240,1) 61%, 
+              rgba(115,163,175,1) 69%, 
+              rgba(207,233,240,1) 71%, 
+              rgba(115,163,175,1) 79%, 
+              rgba(219,246,255,1) 81%, 
+              rgba(66,90,105,1) 100%
+            );
             clip-path: polygon(100% 0, 100% 100%, 0 100%);
           }
         }
@@ -263,11 +265,11 @@
 
               &-link {
                 margin-top: 1rem;
-                border: 2px solid darken($warning-color, 20%);
+                border: 2px solid darken($color-nav-hover, 20%);
                 border-radius: 5px;
                 display: inline-block;
                 padding: 0.5rem 1rem;
-                background-color: $warning-color;
+                background-color: $color-nav-hover;
                 font-size: 1rem;
               }
             }

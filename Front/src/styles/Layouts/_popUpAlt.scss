@@ -1,14 +1,12 @@
 .popUpAlt{
   z-index: 2;
   position: absolute;
-  //top: 50%;
-  //left: 50%;
 
     width: 720px;
     height: auto;
     text-align: left;
     padding: 3rem;
-    background-color: $popUpAlt-backg;  
+    background-color: $color-nav;  
   
 
   &__button{
@@ -38,8 +36,6 @@
 
   &__content {
     display: flex;
-    //flex-direction: column;
-
 
     .description{
       width: 60%;
@@ -55,7 +51,7 @@
         height: auto;
         display: inline-block;
         background-color: $nav-separator;
-        color: $warning-color;
+        color: $color-nav-hover;
         border-radius: 5px;
         border: none;
         margin: 1rem 0;

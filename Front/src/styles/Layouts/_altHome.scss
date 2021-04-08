@@ -44,7 +44,7 @@
       font-weight:700;
       font-size: 3rem;
       margin-bottom:0.9rem;
-      color: white;
+      color: $color-white;
 
       @include xs {
         font-size: 2rem;
@@ -55,7 +55,7 @@
       font-weight: 600;
       line-height: 1.2rem;
       margin-bottom: 0.9rem;
-      color: white;
+      color: $color-white;
       text-align: justify;
 
       @include xs {

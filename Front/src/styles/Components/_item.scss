@@ -20,15 +20,15 @@
     height: 30px;
     border-radius: 50%;
     border-color: leightblue;
-    background: rgb(255,255,255);
+    background: $color-white;
     background: radial-gradient(circle, rgba(255,255,255,0.711922268907563) 0%, rgba(116,116,116,0.5270483193277311) 40%, rgba(116,116,116,0.5158438375350141) 60%, rgba(255,255,255,0.7175245098039216) 100%);
-    color: white;
+    color: $color-white;
     text-shadow: 1px 1px black;
     
     &:hover {
       background: rgb(252,94,94);
       background: radial-gradient(circle, rgba(252,94,94,1) 22%, rgba(221,44,44,1) 71%, rgba(201,27,27,1) 84%, rgba(195,4,4,1) 100%);
-    color: white;
+    color: $color-white;
     }
 
     &:focus {
@@ -71,7 +71,7 @@
     font-size: 2rem;
     background: rgb(111,122,125);
     background: linear-gradient(180deg, rgba(111,122,125,1) 0%, rgba(185,193,195,1) 35%, rgba(220,223,224,1) 46%, rgba(209,215,217,1) 54%, rgba(185,193,195,1) 64%, rgba(111,122,125,1) 100%);
-    color: white;
+    color: $color-white;
     text-shadow: 1px 1px black;
     
     &.Item__btn--less {
