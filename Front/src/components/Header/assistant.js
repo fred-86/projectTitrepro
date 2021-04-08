@@ -11,6 +11,7 @@ const mapStateToProps = (state) => ({
   items: state.cart.items,
   haveChange: state.cart.flyingCart.haveChange,
   categories: state.product.categories,
+  switchVisibility: state.home.switchVisibility,
 });
 
 const mapDispatchToProps = (dispatch) => ({

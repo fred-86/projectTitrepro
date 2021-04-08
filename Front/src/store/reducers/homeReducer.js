@@ -1,6 +1,7 @@
 const initialState = {
   position: 0,
   mainSwitch: false,
+  switchVisibility: false,
 };
 
 const homeReducer = (state = initialState, action = {}) => {
@@ -15,6 +16,12 @@ const homeReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         mainSwitch: !state.mainSwitch,
+      };
+
+    case 'SET_SWITCH_VISIBILITY':
+      return {
+        ...state,
+        switchVisibility: action.value,
       };
 
     default:

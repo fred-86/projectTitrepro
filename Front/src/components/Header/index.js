@@ -11,7 +11,7 @@ import NavBar from '../NavBar';
 import NavBarSmall from '../NavBarSmall';
 
 // Component
-const Header = ({ mainSwitch, setMainSwitch, setIsOpened, items, haveChange, categories, categoryPaths }) => {
+const Header = ({ switchVisibility, mainSwitch, setMainSwitch, setIsOpened, items, haveChange, categories, categoryPaths }) => {
   const { pathname } = useLocation();
   const cartClass = classNames('Header__cart-button-notification', { 'Header__cart-button-notification--updated': haveChange });
 
@@ -58,10 +58,10 @@ const Header = ({ mainSwitch, setMainSwitch, setIsOpened, items, haveChange, cat
         <NavLink to={homePath}>
           <img src={ePakoLogo} alt="logo-ePako" className="Header__logo" />
         </NavLink>
-        <label className="Header__switch" htmlFor="Header__switch-checkbox">
+        {switchVisibility && <label className="Header__switch" htmlFor="Header__switch-checkbox">
           <input type="checkbox" className="Header__switch-checkbox" id="Header__switch-checkbox" checked={mainSwitch} onChange={setMainSwitch} />
           <span className="Header__switch-slider" />
-        </label>
+        </label>}
         <input type="search" className="Header__search" />
         {!isCartPage && <button type="button" className="Header__cart-button" onClick={setIsOpened}>
           <img src={cart} alt="cart" className="Header__cart-button-img" />

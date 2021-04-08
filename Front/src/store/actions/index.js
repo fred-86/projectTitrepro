@@ -31,6 +31,11 @@ export const setMainSwitch = () => ({
   type: 'SET_MAIN_SWITCH',
 });
 
+export const setSwitchVisibility = (value) => ({
+  type: 'SET_SWITCH_VISIBILITY',
+  value: value,
+});
+
 // ==========
 // Home page
 export const setPosition = (position) => ({
