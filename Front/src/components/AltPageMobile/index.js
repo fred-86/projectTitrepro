@@ -23,7 +23,9 @@ const AltPageMobile = ({ token, loadPlaces, places, getMap, map }) => {
   return (
     <section className="AltPageMobile">
       <div className="Alt__banner">
-        <img className="Alt__bannerImg" src={bannerAltCardImg} alt="Dons" />
+        <div className="Alt__bannerQuote"  alt="Dons">
+          <p className="Alt__bannerQuote-text">sdqsdsqdsd</p>
+        </div>  
       </div>
       <div className="Alt__presentation">
         {typeof currentPlace !== 'undefined' && <div className="Alt__wrapper">

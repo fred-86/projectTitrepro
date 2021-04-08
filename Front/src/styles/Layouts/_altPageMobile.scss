@@ -9,10 +9,17 @@
         //position:relative;
       }
 
-      &__bannerImg {
+      &__bannerQuote {
         max-height:500px;
         width:100%;
         object-fit: cover;
+        background-color: $nav-separator;
+        &-text{
+          font-size: 5rem;
+          font-weight: 700;
+          color: #FFDA85;
+          padding: 2rem;
+        }
       }
 
       &__returnToggle{
