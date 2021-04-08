@@ -37,17 +37,14 @@
           padding: 2rem 2.5rem;
         }
       }
-
-      &__returnToggle{
+      
+      &__returnBtn {
+        margin-bottom: 1rem;
         width: 80px;
         height: 30px;
+        display: inline-block;
         background: $background-nav;
         text-align: center;
-        justify-content: center;
-        margin-bottom: 1rem;
-      }
-      &__returnBtn {
-        text-align: left;
         font-size: 2rem;
         font-weight: 700;
         color: $color-nav-hover;

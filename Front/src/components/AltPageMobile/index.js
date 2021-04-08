@@ -2,9 +2,6 @@
 import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
-// Import local
-import bannerAltCardImg from '../../assets/temp/imageAltDons.jpg';
-
 const AltPageMobile = ({ token, loadPlaces, places, getMap, map }) => {
   const { id } = useParams();
   const currentPlace = places.find((place) => place.id === parseInt(id));
@@ -23,24 +20,22 @@ const AltPageMobile = ({ token, loadPlaces, places, getMap, map }) => {
   return (
     <section className="AltPageMobile">
       <div className="Alt__banner">
-        <div className="Alt__bannerQuote"  alt="Dons">
+        <div className="Alt__bannerQuote" alt="Dons">
           <p className="Alt__bannerQuote-text">
-            “Le problème, ce n’est pas le fait qu’on aille dans le mur ou pas. On va dans le mur !<br/>
+            “Le problème, ce n’est pas le fait qu’on aille dans le mur ou pas. On va dans le mur !<br />
             Le problème, c’est à quelle vitesse on y va, à 50 km/h ou à 5 km/h.”
           </p>
           <p className="Alt__bannerQuote-signature">
-            Jean-Marc Jancovici<br/>
+            Jean-Marc Jancovici<br />
             Associé fondateur de Carbone 4
           </p>
-        </div>  
+        </div>
       </div>
       <div className="Alt__presentation">
         {typeof currentPlace !== 'undefined' && <div className="Alt__wrapper">
-          <div className="Alt__returnToggle">
-            <Link to="/practical/category/0" className="Alt__returnBtn">
-              &#10554;
-            </Link>
-          </div>
+          <Link to="/practical/category/0" className="Alt__returnBtn">
+            &#10554;
+          </Link>
           <h1 className="Alt__title">{currentPlace.name}</h1>
           <p className="Alt__description">{currentPlace.content}</p>
           <article className="Alt__adress">
