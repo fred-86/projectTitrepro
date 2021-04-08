@@ -56,4 +56,5 @@ const AltPageMobile = ({ token, loadPlaces, places, getMap, map }) => {
     </section>
   );
 };
+
 export default AltPageMobile;
