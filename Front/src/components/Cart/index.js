@@ -31,6 +31,10 @@ const Cart = ({
     setSelectedProduct(parseInt(event.target.value));
   };
 
+  const setCurrentPlaceCategory = (event) => {
+    setSelectedPlaceCategory(parseInt(event.target.value));
+  }
+
   useEffect(() => {
     loadPlaceCategories();
     setHaveFound(false);
@@ -39,6 +43,13 @@ const Cart = ({
       setSelectedProduct(0);
     }
   }, []);
+
+  useEffect(() => {
+    if (categoriesByProduct.length > 0) {
+      console.log("here");
+      setSelectedPlaceCategory(parseInt(categoriesByProduct[0].id));
+    }
+  }, [selectedProduct]);
 
   return (
     <div className="Cart">
@@ -93,9 +104,9 @@ const Cart = ({
             </h2>
             <div className="Cart__proposal-choices-header-options">
               {categoriesByProduct.map((categoryByProduct, index) => {
-                let checked = '';
+                let checked;
 
-                if (index === 0) {
+                if (selectedPlaceCategory == categoriesByProduct.id) {
                   checked = 'checked';
                 }
 
@@ -105,9 +116,9 @@ const Cart = ({
                       name="alt-option"
                       id={`alt-option--${index}`}
                       type="radio"
-                      defaultChecked={checked}
+                      checked={checked}
                       value={categoryByProduct.id}
-                      onChange={setSelectedPlaceCategory}
+                      onChange={setCurrentPlaceCategory}
                     />
                     <label htmlFor={`alt-option--${index}`} className="Cart__proposal-choices-header-options-btn">
                       {categoryByProduct.name}

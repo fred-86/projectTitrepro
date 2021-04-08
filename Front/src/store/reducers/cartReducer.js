@@ -1,9 +1,9 @@
 const initialState = {
   items: [],
   cart: {
-    selectedProduct: 1,
+    selectedProduct: 0,
     placeCategories: [],
-    selectedPlaceCategory: 1,
+    selectedPlaceCategory: 0,
     places: [],
   },
   flyingCart: {

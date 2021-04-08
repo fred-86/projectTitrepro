@@ -17,8 +17,7 @@ const mapDispatchToProps = (dispatch) => ({
   loadPlaceCategories: () => {
     dispatch(loadPlaceCategories());
   },
-  setSelectedPlaceCategory: (event) => {
-    const categoryIndex = parseInt(event.target.value);
+  setSelectedPlaceCategory: (categoryIndex) => {
     dispatch(setSelectedPlaceCategory(categoryIndex));
   },
   setSelectedProduct: (selectedProduct) => {
