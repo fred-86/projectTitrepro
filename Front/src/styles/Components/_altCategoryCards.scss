@@ -16,7 +16,7 @@
     min-height: 340px;
     max-height: 340px;
     border-radius: 25px 25px 0px 0px;
-    background-color: rgb(255, 255, 255);
+    background-color: $color-white;
     text-align: left;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     transition: transform .2s, width 0.4s, min-height 0.3s 0.8s;

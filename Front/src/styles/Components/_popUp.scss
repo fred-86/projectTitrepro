@@ -5,7 +5,7 @@
   left: 50%;
   margin-left: -150px;
   width: 300px;
-  border: 1px solid rgb(218, 32, 32);
+  border: 1px solid $color-red-save;
   border-top: none;
   border-radius: 0 0 5px 5px;
   display: flex;
@@ -17,7 +17,7 @@
 
   &__warning {
     font-size: 3rem;
-    color: red;
+    color: $color-red-save;
   }
 
   &__message {
@@ -28,7 +28,7 @@
     background-color: rgba(0, 0, 0, 0.562);
     text-align: left;
     font-size: 1rem;
-    color: white;
+    color: $color-white;
   }
 
   &--active {

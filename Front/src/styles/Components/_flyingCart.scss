@@ -27,8 +27,7 @@
   h1{
     font-size: 1rem;
     font-weight: 700;
-    color: $warning-color;
-    //padding-bottom: 2rem;
+    color: $color-nav-hover;
   }
 
   h2{
@@ -73,7 +72,7 @@
     & > label {
       display: inline-block;
       margin-bottom: 0.5rem;
-      color: $warning-color;
+      color: $color-nav-hover;
       font-weight: 600;
     }
 
@@ -95,7 +94,7 @@
 
       &-amount {
         margin-left: 0.5rem;
-        color: white;
+        color: $color-white;
       }
     }
 
@@ -105,9 +104,9 @@
       left: 25%;
       height: 40px;
       width: 130px;
-      border: 1px solid #FFC233;
+      border: 1px solid $color-border-yellow;
       border-radius: 100% / 25px 25px 0 0;
-      background-color: $warning-color;
+      background-color: $color-nav-hover;
       color: $nav-separator;
 
       font-size: 1rem;

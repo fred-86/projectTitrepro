@@ -40,7 +40,7 @@
         margin-bottom: 1.5rem;
         font-size: 1rem;
         font-weight: 700;
-        color: $warning-color;
+        color: $color-nav-hover;
       }
 
       &-label {
@@ -117,7 +117,6 @@
           position: absolute;
           right: 0;
           bottom: 0;
-          //width: 60%;
           height: 50px;
           clip-path: polygon(55px 0, 100% 0, 100% 100%, 0 100%);
           border: 2px solid rgb(147, 171, 180);
@@ -174,7 +173,6 @@
       }
       
       &-tab {
-        //min-height: 371px;
         max-height: 700px;
         padding: 2rem 1rem 1rem;
         overflow-y: auto;
@@ -212,11 +210,11 @@
 
               &-link {
                 margin-top: 1rem;
-                border: 2px solid darken($warning-color, 20%);
+                border: 2px solid darken($color-nav-hover, 20%);
                 border-radius: 5px;
                 display: inline-block;
                 padding: 0.5rem 1rem;
-                background-color: $warning-color;
+                background-color: $color-nav-hover;
                 font-size: 1rem;
               }
             }

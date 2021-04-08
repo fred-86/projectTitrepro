@@ -35,7 +35,7 @@
       opacity: 0;
 
       &:hover + .Header__switch-slider {
-        background-color: lighten($tertiary-color, 10%);
+        background-color: lighten($background-header-green, 10%);
       } 
 
       &:checked + .Header__switch-slider {
