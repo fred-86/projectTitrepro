@@ -1,6 +1,12 @@
 // Import npm
 import React, { useEffect } from 'react';
 
+// Import local
+import alex from 'src/assets/images/teamates/alex.jpg';
+import jonathan from 'src/assets/images/teamates/jonathan.jpg';
+import julien from 'src/assets/images/teamates/julien.JPG';
+import tom from 'src/assets/images/teamates/tom.jpg';
+
 const Apropos = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -37,17 +43,17 @@ const Apropos = () => {
       </article>
       <aside className="Apropos__aside">
         <div className="Apropos__aside-card">
-          <img className="Apropos__aside-card-img" src="https://picsum.photos/180" />
+          <img className="Apropos__aside-card-img" src={julien} />
           <h3 className="Apropos__aside-card-role">Product Owner</h3>
           <h4 className="Apropos__aside-card-teamate">Julien Cambien</h4>
         </div>
         <div className="Apropos__aside-card">
-          <img className="Apropos__aside-card-img" src="https://picsum.photos/180" />
+          <img className="Apropos__aside-card-img" src={jonathan} />
           <h3 className="Apropos__aside-card-role">Lead Dev Back</h3>
           <h4 className="Apropos__aside-card-teamate">Frédéric Lescure</h4>
         </div>
         <div className="Apropos__aside-card">
-          <img className="Apropos__aside-card-img" src="https://picsum.photos/180" />
+          <img className="Apropos__aside-card-img" src={jonathan} />
           <h3 className="Apropos__aside-card-role">Lead Dev Front</h3>
           <h4 className="Apropos__aside-card-teamate">Jonathan Fuzeau</h4>
         </div>
@@ -57,9 +63,14 @@ const Apropos = () => {
           <h4 className="Apropos__aside-card-teamate">Laurent Dashwdood</h4>
         </div>
         <div className="Apropos__aside-card">
-          <img className="Apropos__aside-card-img" src="https://picsum.photos/180" />
+          <img className="Apropos__aside-card-img" src={alex} />
           <h3 className="Apropos__aside-card-role">Scrum Master</h3>
           <h4 className="Apropos__aside-card-teamate">Alexandre Maspimby</h4>
+        </div>
+        <div className="Apropos__aside-card">
+          <img className="Apropos__aside-card-img" src={tom} />
+          <h3 className="Apropos__aside-card-role">Le 'stagiaire'</h3>
+          <h4 className="Apropos__aside-card-teamate">Tom</h4>
         </div>
       </aside>
     </section>
