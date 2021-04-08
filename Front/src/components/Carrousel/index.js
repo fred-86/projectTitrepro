@@ -55,9 +55,10 @@ const Carrousel = ({ category, products, categoryPosition }) => {
       }}
     >
       <h2 className="Carrousel__title">
-        <Link to={`/${categoryLink}`}>
+        {categoryLink !== 'tendance' && <Link to={`/${categoryLink}`}>
           {name}
-        </Link>
+        </Link>}
+        {categoryLink === 'tendance' && <span>{name}</span>}
       </h2>
       <div className="Carrousel__slider">
         <button

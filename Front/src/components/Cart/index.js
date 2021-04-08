@@ -46,7 +46,6 @@ const Cart = ({
 
   useEffect(() => {
     if (categoriesByProduct.length > 0) {
-      console.log("here");
       setSelectedPlaceCategory(parseInt(categoriesByProduct[0].id));
     }
   }, [selectedProduct]);
