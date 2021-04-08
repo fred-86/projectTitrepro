@@ -1,6 +1,7 @@
 // Import npm
 import React, { useEffect } from 'react';
 import { NavLink, Redirect, useLocation } from 'react-router-dom';
+import classNames from 'classnames';
 
 // Import local
 import ePakoLogo from 'src/assets/images/ePaKo.svg';
@@ -10,8 +11,9 @@ import NavBar from '../NavBar';
 import NavBarSmall from '../NavBarSmall';
 
 // Component
-const Header = ({ mainSwitch, setMainSwitch, setIsOpened, categories, categoryPaths }) => {
+const Header = ({ mainSwitch, setMainSwitch, setIsOpened, items, haveChange, categories, categoryPaths }) => {
   const { pathname } = useLocation();
+  const cartClass = classNames('Header__cart-button-notification', { 'Header__cart-button-notification--updated': haveChange });
 
   const navCategories = [
     ...categories,
@@ -63,6 +65,7 @@ const Header = ({ mainSwitch, setMainSwitch, setIsOpened, categories, categoryPa
         <input type="search" className="Header__search" />
         {!isCartPage && <button type="button" className="Header__cart-button" onClick={setIsOpened}>
           <img src={cart} alt="cart" className="Header__cart-button-img" />
+          {items.length > 0 && <div className={cartClass}>+</div>}
         </button>}
         <FlyingCart />
       </header>

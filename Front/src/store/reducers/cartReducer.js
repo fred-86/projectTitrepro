@@ -13,7 +13,6 @@ const initialState = {
     selectedLocation: '',
     amount: 0,
     haveFound: false,
-    pathToFollow: '',
   },
 };
 
@@ -175,18 +174,6 @@ const cartReducer = (state = initialState, action = {}) => {
         ...state.flyingCart,
         isOpened: false,
         haveFound: action.value,
-      };
-
-      return {
-        ...state,
-        flyingCart: newFlyingCart,
-      };
-    }
-
-    case 'SET_PATH_TO_FOLLOW': {
-      const newFlyingCart = {
-        ...state.flyingCart,
-        pathToFollow: action.path,
       };
 
       return {

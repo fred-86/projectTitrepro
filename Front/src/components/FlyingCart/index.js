@@ -9,7 +9,6 @@ import Item from './Item/assistant';
 
 const FlyingCart = ({
   isOpened,
-  setIsOpened,
   token,
   loadLocations,
   locations,
@@ -21,11 +20,9 @@ const FlyingCart = ({
   removeFromCart,
   sendCart,
   haveFound,
-  pathToFollow,
   showPopUp
 }) => {
   const cartClass = classNames("FlyingCart", { "FlyingCart--open": isOpened });
-  // TODO ajouter un voyant lumineux témoins d'un changement dans le panier
 
   const checkCart = () => {
     if (amount !== 0 && selectedLocation !== '') {
@@ -83,7 +80,7 @@ const FlyingCart = ({
         </p>
         <button type="button" onClick={checkCart}>Valider</button>
       </div>
-      {haveFound && <Redirect to='cart' />}
+      {haveFound && <Redirect to='/cart' />}
     </aside>
   );
 };

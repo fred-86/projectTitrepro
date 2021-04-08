@@ -147,6 +147,50 @@
       transform: skew(40deg);
     }
 
+    &-notification {
+      position: absolute;
+      top: -9px;
+      right: -6px;
+      width: 20px;
+      height: 20px;
+      border: 1px solid rgb(185, 185, 185);
+      border-radius: 50%;
+      padding-top: 1px;
+      background: rgb(255,255,255);
+      background: radial-gradient(
+        circle, 
+        rgba(255,255,255,0.639093137254902) 0%, 
+        rgba(195,195,195,0.47942927170868344) 39%, 
+        rgba(85,77,77,0.3701855742296919) 100%
+      );
+      color: white;
+      transform: skew(40deg);
+
+      &--updated {
+        background: rgb(255,0,0);
+        background: radial-gradient(
+          circle, 
+          rgba(255,0,0,1) 0%, 
+          rgba(208,21,21,1) 52%, 
+          rgba(163,15,15,1) 81%
+        );
+        color: white;
+        animation-name: cartNotification;
+        animation-duration: 1.8s;
+        // TODO animation
+      }
+
+      @keyframes cartNotification {
+        from {
+          transform: scale(1.8) skew(40deg);
+          box-shadow: 0 0 3px 5px white;
+        }
+        to {
+          transform: scale(1) skew(40deg); 
+        }
+      }
+    }
+
     @include xs {
       right: 35px;
       height: 35px;

@@ -119,11 +119,6 @@ export const setHaveFound = (value) => ({
   value: value,
 });
 
-export const setPathToFollow = (path) => ({
-  type: 'PATH_TO_FOLLOW',
-  path: path,
-});
-
 // ==========
 // Cart
 export const setPlaceCategories = (placeCategories) => ({

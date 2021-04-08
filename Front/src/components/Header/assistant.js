@@ -8,6 +8,8 @@ import Header from 'src/components/Header';
 const mapStateToProps = (state) => ({
   mainSwitch: state.home.mainSwitch,
   isOpened: state.cart.flyingCart.isOpened,
+  items: state.cart.items,
+  haveChange: state.cart.flyingCart.haveChange,
   categories: state.product.categories,
 });
 
