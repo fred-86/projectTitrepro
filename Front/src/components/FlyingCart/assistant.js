@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 // Import local
 import {
-  setIsOpened,
   loadLocations,
   setAmount,
   removeFromCart,
@@ -24,9 +23,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  setIsOpened: () => {
-    dispatch(setIsOpened());
-  },
   loadLocations: () => {
     dispatch(loadLocations());
   },

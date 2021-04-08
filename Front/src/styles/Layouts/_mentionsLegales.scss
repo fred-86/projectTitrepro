@@ -34,6 +34,19 @@
     margin-bottom: 1rem;
   }
 
+  strong{
+    font-weight: 700;
+  }
+
+  em{
+    font-style: oblique;
+  }
+
+  cite{
+    color: $background-nav;
+    font-weight: 500;
+  }
+
   @include lg {
     .Mentions-legales {
       &__article{

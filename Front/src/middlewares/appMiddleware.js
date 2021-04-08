@@ -9,7 +9,7 @@ const appMiddleware = (store) => (next) => (action) => {
 
   switch (action.type) {
     case 'GET_TOKEN':
-      axios.post('http://100.25.202.232/apo-E-pascommerce-back/public/api/login_check', {
+      axios.post('http://www.epako.studio/apo-E-pascommerce-back/public/api/login_check', {
         "username": "ydfhvd@uifjfn.com",
         "password": "uhzudhzd:;,78545289"
       })
@@ -23,7 +23,7 @@ const appMiddleware = (store) => (next) => (action) => {
       break;
 
     case 'LOAD_CATEGORY':
-      axios.get('http://100.25.202.232/apo-E-pascommerce-back/public/api/product/category/browse', {
+      axios.get('http://www.epako.studio/apo-E-pascommerce-back/public/api/product/category/browse', {
         headers: {
           Authorization: `Bearer ${token}`,
         }
@@ -38,7 +38,7 @@ const appMiddleware = (store) => (next) => (action) => {
       break;
 
     case 'LOAD_PRODUCTS':
-      axios.get('http://100.25.202.232/apo-E-pascommerce-back/public/api/product/browse', {
+      axios.get('http://www.epako.studio/apo-E-pascommerce-back/public/api/product/browse', {
         headers: {
           Authorization: `Bearer ${token}`,
         }
@@ -53,7 +53,7 @@ const appMiddleware = (store) => (next) => (action) => {
       break;
 
     case 'LOAD_PLACE_CATEGORIES':
-      axios.get('http://100.25.202.232/apo-E-pascommerce-back/public/api/place/category/browse', {
+      axios.get('http://www.epako.studio/apo-E-pascommerce-back/public/api/place/category/browse', {
         headers: {
           Authorization: `Bearer ${token}`,
         }
@@ -68,7 +68,7 @@ const appMiddleware = (store) => (next) => (action) => {
       break;
 
     case 'LOAD_PLACES':
-      axios.get('http://100.25.202.232/apo-E-pascommerce-back/public/api/place/browse', {
+      axios.get('http://www.epako.studio/apo-E-pascommerce-back/public/api/place/browse', {
         headers: {
           Authorization: `Bearer ${token}`,
         }

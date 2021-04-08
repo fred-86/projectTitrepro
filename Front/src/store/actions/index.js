@@ -27,8 +27,12 @@ export const setProducts = (products) => ({
   products: products,
 });
 
-export const setMainSwitch = (value) => ({
+export const setMainSwitch = () => ({
   type: 'SET_MAIN_SWITCH',
+});
+
+export const setSwitchVisibility = (value) => ({
+  type: 'SET_SWITCH_VISIBILITY',
   value: value,
 });
 
@@ -54,9 +58,14 @@ export const setPlaces = (places) => ({
   places: places,
 });
 
-export const setSelectedPlace = (place) => ({
-  type: 'SET_SELECTED_PLACE',
+export const getMap = (place) => ({
+  type: 'GET_MAP',
   place: place,
+});
+
+export const setMap = (map) => ({
+  type: 'SET_MAP',
+  map: map,
 });
 
 // ==========
@@ -112,6 +121,11 @@ export const sendCart = () => ({
 
 export const setHaveFound = (value) => ({
   type: 'SET_HAVE_FOUND',
+  value: value,
+});
+
+export const setItemAdded = (value) => ({
+  type: 'SET_ITEM_ADDED',
   value: value,
 });
 

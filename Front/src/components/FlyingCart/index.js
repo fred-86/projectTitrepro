@@ -1,15 +1,14 @@
 // Import npm
 import React, { useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
 import classNames from 'classnames';
 
 // Import local
 import { calculateAmount } from 'src/Utils';
 import Item from './Item/assistant';
-import { Redirect } from 'react-router-dom';
 
 const FlyingCart = ({
   isOpened,
-  setIsOpened,
   token,
   loadLocations,
   locations,
@@ -24,7 +23,6 @@ const FlyingCart = ({
   showPopUp
 }) => {
   const cartClass = classNames("FlyingCart", { "FlyingCart--open": isOpened });
-  // TODO ajouter un voyant lumineux témoins d'un changement dans le panier
 
   const checkCart = () => {
     if (amount !== 0 && selectedLocation !== '') {
@@ -34,7 +32,7 @@ const FlyingCart = ({
       const messages = [];
 
       if (amount === 0) {
-        messages.push('Votre panier est vide');
+        messages.push('Votre panier est vide !');
       }
       if (selectedLocation === '') {
         messages.push('Veuillez sélectionner un département.');
@@ -82,7 +80,7 @@ const FlyingCart = ({
         </p>
         <button type="button" onClick={checkCart}>Valider</button>
       </div>
-      {haveFound && <Redirect to="/cart" />}
+      {haveFound && <Redirect to='/cart' />}
     </aside>
   );
 };

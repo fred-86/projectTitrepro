@@ -19,9 +19,13 @@ import PopUp from '../PopUp/assistant';
 import { generateLink } from 'src/Utils';
 
 // == Component
-const App = ({ getToken, token, loadCategory, categories, loadProducts }) => {
+const App = ({ getToken, token, loadCategory, categories, loadProducts, setSwitchVisibility }) => {
   useEffect(() => {
     getToken();
+
+    if (localStorage.getItem('hadVisited') === 'true') {
+      setSwitchVisibility(true);
+    }
   }, []);
 
   useEffect(() => {

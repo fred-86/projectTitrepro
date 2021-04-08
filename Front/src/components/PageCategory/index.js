@@ -7,7 +7,6 @@ import { generateLink } from 'src/Utils';
 import ProductCard from 'src/components/ProductCard';
 import Loader from '../Loader';
 import CategoryNavBar from '../CategoryNavBar';
-import mainImg from '../../assets/temp/vegetables.jpg';
 
 const PageCategory = ({ isCategoriesLoaded, categories, products, addToCart }) => {
   let currentProducts = [];
@@ -46,7 +45,6 @@ const PageCategory = ({ isCategoriesLoaded, categories, products, addToCart }) =
     window.scrollTo(0, 0);
   }, []);
 
-  // TODO modifier src image quand intégrée au back
   return (
     <>
       {!isCategoriesLoaded && <Loader />}
@@ -86,4 +84,5 @@ const PageCategory = ({ isCategoriesLoaded, categories, products, addToCart }) =
     </>
   );
 };
+
 export default PageCategory;

@@ -5,11 +5,15 @@ import { useParams } from 'react-router';
 // Import local
 import AltCategoryNavBar from '../AltCategoryNavBar';
 import AltCategoryCards from '../AltCategoryCards';
-import bannerImg from '../../assets/temp/forest.jpg';
+import bannerImg from '../../assets/images/practical/forest.jpg';
 
-const AltHome = ({ token, loadPlaceCategories, placeCategories, loadPlaces, places, selectedPlace, setSelectedPlace }) => {
+const AltHome = ({ token, loadPlaceCategories, placeCategories, loadPlaces, places }) => {
   const { id } = useParams();
   const placesByCategory = parseInt(id) === 0 ? places : places.filter((place) => (place.placeCategory.id === parseInt(id)));
+
+  useEffect(() => {
+    window.scrollTo(0, 500);
+  }, []);
 
   useEffect(() => {
     if (token !== '') {
@@ -45,7 +49,7 @@ const AltHome = ({ token, loadPlaceCategories, placeCategories, loadPlaces, plac
           </article>
         </div>
         <AltCategoryNavBar placeCategories={placeCategories} />
-        <AltCategoryCards places={placesByCategory} selectedPlace={selectedPlace} setSelectedPlace={setSelectedPlace} />
+        <AltCategoryCards places={placesByCategory} />
       </section>
     </React.Fragment>
   );

@@ -1,9 +1,9 @@
 const initialState = {
   items: [],
   cart: {
-    selectedProduct: 1,
+    selectedProduct: 0,
     placeCategories: [],
-    selectedPlaceCategory: 1,
+    selectedPlaceCategory: 0,
     places: [],
   },
   flyingCart: {
@@ -13,6 +13,7 @@ const initialState = {
     selectedLocation: '',
     amount: 0,
     haveFound: false,
+    itemAdded: false,
   },
 };
 
@@ -86,6 +87,7 @@ const cartReducer = (state = initialState, action = {}) => {
       const newFlyingCart = {
         ...state.flyingCart,
         haveChange: true,
+        itemAdded: true,
       };
 
       return {
@@ -109,6 +111,18 @@ const cartReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         items: newItems,
+      };
+    }
+
+    case 'SET_ITEM_ADDED': {
+      const newFlyingCart = {
+        ...state.flyingCart,
+        itemAdded: action.value,
+      };
+
+      return {
+        ...state,
+        flyingCart: newFlyingCart,
       };
     }
 

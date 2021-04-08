@@ -2,14 +2,14 @@
 import axios from 'axios';
 
 // Import local
-import { setLocations, setHaveFound, setCartPlaces, showPopUp } from '../store/actions';
+import { setLocations, setHaveFound, setSwitchVisibility, setMainSwitch, setCartPlaces, showPopUp } from '../store/actions';
 
 const cartMiddleware = (store) => (next) => (action) => {
   const { token } = store.getState().product;
 
   switch (action.type) {
     case 'LOAD_LOCATIONS':
-      axios.get('http://100.25.202.232/apo-E-pascommerce-back/public/api/department/browse', {
+      axios.get('http://www.epako.studio/apo-E-pascommerce-back/public/api/department/browse', {
         headers: {
           Authorization: `Bearer ${token}`,
         }
@@ -46,7 +46,7 @@ const cartMiddleware = (store) => (next) => (action) => {
         }
       });
 
-      axios.get(`http://100.25.202.232/apo-E-pascommerce-back/public/api/place/browse/productcategory/postalcode/${selectedLocation}?${formatUrl}`, {
+      axios.get(`http://www.epako.studio/apo-E-pascommerce-back/public/api/place/browse/productcategory/postalcode/${selectedLocation}?${formatUrl}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         }
@@ -54,12 +54,17 @@ const cartMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           store.dispatch(setHaveFound(true));
           store.dispatch(setCartPlaces(response.data));
+          localStorage.setItem("hadVisited", true);
+          store.dispatch(setSwitchVisibility(true));
         })
         .catch((err) => {
           const { error, status } = err.response.data;
 
           if (status === 404) {
-            store.dispatch(setHaveFound(true));
+            store.dispatch(setHaveFound(false));
+            localStorage.setItem("hadVisited", true);
+            store.dispatch(setSwitchVisibility(true));
+            store.dispatch(setMainSwitch());
             store.dispatch(showPopUp([error]));
           }
           else {

@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 
 // Import local
-import { getToken, loadCategory, loadProducts } from 'src/store/actions';
+import { getToken, loadCategory, loadProducts, setSwitchVisibility } from 'src/store/actions';
 import App from './index';
 
 const mapStateToProps = (state) => ({
@@ -20,6 +20,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   getToken: () => {
     dispatch(getToken());
+  },
+  setSwitchVisibility: (value) => {
+    dispatch(setSwitchVisibility(value));
   },
 });
 

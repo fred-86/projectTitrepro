@@ -7,6 +7,7 @@ import storage from 'redux-persist/lib/storage';
 // Import local
 import appMiddleware from '../middlewares/appMiddleware';
 import cartMiddleware from '../middlewares/cartMiddleware';
+import placeMiddleware from '../middlewares/placeMiddleware';
 import homeReducer from './reducers/homeReducer';
 import productReducer from './reducers/productReducer';
 import cartReducer from './reducers/cartReducer';
@@ -23,7 +24,7 @@ const rootReducer = combineReducers({
   altHome: altHomeReducer,
 });
 
-const persistConfig = { 
+const persistConfig = {
   key: 'root',
   storage,
   whitelist: ['cart'],
@@ -35,6 +36,7 @@ const enhancers = composeWithDevTools(
   applyMiddleware(
     appMiddleware,
     cartMiddleware,
+    placeMiddleware,
   ),
 );
 
