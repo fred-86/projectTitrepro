@@ -24,7 +24,14 @@ const AltPageMobile = ({ token, loadPlaces, places, getMap, map }) => {
     <section className="AltPageMobile">
       <div className="Alt__banner">
         <div className="Alt__bannerQuote"  alt="Dons">
-          <p className="Alt__bannerQuote-text">sdqsdsqdsd</p>
+          <p className="Alt__bannerQuote-text">
+            “Le problème, ce n’est pas le fait qu’on aille dans le mur ou pas. On va dans le mur !<br/>
+            Le problème, c’est à quelle vitesse on y va, à 50 km/h ou à 5 km/h.”
+          </p>
+          <p className="Alt__bannerQuote-signature">
+            Jean-Marc Jancovici<br/>
+            Associé fondateur de Carbone 4
+          </p>
         </div>  
       </div>
       <div className="Alt__presentation">
