@@ -4,8 +4,11 @@ import React, { useEffect } from 'react';
 // Import local
 import alex from 'src/assets/images/teamates/alex.jpg';
 import jonathan from 'src/assets/images/teamates/jonathan.jpg';
-import julien from 'src/assets/images/teamates/julien.JPG';
+import julien from 'src/assets/images/teamates/julien.jpg';
 import tom from 'src/assets/images/teamates/tom.jpg';
+import fred from 'src/assets/images/teamates/fred.jpg';
+import laurent from 'src/assets/images/teamates/laurent.jpeg';
+
 
 const Apropos = () => {
   useEffect(() => {
@@ -48,7 +51,7 @@ const Apropos = () => {
           <h4 className="Apropos__aside-card-teamate">Julien Cambien</h4>
         </div>
         <div className="Apropos__aside-card">
-          <img className="Apropos__aside-card-img" src={jonathan} />
+          <img className="Apropos__aside-card-img" src={fred} />
           <h3 className="Apropos__aside-card-role">Lead Dev Back</h3>
           <h4 className="Apropos__aside-card-teamate">Frédéric Lescure</h4>
         </div>
@@ -58,7 +61,7 @@ const Apropos = () => {
           <h4 className="Apropos__aside-card-teamate">Jonathan Fuzeau</h4>
         </div>
         <div className="Apropos__aside-card">
-          <img className="Apropos__aside-card-img" src="https://picsum.photos/180" />
+          <img className="Apropos__aside-card-img" src={laurent} />
           <h3 className="Apropos__aside-card-role">UX designer</h3>
           <h4 className="Apropos__aside-card-teamate">Laurent Dashwdood</h4>
         </div>
