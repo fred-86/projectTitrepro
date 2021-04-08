@@ -175,9 +175,14 @@
           rgba(163,15,15,1) 81%
         );
         color: white;
+        // animation-name: cartNotification;
+        // animation-duration: 1.8s;
+        // TODO animation
+      }
+
+      &--new-item {
         animation-name: cartNotification;
         animation-duration: 1.8s;
-        // TODO animation
       }
 
       @keyframes cartNotification {

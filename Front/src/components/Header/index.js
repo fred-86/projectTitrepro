@@ -11,9 +11,10 @@ import NavBar from '../NavBar';
 import NavBarSmall from '../NavBarSmall';
 
 // Component
-const Header = ({ switchVisibility, mainSwitch, setMainSwitch, setIsOpened, items, haveChange, categories, categoryPaths }) => {
+const Header = ({ switchVisibility, mainSwitch, setMainSwitch, setIsOpened, items, itemAdded, setItemAdded, haveChange, categories, categoryPaths }) => {
   const { pathname } = useLocation();
-  const cartClass = classNames('Header__cart-button-notification', { 'Header__cart-button-notification--updated': haveChange });
+
+  const cartClass = classNames('Header__cart-button-notification', { 'Header__cart-button-notification--updated': haveChange }, { 'Header__cart-button-notification--new-item': itemAdded });
 
   const navCategories = [
     ...categories,
@@ -65,7 +66,7 @@ const Header = ({ switchVisibility, mainSwitch, setMainSwitch, setIsOpened, item
         <input type="search" className="Header__search" />
         {!isCartPage && <button type="button" className="Header__cart-button" onClick={setIsOpened}>
           <img src={cart} alt="cart" className="Header__cart-button-img" />
-          {items.length > 0 && <div className={cartClass}>+</div>}
+          {items.length > 0 && <div className={cartClass} onAnimationEnd={setItemAdded}>+</div>}
         </button>}
         <FlyingCart />
       </header>

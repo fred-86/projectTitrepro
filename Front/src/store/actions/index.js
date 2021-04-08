@@ -124,6 +124,11 @@ export const setHaveFound = (value) => ({
   value: value,
 });
 
+export const setItemAdded = (value) => ({
+  type: 'SET_ITEM_ADDED',
+  value: value,
+});
+
 // ==========
 // Cart
 export const setPlaceCategories = (placeCategories) => ({
