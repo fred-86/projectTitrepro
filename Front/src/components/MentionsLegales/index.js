@@ -55,7 +55,7 @@ const MentionsLegales = () => {
         L’équipe epako met en œuvre tous les moyens dont elle dispose, pour assurer une information fiable et une mise à jour fiable de ses sites internet.<br/><br/>
         
         Toutefois, des erreurs ou omissions peuvent survenir. L’internaute devra donc s’assurer de l’exactitude des informations auprès de  epako , et signaler toutes modifications du site qu’il jugerait utile.  epako n’est en aucun cas responsable de l’utilisation faite de ces informations, et de tout préjudice direct ou indirect pouvant en découler.<br/><br/>
-        Liens hypertextes : Les sites internet de peuvent offrir des liens vers d’autres sites internet ou d’autres ressources disponibles sur Internet. Team epako ne dispose d’aucun moyen pour contrôler les sites en connexion avec ses sites internet.
+        Liens hypertextes : le site <cite>http://50.16.248.104/</cite> peut offrir des liens vers d’autres sites internet ou d’autres ressources disponibles en ligne. Team epako ne dispose d’aucun moyen pour contrôler les sites tiers en connexion avec les sites dont elle propose les liens.
         <br/><br/>
         Epako ne répond pas de la disponibilité de tels sites et sources externes, ni ne la garantit. Elle ne peut être tenue pour responsable de tout dommage, de quelque nature que ce soit, résultant du contenu de ces sites ou sources externes, et notamment des informations, produits ou services qu’ils proposent, ou de tout usage qui peut être fait de ces éléments. Les risques liés à cette utilisation incombent pleinement à l’internaute, qui doit se conformer à leurs conditions d’utilisation.
         </p>
@@ -82,7 +82,7 @@ const MentionsLegales = () => {
         <h2 className="Mentions-legales__article-title--2">Propriété intellectuelle :</h2>
         <p className="Mentions-legales__article-content">
         Tout le contenu du présent site <cite>http://50.16.248.104/</cite> , incluant, de façon non limitative, les graphismes, images, textes, vidéos, animations, sons, logos, gifs et icônes ainsi que leur mise en forme sont la propriété exclusive de epako à l’exception des marques, logos ou contenus appartenant à d’autres sociétés partenaires ou auteurs (unsplash <em>(https://unsplash.com/)</em>, flaticon <em>(https://www.flaticon.com/)</em>).<br/><br/>
-        Toute reproduction, distribution, modification, adaptation, retransmission ou publication, même partielle, de ces différents éléments est strictement interdite sans l’accord exprès par écrit de Team epako. Cette représentation ou reproduction, par quelque procédé que ce soit, constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle. Le non-respect de cette interdiction constitue une contrefaçon pouvant engager la responsabilité civile et pénale du contrefacteur. En outre, les propriétaires des Contenus copiés pourraient intenter une action en justice à votre encontre.
+        Toute reproduction, distribution, modification, adaptation, retransmission ou publication, même partielle, de ces différents éléments est strictement interdite sans l’accord exprès par écrit de Team epako. Cette représentation ou reproduction, par quelque procédé que ce soit, constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle. Le non-respect de cette interdiction constitue une contrefaçon pouvant engager la responsabilité civile et pénale du contrefacteur. En outre, les propriétaires des contenus copiés pourraient intenter une action en justice à votre encontre.
         </p>
         </article>
         <article className="Mentions-legales__article">
@@ -99,7 +99,6 @@ const MentionsLegales = () => {
         Cependant, ce principe comporte certaines exceptions. En effet, pour certains services proposés par notre site, vous pouvez être amenés à nous communiquer certaines données telles que : votre nom, votre prénom, votre adresse électronique. Tel est le cas lorsque vous remplissez le formulaire qui vous est proposé pour proposer de nouveaux ajouts d’alternatives et commentaires.
         </p>
         <p className="Mentions-legales__article-content">
-        Dans tous les cas, vous pouvez refuser de fournir vos données personnelles. Dans ce cas, vous ne pourrez pas utiliser les services du site, notamment celui de solliciter des renseignements, ou de recevoir les lettres d’information.<br/><br/>
         Dans tous les cas, vous pouvez refuser de fournir vos données personnelles. Dans ce cas, vous ne pourrez pas utiliser les services du site, notamment celui de solliciter des renseignements, ou de recevoir les lettres d’information.<br/><br/>
         De telles informations sont utilisées exclusivement à des fins de statistiques internes, de manière à améliorer la qualité des services qui vous sont proposés. Les bases de données sont protégées par les dispositions de la loi du 1er juillet 1998 transposant la directive 96/9 du 11 mars 1996 relative à la protection juridique des bases de données.
         </p>

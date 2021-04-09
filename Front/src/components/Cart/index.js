@@ -53,7 +53,7 @@ const Cart = ({
   return (
     <div className="Cart">
       <article className="Cart__intro">
-        <h2 className="Cart__intro-title">Quelle(s) circuit(s) pour trouver mon produit ?</h2>
+        <h2 className="Cart__intro-title">Quel(s) circuit(s) pour trouver mon produit ?</h2>
         <p className="Cart__intro-content">
           E-pako (contraction d’E-Pas-Commerce),  vous apporte un ensemble d’alternatives au canaux traditionnelles tout en respectant vos besoins de consommation.
           Opter pour de la seconde main, du troc, des dons ou soutenir une association proche de chez vous, c’est possible ! A vous de choisir.
