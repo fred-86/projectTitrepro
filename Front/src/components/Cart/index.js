@@ -59,7 +59,7 @@ const Cart = ({
         setSelectedPlaceCategory(categoriesByProduct[0].id);
       }
     }
-  }, [selectedProduct]);
+  }, [selectedProduct, placeCategories]);
 
   return (
     <div className="Cart">
