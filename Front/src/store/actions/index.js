@@ -124,6 +124,11 @@ export const setHaveFound = (value) => ({
   value: value,
 });
 
+export const setStatusCode = (code) => ({
+  type: 'SET_STATUS_CODE',
+  code: code,
+});
+
 export const setItemAdded = (value) => ({
   type: 'SET_ITEM_ADDED',
   value: value,

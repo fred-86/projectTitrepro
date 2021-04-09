@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // Import local
-import { setLocations, setHaveFound, setSwitchVisibility, setMainSwitch, setCartPlaces, showPopUp } from '../store/actions';
+import { setLocations, setHaveFound, setSwitchVisibility, setMainSwitch, setStatusCode, setCartPlaces, showPopUp } from '../store/actions';
 
 const cartMiddleware = (store) => (next) => (action) => {
   const { token } = store.getState().product;
@@ -65,6 +65,7 @@ const cartMiddleware = (store) => (next) => (action) => {
             localStorage.setItem("hadVisited", true);
             store.dispatch(setSwitchVisibility(true));
             store.dispatch(setMainSwitch());
+            store.dispatch(setStatusCode("404"));
             store.dispatch(showPopUp([error]));
           }
           else {

@@ -1,5 +1,6 @@
 // Import npm
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Cart = ({
   loadPlaceCategories,
@@ -10,7 +11,8 @@ const Cart = ({
   setSelectedProduct,
   selectedPlaceCategory,
   setSelectedPlaceCategory,
-  setHaveFound
+  setMainSwitch,
+  setHaveFound,
 }) => {
   const placesByProduct = places.filter((place) => {
     const placeSubCategoriesIndex = place.productCategories.map((productCategory) => (productCategory.id));
@@ -34,6 +36,10 @@ const Cart = ({
   const setCurrentPlaceCategory = (event) => {
     setSelectedPlaceCategory(parseInt(event.target.value));
   }
+  const test = () => {
+    //console.log('test');
+  };
+  //console.log(categoriesByProduct);
 
   useEffect(() => {
     loadPlaceCategories();
@@ -45,7 +51,11 @@ const Cart = ({
   }, []);
 
   useEffect(() => {
+    // console.log("there");
+    // console.log(categoriesByProduct.length);
+    test();
     if (categoriesByProduct.length > 0) {
+      //console.log("here");
       setSelectedPlaceCategory(parseInt(categoriesByProduct[0].id));
     }
   }, [selectedProduct]);
@@ -53,7 +63,7 @@ const Cart = ({
   return (
     <div className="Cart">
       <article className="Cart__intro">
-        <h2 className="Cart__intro-title">Quelle(s) circuit(s) pour trouver mon produit ?</h2>
+        <h2 className="Cart__intro-title">Quel(s) circuit(s) pour trouver mon produit ?</h2>
         <p className="Cart__intro-content">
           E-pako (contraction d’E-Pas-Commerce),  vous apporte un ensemble d’alternatives au canaux traditionnelles tout en respectant vos besoins de consommation.
           Opter pour de la seconde main, du troc, des dons ou soutenir une association proche de chez vous, c’est possible ! A vous de choisir.
@@ -137,9 +147,9 @@ const Cart = ({
                     <li>{placeByCategory.address}</li>
                     <li>{`${placeByCategory.addressComplement}, ${placeByCategory.city}`}</li>
                     <li>
-                      <a className="Cart__proposal-choices-tab-content-address-link" href={placeByCategory.url} target="_blank">
-                        Visiter le site
-                    </a>
+                      <Link className="Cart__proposal-choices-tab-content-address-link" to={`/practical/place/${placeByCategory.id}`} onClick={setMainSwitch}>
+                        Voir la fiche
+                      </Link>
                     </li>
                   </ul>
                 </section>

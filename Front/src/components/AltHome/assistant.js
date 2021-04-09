@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 
 // Import local
-import { loadPlaceCategories, loadPlaces } from 'src/store/actions';
+import { loadPlaceCategories, loadPlaces, setStatusCode } from 'src/store/actions';
 import AltHome from './index';
 
 const mapStateToProps = (state) => ({
@@ -18,6 +18,9 @@ const mapDispatchToProps = (dispatch) => ({
   loadPlaces: () => {
     dispatch(loadPlaces());
   },
+  setStatusCode: (code) => {
+    dispatch(setStatusCode(code));
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AltHome);

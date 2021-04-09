@@ -20,6 +20,7 @@ const mapStateToProps = (state) => ({
   selectedLocation: state.cart.flyingCart.selectedLocation,
   amount: state.cart.flyingCart.amount,
   haveFound: state.cart.flyingCart.haveFound,
+  statusCode: state.cart.flyingCart.statusCode,
 });
 
 const mapDispatchToProps = (dispatch) => ({
