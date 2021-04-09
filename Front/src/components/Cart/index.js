@@ -36,27 +36,28 @@ const Cart = ({
   const setCurrentPlaceCategory = (event) => {
     setSelectedPlaceCategory(parseInt(event.target.value));
   }
-  const test = () => {
-    //console.log('test');
-  };
-  //console.log(categoriesByProduct);
 
   useEffect(() => {
     loadPlaceCategories();
+    setSelectedProduct(items[0].product.productCategories[0].id);
     setHaveFound(false);
 
     return () => {
       setSelectedProduct(0);
+      setSelectedPlaceCategory(0);
     }
   }, []);
 
   useEffect(() => {
-    // console.log("there");
-    // console.log(categoriesByProduct.length);
-    test();
-    if (categoriesByProduct.length > 0) {
-      //console.log("here");
-      setSelectedPlaceCategory(parseInt(categoriesByProduct[0].id));
+    if (selectedProduct !== 0 && selectedPlaceCategory === 0) {
+      if (categoriesByProduct.length > 0) {
+        setSelectedPlaceCategory(parseInt(categoriesByProduct[0].id));
+      }
+    }
+    if (selectedProduct !== 0 && selectedPlaceCategory !== 0) {
+      if (categoriesByProduct.length > 0) {
+        setSelectedPlaceCategory(categoriesByProduct[0].id);
+      }
     }
   }, [selectedProduct]);
 
@@ -77,10 +78,10 @@ const Cart = ({
           <article className="Cart__proposal-list-content">
             {items.map((item, index) => {
               let checked;
+
               // Auto select the fisrt item when cart is display
-              if (selectedProduct === 0 && index === 0) {
+              if (selectedProduct === item.product.productCategories[0].id) {
                 checked = "checked";
-                setSelectedProduct(item.product.productCategories[0].id);
               }
 
               return (
@@ -115,7 +116,7 @@ const Cart = ({
               {categoriesByProduct.map((categoryByProduct, index) => {
                 let checked;
 
-                if (selectedPlaceCategory == categoriesByProduct.id) {
+                if (selectedPlaceCategory == categoryByProduct.id) {
                   checked = 'checked';
                 }
 
@@ -125,7 +126,7 @@ const Cart = ({
                       name="alt-option"
                       id={`alt-option--${index}`}
                       type="radio"
-                      checked={checked}
+                      defaultChecked={checked}
                       value={categoryByProduct.id}
                       onChange={setCurrentPlaceCategory}
                     />
