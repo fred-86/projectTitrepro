@@ -25,14 +25,10 @@ const Cart = ({
   );
 
   const categoriesByProduct = placeCategories.filter((placeCategory) => {
-    const relatedCategories = placesByProduct.map((placeByProduct) => {
-
-      return (placeByProduct.placeCategory.id)
-    });
-    console.log("rel", relatedCategories);
+    const relatedCategories = placesByProduct.map((placeByProduct) => (placeByProduct.placeCategory.id));
     return relatedCategories.includes(placeCategory.id);
   });
-  console.log("cat", categoriesByProduct);
+
   const setCurrentProduct = (event) => {
     setSelectedProduct(parseInt(event.target.value));
   };
