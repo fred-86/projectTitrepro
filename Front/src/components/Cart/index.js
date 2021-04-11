@@ -17,7 +17,11 @@ const Cart = ({
   const placesByProduct = places.filter((place) => {
     const placeSubCategoriesIndex = place.productCategories.map((productCategory) => (productCategory.id));
 
-    return (placeSubCategoriesIndex.includes(selectedProduct));
+    if (typeof selectedProduct.productCategories !== 'undefined') {
+      return (placeSubCategoriesIndex.includes(selectedProduct.productCategories[0].id));
+    }
+
+    return false;
   });
 
   const placesByCategory = placesByProduct.filter(
@@ -30,34 +34,28 @@ const Cart = ({
   });
 
   const setCurrentProduct = (event) => {
-    setSelectedProduct(parseInt(event.target.value));
+    const currentItem = items.find((item) => item.product.id === parseInt(event.target.value));
+    setSelectedProduct(currentItem.product);
   };
 
   const setCurrentPlaceCategory = (event) => {
     setSelectedPlaceCategory(parseInt(event.target.value));
-  }
+  };
 
   useEffect(() => {
     loadPlaceCategories();
-    setSelectedProduct(items[0].product.productCategories[0].id);
+    setSelectedProduct(items[0].product);
     setHaveFound(false);
 
     return () => {
-      setSelectedProduct(0);
+      setSelectedProduct({});
       setSelectedPlaceCategory(0);
     }
   }, []);
 
   useEffect(() => {
-    if (selectedProduct !== 0 && selectedPlaceCategory === 0) {
-      if (categoriesByProduct.length > 0) {
-        setSelectedPlaceCategory(parseInt(categoriesByProduct[0].id));
-      }
-    }
-    if (selectedProduct !== 0 && selectedPlaceCategory !== 0) {
-      if (categoriesByProduct.length > 0) {
-        setSelectedPlaceCategory(categoriesByProduct[0].id);
-      }
+    if (categoriesByProduct.length > 0) {
+      setSelectedPlaceCategory(categoriesByProduct[0].id);
     }
   }, [selectedProduct, placeCategories]);
 
@@ -80,7 +78,7 @@ const Cart = ({
               let checked;
 
               // Auto select the fisrt item when cart is display
-              if (selectedProduct === item.product.productCategories[0].id) {
+              if (selectedProduct.id === item.product.id) {
                 checked = "checked";
               }
 
@@ -92,7 +90,7 @@ const Cart = ({
                     id={`Cart__proposal-list-item--${index}`}
                     className="Cart__proposal-list-content-item"
                     defaultChecked={checked}
-                    value={item.product.productCategories[0].id}
+                    value={item.product.id}
                     onClick={setCurrentProduct}
                   />
                   <label
@@ -114,9 +112,9 @@ const Cart = ({
             </h2>
             <div className="Cart__proposal-choices-header-options">
               {categoriesByProduct.map((categoryByProduct, index) => {
-                let checked;
+                let checked = false;
 
-                if (selectedPlaceCategory == categoryByProduct.id) {
+                if (selectedPlaceCategory === categoryByProduct.id) {
                   checked = 'checked';
                 }
 
@@ -126,7 +124,7 @@ const Cart = ({
                       name="alt-option"
                       id={`alt-option--${index}`}
                       type="radio"
-                      defaultChecked={checked}
+                      checked={checked}
                       value={categoryByProduct.id}
                       onChange={setCurrentPlaceCategory}
                     />

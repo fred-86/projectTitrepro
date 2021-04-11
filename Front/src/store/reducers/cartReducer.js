@@ -1,7 +1,7 @@
 const initialState = {
   items: [],
   cart: {
-    selectedProduct: 0,
+    selectedProduct: {},
     placeCategories: [],
     selectedPlaceCategory: 0,
     places: [],
