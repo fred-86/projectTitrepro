@@ -13,10 +13,9 @@ const PageCategory = ({ isCategoriesLoaded, categories, products, addToCart }) =
   let currentCategoryLink;
   const { pathname } = useLocation();
   const pathStructure = pathname.split('/');
-  const navCategories = [
-    ...categories,
-  ];
-  navCategories.pop();
+
+  // Exclude tendance category from navBar
+  const navCategories = categories.filter((category) => category.name !== "tendance");
 
   const currentCategory = categories.find((category) => (generateLink(category.name) === pathStructure[1]));
 
