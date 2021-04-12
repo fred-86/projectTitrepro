@@ -21,11 +21,8 @@ const Header = ({ switchVisibility, mainSwitch, setMainSwitch, setIsOpened, item
     { 'Header__cart-button-notification--new-item': itemAdded }
   );
 
-  const navCategories = [
-    ...categories,
-  ];
   // Exclude tendance category from navBar
-  navCategories.pop();
+  const navCategories = categories.filter((category) => category.name !== "tendance");
 
   const forbiddenPaths = [...categoryPaths];
   forbiddenPaths.push("/cart", "/practical");
