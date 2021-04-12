@@ -71,23 +71,27 @@ const Carrousel = ({ category, products, categoryPosition }) => {
           &#171;
         </button>
         <div className="Carrousel__slider-content">
-          {products.map((product) => (
-            <Link
-              className="Carrousel__slider-content-product"
-              to={`product/${product.id}`}
-              key={product.id}
-              style={{ transform: `translateX(${position}px)` }}
-            >
-              <img
-                src={product.images[0].url}
-                alt={product.images[0].alt}
-                key={`product-${product.id}`}
-              />
-              <figcaption>
-                {product.name}
-              </figcaption>
-            </Link>
-          ))}
+          {products.map((product) => {
+            if (product.status !== 1) {
+              return (
+                <Link
+                  className="Carrousel__slider-content-product"
+                  to={`product/${product.id}`}
+                  key={product.id}
+                  style={{ transform: `translateX(${position}px)` }}
+                >
+                  <img
+                    src={product.images[0].url}
+                    alt={product.images[0].alt}
+                    key={`product-${product.id}`}
+                  />
+                  <figcaption>
+                    {product.name}
+                  </figcaption>
+                </Link>
+              );
+            }
+          })}
         </div>
         <button
           type="button"
