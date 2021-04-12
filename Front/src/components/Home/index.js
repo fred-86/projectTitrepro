@@ -75,7 +75,7 @@ const Home = ({
       </button>
       <div className="Home__content">
         {!isCategoriesLoaded || !isProductLoaded && <Loader />}
-        {isCategoriesLoaded && isProductLoaded && categories.map((category, index) => {
+        {isCategoriesLoaded && isProductLoaded && categories.map((category) => {
           let associatedProduct = [];
 
           if (category.name !== 'tendance') {

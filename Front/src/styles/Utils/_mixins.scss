@@ -21,6 +21,7 @@
   }
 }
 
+// Media Quieries
 // ==========
 @mixin xs {
   @media (max-width: 576px) {
@@ -53,6 +54,10 @@
   } 
 }
 
+// Component part
+// ==========
+
+// Carrousel
 @mixin swipe-btn {
   user-select: none;
   width: 50px;
@@ -124,4 +129,23 @@
   &:active {
     border: 1px inset rgb(105, 117, 126);
   }
+}
+
+// Promo carrousel
+@mixin PCbackgroundShape {
+  content: '';
+  position: absolute;
+  top: 50%;
+  border-radius: 105px 105px 105px 105px / 100%;
+  background: rgb(186,242,216);
+  background: linear-gradient(
+    180deg, 
+    rgba(186,242,216,0.22172619047619047) 0%, 
+    rgba(130,215,176,0.4150035014005602) 11%, 
+    rgba(33,94,73,0.7847514005602241) 30%, 
+    rgba(28,56,43,1) 50%, 
+    rgba(33,94,73,0.7287289915966386) 70%, 
+    rgba(130,215,176,0.40940126050420167) 89%, 
+    rgba(186,242,216,0.24413515406162467) 100%
+  );
 }

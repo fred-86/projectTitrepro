@@ -4,13 +4,9 @@ import React, { useState, useEffect } from 'react';
 // Import local
 import { images } from './utils';
 
+// Component
 const PromoCarrousel = () => {
   const [promoIndex, setPromoIndex] = useState(0);
-  const positions = [
-    "displayed",
-    "incoming",
-    "waiting"
-  ];
 
   const setPosition = (event) => {
     setPromoIndex(parseInt(event.target.value));
@@ -31,18 +27,18 @@ const PromoCarrousel = () => {
           let position;
 
           if (index === promoIndex) {
-            position = `PromoCarrousel__content-img-${positions[0]}`;
+            position = 'PromoCarrousel__content-img-displayed';
           }
           else if (index === promoIndex + 1) {
-            position = `PromoCarrousel__content-img-${positions[1]}`;
+            position = `PromoCarrousel__content-img-incoming`;
           }
           else {
-            position = `PromoCarrousel__content-img-${positions[2]}`;
+            position = `PromoCarrousel__content-img-waiting`;
           }
 
           if (promoIndex === images.length - 1) {
             if (index === 0) {
-              position = `PromoCarrousel__content-img-${positions[1]}`;
+              position = `PromoCarrousel__content-img-incoming`;
             }
           }
 
@@ -57,7 +53,10 @@ const PromoCarrousel = () => {
 
             return (
               <div key={index}>
-                <label htmlFor={`PromoCarrousel__content-indicator-${index}`} className={`PromoCarrousel__content-indicator-label PromoCarrousel__content-indicator-label-${indicator}`} />
+                <label
+                  htmlFor={`PromoCarrousel__content-indicator-${index}`}
+                  className={`PromoCarrousel__content-indicator-label PromoCarrousel__content-indicator-label-${indicator}`}
+                />
                 <input type="radio" id={`PromoCarrousel__content-indicator-${index}`} name="indicator" value={index} onChange={setPosition} />
               </div>
             );

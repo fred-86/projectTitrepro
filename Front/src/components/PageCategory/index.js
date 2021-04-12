@@ -50,32 +50,32 @@ const PageCategory = ({ isCategoriesLoaded, categories, products, addToCart }) =
       {isCategoriesLoaded && typeof currentCategory === "undefined" && <Redirect to="/404" />}
       {typeof currentCategory !== "undefined" && <section className="CategoryPage">
         <CategoryNavBar categories={navCategories} />
-        <div className="MainImgCategory">
-          <img src={currentCategory.pictogram} className="MainImgCategory__img" alt={currentCategory.name} />
+        <div className="CategoryPage__banner">
+          <img src={currentCategory.pictogram} className="CategoryPage__banner-img" alt={currentCategory.name} />
         </div>
-        <nav className="Pictogram">
-          <ul className="Pictogram__list">
+        <nav className="CategoryPage__subCategory">
+          <ul className="CategoryPage__subCategory-list">
             {currentCategory.childCategories.map((childCategory) => {
               const childCategoryLink = generateLink(childCategory.name);
               return (
-                <li className="Pictogram__list-item" key={childCategory.id}>
+                <li className="CategoryPage__subCategory-list-item" key={childCategory.id}>
                   <NavLink
-                    to={`/${currentCategoryLink}/${childCategoryLink}`} className="Pictogram__list-item-link"
-                    activeClassName="Pictogram__list-item-link--active"
+                    to={`/${currentCategoryLink}/${childCategoryLink}`} className="CategoryPage__subCategory-list-item-link"
+                    activeClassName="CategoryPage__subCategory-list-item-link--active"
                   >
-                    <img src={childCategory.pictogram} alt="picto" className="Pictogram__list-item-link-img" />
-                    <img src={childCategory.pictogram} alt="picto" className="Pictogram__list-item-link-back" />
+                    <img src={childCategory.pictogram} alt="picto" className="CategoryPage__subCategory-list-item-link-img" />
+                    <img src={childCategory.pictogram} alt="picto" className="CategoryPage__subCategory-list-item-link-back" />
                   </NavLink>
                 </li>
               );
             })}
           </ul>
         </nav>
-        <div className="ContainerSubCategoriesImg">
+        <div className="CategoryPage__product-list">
           {currentProducts.length > 0 && currentProducts.map((currentProduct) => (
             <ProductCard product={currentProduct} addToCart={addToCart} key={currentProduct.id} />
           ))}
-          {currentProducts.length === 0 && <p className="ContainerSubCategoriesImg__empty-message">
+          {currentProducts.length === 0 && <p className="CategoryPage__product-list-empty-message">
             Veuillez nous excuser, nous ne proposons aucun article dans cette catégorie.
           </p>}
         </div>

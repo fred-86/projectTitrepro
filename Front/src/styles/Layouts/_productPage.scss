@@ -6,7 +6,6 @@
   align-items: center;
 
   .description {
-    //position: relative;
     display: flex;
     text-align: left;
     max-width: 70%;
@@ -67,7 +66,15 @@
         }
 
         &__item{
-          font-size: $breadcrumb-size;
+          font-size: $small-font;
+
+          &:nth-of-type(1) {
+            margin-right: 0.5rem;
+          }
+
+          &:hover { 
+            color: $color-nav-hover;
+          }
         }
       }
 
@@ -77,7 +84,7 @@
       }
 
       &-compagny {
-        font-size: 0.8rem;
+        font-size: $small-font;
         margin-bottom: 2rem;
 
         & > em {
@@ -100,7 +107,6 @@
 
         &-save {
           padding: 0.5rem 0;
-          font-size: 1rem;
           color: $color-red-save;
         }
       }
@@ -126,7 +132,7 @@
           padding: 0.7rem;
   
           &-label {
-            font-size: 0.8rem;
+            font-size: $small-font;
             margin-bottom: 0.5rem;
           }
   
@@ -150,6 +156,7 @@
     }
   }
 
+  // Media Queries
   @include lg {
     .description{
       max-width: 80%;
@@ -165,37 +172,41 @@
       display: flex;
       flex-direction: column-reverse;
       text-align: left;
-    }
-    .description__details{
-      margin-bottom: 2rem;
-    }
 
-    .description__pictures-main{
-      margin: 0 auto;
-      width: 660px;
-      height: auto;
+      &__details {
+        margin-bottom: 2rem;  
+      }
+
+      &__pictures-main {
+        margin: 0 auto;
+        width: 660px;
+        height: auto;
+      }
     }
   }
 
   @include sm {
-    .description__pictures {
-      width: auto;
-      height: auto;
-      align-items: center;
-      padding-right: inherit;
-    }
+    .description {
 
-    .description__pictures-main{
-      width: 400px;
-    }
+      &__pictures {
+        width: auto;
+        height: auto;
+        align-items: center;
+        padding-right: inherit;  
 
-    .description__details-resume{
-      margin-top: 1rem;
-      padding: 0;
+        &-main{
+          width: 400px;
+        }
+      }
+
+      &__details-resume{
+        margin-top: 1rem;
+        padding: 0;
+      }
     }
   }
 
-  @include sm {
+  @include xs {
     .description__pictures-main{
       width: 250px;
     }
