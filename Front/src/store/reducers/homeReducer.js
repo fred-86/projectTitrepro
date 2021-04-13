@@ -2,6 +2,7 @@ const initialState = {
   position: 0,
   mainSwitch: false,
   switchVisibility: false,
+  bubble: false,
 };
 
 const homeReducer = (state = initialState, action = {}) => {
@@ -22,6 +23,12 @@ const homeReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         switchVisibility: action.value,
+      };
+
+    case 'SET_BUBBLE':
+      return {
+        ...state,
+        bubble: !state.bubble,
       };
 
     default:

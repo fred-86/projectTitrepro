@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 
 // Import local
-import { setMainSwitch, setIsOpened, setItemAdded } from 'src/store/actions';
+import { setMainSwitch, setBubble, setIsOpened, setItemAdded } from 'src/store/actions';
 import Header from 'src/components/Header';
 
 const mapStateToProps = (state) => ({
@@ -13,6 +13,7 @@ const mapStateToProps = (state) => ({
   haveChange: state.cart.flyingCart.haveChange,
   categories: state.product.categories,
   switchVisibility: state.home.switchVisibility,
+  bubble: state.home.bubble,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -24,7 +25,10 @@ const mapDispatchToProps = (dispatch) => ({
   },
   setItemAdded: () => {
     dispatch(setItemAdded(false));
-  }
+  },
+  setBubble: () => {
+    dispatch(setBubble());
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

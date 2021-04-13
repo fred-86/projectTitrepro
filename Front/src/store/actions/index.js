@@ -36,6 +36,10 @@ export const setSwitchVisibility = (value) => ({
   value: value,
 });
 
+export const setBubble = () => ({
+  type: 'SET_BUBBLE',
+});
+
 // ==========
 // Home page
 export const setPosition = (position) => ({
