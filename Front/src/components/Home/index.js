@@ -74,7 +74,7 @@ const Home = ({
         &#187;
       </button>
       <div className="Home__content">
-        {!isCategoriesLoaded || !isProductLoaded && <Loader />}
+        {(!isCategoriesLoaded || !isProductLoaded) && <Loader />}
         {isCategoriesLoaded && isProductLoaded && categories.map((category) => {
           let associatedProduct = [];
 

@@ -11,7 +11,7 @@ const appMiddleware = (store) => (next) => (action) => {
     case 'GET_TOKEN':
       axios.post('http://www.epako.studio/apo-E-pascommerce-back/public/api/login_check', {
         "username": "ydfhvd@uifjfn.com",
-        "password": "uhzudhzd:;,78545289"
+        "password": "U:;,ihejhifheif45"
       })
         .then((response) => {
           store.dispatch(setToken(response.data.token));
@@ -32,7 +32,7 @@ const appMiddleware = (store) => (next) => (action) => {
           store.dispatch(setCategories(response.data));
         })
         .catch((err) => {
-          //console.log(err.response);
+          console.log(err.response);
         });
       next(action);
       break;
@@ -47,7 +47,7 @@ const appMiddleware = (store) => (next) => (action) => {
           store.dispatch(setProducts(response.data));
         })
         .catch((err) => {
-          //console.log(err);
+          console.log(err);
         });
       next(action);
       break;
@@ -62,7 +62,7 @@ const appMiddleware = (store) => (next) => (action) => {
           store.dispatch(setPlaceCategories(response.data));
         })
         .catch((err) => {
-          //console.log(err);
+          console.log(err);
         });
       next(action);
       break;
@@ -77,7 +77,7 @@ const appMiddleware = (store) => (next) => (action) => {
           store.dispatch(setPlaces(response.data));
         })
         .catch((err) => {
-          //console.log('err:', err);
+          console.log('err:', err);
         });
       next(action);
       break;
