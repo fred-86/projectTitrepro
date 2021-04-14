@@ -20,6 +20,7 @@ const FlyingCart = ({
   removeFromCart,
   sendCart,
   haveFound,
+  statusCode,
   showPopUp
 }) => {
   const cartClass = classNames("FlyingCart", { "FlyingCart--open": isOpened });
@@ -81,6 +82,7 @@ const FlyingCart = ({
         <button type="button" onClick={checkCart}>Valider</button>
       </div>
       {haveFound && <Redirect to='/cart' />}
+      {!haveFound && statusCode === '404' && <Redirect to='/practical/category/0' />}
     </aside>
   );
 };

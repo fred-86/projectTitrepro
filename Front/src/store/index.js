@@ -1,6 +1,5 @@
 // Import npm
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
@@ -32,12 +31,10 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-const enhancers = composeWithDevTools(
-  applyMiddleware(
-    appMiddleware,
-    cartMiddleware,
-    placeMiddleware,
-  ),
+const enhancers = applyMiddleware(
+  appMiddleware,
+  cartMiddleware,
+  placeMiddleware,
 );
 
 export const store = createStore(persistedReducer, enhancers);

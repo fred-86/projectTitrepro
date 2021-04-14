@@ -1,4 +1,5 @@
 .ProductPage {
+  position: relative;
   margin-top: 3rem;
   display: flex;
   flex-direction: column;
@@ -44,6 +45,20 @@
     &__details {
       padding: 0 1rem;
 
+      &-back-link {
+        position: absolute;
+        top: -15px;
+        left: 20px;
+        width: 80px;
+        height: 30px;
+        display: inline-block;
+        background: $background-nav;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+        color: $color-nav-hover;
+      }
+
       .breadcrumb {
         padding-bottom: 1rem;
         &__list{
@@ -51,7 +66,15 @@
         }
 
         &__item{
-          font-size: $breadcrumb-size;
+          font-size: $small-font;
+
+          &:nth-of-type(1) {
+            margin-right: 0.5rem;
+          }
+
+          &:hover { 
+            color: $color-nav-hover;
+          }
         }
       }
 
@@ -61,7 +84,7 @@
       }
 
       &-compagny {
-        font-size: 0.8rem;
+        font-size: $small-font;
         margin-bottom: 2rem;
 
         & > em {
@@ -84,7 +107,6 @@
 
         &-save {
           padding: 0.5rem 0;
-          font-size: 1rem;
           color: $color-red-save;
         }
       }
@@ -110,7 +132,7 @@
           padding: 0.7rem;
   
           &-label {
-            font-size: 0.8rem;
+            font-size: $small-font;
             margin-bottom: 0.5rem;
           }
   
@@ -134,6 +156,7 @@
     }
   }
 
+  // Media Queries
   @include lg {
     .description{
       max-width: 80%;
@@ -149,34 +172,43 @@
       display: flex;
       flex-direction: column-reverse;
       text-align: left;
-    }
-    .description__details{
-      margin-bottom: 2rem;
-    }
 
+      &__details {
+        margin-bottom: 2rem;  
+      }
 
-    .description__pictures-main{
-      width: auto;
-      height: auto;
+      &__pictures-main {
+        margin: 0 auto;
+        width: 660px;
+        height: auto;
+      }
     }
   }
 
   @include sm {
-    .description__pictures {
-      width: auto;
-      height: auto;
-      align-items: center;
-      padding-right: inherit;
-    }
+    .description {
 
+      &__pictures {
+        width: auto;
+        height: auto;
+        align-items: center;
+        padding-right: inherit;  
+
+        &-main{
+          width: 400px;
+        }
+      }
+
+      &__details-resume{
+        margin-top: 1rem;
+        padding: 0;
+      }
+    }
+  }
+
+  @include xs {
     .description__pictures-main{
       width: 250px;
-      height: auto;
-    }
-
-    .description__details-resume{
-      margin-top: 1rem;
-      padding: 0;
     }
   }
 }

@@ -62,6 +62,9 @@ const ProductPage = ({
         )}
         {typeof currentProduct !== "undefined" && (
           <article className="description__details">
+            <Link to={`/${categoryLink}`} className="description__details-back-link">
+              &#10554;
+            </Link>
             <div className="breadcrumb">
               <ol className="breadcrumb__list">
                 <li className="breadcrumb__item">

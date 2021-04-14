@@ -36,6 +36,10 @@ export const setSwitchVisibility = (value) => ({
   value: value,
 });
 
+export const setBubble = () => ({
+  type: 'SET_BUBBLE',
+});
+
 // ==========
 // Home page
 export const setPosition = (position) => ({
@@ -122,6 +126,11 @@ export const sendCart = () => ({
 export const setHaveFound = (value) => ({
   type: 'SET_HAVE_FOUND',
   value: value,
+});
+
+export const setStatusCode = (code) => ({
+  type: 'SET_STATUS_CODE',
+  code: code,
 });
 
 export const setItemAdded = (value) => ({

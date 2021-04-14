@@ -30,19 +30,6 @@
     color: $color-nav-hover;
   }
 
-  h2{
-    font-size: 1rem;
-    color: $color-nav;
-    padding-bottom: 2rem;
-  }
-
-  .FlyingCart__div{
-    width: 100%;
-    height: 6rem;
-    background-color: $color-nav;
-    margin-bottom: 2rem;
-  }
-
   &.FlyingCart--open {
     right: 0;
     transition: right 0.4s;
@@ -112,6 +99,27 @@
       font-size: 1rem;
       font-weight: 700;
       text-transform: uppercase;
+    }
+  }
+
+  @include xs {
+    height: 80vh;
+
+    &__resume {
+      padding: 1.5rem 1rem;
+  
+      &-logo {
+        padding: 0.5rem 1rem;
+        margin-bottom: 1.5rem;
+      }
+  
+      &-dep {
+        margin-bottom: 2.5rem;
+      }
+  
+      &-total {
+        margin-bottom: 1.5rem;
+      }
     }
   }
 }

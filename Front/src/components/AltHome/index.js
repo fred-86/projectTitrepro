@@ -7,12 +7,13 @@ import AltCategoryNavBar from '../AltCategoryNavBar';
 import AltCategoryCards from '../AltCategoryCards';
 import bannerImg from '../../assets/images/practical/forest.jpg';
 
-const AltHome = ({ token, loadPlaceCategories, placeCategories, loadPlaces, places }) => {
+const AltHome = ({ token, loadPlaceCategories, placeCategories, loadPlaces, places, setStatusCode }) => {
   const { id } = useParams();
   const placesByCategory = parseInt(id) === 0 ? places : places.filter((place) => (place.placeCategory.id === parseInt(id)));
 
   useEffect(() => {
-    window.scrollTo(0, 500);
+    window.scrollTo(0, 0);
+    setStatusCode('');
   }, []);
 
   useEffect(() => {

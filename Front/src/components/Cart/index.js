@@ -1,5 +1,6 @@
 // Import npm
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Cart = ({
   loadPlaceCategories,
@@ -10,12 +11,17 @@ const Cart = ({
   setSelectedProduct,
   selectedPlaceCategory,
   setSelectedPlaceCategory,
-  setHaveFound
+  setMainSwitch,
+  setHaveFound,
 }) => {
   const placesByProduct = places.filter((place) => {
     const placeSubCategoriesIndex = place.productCategories.map((productCategory) => (productCategory.id));
 
-    return (placeSubCategoriesIndex.includes(selectedProduct));
+    if (typeof selectedProduct.productCategories !== 'undefined') {
+      return (placeSubCategoriesIndex.includes(selectedProduct.productCategories[0].id));
+    }
+
+    return false;
   });
 
   const placesByCategory = placesByProduct.filter(
@@ -28,33 +34,35 @@ const Cart = ({
   });
 
   const setCurrentProduct = (event) => {
-    setSelectedProduct(parseInt(event.target.value));
+    const currentItem = items.find((item) => item.product.id === parseInt(event.target.value));
+    setSelectedProduct(currentItem.product);
   };
 
   const setCurrentPlaceCategory = (event) => {
     setSelectedPlaceCategory(parseInt(event.target.value));
-  }
+  };
 
   useEffect(() => {
     loadPlaceCategories();
+    setSelectedProduct(items[0].product);
     setHaveFound(false);
 
     return () => {
-      setSelectedProduct(0);
+      setSelectedProduct({});
+      setSelectedPlaceCategory(0);
     }
   }, []);
 
   useEffect(() => {
     if (categoriesByProduct.length > 0) {
-      console.log("here");
-      setSelectedPlaceCategory(parseInt(categoriesByProduct[0].id));
+      setSelectedPlaceCategory(categoriesByProduct[0].id);
     }
-  }, [selectedProduct]);
+  }, [selectedProduct, placeCategories]);
 
   return (
     <div className="Cart">
       <article className="Cart__intro">
-        <h2 className="Cart__intro-title">Quelle(s) circuit(s) pour trouver mon produit ?</h2>
+        <h2 className="Cart__intro-title">Quel(s) circuit(s) pour trouver mon produit ?</h2>
         <p className="Cart__intro-content">
           E-pako (contraction d’E-Pas-Commerce),  vous apporte un ensemble d’alternatives au canaux traditionnelles tout en respectant vos besoins de consommation.
           Opter pour de la seconde main, du troc, des dons ou soutenir une association proche de chez vous, c’est possible ! A vous de choisir.
@@ -68,10 +76,10 @@ const Cart = ({
           <article className="Cart__proposal-list-content">
             {items.map((item, index) => {
               let checked;
+
               // Auto select the fisrt item when cart is display
-              if (selectedProduct === 0 && index === 0) {
+              if (selectedProduct.id === item.product.id) {
                 checked = "checked";
-                setSelectedProduct(item.product.productCategories[0].id);
               }
 
               return (
@@ -82,7 +90,7 @@ const Cart = ({
                     id={`Cart__proposal-list-item--${index}`}
                     className="Cart__proposal-list-content-item"
                     defaultChecked={checked}
-                    value={item.product.productCategories[0].id}
+                    value={item.product.id}
                     onClick={setCurrentProduct}
                   />
                   <label
@@ -104,9 +112,9 @@ const Cart = ({
             </h2>
             <div className="Cart__proposal-choices-header-options">
               {categoriesByProduct.map((categoryByProduct, index) => {
-                let checked;
+                let checked = false;
 
-                if (selectedPlaceCategory == categoriesByProduct.id) {
+                if (selectedPlaceCategory === categoryByProduct.id) {
                   checked = 'checked';
                 }
 
@@ -138,9 +146,9 @@ const Cart = ({
                     <li>{placeByCategory.address}</li>
                     <li>{`${placeByCategory.addressComplement}, ${placeByCategory.city}`}</li>
                     <li>
-                      <a className="Cart__proposal-choices-tab-content-address-link" href={placeByCategory.url} target="_blank">
-                        Visiter le site
-                    </a>
+                      <Link className="Cart__proposal-choices-tab-content-address-link" to={`/practical/place/${placeByCategory.id}`} onClick={setMainSwitch}>
+                        Voir la fiche
+                      </Link>
                     </li>
                   </ul>
                 </section>

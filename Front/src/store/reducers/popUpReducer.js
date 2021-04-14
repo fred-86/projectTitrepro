@@ -1,6 +1,6 @@
 const initialState = {
   isActive: false,
-  messages: [],
+  messages: ['Une erreur est survenue !'],
 };
 
 const popUpReducer = (state = initialState, action = {}) => {

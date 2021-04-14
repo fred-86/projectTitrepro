@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // Import local
-import { setLocations, setHaveFound, setSwitchVisibility, setMainSwitch, setCartPlaces, showPopUp } from '../store/actions';
+import { setLocations, setHaveFound, setSwitchVisibility, setMainSwitch, setStatusCode, setCartPlaces, showPopUp, setBubble } from '../store/actions';
 
 const cartMiddleware = (store) => (next) => (action) => {
   const { token } = store.getState().product;
@@ -54,6 +54,12 @@ const cartMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           store.dispatch(setHaveFound(true));
           store.dispatch(setCartPlaces(response.data));
+          console.log(localStorage.getItem('hadVisited'));
+
+          if (localStorage.getItem('hadVisited') === null) {
+            store.dispatch(setBubble());
+          }
+
           localStorage.setItem("hadVisited", true);
           store.dispatch(setSwitchVisibility(true));
         })
@@ -62,9 +68,15 @@ const cartMiddleware = (store) => (next) => (action) => {
 
           if (status === 404) {
             store.dispatch(setHaveFound(false));
+
+            if (localStorage.getItem('hadVisited') === null) {
+              store.dispatch(setBubble());
+            }
+
             localStorage.setItem("hadVisited", true);
             store.dispatch(setSwitchVisibility(true));
             store.dispatch(setMainSwitch());
+            store.dispatch(setStatusCode("404"));
             store.dispatch(showPopUp([error]));
           }
           else {

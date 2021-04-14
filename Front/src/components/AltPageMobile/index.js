@@ -13,9 +13,14 @@ const AltPageMobile = ({ token, loadPlaces, places, getMap, map }) => {
   useEffect(() => {
     if (token !== '') {
       loadPlaces();
-      getMap(currentPlace);
     }
   }, [token]);
+
+  useEffect(() => {
+    if (places.length > 0) {
+      getMap(currentPlace);
+    }
+  }, [places]);
 
   return (
     <section className="AltPageMobile">

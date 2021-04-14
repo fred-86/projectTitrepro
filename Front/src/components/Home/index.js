@@ -14,6 +14,13 @@ const Home = ({
   position,
   setPosition
 }) => {
+  const fashionCategory = categories.find((category) => category.name === 'tendance');
+  const fashionProduct = products.filter((product) => {
+    const categoriesId = product.productCategories.map((productCategory) => productCategory.name);
+
+    return categoriesId.includes('tendance');
+  });
+
   const lockPosition = () => {
     const currentWidth = window.innerWidth;
 
@@ -67,33 +74,36 @@ const Home = ({
         &#187;
       </button>
       <div className="Home__content">
-        {!isCategoriesLoaded && !isProductLoaded && <Loader />}
-        {isCategoriesLoaded && isProductLoaded && categories.map((category, index) => {
+        {(!isCategoriesLoaded || !isProductLoaded) && <Loader />}
+        {isCategoriesLoaded && isProductLoaded && categories.map((category) => {
           let associatedProduct = [];
 
-          if (index !== categories.length - 1) {
+          if (category.name !== 'tendance') {
             const childCategoriesIndex = category.childCategories.map((childCategorie) => (
               childCategorie.id
             ));
+
             associatedProduct = products.filter((product) => {
               return (
                 childCategoriesIndex.includes(product.productCategories[0].id)
               )
             });
-          }
-          else {
-            associatedProduct = products.filter((product) => product.productCategories.length > 1);
-          }
 
-          return (
-            <Carrousel
-              category={category}
-              products={associatedProduct}
-              categoryPosition={position}
-              key={category.id}
-            />
-          );
+            return (
+              <Carrousel
+                category={category}
+                products={associatedProduct}
+                categoryPosition={position}
+                key={category.id}
+              />
+            );
+          }
         })}
+        {isCategoriesLoaded && isProductLoaded && <Carrousel
+          category={fashionCategory}
+          products={fashionProduct}
+          categoryPosition={position}
+        />}
       </div>
     </div>
   );

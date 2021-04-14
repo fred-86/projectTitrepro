@@ -1,12 +1,9 @@
 .loader {
-  //  <div className="loader" />
   z-index: 99;
+  margin: 10rem auto;
   width: 300px;
   height: 100px;
-  //background-color: $background-nav;
   background-image: url(src/assets/images/ePaKo.svg);
-  margin: 10rem auto;
-  // https://developer.mozilla.org/en-US/docs/Web/CSS/animation
   animation: rotateplan 5.5s infinite ease-in-out;
 
   @keyframes rotateplan {
@@ -17,18 +14,7 @@
       transform: perspective(300) rotateX(-180.1deg) rotateY(0deg);
     }
     100% {
-      transform: perspective(300) rotateX(-180deg) rotateY(-179.9deg);
-    }
-    50% {
-      transform: perspective(300) rotateX(180deg) rotateY(0deg);
-    }
-    100% {
-      transform: perspective(300) rotateX(-180deg) rotateY(-179.9deg);
-    }
-    100% {
       transform: perspective(300) rotateX(0deg) rotateY(0deg);
     }
   }
-
-  
 }

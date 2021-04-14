@@ -1,7 +1,7 @@
 const initialState = {
   items: [],
   cart: {
-    selectedProduct: 0,
+    selectedProduct: {},
     placeCategories: [],
     selectedPlaceCategory: 0,
     places: [],
@@ -12,8 +12,9 @@ const initialState = {
     locations: [],
     selectedLocation: '',
     amount: 0,
-    haveFound: false,
     itemAdded: false,
+    haveFound: false,
+    statusCode: '',
   },
 };
 
@@ -188,6 +189,18 @@ const cartReducer = (state = initialState, action = {}) => {
         ...state.flyingCart,
         isOpened: false,
         haveFound: action.value,
+      };
+
+      return {
+        ...state,
+        flyingCart: newFlyingCart,
+      };
+    }
+
+    case 'SET_STATUS_CODE': {
+      const newFlyingCart = {
+        ...state.flyingCart,
+        statusCode: action.code,
       };
 
       return {
