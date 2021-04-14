@@ -4,14 +4,17 @@ import axios from 'axios';
 // Import local
 import { setToken, setCategories, setProducts, setPlaceCategories, setPlaces } from 'src/store/actions';
 
+// Function
 const appMiddleware = (store) => (next) => (action) => {
   const { token } = store.getState().product;
+  const login = process.env.AUTH_LOGIN;
+  const password = process.env.AUTH_PASSWORD;
 
   switch (action.type) {
     case 'GET_TOKEN':
       axios.post('http://www.epako.studio/apo-E-pascommerce-back/public/api/login_check', {
-        "username": "ydfhvd@uifjfn.com",
-        "password": "U:;,ihejhifheif45"
+        "username": `${login}`,
+        "password": `${password}`
       })
         .then((response) => {
           store.dispatch(setToken(response.data.token));
