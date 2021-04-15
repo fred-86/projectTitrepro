@@ -1,5 +1,6 @@
 // Import npm
 import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
@@ -12,8 +13,6 @@ import productReducer from './reducers/productReducer';
 import cartReducer from './reducers/cartReducer';
 import popUpReducer from './reducers/popUpReducer';
 import altHomeReducer from './reducers/altHomeReduce';
-
-
 
 const rootReducer = combineReducers({
   home: homeReducer,
@@ -31,10 +30,12 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-const enhancers = applyMiddleware(
-  appMiddleware,
-  cartMiddleware,
-  placeMiddleware,
+const enhancers = composeWithDevTools(
+  applyMiddleware(
+    appMiddleware,
+    cartMiddleware,
+    placeMiddleware,
+  )
 );
 
 export const store = createStore(persistedReducer, enhancers);

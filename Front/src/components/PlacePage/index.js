@@ -54,8 +54,8 @@ const PlacePage = ({ token, loadPlaces, places, getMap, map }) => {
             </p>
           </article>
           <div className="PlacePage__presentation-map">
-            <img className="PlacePage__presentation-map-geoloc" src={map} />
             <a className="PlacePage__presentation-map-btn" href={currentPlace.url} target="_blank">Voir le site</a>
+            <img className="PlacePage__presentation-map-geoloc" src={map} />
           </div>
           <div className="PlacePage__presentation-comment">
             <h2 className="PlacePage__presentation-comment-title">Commentaire</h2>
