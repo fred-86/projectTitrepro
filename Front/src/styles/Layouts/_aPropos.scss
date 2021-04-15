@@ -7,17 +7,16 @@
   &__article {
     width: 50%;
     padding: 1rem 2rem;
+    text-align: left;
 
     &-title {
       margin-bottom: 1rem;
-      text-align: left;
       font-size: 2rem;
       font-weight: 700;
     }
 
     &-title--2 {
       margin-bottom: 1.5rem;
-      text-align: left;
       font-size: 1.5rem;
       font-weight: 500;
       color: $background-mediumgrey;
@@ -41,6 +40,10 @@
         padding-left: 3rem;
       }
     }
+
+    &:not(:nth-last-of-type(1)) {
+      margin-bottom: 1rem;
+    }
   }
 
   &__aside {
@@ -56,7 +59,9 @@
 
       &-img {
         border-radius: 10px 10px 0 0;
-        max-width: 180px;
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
       }
 
       &-role {
@@ -74,12 +79,6 @@
     }
   }
 
-  &__article:not(:nth-last-of-type(1)) {
-    margin-bottom: 1rem;
-  }
-
-
-  
   @include lg {
     .Apropos {
       &__article{

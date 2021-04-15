@@ -9,7 +9,7 @@ import Cart from '../Cart/assistant';
 import Page404 from '../404';
 import Home from '../Home/assistant';
 import AltHome from '../AltHome/assistant';
-import AltPageMobile from '../AltPageMobile/assistant';
+import PlacePage from '../PlacePage/assistant';
 import PageCategory from '../PageCategory/assistant';
 import ProductPage from '../ProductPage/assistant';
 import MentionsLegales from '../MentionsLegales';
@@ -19,7 +19,14 @@ import PopUp from '../PopUp/assistant';
 import { generateLink } from 'src/Utils';
 
 // == Component
-const App = ({ getToken, token, loadCategory, categories, loadProducts, setSwitchVisibility }) => {
+const App = ({
+  getToken,
+  token,
+  loadCategory,
+  categories,
+  loadProducts,
+  setSwitchVisibility
+}) => {
   useEffect(() => {
     getToken();
 
@@ -66,7 +73,7 @@ const App = ({ getToken, token, loadCategory, categories, loadProducts, setSwitc
             <AltHome />
           </Route>
           <Route path="/practical/place/:id">
-            <AltPageMobile />
+            <PlacePage />
           </Route>
           <Route path="/mentions-legales">
             <MentionsLegales />

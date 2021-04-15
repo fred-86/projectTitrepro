@@ -114,6 +114,7 @@ const Cart = ({
               {categoriesByProduct.map((categoryByProduct, index) => {
                 let checked = false;
 
+                // Auto select the fisrt category when cart is display
                 if (selectedPlaceCategory === categoryByProduct.id) {
                   checked = 'checked';
                 }

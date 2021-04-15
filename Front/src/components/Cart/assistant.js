@@ -2,7 +2,13 @@
 import { connect } from 'react-redux';
 
 // Import local
-import { loadPlaceCategories, setSelectedProduct, setSelectedPlaceCategory, setMainSwitch, setHaveFound } from 'src/store/actions';
+import {
+  loadPlaceCategories,
+  setSelectedProduct,
+  setSelectedPlaceCategory,
+  setMainSwitch,
+  setHaveFound
+} from 'src/store/actions';
 import Cart from './index';
 
 const mapStateToProps = (state) => ({

@@ -29,12 +29,14 @@ const Header = ({ switchVisibility, bubble, setBubble, mainSwitch, setMainSwitch
   // Exclude tendance category from navBar
   const navCategories = categories.filter((category) => category.name !== "tendance");
 
+  // Hide navBar on specifics pages
   const forbiddenPaths = [...categoryPaths];
   forbiddenPaths.push("/cart", "/practical");
 
   const isCurrentPath = (path) => pathname.includes(path);
   const isNavHide = forbiddenPaths.some(isCurrentPath);
 
+  // Hide cart button on cart page
   const isCartPage = pathname === "/cart" ? true : false;
 
   // Set the path for le Logo link
@@ -46,6 +48,7 @@ const Header = ({ switchVisibility, bubble, setBubble, mainSwitch, setMainSwitch
   }
 
   useEffect(() => {
+    // Deal with switch state when coming from alt home
     if (pathname === '/a-propos' || pathname === '/mentions-legales') {
       if (mainSwitch === true) {
         setMainSwitch();
@@ -62,7 +65,12 @@ const Header = ({ switchVisibility, bubble, setBubble, mainSwitch, setMainSwitch
         {switchVisibility && <label className="Header__switch" htmlFor="Header__switch-checkbox">
           <input type="checkbox" className="Header__switch-checkbox" id="Header__switch-checkbox" checked={mainSwitch} readOnly />
           <span className="Header__switch-slider" />
-          <Link to={switchPath} className="Header__switch-link" onClick={setMainSwitch} title="Basculer entre la partie e-commerce de notre site et la partie où nous vous proposons des alternatives grâce à ce switch." />
+          <Link
+            to={switchPath}
+            className="Header__switch-link"
+            onClick={setMainSwitch}
+            title="Basculer entre la partie e-commerce de notre site et la partie où nous vous proposons des alternatives grâce à ce switch."
+          />
           <p className={bubbleClass} onAnimationEnd={setBubble}>
             Vous pouvez à présent basculer entre la partie e-commerce de notre site et la partie où nous vous proposons des alternatives grâce à ce ce switch.
           </p>

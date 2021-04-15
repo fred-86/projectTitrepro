@@ -149,3 +149,17 @@
     rgba(186,242,216,0.24413515406162467) 100%
   );
 }
+
+
+// Switch thumb
+@mixin SwitchThumb {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 50%;
+  width: 36px;
+  height: 36px;
+  margin-top: -18px;
+  border-radius: 50%;
+  transition: 0.4s;
+}

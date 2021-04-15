@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 // Import local
 import { loadPlaces, getMap } from 'src/store/actions';
-import AltPageMobile from './index';
+import PlacePage from './index';
 
 const mapStateToProps = (state) => ({
   token: state.product.token,
@@ -20,4 +20,4 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(AltPageMobile);
+export default connect(mapStateToProps, mapDispatchToProps)(PlacePage);

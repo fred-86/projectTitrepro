@@ -6,8 +6,8 @@
   height: 90vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  //align-items: center;
+  //justify-content: flex-start;
   padding: 1rem 0 0;
   background-color: $nav-separator;
   transition: right 0.4s;
@@ -45,15 +45,14 @@
     padding: 2rem 1rem;
 
     &-logo {
-      height: auto;
+      //height: auto;
       padding: 1rem;
       margin-bottom: 2rem;
       border-radius: 5px;
       background-color: lighten(lightgrey, 20%);
-
-      font-size: 0.7rem;
-      line-height: 1.2rem;
       text-align: left;
+      line-height: 1.2rem;
+      font-size: 0.8rem;
     }
 
     & > label {
@@ -65,12 +64,9 @@
 
     &-dep {
       margin-bottom: 3rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
-      height: 2rem;
+      padding: 0.5rem 1rem;
       border: none;
       background-color: $nav-separator;
-
       color: $color-nav;
     }
 
@@ -94,11 +90,10 @@
       border: 1px solid $color-border-yellow;
       border-radius: 100% / 25px 25px 0 0;
       background-color: $color-nav-hover;
-      color: $nav-separator;
-
       font-size: 1rem;
       font-weight: 700;
       text-transform: uppercase;
+      color: $nav-separator;
     }
   }
 
