@@ -23,7 +23,15 @@
     border-top: 1px solid rgb(138, 138, 138);
     padding: 0.6rem 1rem 0.5rem;
     background: rgb(219,229,231);
-    background: linear-gradient(180deg, rgba(219,229,231,1) 0%, rgba(222,245,250,1) 15%, rgba(204,227,232,1) 40%, rgba(206,226,230,1) 60%, rgba(228,251,255,1) 85%, rgba(171,190,195,1) 100%);
+    background: linear-gradient(
+      180deg, 
+      rgb(226, 232, 233) 0%, 
+      rgb(235, 250, 253) 15%, 
+      rgb(214, 228, 231) 40%, 
+      rgb(214, 227, 230) 60%, 
+      rgb(234, 250, 253) 85%, 
+      rgb(179, 192, 196) 100%
+    );
     font-weight: $md-weight;
     color: #7E7D7D;
 
