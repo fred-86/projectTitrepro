@@ -122,7 +122,7 @@
         rgb(191, 238, 233) 100%
       );
       text-align: justify;
-      font-size: 0.8rem;
+      font-size: $sm-font;
       color: rgb(65, 64, 64);
 
       &--active {
@@ -184,7 +184,7 @@
     border-color: rgb(223, 216, 207);
     background-color: rgba(230, 230, 230, 0.438);
     text-indent: 1rem;
-    font-size: 1.2rem;
+    font-size: $lg-font;
     color: rgb(70, 75, 146);
   }
 

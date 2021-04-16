@@ -24,7 +24,7 @@
     padding: 0.6rem 1rem 0.5rem;
     background: rgb(219,229,231);
     background: linear-gradient(180deg, rgba(219,229,231,1) 0%, rgba(222,245,250,1) 15%, rgba(204,227,232,1) 40%, rgba(206,226,230,1) 60%, rgba(228,251,255,1) 85%, rgba(171,190,195,1) 100%);
-    font-weight: 700;
+    font-weight: $md-weight;
     color: #7E7D7D;
 
     &-category-title {
@@ -34,13 +34,13 @@
 
     &-name {
       margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-      font-weight: 900;
+      font-size: $lg-font;
+      font-weight: $lg-weight;
       color:#525252;
     }
 
     &-location {
-      font-size: 0.8rem;
+      font-size: $sm-font;
     }
   }
   

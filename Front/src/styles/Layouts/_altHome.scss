@@ -24,14 +24,14 @@
 
       &-title {
         margin-bottom:0.9rem;
-        font-size: 3rem;
-        font-weight:700;
+        font-size: $xxl-font;
+        font-weight:$md-weight;
       }
 
       &-text {
         margin-bottom: 0.9rem;
         text-align: justify;
-        font-weight: 600;
+        font-weight: $sm-weight;
         line-height: 1.2rem;
       }
     }
@@ -73,7 +73,7 @@
         padding: 3rem;
 
         &-title {
-          font-size: 2rem;
+          font-size: $xl-font;
         }
       }
     }

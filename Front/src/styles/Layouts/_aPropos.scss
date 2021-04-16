@@ -11,8 +11,8 @@
 
     &-title {
       margin-bottom: 1rem;
-      font-size: 2rem;
-      font-weight: 700;
+      font-size: $xl-font;
+      font-weight: $md-weight;
     }
 
     &-title--2 {
@@ -32,7 +32,7 @@
       }
 
       strong{
-        font-weight: 700;
+        font-weight: $md-weight;
       }
 
       ul li {
@@ -66,14 +66,14 @@
 
       &-role {
         margin-top: 0.5rem;
-        font-size: 1rem;
-        font-weight: 700;
+        font-size: $md-font;
+        font-weight: $md-weight;
         color: $background-nav;
       }
 
       &-teamate {
         margin-top: 0.5rem;
-        font-size: 0.8rem;
+        font-size: $sm-font;
         color: $background-mediumgrey;
       }
     }
@@ -97,15 +97,15 @@
 
         &-title {
           font-size: 1.5rem;
-          font-weight: 700;
+          font-weight: $md-weight;
         }
         &-title--2 {
-          font-size: 1.2rem ;
-          font-weight: 700;
+          font-size: $lg-font;
+          font-weight: $md-weight;
         }
 
         &-content {
-          font-size: 0.9rem ;
+          font-size: $md-font;
         }
       }
 
