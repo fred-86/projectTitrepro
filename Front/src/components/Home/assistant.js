@@ -4,10 +4,10 @@ import { setPosition } from 'src/store/actions';
 import Home from './index';
 
 const mapStateToProps = (state) => ({
-  isCategoriesLoaded: state.product.isCategoriesLoaded,
-  isProductLoaded: state.product.isProductLoaded,
-  categories: state.product.categories,
-  products: state.product.products,
+  isCategoriesLoaded: state.app.isCategoriesLoaded,
+  isProductLoaded: state.app.isProductLoaded,
+  categories: state.app.categories,
+  products: state.app.products,
   position: state.home.position,
 });
 

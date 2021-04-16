@@ -8,27 +8,28 @@ import storage from 'redux-persist/lib/storage';
 import appMiddleware from '../middlewares/appMiddleware';
 import cartMiddleware from '../middlewares/cartMiddleware';
 import placeMiddleware from '../middlewares/placeMiddleware';
+import appReducer from './reducers/appReducer';
 import homeReducer from './reducers/homeReducer';
-import productReducer from './reducers/productReducer';
 import cartReducer from './reducers/cartReducer';
-import popUpReducer from './reducers/popUpReducer';
 import altHomeReducer from './reducers/altHomeReduce';
 
-const rootReducer = combineReducers({
-  home: homeReducer,
-  product: productReducer,
-  cart: cartReducer,
-  popUp: popUpReducer,
-  altHome: altHomeReducer,
-});
-
-const persistConfig = {
-  key: 'root',
+const appPersistConfig = {
+  key: 'app',
   storage,
-  whitelist: ['cart'],
+  whitelist: ['mainSwitch']
 };
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+const cartPersistConfig = {
+  key: 'cart',
+  storage,
+};
+
+const rootReducer = combineReducers({
+  app: persistReducer(appPersistConfig, appReducer),
+  home: homeReducer,
+  cart: persistReducer(cartPersistConfig, cartReducer),
+  altHome: altHomeReducer,
+});
 
 const enhancers = composeWithDevTools(
   applyMiddleware(
@@ -38,6 +39,6 @@ const enhancers = composeWithDevTools(
   )
 );
 
-export const store = createStore(persistedReducer, enhancers);
+export const store = createStore(rootReducer, enhancers);
 
 export const persistedStore = persistStore(store);

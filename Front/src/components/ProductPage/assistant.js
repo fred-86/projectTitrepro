@@ -2,13 +2,14 @@
 import { connect } from 'react-redux';
 
 // Import local
-import { addToCart, setPictureToMain } from 'src/store/actions';
+import { addToCart } from 'src/store/actions/cartActions';
+import { setPictureToMain } from 'src/store/actions';
 import ProductPage from './index';
 
 const mapStateToProps = (state) => ({
-  isProductLoaded: state.product.isProductLoaded,
-  products: state.product.products,
-  categories: state.product.categories,
+  categories: state.app.categories,
+  isProductLoaded: state.app.isProductLoaded,
+  products: state.app.products,
 });
 
 const mapDispatchToProps = (dispatch, props) => ({

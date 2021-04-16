@@ -2,12 +2,8 @@
 import { connect } from 'react-redux';
 
 // Import local
-import { updateItem } from 'src/store/actions';
+import { updateItem } from 'src/store/actions/cartActions';
 import Item from './index';
-
-const mapStateTopProps = (state) => ({
-
-});
 
 const mapDispatchToProps = (dispatch) => ({
   updateItem: (item) => {
@@ -15,4 +11,4 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-export default connect(mapStateTopProps, mapDispatchToProps)(Item);
+export default connect(null, mapDispatchToProps)(Item);

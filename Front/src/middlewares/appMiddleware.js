@@ -2,13 +2,14 @@
 import axios from 'axios';
 
 // Import local
-import { setToken, setCategories, setProducts, setPlaceCategories, setPlaces } from 'src/store/actions';
+import { setToken, setCategories, setProducts, setPlaceCategories } from 'src/store/actions/appActions';
+import { setPlaces } from 'src/store/actions/altHomeActions';
 
 // Function
 const appMiddleware = (store) => (next) => (action) => {
-  const { token } = store.getState().product;
   const login = process.env.AUTH_LOGIN;
   const password = process.env.AUTH_PASSWORD;
+  const { token } = store.getState().app;
 
   switch (action.type) {
     case 'GET_TOKEN':
@@ -25,7 +26,7 @@ const appMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
 
-    case 'LOAD_CATEGORY':
+    case 'LOAD_CATEGORIES':
       axios.get('http://www.epako.studio/apo-E-pascommerce-back/public/api/product/category/browse', {
         headers: {
           Authorization: `Bearer ${token}`,

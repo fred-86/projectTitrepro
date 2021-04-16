@@ -3,7 +3,7 @@ import axios from "axios";
 
 // Import local
 import { generateLink } from 'src/Utils';
-import { setMap } from 'src/store/actions';
+import { setMap } from 'src/store/actions/altHomeActions';
 
 const placeMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
