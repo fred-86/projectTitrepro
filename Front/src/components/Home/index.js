@@ -6,6 +6,8 @@ import Loader from '../Loader';
 import Carrousel from '../Carrousel';
 import PromoCarrousel from '../PromoCarrousel';
 
+import CarrouselV2 from '../CarrouselV2';
+
 const Home = ({
   categories,
   products,
@@ -90,7 +92,7 @@ const Home = ({
             });
 
             return (
-              <Carrousel
+              <CarrouselV2
                 category={category}
                 products={associatedProduct}
                 categoryPosition={position}
