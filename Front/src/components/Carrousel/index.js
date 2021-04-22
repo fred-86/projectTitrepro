@@ -5,37 +5,52 @@ import { Link } from 'react-router-dom';
 // Import local
 import { generateLink } from '../../Utils';
 
-const Carrousel = ({ category, products, categoryPosition }) => {
-  const [position, setPosition] = useState(0);
-  const [picturesDisplayed, setPicturesDisplayed] = useState(0);
+const Carrousel = ({ category, products, carrouselClass }) => {
+  const [initialPosition, setInitialPosition] = useState(0);
+  const [productsDisplayed, setProductsDisplayed] = useState(4);
+  const slideNumber = Math.ceil(products.length / productsDisplayed);
+  let slides = [];
+  let firstIndex = 0;
   const { name } = category;
   const categoryLink = generateLink(category.name);
 
-  const updateCarrousel = () => {
-    const { matches } = window.matchMedia('(max-width: 1200px');
-    const picturesToDisplay = matches ? 3 : 4;
+  for (let i = 0; i < slideNumber; i++) {
+    const currentSlide = [];
 
-    setPicturesDisplayed(picturesToDisplay);
-  };
+    for (let i = firstIndex; i < firstIndex + productsDisplayed; i++) {
+      if (typeof products[i] !== 'undefined') {
+        currentSlide.push(products[i]);
+      }
+    }
 
-  const swipe = (side) => {
-    const frameSize = picturesDisplayed * 200 + (picturesDisplayed - 1) * 24 + 65;
+    slides.push(currentSlide);
+    firstIndex += productsDisplayed;
+  }
 
-    const times = products.length % picturesDisplayed === 0
-      ? products.length / picturesDisplayed - 1
-      : Math.floor(products.length / picturesDisplayed);
-
-    const lastFramePosition = 0 - (frameSize * times);
-    let newPosition = 0;
-
-    if (side === 'right') {
-      newPosition = position === lastFramePosition ? 0 : position - frameSize;
+  const handleSwipe = (side) => {
+    if (side === 'left') {
+      initialPosition === 0 ? setInitialPosition(slides.length - 1) : setInitialPosition(initialPosition - 1);
     }
     else {
-      newPosition = position === 0 ? lastFramePosition : position + frameSize;
+      initialPosition === slides.length - 1 ? setInitialPosition(0) : setInitialPosition(initialPosition + 1);
+    }
+  };
+
+  // Check how many products to display depending on viewport width
+  const updateCarrousel = () => {
+    const viewportWidth = window.innerWidth;
+    let productsToDisplay = 4;
+
+    if (viewportWidth < 1200) {
+      productsToDisplay = 3;
     }
 
-    setPosition(newPosition);
+    if (viewportWidth < 992) {
+      productsToDisplay = products.length;
+      setInitialPosition(0);
+    }
+
+    setProductsDisplayed(productsToDisplay);
   };
 
   useEffect(() => {
@@ -48,12 +63,7 @@ const Carrousel = ({ category, products, categoryPosition }) => {
   }, []);
 
   return (
-    <div
-      className="Carrousel"
-      style={{
-        transform: `translateX(${categoryPosition}px)`,
-      }}
-    >
+    <div className={carrouselClass}>
       <h2 className="Carrousel__title">
         {categoryLink !== 'tendance' && <Link to={`/${categoryLink}`}>
           {name}
@@ -65,39 +75,56 @@ const Carrousel = ({ category, products, categoryPosition }) => {
           type="button"
           className="Carrousel__slider-control Carrousel__slider-control--left"
           onClick={() => {
-            swipe('left');
+            handleSwipe('left');
           }}
         >
           &#171;
         </button>
         <div className="Carrousel__slider-content">
-          {products.map((product) => {
-            if (product.status !== 1) {
-              return (
-                <Link
-                  className="Carrousel__slider-content-product"
-                  to={`product/${product.id}`}
-                  key={product.id}
-                  style={{ transform: `translateX(${position}px)` }}
-                >
-                  <img
-                    src={product.images[0].url}
-                    alt={product.images[0].alt}
-                    key={`product-${product.id}`}
-                  />
-                  <figcaption>
-                    {product.name}
-                  </figcaption>
-                </Link>
-              );
+          {slides.map((slide, index) => {
+            let slideClass = "Carrousel__slider-content-slide";
+
+            if (index === initialPosition) {
+              slideClass = "Carrousel__slider-content-slide Carrousel__slider-content-slide--displayed";
             }
+            else if (index === initialPosition + 1) {
+              slideClass = "Carrousel__slider-content-slide Carrousel__slider-content-slide--incoming";
+            }
+            else {
+              slideClass = "Carrousel__slider-content-slide Carrousel__slider-content-slide--outgoing";
+            }
+
+            if (initialPosition === slides.length - 1 && index === 0 && slides.length > 1) {
+              slideClass = "Carrousel__slider-content-slide Carrousel__slider-content-slide--incoming";
+            }
+
+            return (
+              <div className={slideClass} key={index}>
+                {slide.map((product) => (
+                  <Link
+                    className="Carrousel__slider-content-slide-link"
+                    to={`product/${product.id}`}
+                    key={product.id}
+                  >
+                    <img
+                      src={product.images[0].url}
+                      alt={product.images[0].alt}
+                      key={`product-${product.id}`}
+                    />
+                    <figcaption>
+                      {product.name}
+                    </figcaption>
+                  </Link>
+                ))}
+              </div>
+            );
           })}
         </div>
         <button
           type="button"
           className="Carrousel__slider-control Carrousel__slider-control--right"
           onClick={() => {
-            swipe('right');
+            handleSwipe('right');
           }}
         >
           &#187;

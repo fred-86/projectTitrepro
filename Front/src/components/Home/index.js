@@ -6,8 +6,6 @@ import Loader from '../Loader';
 import Carrousel from '../Carrousel';
 import PromoCarrousel from '../PromoCarrousel';
 
-import CarrouselV2 from '../CarrouselV2';
-
 const Home = ({
   categories,
   products,
@@ -32,18 +30,12 @@ const Home = ({
   };
 
   const swipeCategory = (side) => {
-    const frameSize = window.innerWidth - 14;
-    const lastPosition = 0 - (frameSize * (categories.length - 1));
-    let newPosition = 0;
-
-    if (side === 'right') {
-      newPosition = position === 0 ? lastPosition : position + frameSize;
+    if (side === 'left') {
+      position === 0 ? setPosition(categories.length - 2) : setPosition(position - 1);
     }
     else {
-      newPosition = position === lastPosition ? 0 : position - frameSize;
+      position === categories.length - 2 ? setPosition(0) : setPosition(position + 1);
     }
-
-    setPosition(newPosition);
   };
 
   useEffect(() => {
@@ -77,8 +69,9 @@ const Home = ({
       </button>
       <div className="Home__content">
         {(!isCategoriesLoaded || !isProductLoaded) && <Loader />}
-        {isCategoriesLoaded && isProductLoaded && categories.map((category) => {
+        {isCategoriesLoaded && isProductLoaded && categories.map((category, index) => {
           let associatedProduct = [];
+          let carrouselClass = 'Carrousel';
 
           if (category.name !== 'tendance') {
             const childCategoriesIndex = category.childCategories.map((childCategorie) => (
@@ -91,11 +84,25 @@ const Home = ({
               )
             });
 
+            if (index === position) {
+              carrouselClass = 'Carrousel Carrousel--displayed';
+            }
+            else if (index === position + 1) {
+              carrouselClass = 'Carrousel Carrousel--incoming';
+            }
+            else {
+              carrouselClass = 'Carrousel Carrousel--outgoing';
+            }
+
+            if (position === categories.length - 2 && index === 0) {
+              carrouselClass = 'Carrousel Carrousel--incoming';
+            }
+
             return (
-              <CarrouselV2
+              <Carrousel
                 category={category}
                 products={associatedProduct}
-                categoryPosition={position}
+                carrouselClass={carrouselClass}
                 key={category.id}
               />
             );
@@ -104,7 +111,7 @@ const Home = ({
         {isCategoriesLoaded && isProductLoaded && <Carrousel
           category={fashionCategory}
           products={fashionProduct}
-          categoryPosition={position}
+          carrouselClass="Carrousel Carrousel--tendance"
         />}
       </div>
     </div>
