@@ -7,6 +7,7 @@ import classNames from 'classnames';
 import { calculateAmount } from 'src/Utils';
 import Item from './Item/assistant';
 
+// Component
 const FlyingCart = ({
   isOpened,
   token,

@@ -2,13 +2,13 @@
 import { connect } from 'react-redux';
 
 // Import local
-import { addToCart } from 'src/store/actions';
+import { addToCart } from 'src/store/actions/cartActions';
 import PageCategory from './index';
 
 const mapStateToProps = (state) => ({
-  isCategoriesLoaded: state.product.isCategoriesLoaded,
-  categories: state.product.categories,
-  products: state.product.products,
+  isCategoriesLoaded: state.app.isCategoriesLoaded,
+  categories: state.app.categories,
+  products: state.app.products,
 });
 
 const mapDispatchToProps = (dispatch) => ({

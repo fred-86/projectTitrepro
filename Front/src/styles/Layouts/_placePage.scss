@@ -1,0 +1,147 @@
+.PlacePage {
+  background: $background-lightgrey;
+    
+  &__banner {
+    margin-top: -49px;
+
+    &-quote {
+      width:100%;
+      padding: 3rem 5rem;
+      background-color: $background-nav-light;
+      text-align: center;
+      border-bottom: 3px solid $nav-separator;
+      color: #fff;
+
+      &-text{
+        font-size: $lg-font;
+        line-height: 1.6rem;
+      }
+
+      &-signature{
+        padding-top: 1rem;
+        font-size: $sm-font;
+      }
+    }
+  }
+
+  &__presentation {
+    margin: 0 auto;
+    max-width: 915px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding:3rem;
+    text-align: left;
+    color:#454343;
+
+    &-returnBtn {
+      margin-bottom: 1rem;
+      width: 80px;
+      height: 30px;
+      display: inline-block;
+      background: $background-nav;
+      text-align: center;
+      font-size: $xl-font;
+      font-weight: $md-weight;
+      color: $color-nav-hover;
+    }
+
+    &-title {
+      margin-bottom :1.2rem;
+      font-size: $xl-font;
+      font-weight: 500;
+    }
+
+    &-description {
+      line-height: 1.2rem;
+      text-align: justify;
+    }
+
+    &-address {
+      &-title {
+        margin: 2rem 0 1rem;
+        font-size: $lg-font;
+        font-weight: $md-weight;
+      }
+
+      &-text{
+        padding-bottom: 0.5rem;
+      } 
+    }
+
+    &-map {
+      &-btn {
+        margin:0.5rem 0 0.5rem 0;
+        width:120px;
+        height:35px;
+        border:none;
+        border-radius: 5px;
+        display: block;
+        padding: 0.5rem 1rem;
+        background-color: $background-nav-light;
+        text-align: center;
+        font-weight: $md-weight;
+        color: $color-nav;
+
+        &:hover{
+          color: $color-nav-hover;
+        }
+      }
+
+      &-geoloc{
+        width: 500px;
+        height: 500px;
+        background-color: cadetblue;;
+        margin-top: 1rem;
+        border-radius: 30px;
+      }
+    }
+
+    &-comment {
+      display: none;
+      margin: 2rem 0 1rem;
+    
+      &-title{
+        margin-bottom: 1rem;
+        font-size: $lg-font;
+        font-weight: $md-weight;
+      }    
+    }
+
+    &-input{
+      border: none;
+      width: 100%;
+      padding: 1rem;
+      background-color: #f1f1f1;
+    }
+  }
+
+  // Media Queries
+  @include sm {
+    &__presentation {
+      &-map {
+        &-geoloc {
+          width: 350px;
+          height: 350px;  
+        }
+      }
+    }
+  }
+
+  @include xs {
+    &__banner {
+      &-quote {
+        text-align: justify;
+        padding: 2rem 2.5rem;
+
+        &-text {
+          font-size: $md-font;
+        }
+
+        &-signature {
+          font-size: $sm-font;
+        }
+      }
+    }
+  }
+}

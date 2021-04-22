@@ -1,0 +1,59 @@
+.PlaceCard {
+  margin: 1rem 0.6rem;
+  width: 210px;
+  height: 340px;
+  border-radius: 25px 25px 0px 0px;
+  background-color: $color-white;
+  text-align: left;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  transition: transform .2s;
+
+  &__img {
+    margin: 0.5rem 0.5rem 0;
+    border-radius: 25px 25px 0px 0px;
+    transition: border-radius 0.5s 0.2s;
+    width: 194px;
+    height: 194px;
+    object-fit: contain;
+  }
+
+  &__details {
+    height: 135px;
+    box-shadow: 0 2px 8px inset rgba(18, 44, 59, 0.527);
+    border-top: 1px solid rgb(138, 138, 138);
+    padding: 0.6rem 1rem 0.5rem;
+    background: rgb(219,229,231);
+    background: linear-gradient(
+      180deg, 
+      rgb(226, 232, 233) 0%, 
+      rgb(235, 250, 253) 15%, 
+      rgb(214, 228, 231) 40%, 
+      rgb(214, 227, 230) 60%, 
+      rgb(234, 250, 253) 85%, 
+      rgb(179, 192, 196) 100%
+    );
+    font-weight: $md-weight;
+    color: #7E7D7D;
+
+    &-category-title {
+      margin-bottom: 0.6rem;
+      font-size: 15px;
+    }
+
+    &-name {
+      margin-bottom: 0.5rem;
+      font-size: $lg-font;
+      font-weight: $lg-weight;
+      color:#525252;
+    }
+
+    &-location {
+      font-size: $sm-font;
+    }
+  }
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+

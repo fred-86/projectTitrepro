@@ -2,12 +2,14 @@
 import { connect } from 'react-redux';
 
 // Import local
-import { loadPlaceCategories, loadPlaces, setStatusCode } from 'src/store/actions';
+import { loadPlaceCategories } from 'src/store/actions/appActions';
+import { loadPlaces } from 'src/store/actions/altHomeActions';
+import { setStatusCode } from 'src/store/actions/cartActions';
 import AltHome from './index';
 
 const mapStateToProps = (state) => ({
-  token: state.product.token,
-  placeCategories: state.cart.cart.placeCategories,
+  token: state.app.token,
+  placeCategories: state.app.placeCategories,
   places: state.altHome.places,
 });
 

@@ -2,10 +2,11 @@
 import axios from 'axios';
 
 // Import local
-import { setLocations, setHaveFound, setSwitchVisibility, setMainSwitch, setStatusCode, setCartPlaces, showPopUp, setBubble } from '../store/actions';
+import { setSwitchVisibility, setMainSwitch, showPopUp, setBubble, setLocations } from '../store/actions/appActions';
+import { setHaveFound, setStatusCode, setRelatedPlaces } from '../store/actions/cartActions';
 
 const cartMiddleware = (store) => (next) => (action) => {
-  const { token } = store.getState().product;
+  const { token } = store.getState().app;
 
   switch (action.type) {
     case 'LOAD_LOCATIONS':
@@ -53,7 +54,7 @@ const cartMiddleware = (store) => (next) => (action) => {
       })
         .then((response) => {
           store.dispatch(setHaveFound(true));
-          store.dispatch(setCartPlaces(response.data));
+          store.dispatch(setRelatedPlaces(response.data));
           console.log(localStorage.getItem('hadVisited'));
 
           if (localStorage.getItem('hadVisited') === null) {

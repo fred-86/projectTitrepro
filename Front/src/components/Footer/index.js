@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import facebook from 'src/assets/images/socials/facebook.svg';
 import twitter from 'src/assets/images/socials/twitter.svg';
 
+// Component
 const Footer = () => (
   <footer className="Footer">
     <p className="Footer__copyright">

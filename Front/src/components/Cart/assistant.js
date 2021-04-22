@@ -2,15 +2,20 @@
 import { connect } from 'react-redux';
 
 // Import local
-import { loadPlaceCategories, setSelectedProduct, setSelectedPlaceCategory, setMainSwitch, setHaveFound } from 'src/store/actions';
+import { loadPlaceCategories, setMainSwitch } from 'src/store/actions/appActions';
+import {
+  setSelectedProduct,
+  setSelectedPlaceCategory,
+  setHaveFound
+} from 'src/store/actions/cartActions';
 import Cart from './index';
 
 const mapStateToProps = (state) => ({
   items: state.cart.items,
-  placeCategories: state.cart.cart.placeCategories,
-  selectedPlaceCategory: state.cart.cart.selectedPlaceCategory,
-  places: state.cart.cart.places,
+  placeCategories: state.app.placeCategories,
+  places: state.cart.cart.relatedPlaces,
   selectedProduct: state.cart.cart.selectedProduct,
+  selectedPlaceCategory: state.cart.cart.selectedPlaceCategory,
 });
 
 const mapDispatchToProps = (dispatch) => ({

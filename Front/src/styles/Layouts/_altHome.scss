@@ -2,71 +2,80 @@
   margin-top: -49px;
 
   &__banner {
-    width:100%;
-    max-height:587px;
     position:relative;
+    max-height:587px;
+    color: $color-white;
 
     &-img {
-      max-height: 587px;
+      height: 587px;
       width:100%;
       object-fit: cover;  
     }
 
     &-article {
-      background-color: rgba(65, 63, 63, 0.563);
       position:absolute;
-      width:40%;
-      height:100%;
       bottom:0;
       right:0;
+      width:40%;
+      height:100%;
       padding: 3rem;
+      background-color: rgba(65, 63, 63, 0.563);
       text-align: left;
 
-      @include lg {
-        width: 50%;
+      &-title {
+        margin-bottom:0.9rem;
+        font-size: $xxl-font;
+        font-weight:$md-weight;
       }
 
-      @include md {
-        width: 100%;
-        padding-right: 300px;
-      }
-
-      @include sm {
-        padding-right: 160px;
-      }
-
-      @include sm {
-        padding: 2rem;
+      &-text {
+        margin-bottom: 0.9rem;
+        text-align: justify;
+        font-weight: $sm-weight;
+        line-height: 1.2rem;
       }
     }
+  }
+  
+  &__place-list {
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    justify-content: center;
+    padding: 0rem 3rem 2rem;
+  }
+  
+  // Media Queries
+  @include lg {
+    &__banner-article {
+      width: 50%;
+    }
+  }
 
-    &-title {
-      font-weight:700;
-      font-size: 3rem;
-      margin-bottom:0.9rem;
-      color: $color-white;
+  @include md {
+    &__banner-article {
+      width: 100%;
+      padding-right: 300px;
+    }
+  }
 
-      @include xs {
-        font-size: 2rem;
+  @include sm {
+    &__banner {
+      &-article {
+        padding-right: 160px;  
       }
     }
+  }
 
-    &-text {
-      font-weight: 600;
-      line-height: 1.2rem;
-      margin-bottom: 0.9rem;
-      color: $color-white;
-      text-align: justify;
+  @include xs {
+    &__banner {
+      &-article {
+        padding: 3rem;
 
-      @include xs {
-        font-size: 0.9rem;
+        &-title {
+          font-size: $xl-font;
+        }
       }
     }
-
-    @include sm {
-      &-img {
-        height: 500px;
-      }
-    }
-  }   
+  }
 }

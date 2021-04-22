@@ -8,8 +8,8 @@
   background-color: $background-nav;
   text-align: center;
   color: $color-nav;
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: $md-font;
+  font-weight: $md-weight;
 
   & > div {
     width: 100%;

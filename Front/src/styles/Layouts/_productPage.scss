@@ -54,8 +54,8 @@
         display: inline-block;
         background: $background-nav;
         text-align: center;
-        font-size: 2rem;
-        font-weight: 700;
+        font-size: $xl-font;
+        font-weight: $md-weight;
         color: $color-nav-hover;
       }
 
@@ -66,7 +66,7 @@
         }
 
         &__item{
-          font-size: $small-font;
+          font-size: $sm-font;
 
           &:nth-of-type(1) {
             margin-right: 0.5rem;
@@ -79,12 +79,12 @@
       }
 
       &-title {
-        font-size: $title-size;
+        font-size: $xl-font;
         margin-bottom: 1rem;
       }
 
       &-compagny {
-        font-size: $small-font;
+        font-size: $sm-font;
         margin-bottom: 2rem;
 
         & > em {
@@ -132,22 +132,22 @@
           padding: 0.7rem;
   
           &-label {
-            font-size: $small-font;
+            font-size: $sm-font;
             margin-bottom: 0.5rem;
           }
   
           &-amount {
             background-color: transparent;
             border: none;
-            font-size: 1rem;
-            font-weight: bold;
+            font-size: $md-font;
+            font-weight: $md-weight;
           }
         }    
 
         &-btn {
           background-color: $color-nav-hover;
-          font-size: 1rem;
-          font-weight: 700;
+          font-size: $md-font;
+          font-weight: $md-weight;
           padding: 1rem;
           border-radius: 5px;
           border: solid 3px $color-border-yellow;

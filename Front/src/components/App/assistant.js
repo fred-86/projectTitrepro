@@ -2,24 +2,24 @@
 import { connect } from 'react-redux';
 
 // Import local
-import { getToken, loadCategory, loadProducts, setSwitchVisibility } from 'src/store/actions';
+import { getToken, loadCategories, loadProducts, setSwitchVisibility } from 'src/store/actions/appActions';
 import App from './index';
 
 const mapStateToProps = (state) => ({
-  token: state.product.token,
-  categories: state.product.categories,
-  products: state.product.products,
+  token: state.app.token,
+  categories: state.app.categories,
+  products: state.app.products,
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  getToken: () => {
+    dispatch(getToken());
+  },
   loadCategory: () => {
-    dispatch(loadCategory());
+    dispatch(loadCategories());
   },
   loadProducts: () => {
     dispatch(loadProducts());
-  },
-  getToken: () => {
-    dispatch(getToken());
   },
   setSwitchVisibility: (value) => {
     dispatch(setSwitchVisibility(value));

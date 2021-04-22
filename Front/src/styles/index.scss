@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import './Utils/vars';
 @import './Utils/mixins';
+@import './Components/header';
+@import './Components/footer';
 @import './Components/loader';
 @import './Components/popUp';
 @import './Components/nav';
@@ -13,16 +15,14 @@
 @import './Components/categoryNavBar';
 @import './Components/productCard';
 @import './Components/altCategoryNavBar';
-@import './Components/altCategoryCards';
-@import './Layouts/header';
-@import './Layouts/footer';
+@import './Components/placeCard';
 @import './Layouts/app';
 @import './Layouts/home';
 @import './Layouts/categoryPage';
 @import './Layouts/productPage';
 @import './Layouts/cart';
 @import './Layouts/altHome';
-@import './Layouts/altPageMobile';
+@import './Layouts/placePage';
 @import './Layouts/aPropos';
 @import './Layouts/mentionsLegales';
 @import './Layouts/page404';

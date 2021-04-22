@@ -8,33 +8,23 @@
   display: flex;
   align-items: center;
   border-bottom: 1px solid rgb(167, 175, 177);
-  padding: 1rem 2rem;
+  padding: 0 2rem;
   background: rgb(203,225,235);
   background: linear-gradient(
-    180deg, 
-    rgba(203,225,235,0.9724264705882353) 13%, 
-    rgba(142,181,190,0.9444152661064426) 52%, 
-    rgba(99,140,154,0.9416141456582633) 94%, 
+    180deg,
+    rgba(203,225,235,0.9724264705882353) 13%,
+    rgba(142,181,190,0.9444152661064426) 52%,
+    rgba(99,140,154,0.9416141456582633) 94%,
     rgba(159,185,195,1) 98%
   );
-
-  @include xs {
-    padding: 1rem 1.2rem;
-  }
 
   &__logo {
     margin-right: 2rem;
     width: 150px;
-
-    @include xs {
-      margin-right: 1rem;
-      width: 100px;
-    }
   }
 
   &__switch {
     position: relative;
-    //margin-right: 1rem;
     width: 90px;
     height: 40px;
     box-shadow: 0 2px 2px rgba(65, 65, 65, 0.719), 0 -4px 6px rgba(36, 36, 36, 0.37);
@@ -50,34 +40,22 @@
     }
 
     &-checkbox {
-      width: 0;
-      height: 0;
-      opacity: 0;
-
-      &:hover + .Header__switch-slider {
-        background-color: lighten($background-header-green, 10%);
-      } 
+      display: none;
 
       &:checked + .Header__switch-slider {
         background: rgb(101,188,224);
         background: radial-gradient(
-          circle, 
-          rgba(101,188,224,1) 13%, 
-          rgba(74,180,205,1) 30%, 
-          rgba(38,136,170,1) 82%, 
+          circle,
+          rgba(101,188,224,1) 13%,
+          rgba(74,180,205,1) 30%,
+          rgba(38,136,170,1) 82%,
           rgba(13,119,159,1) 98%
         );
         transition: all 3s;
       }
-      
+
       &:checked + .Header__switch-slider:before, &:checked + .Header__switch-slider:after {
         transform: translateX(49px);
-      }
-      
-      @include xs {
-        &:checked + .Header__switch-slider:before, &:checked + .Header__switch-slider:after {
-          transform: translateX(55px);
-        }
       }
     }
 
@@ -91,53 +69,37 @@
       border-radius: 20px;
       background: rgb(114,224,101);
       background: radial-gradient(
-        circle, 
-        rgba(114,224,101,1) 13%, 
-        rgba(78,205,74,1) 43%, 
-        rgba(38,170,45,1) 71%, 
+        circle,
+        rgba(114,224,101,1) 13%,
+        rgba(78,205,74,1) 43%,
+        rgba(38,170,45,1) 71%,
         rgba(31,133,17,1) 91%
       );
       transition: all 3.4s;
     }
-    
+
     &-slider:before {
-      content: "";
-      position: absolute;
-      left: 1px;
-      top: 50%;
-      width: 36px;
-      height: 36px;
-      margin-top: -18px;
+      @include SwitchThumb;
       border: 2px solid rgb(204, 216, 211);
-      border-radius: 50%;
       background: rgb(214,212,180);
       background: radial-gradient(
-        circle, 
-        rgb(252, 252, 251) 15%, 
-        rgb(88, 117, 117) 22%, 
-        rgb(140, 196, 193) 36%, 
+        circle,
+        rgb(252, 252, 251) 15%,
+        rgb(88, 117, 117) 22%,
+        rgb(140, 196, 193) 36%,
         rgb(85, 130, 141) 41%
       );
-      transition: 0.4s;
     }
 
     &-slider:after {
-      content: "";
-      position: absolute;
-      left: 1px;
-      top: 50%;
-      width: 36px;
-      height: 36px;
-      margin-top: -18px;
-      border-radius: 50%;
+      @include SwitchThumb;
       background: rgb(146,149,150);
       background: linear-gradient(
-        148deg, 
-        rgba(146,149,150,0.4822303921568627) 33%, 
-        rgba(170,170,170,0.6502976190476191) 58%, 
+        148deg,
+        rgba(146,149,150,0.4822303921568627) 33%,
+        rgba(170,170,170,0.6502976190476191) 58%,
         rgba(207,215,212,0.8211659663865546) 78%
       );
-      transition: 0.4s;
     }
 
     &-bubble {
@@ -152,9 +114,15 @@
       border-radius: 10px;
       padding: 0.5rem 1rem;
       background: rgb(191,238,233);
-      background: linear-gradient(180deg, rgb(191, 238, 233) 0%, rgba(141,213,206,1) 40%, rgba(135,207,200,1) 50%, rgb(191, 238, 233) 100%);
+      background: linear-gradient(
+        180deg, 
+        rgb(191, 238, 233) 0%, 
+        rgba(141,213,206,1) 40%, 
+        rgba(135,207,200,1) 50%, 
+        rgb(191, 238, 233) 100%
+      );
       text-align: justify;
-      font-size: 0.8rem;
+      font-size: $sm-font;
       color: rgb(65, 64, 64);
 
       &--active {
@@ -166,14 +134,14 @@
             opacity: 1;
             transform: scale(0);
           }
-          8% {
+          6% {
             box-shadow: -1px -1px 2px inset rgba(49, 102, 75, 0.479), 0 0 0px rgba(0, 0, 0, 0.678);
             transform: scale(1);
           }
-          16% {
+          14% {
             box-shadow: -1px -1px 2px inset rgba(49, 102, 75, 0.479), 0 0 30px rgba(0, 0, 0, 0);
           }
-          20% {
+          18% {
             box-shadow: -1px -1px 2px inset rgba(49, 102, 75, 0.479), 0 0 30px rgba(0, 0, 0, 0);
           }
           90% {
@@ -193,19 +161,14 @@
         width: 40px;
         height: 20px;
         background: rgb(191,238,233);
-        background: linear-gradient(180deg, rgb(191, 238, 233) 0%, rgba(141,213,206,1) 40%, rgba(135,207,200,1) 50%, rgb(172, 214, 210) 100%);
+        background: linear-gradient(
+          180deg, 
+          rgb(191, 238, 233) 0%, 
+          rgba(141,213,206,1) 40%, 
+          rgba(135,207,200,1) 50%, 
+          rgb(172, 214, 210) 100%
+        );
         clip-path: polygon(0 0, 100% 100%, 0 100%);
-      }
-    }
-
-    @include xs {
-      height: 35px;
-
-      &-slider:before, &-slider:after {
-        left: 0px;
-        width: 31px;
-        height: 31px;
-        margin-top: -15px;
       }
     }
   }
@@ -221,16 +184,8 @@
     border-color: rgb(223, 216, 207);
     background-color: rgba(230, 230, 230, 0.438);
     text-indent: 1rem;
-    font-size: 1.2rem;
+    font-size: $lg-font;
     color: rgb(70, 75, 146);
-
-    @include md {
-      width: 35%;
-    }
-
-    @include sm {
-      display: none;
-    }
   }
 
   &__cart-button {
@@ -242,10 +197,10 @@
     border-color: rgb(219, 212, 201);
     background: rgb(255,246,170);
     background: linear-gradient(
-      225deg, 
-      rgba(255,246,170,0.5942752100840336) 12%, 
-      rgba(247,214,92,0.7287289915966386) 40%, 
-      rgba(221,178,58,0.8575805322128851) 64%, 
+      225deg,
+      rgba(255,246,170,0.5942752100840336) 12%,
+      rgba(247,214,92,0.7287289915966386) 40%,
+      rgba(221,178,58,0.8575805322128851) 64%,
       rgba(250,174,74,0.8687850140056023) 99%
     );
     transform: skew(-40deg);
@@ -266,9 +221,9 @@
       padding-top: 1px;
       background: rgb(255,255,255);
       background: radial-gradient(
-        circle, 
-        rgba(255,255,255,0.639093137254902) 0%, 
-        rgba(195,195,195,0.47942927170868344) 39%, 
+        circle,
+        rgba(255,255,255,0.639093137254902) 0%,
+        rgba(195,195,195,0.47942927170868344) 39%,
         rgba(85,77,77,0.3701855742296919) 100%
       );
       color: white;
@@ -277,9 +232,9 @@
       &--updated {
         background: rgb(255,0,0);
         background: radial-gradient(
-          circle, 
-          rgba(255,0,0,1) 0%, 
-          rgba(208,21,21,1) 52%, 
+          circle,
+          rgba(255,0,0,1) 0%,
+          rgba(208,21,21,1) 52%,
           rgba(163,15,15,1) 81%
         );
         color: white;
@@ -296,12 +251,51 @@
           box-shadow: 0 0 3px 5px white;
         }
         to {
-          transform: scale(1) skew(40deg); 
+          transform: scale(1) skew(40deg);
         }
       }
     }
+  }
 
-    @include xs {
+  // Media Queries
+  @include md {
+    .Header__search {
+      width: 35%;
+    }
+  }
+
+  @include sm {
+    .Header__search {
+     display: none;
+    }
+  }
+
+  @include xs {
+    padding: 0 1.2rem;
+
+    &__logo {
+      margin-right: 1rem;
+      width: 100px;
+    }
+
+    &__switch {
+      height: 35px;
+
+      &-checkbox {
+        &:checked + .Header__switch-slider:before, &:checked + .Header__switch-slider:after {
+          transform: translateX(54px);
+        }
+      }
+
+      &-slider:before, &-slider:after {
+        left: 0px;
+        width: 32px;
+        height: 32px;
+        margin-top: -16px;
+      }
+    }
+
+    &__cart-button {
       right: 35px;
       height: 35px;
 

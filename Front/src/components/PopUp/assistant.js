@@ -2,12 +2,12 @@
 import { connect } from 'react-redux';
 
 // Import local
-import { setIsActive } from 'src/store/actions';
+import { setIsActive } from 'src/store/actions/appActions';
 import PopUp from './index';
 
 const mapStateToProps = (state) => ({
-  isActive: state.popUp.isActive,
-  messages: state.popUp.messages,
+  isActive: state.app.popUp.isActive,
+  messages: state.app.popUp.messages,
 });
 
 const mapDispatchToProps = (dispatch) => ({

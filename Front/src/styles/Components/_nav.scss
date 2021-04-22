@@ -19,8 +19,8 @@
       border-left: $nav-separator solid 1px;
 
       color: $color-nav;
-      font-size: 1rem;
-      font-weight: 700;
+      font-size: $md-font;
+      font-weight: $md-weight;
 
       &:hover { 
         color: $color-nav-hover;
@@ -86,7 +86,7 @@
     &__list{
       .navLink{
         width: 195px;
-        font-size: 0.9rem;
+        font-size: $md-font;
       }
     }
   }

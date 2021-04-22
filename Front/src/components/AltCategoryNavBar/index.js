@@ -2,6 +2,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+// Component
 const AltCategoryNavBar = ({ placeCategories }) => (
   <nav className="AltCategoryNavBar">
     <ul className="AltCategoryNavBar__list">
