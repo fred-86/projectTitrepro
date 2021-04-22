@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { setPosition } from 'src/store/actions';
+import { setPosition } from 'src/store/actions/homeActions';
 import Home from './index';
 
 const mapStateToProps = (state) => ({

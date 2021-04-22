@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 // Import local
 import { addToCart } from 'src/store/actions/cartActions';
-import { setPictureToMain } from 'src/store/actions';
+import { setPictureToMain } from 'src/store/actions/homeActions';
 import ProductPage from './index';
 
 const mapStateToProps = (state) => ({
